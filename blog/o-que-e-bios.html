@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>O que é BIOS? &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="Um dos usos mais comuns da memória flash é o do sistema básico de entradas/saídas do computador, conhecido como memória BIOS (Basic Input/Output System) ou simplesmente BIOS. Em praticamente todos os computadores disponíveis, a BIOS…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, BIOS">
+<META NAME=abstract CONTENT="Um dos usos mais comuns da memória flash é o do sistema básico de entradas/saídas do computador, conhecido como memória BIOS (Basic Input/Output System) ou simplesmente BIOS. Em praticamente todos os computadores disponíveis, a BIOS…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>O que é BIOS?</H1>
+<P><I><FONT SIZE=1>quarta-feira, 9 de maio de 2007</FONT></I></P>
+<p>Um dos usos mais comuns da <a href=https://pt.wikipedia.org/wiki/Mem%C3%B3ria_flash target=_blank>memória flash</a> é o do sistema básico de entradas/saídas do computador, conhecido como memória <a href=https://pt.wikipedia.org/wiki/BIOS target=_blank>BIOS</a> (Basic Input/Output System) ou simplesmente BIOS. Em praticamente todos os computadores disponíveis, a BIOS assegura que todos os outros chips, discos rígidos, portas e CPU funcionem em conjunto.</p>
+<p>Todo computador do tipo desktop e laptop de propósito geral contém um microprocessador como unidade central de processamento. O microprocessador é um componente de hardware. Para fazer seu trabalho, o microprocessador executa um conjunto de instruções conhecido como software (veja Como funcionam os microprocessadores para mais informações). Você provavelmente já está bem familiarizado com dois tipos de software diferentes:</p>
+<ul>
+<li>O sistema operacional - o sistema operacional fornece um conjunto de serviços para os aplicativos em execução em seu computador e também fornece a interface de usuário fundamental para seu computador. Windows e Linux são exemplos de sistemas operacionais;</li>
+<li>Os aplicativos - <a href=https://pt.wikipedia.org/wiki/Software_aplicativo target=_blank>aplicativos são trechos de software programados para efetuar tarefas específicas</a>. Agora mesmo você pode estar executando, além de um aplicativo de navegação (ou browser), um aplicativo de processamento de texto, um aplicativo de e-mail e assim por diante. Você também pode comprar novos aplicativos e instalá-los em seu computador.</li>
+</ul>
+<p>Acontece que a memória BIOS é o terceiro tipo de software que seu computador precisa para operar com êxito. Neste artigo, você aprenderá tudo sobre a BIOS: o que ela faz, como configurá-la e o que fazer caso sua BIOS precise de atualização.</p>
+<h2>O que faz a BIOS</h2>
+<center><img src=/files/hs-fail.png alt="HS Failed" width=256 height=224 hspace=5 vspace=5 border=1></center>
+<p>O software da BIOS tem diversos papéis diferentes, mas o mais importante é o carregamento do sistema operacional. Quando você liga seu computador e o microprocessador tenta executar sua primeira instrução, ele tem que obter essa instrução de algum lugar. Ele não pode obtê-la do sistema operacional porque esse sistema se localiza no disco rígido e o microprocessador não pode se comunicar com ele sem algumas instruções que digam como fazê-lo. A BIOS fornece essas instruções. Algumas das outras tarefas comuns que a BIOS executa incluem:</p>
+<ul>
+<li>Um auto-teste durante a energização (POST - Power On-Self Test) para todos os diferentes componentes de hardware no sistema, para assegurar que tudo esteja funcionando corretamente;</li>
+<li>Ativação de outros chips da BIOS em diferentes cartões instalados no computador. Por exemplo, placas SCSI e de vídeo freqüentemente possuem seus próprios chips de BIOS;</li>
+<li>Fornecimento de um conjunto de rotinas de baixo nível que o sistema operacional usa para interfacear de diferentes dispositivos de hardware. São essas rotinas que dão à BIOS o seu nome. Elas administram coisas como o teclado, o monitor de vídeo, a porta serial e as portas paralelas, especialmente quando o computador está sendo inicializado;</li>
+<li>Gerenciamento de diversos parâmetros para os discos rígidos, relógio, etc.</li>
+</ul>
+<p>A BIOS é um software especial que faz a interface dos principais componentes de hardware de seu computador com o sistema operacional. Ela geralmente é armazenada em um chip de memória flash na placa-mãe, mas algumas vezes o chip é de um outro tipo de <a href=https://pt.wikipedia.org/wiki/Mem%C3%B3ria_somente_de_leitura target=_blank>ROM</a>.</p>
+<p>Quando você liga seu computador, a BIOS faz diversas coisas. Esta é a seqüência normal:</p>
+<ol>
+<li>Verifica a configuração (setup) da <a href=https://pt.wikipedia.org/wiki/CMOS target=_blank>CMOS</a> para os ajustes personalizados</li>
+<li>Carrega os manipuladores de interrupção e acionadores (drivers) de dispositivos</li>
+<li>Inicializa registradores e gerenciamento de energia</li>
+<li>Efetua o autoteste durante a energização (POST)</li>
+<li>Exibe as configurações do sistema</li>
+<li>Determina quais dispositivos são inicializáveis</li>
+<li>Começa a seqüência de inicialização (<a href=/blog/como-funciona-o-boot-do-windows/ >conhecida como bootstrap ou, de forma mais reduzida, como boot</a>)</li>
+</ol>
+<center><img src=/files/startup.gif alt="System Start-up" width=292 height=342 hspace=5 vspace=5 border=1></center>
+<p>A primeira coisa que a BIOS faz é verificar a informação armazenada em uma minúscula quantidade de RAM (64 bytes) localizada em um chip fabricado com a tecnologia CMOS (Complementary Metal Oxide Semicondutor). A Configuração da CMOS fornece informações detalhadas particulares para seu sistema e pode ser alterada de acordo as mudanças do sistema. A BIOS usa essas informações para modificar ou complementar sua programação padrão conforme necessário. Vamos falar mais sobre essas configurações daqui a pouco.</p>
+<p>Manipuladores de interrupção são pequenos trechos de software que atuam como tradutores entre os componentes do hardware e o sistema operacional. Por exemplo, quando você pressiona uma tecla, o evento associado ao sinal é enviado para o manipulador de interrupção do teclado, que informa à CPU do que se trata e o envia esse evento para o sistema operacional. Os drivers de dispositivos são outros trechos de software que identificam os componentes básicos do hardware como teclado, mouse, disco rígido e disco flexível. Como a BIOS está constantemente interceptando sinais de e para o hardware, ela geralmente é copiada (espelhada) na RAM para ser executada mais rapidamente.</p>
+<h2>Inicializando o computador</h2>
+<p>Sempre que você liga seu computador, a primeira coisa que vê é o software da BIOS fazendo seu trabalho. Em muitas máquinas, a BIOS exibe um texto que descreve coisas como a quantidade de memória instalada em seu computador, o tipo de disco rígido e assim por diante. Acontece que durante a seqüência de inicialização (boot), a BIOS faz uma grande quantidade de trabalho para deixar seu computador pronto para funcionar. Esta seção descreve rapidamente algumas dessas atividades para um PC típico.</p>
+<p>Depois de verificar a configuração de CMOS e carregar os manipuladores de interrupção, a BIOS determina se a placa de vídeo está operacional. A maioria das placas de vídeo possui sua própria BIOS em miniatura que inicializa a memória e o processador gráfico de sua placa. Caso não o façam, geralmente há informações do driver de vídeo em outra ROM na placa-mãe, que a BIOS pode carregar.</p>
+<p>Em seguida, a BIOS verifica se se trata de uma inicialização a frio (cold boot) ou de uma reinicialização (reboot). Ela faz isso verificando o valor no endereço de memória 0000:0472. Um valor 1234h indica uma reinicialização e a BIOS salta o restante do POST. Caso contrário, é considerada uma inicialização a frio.</p>
+<center><img src=/files/BIOS.GIF alt="Controladores na placa-mãe" width=315 height=229 hspace=5 vspace=5 border=1></center>
+<p>Se for uma inicialização a frio, a BIOS verifica a RAM fazendo um teste de escrita/leitura de cada endereço da memória. Ele verifica as portas PS/2 ou portas USB em busca de um teclado e um mouse. Ela procura por um barramento PCI (Peripheral Component Interconnect) e, caso encontre algum, verifica todos os cartões PCI. Se a BIOS encontrar algum erro durante o POST, ela notificará o usuário por meio de uma série de bips ou uma mensagem de texto exibida na tela. Um erro nesse ponto quase sempre representa um problema de hardware.</p>
+<p>A BIOS então exibe alguns detalhes sobre seu sistema. Isso inclui tipicamente informações a respeito do (a):</p>
+<ul>
+<li>Processador</li>
+<li>Unidades (drivers) de disco flexível e disco rígido</li>
+<li>Memória</li>
+<li>Versão e data da BIOS</li>
+<li>Monitor de vídeo</li>
+</ul>
+<p>Quaisquer drivers especiais, como aqueles para adaptadores de SCSI (Small Computer System Interface) são carregados a partir do adaptador e a BIOS exibe essa informação. A BIOS então considera a seqüência de dispositivos de armazenamento identificada como dispositivos de inicialização na configuração de CMOS. "Boot" é outro nome para a inicialização, e é uma forma reduzida de "bootstrap", alça para ajudar a calçar uma bota. A relação se origina em um antigo ditado, "Lift yourself up by your bootstraps", algo que pode ser traduzido como "Levante-se por conta própria ". O boot se refere ao processo de carregamento do sistema operacional.</p>
+<center><img src=/files/non-system-disk-error.jpg alt="non system disk error" width=262 height=174 hspace=5 vspace=5 border=1></center>
+<p>O BIOS tentará iniciar a seqüência de boot a partir do primeiro dispositivo. Se a BIOS não encontrar um dispositivo, tentará o próximo dispositivo na lista. Caso ela não encontre os arquivos apropriados no dispositivo, o processo de partida será interrompido. Se algum dia você esqueceu um disquete no drive quando reiniciou seu computador, provavelmente já viu essa mensagem.</p>
+<p>A BIOS tentou inicializar o computador a partir do disquete esquecido no drive. Como ela não encontrou os arquivos de sistema corretos, não pôde continuar. É claro, isso é fácil de resolver. Simplesmente retire o disquete e pressione uma tecla para continuar.</p>
+<p>Fonte: <a href=http://eletronicos.hsw.uol.com.br/bios.htm target=_blank>http://eletronicos.hsw.uol.com.br/bios.htm</a></p>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+</FONT>
+</BODY>
+</HTML>
