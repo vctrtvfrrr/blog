@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Como funciona o boot do Windows &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="Navegando pela internet, encontrei este artigo sobre o Boot dos sistemas operacionais. Não contente, fui atrás de como funciona o processo de boot do Windows e como o sistema operacional faz para inicializar. Encontrei algumas…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, Windows, BOOT">
+<META NAME=abstract CONTENT="Navegando pela internet, encontrei este artigo sobre o Boot dos sistemas operacionais. Não contente, fui atrás de como funciona o processo de boot do Windows e como o sistema operacional faz para inicializar. Encontrei algumas…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Como funciona o boot do Windows</H1>
+<P><I><FONT SIZE=1>quarta-feira, 9 de maio de 2007</FONT></I></P>
+<center><img src=/files/boot.jpg alt="pull oneself up by one's bootstraps" width=365 height=300 hspace=5 vspace=5 border=1></center>
+<p>Navegando pela internet, encontrei <a href=https://www.hardware.com.br/livros/hardware/boot.html target=_blank>este artigo sobre o Boot dos sistemas operacionais</a>. Não contente, fui atrás de como funciona o processo de boot do Windows e como o sistema operacional faz para inicializar. Encontrei algumas informações interessantes e vou resumí-las aqui pra vocês:</p>
+<p>O termo "boot" vem da expressão em inglês "pull oneself up by one's bootstraps" ("erguer-se pelas próprias alças das botas"), que é uma piada por si só e significa realizar uma tarefa difícil por conta própria, sem ajuda externa. No contexto da informática, isso se aplica à ideia de o computador "iniciar-se sozinho" sem qualquer assistência, carregando o sistema operacional e preparando-se para o uso.</p>
+<p>Esse processo de "bootstrapping" (ou "boot") refere-se ao conjunto de etapas iniciais em que um sistema começa a rodar o código necessário para carregar seu sistema operacional e tornar-se funcional. No Windows, essas etapas são as seguintes:</p>
+<ol>
+<li><b>BIOS e POST</b>: Quando você liga o computador, o BIOS (Basic Input/Output System) faz um teste chamado POST (Power-On Self-Test) para verificar o hardware básico, como memória, teclado e disco rígido.</li>
+<li><b>MBR e Partição Ativa</b>: Depois do POST, o BIOS procura o Master Boot Record (MBR), que está nos primeiros setores do disco rígido. O MBR contém informações sobre a partição ativa, onde o sistema operacional está instalado, e o código para carregar o sistema.</li>
+<li><b>Carregamento do NTLDR</b>: O MBR carrega o "NTLDR" (NT Loader), que é responsável por iniciar o Windows. Ele carrega os arquivos do sistema e apresenta a tela de escolha de sistema operacional (se houver mais de um instalado).</li>
+<li><b>Configuração do Sistema (BOOT.INI)</b>: O NTLDR lê o arquivo <code>BOOT.INI</code>, que indica onde o Windows está localizado no disco e quais parâmetros de inicialização usar.</li>
+<li><b>Carregamento do NTOSKRNL e HAL</b>: O NTLDR carrega o kernel do sistema, o <code>NTOSKRNL.EXE</code>, e o HAL (Hardware Abstraction Layer), que ajuda o Windows a interagir com o hardware do computador.</li>
+<li><b>Carregamento de Drivers</b>: Em seguida, o sistema começa a carregar drivers essenciais para a inicialização, como os drivers do disco e da tela. O usuário vê a tela de inicialização do Windows neste ponto.</li>
+<li><b>Sessão de Logon</b>: Por fim, o sistema carrega os serviços e configurações de usuário, levando à tela de login, onde você pode acessar sua conta.</li>
+</ol>
+<p>Esse processo ajuda o Windows a iniciar com os recursos mínimos e carregar o ambiente de trabalho e configurações específicas do usuário.</p>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+</FONT>
+</BODY>
+</HTML>
