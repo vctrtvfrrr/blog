@@ -1,0 +1,29 @@
+version: "3"
+services:
+  build:
+    image: jekyll/jekyll:latest
+    environment:
+      JEKYLL_ENV: development
+    command: sh -c "jekyll build && chown -R 1000:1000 ."
+    volumes:
+      - ./:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    networks:
+      - app-network
+
+  serve:
+    image: jekyll/jekyll:latest
+    ports:
+      - "4000:4000"
+    environment:
+      JEKYLL_ENV: production
+    command: sh -c "jekyll serve && chown -R 1000:1000 ."
+    volumes:
+      - ./:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
