@@ -1,7 +1,6 @@
 ---
 layout: post
 title: HTML - Visão geral da linguagem
-subtitle: Estrutura e tags básicas
 date: 2007-05-15 17:15:01 UTC
 tags: [html, DTD, doctype]
 ---
@@ -19,23 +18,7 @@ Atualmente, o HTML é amplamente utilizado para formatar páginas e websites, co
 
 Aqui temos um exemplo de um documento HTML em sua forma mais simples:
 
-```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-  <head>
-    <title>Título do documento</title>
-  </head>
-
-  <body>
-    <h1>Isto é um cabeçalho</h1>
-    <p>Conteúdo do documento</p>
-  </body>
-</html>
-```
-
-O exemplo acima será renderizado da seguinte forma:
-
-<script async src="//jsfiddle.net/vctrtvfrrr/j8avk7st/4/embed/result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/j8avk7st/4/embed/html,result/"></script>
 
 ## Tags HTML
 

@@ -3,7 +3,7 @@ services:
   build:
     image: jekyll/jekyll:latest
     environment:
-      JEKYLL_ENV: development
+      JEKYLL_ENV: production
     command: sh -c "jekyll build && chown -R 1000:1000 ."
     volumes:
       - ./:/srv/jekyll
@@ -16,8 +16,8 @@ services:
     ports:
       - "4000:4000"
     environment:
-      JEKYLL_ENV: production
-    command: sh -c "jekyll serve && chown -R 1000:1000 ."
+      JEKYLL_ENV: development
+    command: sh -c "jekyll serve --drafts && chown -R 1000:1000 ."
     volumes:
       - ./:/srv/jekyll
       - ./vendor/bundle:/usr/local/bundle

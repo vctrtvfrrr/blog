@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Tutorial HTML
-subtitle: Introdução à linguagem
 date: 2007-05-14 18:32:16 UTC
 tags: html
 ---
@@ -27,17 +26,7 @@ Este tutorial foi escrito para iniciantes na área de desenvolvimento para a web
 
 Só para te dar um pouco de empolgação com o HTML, vou apresentar uma pequena convenção no desenvolvimento de software, o _Hello World_. Veja como é simples com HTML:
 
-```html
-<html>
-  <head>
-    <title>Título do documento</title>
-  </head>
-  <body>
-    <h1>Isto é um cabeçalho</h1>
-    <p>Olá, mundo!</p>
-  </body>
-</html>
-```
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/embed/html,result/"></script>
 
 Você pode testar o código acima colando-o num arquivo de texto com extensão `.html` e abrindo o arquivo diretamente no seu navegador.
 
