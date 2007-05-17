@@ -11,13 +11,13 @@ Qualquer documento começa com um título. Você pode usar tamanhos diferentes p
 
 Exemplo:
 
-<script async src="//jsfiddle.net/vctrtvfrrr/er7y52nv/1/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/4/embed/html,result/"></script>
 
 ## Tag de parágrafo
 
 A tag `<p>` oferece uma maneira de estruturar seu texto em diferentes parágrafos. Cada parágrafo de texto deve ficar entre uma tag de abertura `<p>` e uma tag de fechamento `</p>`, conforme mostrado abaixo no exemplo:
 
-<script async src="//jsfiddle.net/vctrtvfrrr/mnytLoa5/1/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/5/embed/html,result/"></script>
 
 ## Tag de quebra de linha
 
@@ -25,13 +25,13 @@ Sempre que você usa o elemento `<br />`, tudo o que o segue começa na próxima
 
 A tag `<br />` possui um espaço entre os caracteres br e a barra. Se você omitir este espaço, os navegadores mais antigos terão problemas para processar a quebra de linha. Por outro lado, se você omitir o caractere de barra e usar apenas `<br>`, seu HTML não será um XHTML válido.
 
-<script async src="//jsfiddle.net/vctrtvfrrr/j8avk7st/6/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/6/embed/html,result/"></script>
 
 ## Conteúdo centralizado
 
 Você pode usar a tag `<center>` para colocar qualquer conteúdo no centro da página ou no centro da célula de uma tabela.
 
-<script async src="//jsfiddle.net/vctrtvfrrr/hd1ptswx/1/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/7/embed/html,result/"></script>
 
 ## Linhas horizontais
 
@@ -39,7 +39,7 @@ As linhas horizontais são usadas para separar visualmente as seções de um doc
 
 Por exemplo, você pode querer apresentar uma linha entre dois parágrafos como no exemplo abaixo:
 
-<script async src="//jsfiddle.net/vctrtvfrrr/z3mxgrq5/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/9/embed/html,result/"></script>
 
 Novamente a tag `<hr />` é um exemplo de elemento vazio, onde você não precisa abrir e fechar as tags, pois não há nada entre elas.
 
@@ -49,7 +49,7 @@ Novamente a tag `<hr />` é um exemplo de elemento vazio, onde você não precis
 
 Qualquer texto entre a tag de abertura `<pre>` e a tag de fechamento `</pre>` preservará a formatação do documento de origem.
 
-<script async src="//jsfiddle.net/vctrtvfrrr/gL0ftx63/1/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/10/embed/html,result/"></script>
 
 Tente usar o mesmo código sem mantê-lo dentro das tags `<pre>`...`</pre>`
 
@@ -61,4 +61,4 @@ Suponha que você queira usar a frase "12 Homens e uma Sentença". Aqui, você n
 
 Nos casos em que você não deseja que o navegador quebre o texto, você deve usar uma entidade de espaço não separável `&nbsp;` em vez de um espaço normal. Por exemplo, ao codificar os "12 Homens e uma Sentença" em um parágrafo, você deve usar algo semelhante ao seguinte código:
 
-<script async src="//jsfiddle.net/vctrtvfrrr/gp531m2f/1/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/12/embed/html,result/"></script>

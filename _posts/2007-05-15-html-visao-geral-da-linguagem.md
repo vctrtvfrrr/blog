@@ -18,7 +18,7 @@ Atualmente, o HTML é amplamente utilizado para formatar páginas e websites, co
 
 Aqui temos um exemplo de um documento HTML em sua forma mais simples:
 
-<script async src="//jsfiddle.net/vctrtvfrrr/j8avk7st/4/embed/html,result/"></script>
+<script async src="//jsfiddle.net/vctrtvfrrr/kjcrxo1q/2/embed/html,result/"></script>
 
 ## Tags HTML
 
