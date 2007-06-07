@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Por quê o DOS? &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como dir, cls e attrib pareciam encantamentos. O Qbasic me possibilitou dar os meus primeiros passos em…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, MS-DOS, comandos">
+<META NAME=abstract CONTENT="Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como dir, cls e attrib pareciam encantamentos. O Qbasic me possibilitou dar os meus primeiros passos em…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Por quê o DOS?</H1>
+<P><I><FONT SIZE=1>quarta-feira, 6 de junho de 2007</FONT></I></P>
+<p>Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como <code>dir</code>, <code>cls</code> e <code>attrib</code> pareciam encantamentos. O <code>Qbasic</code> me possibilitou dar os meus primeiros passos em uma linguagem de programação. É uma pena que o sistema operacional de disco (DOS) da Microsoft tende a não existir mais. A cada versão do Windows mata-se um pouco dele. No Millennium, nem é possível mais rodar alguns programas. Uma grande pena para os usuários da era do mouse. Vemos pessoas assim chamar diretórios de pastas, copiar arquivos usando o Windows Explorer (sendo que não há nada melhor e mais gostoso de ser usado do que o comando <code>copy</code> do DOS). Recomendo sua aprendizagem a todos que não o conhecem. Vocês ainda têm tempo antes de adquirir um Windows XP e acabar de assassinar nosso querido amigo. Foi em homenagem a ele que essa seção de dedica, mostrando truques e táticas de segurança.</p>
+<h2>Arquivos BAT</h2>
+<p>Os arquivos batch no DOS são pequenos scripts que possibilitam que se faça muitas tarefas de uma só vez. Possuem a extensão BAT e podem ser rodados como se fossem executáveis. A linguagem batch é bem extensa e ótima para iniciantes aprenderem os primeiros passos em programação. Meu objetivo não é ensinar a linguagem e sim apenas mostrar como o processo funciona. Um exemplo de um arquivo batch abaixo.</p>
+<pre><code>dir/p
+cls
+mem</code></pre>
+<p>Digite no prompt do DOS "edit teste.bat". Assim o editor padrão EDIT irá criar o arquivo teste.bat. Escreva os três comandos acima, colocando-os um em cada linha. Salve o arquivo e execute-o digitando <code>teste</code> ou <code>teste.bat</code>. O programa listará os arquivos com pausa (<code>dir/p</code>), limpará a tela (<code>cls</code>) e mostrará o status da memória (<code>mem</code>).</p>
+<h2>Badcoms</h2>
+<p>Os badcoms são uma má utilização de arquivos bat. Coloca-se no arquivo comandos destrutivos, tais como <code>del *.*</code> ou <code>deltree /y *.*</code>, que são comandos para apagar arquivos e diretórios. Pode-se até conseguir formatar o computador colocando-se <code>format c: | echo s</code>. O pipe ( | ) fará com que o comando <code>echo</code> envie o caractere <code>s</code> para o comando <code>format c:</code>. Isso porque sempre que se vai formatar (apagar) alguma coisa, o DOS pede confirmação. No caso, o batch daria a confirmação por si próprio.</p>
+<p>Um exemplozinho rápido de um badcom:</p>
+<pre><code>cls
+@deltree /y *.* &gt; nul</code></pre>
+<p>Ao criar esse arquivo BAT e executá-lo, o programa primeiro limpará a tela e logo depois usará o comando <code>deltree</code> para apagar os arquivos e pastas do computador. O @ antes do comando e o <code>&gt; nul</code> depois é para que não mostre o que o batch irá fazer. Se você digitasse esse comando sem esses dois termos (somente <code>deltree /y *.*</code>), iria aparecer a mensagem "Excluindo &lt;pasta ou arquivo&gt;". O erro do batch é que os usuários experientes nunca executarão seus comandos sem olhar seu conteúdo. Infelizmente foi criado o programa <b>bat2exe</b> que transforma o arquivo bat em executável (podendo ser COM ou EXE). Assim, muitas pessoas caem no seu truque a cada dia.</p>
+<center><p style=width:500px;><img src=/files/DOS_03.jpg alt="Exemplo de badcom" width=500 height=313 hspace=5 vspace=5 border=1><br>
+<font size=2>Nesse exemplo, enviamos o caractere <code>s</code> (<code>echo s</code>) para o comando <code>del</code>, assim ao executar o arquivo bat (ou badcom nesse caso) ele limpará a tela (<code>cls</code>), listará os dados(<code>dir</code>) e logo em seguida irá apagar o conteúdo do disquete (drive a). E ainda não mostrará nada na tela (<code>nul</code>).</font></p></center>
+<h2>Macros do doskey</h2>
+<p>Os antigos usuários do DOS se lembram muito bem do nome doskey. Ele era muito utilizado para repetir os comandos mais usados pelo usuário ao se apertar a tecla para cima. Algo como o botão voltar do Internet Explorer. Mas esse pequeno comando pode ser utilizado para outros fins interessantes, como a criação de macros. Vamos fazer um teste criando uma macro chamada listar.</p>
+<center><p style=width:500px;><img src=/files/DOS_06.jpg alt="Exemplo de macro do doskey" width=500 height=312 hspace=5 vspace=5 border=1></p></center>
+<p><b><code>doskey listar=dir</code></b></p>
+<p>Ao executarmos a macro <code>listar</code> (executando-a como se fosse um comando comum), ela automaticamente dará um <code>dir</code>, ou seja, listará os diretórios e arquivos. Até aqui a coisa não têm muita graça. Mas e se utilizarmos os caracteres <code>$T</code>?</p>
+<p><b><code>doskey listar=dir/p $t mem</code></b></p>
+<p>Neste exemplo, ao executarmos a macro <code>listar</code> o sistema dará um <code>dir</code> com pausa e executará logo em seguida o comando <code>mem</code>, que mostra o status da memória do sistema. Assim, usando o recurso <code>$T</code> podemos executar diversos comandos com uma só macro. Mas o interessante vêm agora:</p>
+<p><b><code>doskey dir = cls $t ver $t mem</code></b></p>
+<p>Nós conseguimos criar uma macro com o próprio comando <code>dir</code>. Assim quando alguém for listar diretórios, tomará um susto danado. Isso funciona para todos os comandos do DOS. Passe um bom susto em alguém.</p>
+<p>Para resetar as macros, aperte <kbd>alt + f10</kbd>.</p>
+<h2>Variáveis do sistema</h2>
+<p>Vou abranger rapidamente essa seção dizendo apenas que existem muitas variáveis de sistema do DOS, e que todas podem ser mudadas usando o comand <code>set</code>. Vou demonstrar um ótimo exemplo:</p>
+<p><b><code>set dircmd=@</code></b></p>
+<p>Isso fará com que ao listar os diretórios e arquivos, não apareça nada. O significado do @ é esse, esconder. Mas você pode colocar como <code>dircmd</code> a opção <code>/p</code> ou <code>/w</code> ou alguma outra. Elas irão automatizar o processo de listar com pausa, etc. Se teve dúvidas, tente fazê-lo que irá entender.</p>
+<h2>Comandos ANSI</h2>
+<p>Esse é o mais interessante de todos. Antes de tudo, verifique se existe essa linha no seu <code>config.sys</code> (ele fica na raiz). Se não existir, inclua.</p>
+<p><b><code>Device = C:\Windows\command\ansi.sys</code></b></p>
+<center><p style=width:500px;><img src=/files/DOS_07.jpg alt="Verificando se o comando ANSI está habilitado" width=500 height=314 hspace=5 vspace=5 border=1></p></center>
+<p>Agora resete o computador. Vá para o prompt do DOS depois que ele reiniciar.</p>
+<p>Deixe-me explicar por partes: primeiro vamos definir algumas cores dos números:</p>
+<ul>
+<li>0 - Preto</li>
+<li>1 - Vermelho</li>
+<li>2 - Verde</li>
+<li>3 - Amarelo</li>
+<li>4 - Azul</li>
+<li>7 - Branco</li>
+</ul>
+<p>E agora o status:</p>
+<ul>
+<li>0 - Letra mais forte</li>
+<li>1 - Letra mais fraca</li>
+<li>5 - Piscando</li>
+</ul>
+<p>Ok, qual o significado de mostrarmos esses números? Você vai entender.</p>
+<p><b><code>C:\&gt; prompt $e[1;33;44m$p$g</code></b></p>
+<center><p style=width:500px;><img src=/files/DOS_08.jpg alt="Exemplo de comando ANSI" width=500 height=290 hspace=5 vspace=5 border=1></p></center>
+<p>O comando <code>prompt</code> (atenção, o <code>c:\&gt;</code> não é para ser digitado) é usado para alterar esse <code>c:\&gt;</code> do DOS. Mas a sua opção <code>$e</code> é a de ANSI. O exemplo acima é dividido em três partes: o número 1 é o status. Logo depois ele é separado da dezena de 30 pelo ponto e vírgula. A dezena de 30 é a responsável pela letra, então colocamos o 3 (ficando 33) para que a letra seja amarela. Logo depois outro ponto e vírgula separando a dezena de 40. E colocamos a cor azul (ficando 44).O <code>m</code> é usado para terminar a sentença e o <code>$p$g</code> são para o prompt continuar o mesmo (ou seja, não mudar o <code>C:\&gt;</code>). Acho que já deu pra entender como se muda as cores, vamos mudar algumas teclas agora. Que tal o vírus cebolinha? Mudaremos a tecla r pela l.</p>
+<p><b><code>C:\&gt; prompt $e[“r”;”l”p$p$g</code></b></p>
+<p>Esse comando trocará a letra r pela l. Experimente pedir a alguém digitar seu nome. O <code>p</code> faz a mesma coisa que o <code>m</code> na cor. Mais dois exemplos apenas.</p>
+<p><b><code>C:\&gt; prompt $e[0;60;””;13p$p$g</code></b></p>
+<p>Esse comando transforma a tecla F2 (cujo código é <code>0;60</code>) em Enter (o <code>13p</code> no final). Agora vai o comando mais malvado de todos.</p>
+<p><b><code>C:\&gt; prompt $e[13;”deltree /y *.*”;13p$p$g</code></b></p>
+<p>Cuidado ao executá-lo, ele fará com que só de pressionar a tecla Enter (código 13), se execute o comando <code>deltree /y *.*</code> que apagará todos os arquivos. Troque o comando entre as aspas como teste. Para voltar as teclas ao normal, seria preciso saber o código delas. Há um método mais fácil. Feche o prompt do DOS ou resete o computador.</p>
+<h2>Velhos truques</h2>
+<p>O DOS é cheio de truques muito interessantes. Vou dar apenas uma palhinha pois o gostoso é fuçar e descobrí-los por você mesmo. Mas tenho certeza de que essa dica será muito útil. Abra o arquivo <code>autoexec.bat</code> (que está na raiz) e coloque o comando <code>date</code> mais a sua data atual. Mais ou menos assim:</p>
+<p><b><code>date 07/11/2007</code></b></p>
+<center><p style=width:500px;><img src=/files/DOS_09.jpg alt="Truque `date` no DOS" width=500 height=313 hspace=5 vspace=5 border=1></p></center>
+<p>Salve o arquivo e resete o computador. Esse lhe trará duas vantagens:</p>
+<ol>
+<li>Aqueles vírus com dias programados para atacar, nunca atacarão seu pc (e são mais de 50% dos vírus existentes) e</li>
+<li>Os programas que você pode usar por 30 dias poderão ser usados para sempre. É uma ótima vantagem. Ah, os segredos do DOS. <b>🙂</b></li>
+</ol>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+</FONT>
+</BODY>
+</HTML>
