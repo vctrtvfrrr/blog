@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Invasão por IP &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, invasão, IP">
+<META NAME=abstract CONTENT="Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Invasão por IP</H1>
+<P><I><FONT SIZE=1>domingo, 10 de junho de 2007</FONT></I></P>
+<center><img src=/files/windowsxp_fail.gif width=267 height=200 hspace=5 vspace=5 border=1></center>
+<p>Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.</p>
+<h2>1º Método</h2>
+<ol>
+<li>Verifique se você possui o programa <code>NBTSTAT</code> instalado no sistema.</li>
+<li>Abra o <b>Prompt de Comando</b> (MS-DOS).</li>
+<li>Digite o comando:
+<pre><code>nbtstat -a [IP do alvo]</code></pre></li>
+<li>O comando retornará informações sobre o computador de destino. Se o compartilhamento de arquivos não estiver habilitado, será exibida a mensagem: <code>HOST NOT FOUND</code>.</li>
+<li>Caso apareçam mensagens contendo <code>&lt;03&gt;</code>, isso indica que o compartilhamento está ativo. Pegue o nome associado a essa marca.</li>
+<li>Mapeie uma unidade de disco para integrar os dois sistemas. No Windows, acesse:<br>
+<b>Iniciar &gt; Executar</b><br>
+Digite:
+<pre><code>\\[IP do alvo]</code></pre>
+e clique em <b>OK</b>.</li>
+<li>Agora, o computador foi acessado via IP!</li>
+</ol>
+<p><b>Observação:</b><br>
+Nunca apague ou modifique arquivos no computador de destino. Limite-se a explorar e, se necessário, copiar o que for relevante.</p>
+<h3>Dica</h3>
+<p>Para evitar ataques de terceiros, alguns usuários renomeiam o arquivo <code>VNBT.386</code>, localizado no diretório <code>C:\Windows\System</code>. Considere renomeá-lo também como medida de proteção.</p>
+<h2>2º Método</h2>
+<h3>Introdução</h3>
+<p>Para utilizar este método, é necessário:</p>
+<ol>
+<li>Uma conexão <b>PPP</b> (Point-to-Point Protocol).</li>
+<li>O endereço <b>IP</b> do computador-alvo.</li>
+</ol>
+<p>Com essas informações, você poderá acessar e controlar os drives da máquina da vítima.</p>
+<h3>Pré-requisitos</h3>
+<p>O computador da vítima deve ter o <b>Compartilhamento de Arquivos</b> instalado e ativado.</p>
+<h3>Configurações Necessárias</h3>
+<ol>
+<li>Verifique se o programa <code>NBTSTAT.EXE</code> está instalado. Ele geralmente está disponível por padrão no diretório <code>C:\Windows</code>.</li>
+<li>Certifique-se de que o driver <b>Clientes para Redes Microsoft</b> está ativado. Para isso:
+<ol>
+<li>Acesse o <b>Painel de Controle</b>.</li>
+<li>Abra o ícone <b>Redes</b>.</li>
+<li>Caso o driver não esteja listado, instale-o.</li>
+</ol></li>
+<li>Configure os serviços <b>WINS</b> e <b>LMHOSTS</b>:
+<ol>
+<li>O <b>WINS</b> localiza computadores com IP fixo.</li>
+<li>O <b>LMHOSTS</b> identifica dispositivos com IP dinâmico (IPs atribuídos pelo provedor, como ocorre na maioria dos casos).</li>
+</ol></li>
+</ol>
+<h4>Passo a passo para configurar o WINS:</h4>
+<ol>
+<li>No <b>Painel de Controle</b>, abra o ícone <b>Redes</b>.</li>
+<li>Selecione <b>TCP/IP</b> e clique em <b>Propriedades</b>.</li>
+<li>Vá até a aba <b>Configuração WINS</b> e ative a resolução WINS.</li>
+</ol>
+<h3>Realizando a Invasão</h3>
+<ol>
+<li>Certifique-se de capturar o IP da vítima no momento da invasão, pois IPs dinâmicos mudam a cada conexão.</li>
+<li>No <b>Prompt de Comando</b>, digite:
+<pre><code>nbtstat -A [IP do alvo]</code></pre>
+<p><b>Nota:</b> O parâmetro <code>-A</code> deve ser digitado em letras maiúsculas.</p>
+<ul>
+<li>Se a mensagem <code>Host not found</code> aparecer, o computador da vítima pode não ter compartilhamento de arquivos habilitado ou o IP pode ser inválido.</li>
+<li>Caso apareçam nomes com a marca <code>&lt;03&gt;</code>, anote o <b>NetBIOS</b> associado.</li>
+</ul></li>
+<li>Abra o arquivo <code>LMHOSTS.SAM</code>, localizado no diretório <code>C:\Windows</code>, utilizando o <b>Notepad</b>. Adicione o seguinte:
+<pre><code>[IP do alvo] [Nome NetBIOS]</code></pre>
+<ul>
+<li>O <b>Nome NetBIOS</b> é aquele associado à marca <code>&lt;03&gt;</code>.</li>
+<li>Seja rápido, pois o IP da vítima pode mudar ou ela pode desconectar-se.</li>
+</ul></li>
+</ol>
+<h3>Mapeando os Drives</h3>
+<center><img src=/files/invasao_por_ip.jpg width=280 height=252 hspace=5 vspace=5 border=1></center>
+<p>Agora, vincule os drives do computador da vítima ao seu sistema:</p>
+<ol>
+<li>No <b>Windows Explorer</b>, acesse <b>Ferramentas &gt; Mapear unidade de rede</b>.</li>
+<li>Escolha uma letra de unidade (por exemplo, <code>Z:</code>).</li>
+<li>No campo de endereço, insira:
+<pre><code>\\[IP do alvo]</code></pre>
+<p>Para maior facilidade, acesse o menu <b>Iniciar &gt; Executar</b> e digite o comando acima.</p></li>
+</ol>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script language="JavaScript"><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</FONT>
+<script language="JavaScript"><!--
+	window.defaultStatus=" - = Victor Ferreira&#39;s Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
