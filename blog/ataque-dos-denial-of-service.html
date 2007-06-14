@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Ataque DoS (Denial of Service) &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="A diferença entre um cracker e um script kiddie pode ser vista aqui. Um invasor decente estuda em detalhes o sistema alvo, às vezes por meses, conhecendo todo o seu processo de autenticação, usuários e…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, DoS">
+<META NAME=abstract CONTENT="A diferença entre um cracker e um script kiddie pode ser vista aqui. Um invasor decente estuda em detalhes o sistema alvo, às vezes por meses, conhecendo todo o seu processo de autenticação, usuários e…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Ataque DoS (Denial of Service)</H1>
+<P><I><FONT SIZE=1>quarta-feira, 13 de junho de 2007</FONT></I></P>
+<h2>Definição</h2>
+<p>A diferença entre um cracker e um script kiddie pode ser vista aqui. Um invasor decente estuda em detalhes o sistema alvo, às vezes por meses, conhecendo todo o seu processo de autenticação, usuários e falhas que podem levá-lo a ter acesso a arquivos vitais. Já o script kiddie pega algum programinha de alguma homepage duvidável de fundo preto e imagens de caveiras animadas, tenta usá-lo no primeiro sistema que vê na frente e se não consegue invadí-lo , o derruba para mostrar que é “bom”. Isso é absolutamente inútil, afinal se o sistema travar e cair devido ao Denial of Service, provavelmente ele volta a funcionar com questão de poucos minutos. Ou o administrador competente rapidamente percebe. Alguns programas bons para essa tarefa são o Agressor, o IGMP Nuker e o Divine Intervention (para Windows). Para Linux e Unix, sem dúvida o melhor é o excelente Tribal Flood Network.</p>
+<h2>Danos sem invasões</h2>
+<p>Por ser um ataque apenas voltado para o consumo de memória ou do processamento, o DoS não é usado para invasão. Ao contrário de alguns programas que causam um estouro de memória já sabendo que esse problema lhe dará acesso ao sistema (programas que causam buffer overflow), a intenção do DoS é só chatear. Mesmo assim em grandes empresas o prejuízo pode ser grande. Quando a Amazon.com foi tirada do ar por exemplo, chegou a ficar apenas poucos minutos desligada, mas nesse tempo perdeu muito dinheiro em compras. O mesmo aconteceu com o Yahoo e até com o UOL, que já foi tirado do ar.</p>
+<h2>Utilizando o broadcast como arma</h2>
+<p>Realizar um ataque de DoS é muito simples. Pode-se utilizar vários tipos de programas e softwares zumbis para fazê-lo. Às vezes nem é preciso um programa adicional. Sites como Yahoo e Altavista utilizam webspiders (programa utilizado para procurar informações pulando de link em link) para checar o conteúdo de homepages. Muitos webspiders checando o mesmo servidor ao mesmo tempo pode levá-lo ao colapso. Causar um DoS em algum servidor de e-mail é ainda mais fácil. Utilizando um programa de e-mail bomba (software que envia milhares de e-mails para o mesmo endereço) ou cadastrando o e-mail alvo em serviços de spam (como mensagens de anjos, piadas, notícias e outros) pode encher a sua caixa postal e travar todo o sistema. Ou mande um e-mail para alguém que tenha serviço de resposta automática , utilizando o próprio endereço da pessoa. É assim: mande uma mensagem para fulano@provedor.com.br usando esse e-mail (como se fosse o seu, já que pra mandar e-mails não se precisa de senha). A resposta automática da caixa postal do Fulano mandará mensagens para ele mesmo, travando sua caixa postal. O endereço de broadcast de redes geralmente é o com final 255 (exemplo: 200.202.243.255). A solução para o problema do e-mail é mais simples. Apenas use um bom filtro ou algum programa que impossibilite que se receba mais de três e-mails enviados da mesma origem (endereço IP) durante um certo intervalo de tempo.</p>
+<p><img src=/files/deniel_of_service.JPG width=422 height=389><br>
+Uma tela de um programa e-mail bomba</p>
+<h2>Syn-flood</h2>
+<p>O tipo de ataque usado para gerar o ip spoof. A autenticação por Syn é feita em três vias. O ataque consiste em não completar essas três vias. Mais ou menos assim. No caso do ping, ele é em duas vias, apenas envia o pacote e recebe a resposta. Para o Syn-flood, primeiro é enviado o pacote Syn e logo depois teria que ser enviado o Ack para a conexão se estabelecer, mas ele não é enviado, fazendo com que a máquina alvo consuma seus recursos ao receber muitos Syns e esperar muitos Acks. O ataque por ping é parecido, é enviado vários pings com grandes pacotes fazendo com que um sistema trave. Mas é mais difícil de ocorrer o travamento do que o ataque por syn.</p>
+<h2>OOB</h2>
+<p>Ataque Out-of-Band ou popularmente conhecido como WinNuke. Consiste em mandar pacotes malformados para uma porta Netbios do Windows. Geralmente usado nas portas 135, 137 e 139, essa última sendo a mais usada. O sistema não consegue lidar com os pacotes, trava e mostra a famosa tela azul de erro. No Windows 95 esse ataque era mais eficaz, agora está se tornando obsoleto.</p>
+<h2>Smurf</h2>
+<p>Na minha opinião o mais devastador de todos os ataques. Envia pacotes ICMP (protocolo que informa condições de erro) spoofados para centenas, talvez milhares de sites. Envia-se os pacotes com o endereço IP da vítima, assim fazendo com que ela receba muitos pacotes ping de resposta ao mesmo tempo, causando um travamento total. Ainda não existe uma proteção eficaz contra esse tipo de ataque. Um programa bom (para Windows) que realiza o smurf é o WinSmurf.</p>
+<h2>Softwares Zumbis</h2>
+<p>Programas que automatizam o processo de causar um DoS em alguma máquina. São instalados em computadores estratégicos (como universidades, centros de pesquisa e outros) que possuem conexão rápida à Internet e configurados para atacar ao mesmo tempo. Se eu instalar o programa em vinte máquinas de diferentes endereços e configurá-las para enviar 10.000 pacotes cada uma, com certeza derruba qualquer host. Um programa muito utilizado para isso é o Tribal Flood Network. Trojans também são largamente usados para esse fim.</p>
+<h2>Diminuindo o impacto causado pelos ataques</h2>
+<p>O melhor procedimento para se adotar é procurar os sites do fabricante do sistema operacional e pegar atualizações para as falhas. Como é o caso do OOB(Winnuke). A Microsoft já colocou um patch de correção em sua homepage. Evitar o máximo de uso desnecessário da memória, assim dificultando um pouco os ataques. E sempre que puder, aumentar a capacidade de processamento e a memória RAM do sistema. Isso não vai impedir os ataques pois alguns não têm solução, mas só funcionam mesmo quando utilizados em larga escala. O Smurf por exemplo, para derrubar um computador pessoal é fácil, mas um grande host para cair seria preciso muitas pessoas realizando o ataque ao mesmo tempo. Ou a utilização do software zumbi. A não ser que tenha comprado briga com alguns crackers, pode ficar tranqüilo.</p>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script language="JavaScript"><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</FONT>
+<script language="JavaScript"><!--
+	window.defaultStatus=" - = Victor Ferreira&#39;s Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
