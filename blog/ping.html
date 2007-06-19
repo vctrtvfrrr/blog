@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Ping &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="Ping é uma das ferramentas mais conhecidas no diagnóstico de redes. Ela é usada para testar a conectividade entre dois dispositivos (por exemplo, entre seu computador e um servidor) e medir o tempo necessário para…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, ping, prompt de comando">
+<META NAME=abstract CONTENT="Ping é uma das ferramentas mais conhecidas no diagnóstico de redes. Ela é usada para testar a conectividade entre dois dispositivos (por exemplo, entre seu computador e um servidor) e medir o tempo necessário para…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Ping</H1>
+<P><I><FONT SIZE=1>segunda-feira, 18 de junho de 2007</FONT></I></P>
+<p>Ping é uma das ferramentas mais conhecidas no diagnóstico de redes. Ela é usada para testar a conectividade entre dois dispositivos (por exemplo, entre seu computador e um servidor) e medir o tempo necessário para que um pacote de dados seja enviado e retornado. O <b>ping</b> utiliza o protocolo <b>ICMP</b> (Internet Control Message Protocol) para realizar essas verificações.</p>
+<h2>Principais Usos do Ping</h2>
+<ol>
+<li><b>Verificar a conectividade com outro dispositivo</b><br>
+Com o <b>ping</b>, você pode determinar se um host (computador, servidor, roteador, etc.) está alcançável na rede.</li>
+<li><b>Diagnosticar problemas de rede</b><br>
+Ele ajuda a identificar falhas em conexões ou identificar se há alta latência na comunicação.</li>
+<li><b>Medir latência (tempo de resposta)</b><br>
+O <b>ping</b> retorna o tempo que um pacote de dados levou para ir e voltar, medido em milissegundos (ms).</li>
+<li><b>Testar nomes de domínio ou endereços IP</b><br>
+Você pode usá-lo para verificar a resolução de nomes de domínio para IPs e vice-versa.</li>
+</ol>
+<h2>Como Usar o Ping</h2>
+<p>No Prompt de Comando, basta digitar <code>ping</code> seguido do endereço IP ou do nome do host que deseja testar.</p>
+<h3>Sintaxe Básica</h3>
+<pre><code>ping [host ou endereço IP] [opções]</code></pre>
+<h3>Exemplos Básicos</h3>
+<ol>
+<li>
+<p><b>Ping para um domínio</b></p>
+<pre><code>ping www.google.com</code></pre>
+<p>Retorna informações sobre a latência entre seu computador e os servidores do Google.</p>
+</li>
+<li>
+<p><b>Ping para um endereço IP</b></p>
+<pre><code>ping 8.8.8.8</code></pre>
+<p>Verifica a conectividade com o DNS público do Google.</p>
+</li>
+</ol>
+<p align=center><img src=/files/ping.JPG width=573 height=358 hspace=5 vspace=5 border=1></p>
+<h2>Parâmetros Comuns do Ping</h2>
+<p>A ferramenta <b>ping</b> aceita diversos parâmetros que permitem personalizar seus testes. Aqui estão os mais comuns:</p>
+<table align=center width=500 border=1 bordercolor=#3CFF00 cellspacing=0 cellpadding=5>
+<thead>
+<tr>
+<th width=25%><b>Parâmetro</b></th>
+<th width=75%><b>Descrição</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>/t</code>
+</td>
+<td>Envia pacotes continuamente até que seja interrompido manualmente (Ctrl+C para parar).</td>
+</tr>
+<tr>
+<td>
+<code>/n &lt;count&gt;</code>
+</td>
+<td>Define o número de pacotes ICMP que serão enviados.</td>
+</tr>
+<tr>
+<td>
+<code>/l &lt;size&gt;</code>
+</td>
+<td>Define o tamanho do pacote ICMP enviado (em bytes).</td>
+</tr>
+<tr>
+<td>
+<code>/a</code>
+</td>
+<td>Resolve o endereço IP para um nome de host, caso possível.</td>
+</tr>
+<tr>
+<td>
+<code>/w &lt;timeout&gt;</code>
+</td>
+<td>Especifica o tempo limite em milissegundos para aguardar uma resposta.</td>
+</tr>
+<tr>
+<td>
+<code>/4</code>
+</td>
+<td>Força o uso do protocolo IPv4.</td>
+</tr>
+<tr>
+<td>
+<code>/6</code>
+</td>
+<td>Força o uso do protocolo IPv6.</td>
+</tr>
+</tbody>
+</table>
+<h2>Exemplos de Uso com Parâmetros</h2>
+<ol>
+<li>
+<p><b>Enviar ping continuamente</b></p>
+<pre><code>ping www.google.com /t</code></pre>
+<p>Útil para monitorar a estabilidade de uma conexão.</p>
+</li>
+<li>
+<p><b>Enviar um número específico de pacotes</b></p>
+<pre><code>ping www.google.com /n 5</code></pre>
+<p>Envia 5 pacotes para o servidor Google.</p>
+</li>
+<li>
+<p><b>Alterar o tamanho do pacote enviado</b></p>
+<pre><code>ping www.google.com /l 128</code></pre>
+<p>Envia pacotes com 128 bytes de dados.</p>
+</li>
+<li>
+<p><b>Força o uso de IPv4</b></p>
+<pre><code>ping www.google.com /4</code></pre>
+<p>Garante que apenas o protocolo IPv4 será utilizado.</p>
+</li>
+<li>
+<p><b>Configura um tempo limite para resposta</b></p>
+<pre><code>ping www.google.com /w 2000</code></pre>
+<p>Aguarda no máximo 2 segundos (2000 ms) por uma resposta antes de declarar o destino inacessível.</p>
+</li>
+</ol>
+<h2>Analisando a Resposta do Ping</h2>
+<p>Quando você executa o <b>ping</b>, verá algo semelhante a:</p>
+<pre><code>Disparando em www.google.com [142.250.72.206] com 32 bytes de dados: Resposta de 142.250.72.206: bytes=32 tempo=28ms TTL=114 Resposta de 142.250.72.206: bytes=32 tempo=27ms TTL=114</code></pre>
+<h3>Campos Importantes</h3>
+<ul>
+<li><b>bytes</b>: O tamanho do pacote enviado.</li>
+<li><b>tempo</b>: A latência, medida em milissegundos.</li>
+<li><b>TTL</b>: Time-to-Live, que indica o número máximo de saltos que o pacote pode realizar antes de ser descartado.</li>
+</ul>
+<p>Se o servidor não estiver acessível, você verá mensagens como:</p>
+<ul>
+<li><b>Host de destino inacessível</b></li>
+<li><b>Esgotado o tempo limite do pedido</b></li>
+</ul>
+<h2>Limitações do Ping</h2>
+<ol>
+<li><b>Firewalls e políticas de segurança</b><br>
+Algumas redes bloqueiam pacotes ICMP, tornando o <b>ping</b> inútil nesses casos.</li>
+<li><b>Não detecta problemas complexos</b><br>
+O <b>ping</b> é útil para diagnósticos básicos, mas não substitui ferramentas mais avançadas, como <b>tracert</b> ou <b>Wireshark</b>.</li>
+</ol>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script language="JavaScript"><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</FONT>
+<script language="JavaScript"><!--
+	window.defaultStatus=" - = Victor Ferreira&#39;s Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
