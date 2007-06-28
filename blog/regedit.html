@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>Regedit &mdash; Victor Ferreira&#39;s Homepage</TITLE>
+<META NAME=description CONTENT="O Regedit (Editor de Registro) é uma ferramenta do Windows usada para visualizar, editar e gerenciar o registro do sistema operacional. O registro é uma base de dados que armazena informações importantes sobre o sistema,…">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, regedit, registro do windows">
+<META NAME=abstract CONTENT="O Regedit (Editor de Registro) é uma ferramenta do Windows usada para visualizar, editar e gerenciar o registro do sistema operacional. O registro é uma base de dados que armazena informações importantes sobre o sistema,…">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<BGSOUND SRC=/files/sound001.mid LOOP="infinite">
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<H1>Regedit</H1>
+<P><I><FONT SIZE=1>quinta-feira, 28 de junho de 2007</FONT></I></P>
+<p>O Regedit (Editor de Registro) é uma ferramenta do Windows usada para visualizar, editar e gerenciar o registro do sistema operacional. O registro é uma base de dados que armazena informações importantes sobre o sistema, como configurações de hardware, preferências de software e detalhes sobre os programas instalados no computador.</p>
+<h2>Atenção ao usar o Regedit</h2>
+<p>Se você é iniciante e está explorando o Regedit, seja por curiosidade ou por qualquer outro motivo, é fundamental ter cuidado. Alterações no registro podem causar sérios problemas ao funcionamento do sistema, incluindo falhas críticas. Por isso, recomenda-se sempre:</p>
+<ol>
+<li>
+Fazer um backup do registro antes de qualquer modificação.
+</li>
+<li>
+Realizar testes apenas em computadores que não são críticos, caso algo dê errado.
+</li>
+</ol>
+<p>Qualquer alteração, mesmo que pequena, pode ser irreversível ou exigir a reinstalação do sistema operacional para corrigir.</p>
+<h2>Exemplos de modificações simples no Regedit</h2>
+<h3>1. Alterar o Nome da Lixeira</h3>
+<p>Uma modificação simples e inofensiva é alterar o nome da Lixeira do Windows. Para isso:</p>
+<ol>
+<li>
+Abra o Regedit.
+</li>
+<li>
+Use a ferramenta de busca (pressione <kbd>Ctrl</kbd>+<kbd>F</kbd>) e digite o termo <code>Lixeira</code>.
+</li>
+<li>
+Localize a chave correspondente ao nome da Lixeira.
+</li>
+<li>
+Altere o valor da chave para o nome desejado.
+</li>
+<li>
+Salve as alterações.
+</li>
+</ol>
+<p>Lembre-se de reiniciar o sistema ou atualizar a área de trabalho para que a modificação seja aplicada.</p>
+<h3>2. Driblar limites de uso de programas trial</h3>
+<p>Outra prática comum é usar o Regedit para contornar restrições de tempo de uso de softwares de avaliação.</p>
+<p>Quando um programa atinge o limite de uso, ele normalmente registra essa informação no registro do Windows. Para redefinir o contador:</p>
+<ol>
+<li>
+Abra o Regedit.
+</li>
+<li>
+Procure a chave relacionada ao programa, frequentemente identificada pelo nome do software.
+</li>
+<li>
+Exclua ou edite a chave correspondente ao registro de uso.
+</li>
+</ol>
+<p><b>Atenção:</b> Nem sempre esse método funciona, pois muitos softwares utilizam mecanismos de proteção avançados para evitar esse tipo de alteração, mas não custa tentar. ;-)</p>
+<p align=center><img src=/files/regedit.jpg width=500 height=210 hspace=5 vspace=5 border=1></p>
+<h2>Algumas chaves do Regedit:</h2>
+<ul>
+<li>
+<b>Painel de Controle</b> {21EC2020-3AEA-1069-A2DD-08002B30309D}
+</li>
+<li>
+<b>Impressoras</b> {2227A280-3AEA-1069-A2DE-08002B30309D}
+</li>
+<li>
+<b>Lixeira</b> {645FF040-5081-101B-9F08-00AA002F954E}
+</li>
+<li>
+<b>Meu Computador</b> {20D04FE0-3AEA-1069-A2D8-08002B30309D}
+</li>
+<li>
+<b>Network Neighborhood</b> {208D2C60-3AEA-1069-A2D7-08002B30309D}
+</li>
+<li>
+<b>Caixa de Entrada</b> {00020D75-0000-0000-C000-000000000046}
+</li>
+<li>
+<b>Área de Trabalho</b> {00021400-0000-0000-C000-000000000046}
+</li>
+<li>
+<b>Atalho</b> {00021401-0000-0000-C000-000000000046}
+</li>
+<li>
+<b>Tarefa do Menu iniciar</b> {DDB008FE-048D-11d1-B9CD-00C04FC2C1D2}
+</li>
+<li>
+<b>Active Desktop Mover</b> {72267F6A-A6F9-11D0-BC94-00C04FB67863}
+</li>
+<li>
+<b>Internet Explorer</b> {25336920-03F9-11CF-8FD0-00AA00686F13}
+</li>
+<li>
+<b>Documento MS WORD</b> {00020900-0000-0000-C000-000000000046}
+</li>
+<li>
+<b>Documento MS EXCEL</b> {00024500-0000-0000-C000-000000000046}
+</li>
+<li>
+<b>The Ms Network</b> {00028B00-0000-0000-C000-000000000046}
+</li>
+<li>
+<b>Fontes</b> {BD84B380-8CA2-1069-A2DE-08000948F534}
+</li>
+</ul>
+<P><IMG SRC=/files/linha01.gif WIDTH=765 HEIGHT=30></P>
+<p><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p><a href="http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=victorferreira" target=_top><script language="JavaScript"><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=3" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=2" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=1" lwl38x8ud=""><img border=0 src="http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=victorferreira&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+<p><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</FONT>
+<script language="JavaScript"><!--
+	window.defaultStatus=" - = Victor Ferreira&#39;s Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
