@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>10 Dicas para o Windows - Parte 7 &mdash; Victor Ferreira's Homepage</TITLE>
+<META NAME=description CONTENT="Dicas para o Windows, incluindo auto-arranjo de pastas, desativação de animações, personalização do menu &quot;Enviar Para&quot;, aumento da taxa de atualização, atualização do registro sem reiniciar, uso de nomes longos no Prompt do DOS, mapeamento de sistemas remotos, aumento da barra de tarefas, obtenção de caminhos de ícones, gerenciamento de documentos recentes, abertura e fechamento de múltiplas janelas, inicialização automática de programas e transformação de bitmap em ícone.">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, dicas,Windows">
+<META NAME=abstract CONTENT="Dicas para o Windows, incluindo auto-arranjo de pastas, desativação de animações, personalização do menu &quot;Enviar Para&quot;, aumento da taxa de atualização, atualização do registro sem reiniciar, uso de nomes longos no Prompt do DOS, mapeamento de sistemas remotos, aumento da barra de tarefas, obtenção de caminhos de ícones, gerenciamento de documentos recentes, abertura e fechamento de múltiplas janelas, inicialização automática de programas e transformação de bitmap em ícone.">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif topmargin=0 leftmargin=0>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<table width=768 border=0 cellspacing=0 cellpadding=10>
+<tr>
+<td colspan=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
+</td>
+</tr>
+<tr>
+<td valign=top>
+<H1>10 Dicas para o Windows - Parte 7</H1>
+<P><I><FONT SIZE=1>segunda-feira, 17 de setembro de 2007</FONT></I></P>
+<h2>Habilitando o Auto-arranjo para Pastas</h2>
+<p>Para configurar uma pasta com a opção <b>Autoorganizar</b>:</p>
+<ol>
+<li>Abra a pasta desejada.</li>
+<li>
+No menu <b>Exibir</b>, selecione <b>Organizar Ícones</b>.
+<ul>
+<li>Escolha como deseja organizar os ícones (por <b>Nome</b>, <b>Tamanho</b>, etc.).</li>
+</ul>
+</li>
+<li>Retorne ao menu <b>Exibir &gt; Organizar Ícones</b> e selecione <b>Autoorganizar</b>.</li>
+<li>Pressione <b>Ctrl</b> enquanto fecha a janela.</li>
+</ol>
+<p>Essa configuração manterá o <b>Autoorganizar</b> habilitado para a pasta.</p>
+<h3>Alterando o Padrão de Organização</h3>
+<p>Se quiser mudar o padrão de organização (por exemplo, para <b>Tamanho</b> ou <b>Nome</b>), siga os mesmos passos acima e ajuste a configuração antes de ativar o <b>Autoorganizar</b>.</p>
+<h2>Desativando a Animação de Janelas</h2>
+<p>Para desativar a animação exibida ao minimizar ou maximizar janelas:</p>
+<ol>
+<li>
+Abra o <b>Regedit</b>:
+<ul>
+<li>Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione <b>Enter</b>.</li>
+</ul>
+</li>
+<li>
+<p>Navegue até a chave:</p>
+<pre><code>HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics</code></pre>
+</li>
+<li>
+No painel direito:
+<ul>
+<li>Clique com o botão direito em um espaço vazio e selecione <b>Novo &gt; Valor da Cadeia</b>.</li>
+<li>Renomeie o novo valor para <code>MinAnimate</code>.</li>
+</ul>
+</li>
+<li>
+Clique duas vezes em <code>MinAnimate</code> e insira:
+<ul>
+<li><b>0</b> para desativar a animação.</li>
+<li><b>1</b> para ativar a animação.</li>
+</ul>
+</li>
+<li>Feche o <b>Regedit</b>, encerre os programas abertos e reinicie o computador para aplicar a alteração.</li>
+</ol>
+<h2>Personalizando o Menu "Enviar Para" no Explorer</h2>
+<p>O menu <b>Enviar Para</b> permite enviar arquivos rapidamente para locais ou programas específicos. Para personalizá-lo:</p>
+<ol>
+<li>
+<p>Navegue até a pasta:</p>
+<pre><code>C:\Windows\SendTo</code></pre>
+</li>
+<li>
+Arraste atalhos de diretórios ou programas para esta pasta.
+<ul>
+<li>Exemplos úteis incluem atalhos para <b>Bloco de Notas</b>, <b>WinZip</b> ou diretórios frequentemente usados.</li>
+</ul>
+</li>
+</ol>
+<p>Os itens adicionados aparecerão no menu <b>Enviar Para</b> quando você clicar com o botão direito em um arquivo.</p>
+<h2>Acelerando a Taxa de Atualização (Refresh) do Windows</h2>
+<p>O Windows geralmente exige pressionar <b>F5</b> para atualizar o conteúdo de uma janela. Para configurar a atualização automática:</p>
+<ol>
+<li>
+Abra o <b>Regedit</b>:
+<ul>
+<li>Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione **Enter`.</li>
+</ul>
+</li>
+<li>
+<p>Navegue até a chave:</p>
+<pre><code>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Update</code></pre>
+</li>
+<li>No painel direito, clique com o botão direito no valor <b>Update</b> e selecione <b>Modificar</b>.</li>
+<li>Altere o valor de <code>01</code> para <code>00</code>.</li>
+<li>Clique em <b>OK</b> e reinicie o Windows para que as alterações tenham efeito.</li>
+</ol>
+<h2>Atualizando o Registro sem Reiniciar o Sistema</h2>
+<p>Para aplicar alterações no Registro do Windows sem precisar reiniciar:</p>
+<ol>
+<li>Pressione <b>Ctrl + Alt + Del</b> e abra o <b>Gerenciador de Tarefas</b>.</li>
+<li>Na lista de tarefas, selecione <b>Explorer</b> e clique em <b>Finalizar Tarefa</b>.</li>
+<li>Quando o Windows perguntar se deseja desligar, clique em <b>Não</b>.</li>
+<li>No próximo menu, clique em <b>Terminar Tarefa</b>.</li>
+</ol>
+<p>O <b>Explorer</b> será reiniciado automaticamente, atualizando o registro.</p>
+<h2>Usando Nomes Longos no Prompt do DOS</h2>
+<p>No <b>Prompt do DOS</b>, você pode acessar pastas e arquivos com nomes longos, desde que eles sejam colocados entre aspas. Por exemplo:</p>
+<pre><code>dir "Arquivos de Programas"</code></pre>
+<p>Isso permite navegar e usar nomes que excedam o limite padrão do DOS.</p>
+<h2>Mapeando Sistemas Remotos como Discos de Rede</h2>
+<p>Se você utiliza <b>TCP/IP</b> para acessar servidores FTP frequentemente, pode mapeá-los como discos de rede:</p>
+<ol>
+<li>
+<p>Localize o arquivo <code>LMHOSTS.SAM</code> no diretório:</p>
+<pre><code>C:\Windows</code></pre>
+</li>
+<li>Faça uma cópia do arquivo <code>LMHOSTS.SAM</code> e renomeie-a para <code>LMHOSTS</code>.</li>
+<li>
+<p>Edite o arquivo <code>LMHOSTS</code> com um editor de texto, como o <b>Bloco de Notas</b>, e adicione a seguinte linha:</p>
+<pre><code>198.105.232.1 msftp #FTP da Microsoft</code></pre>
+<ul>
+<li>Substitua <code>198.105.232.1</code> pelo IP do servidor desejado.</li>
+<li>O símbolo <code>#</code> indica o início de um comentário.</li>
+</ul>
+</li>
+</ol>
+<p>Agora, o local será tratado como um disco de rede, facilitando o acesso.</p>
+<h2>Aumentando o Tamanho da Barra de Tarefas</h2>
+<p>A <b>Barra de Tarefas</b> pode ser redimensionada como qualquer outra janela:</p>
+<ol>
+<li>Posicione o cursor do mouse na borda superior da Barra de Tarefas até que ele mude para o formato de seta vertical (Norte-Sul).</li>
+<li>Clique e arraste para cima para aumentar ou para baixo para diminuir a barra.</li>
+</ol>
+<p>Isso ajuda a organizar melhor os ícones e as janelas abertas.</p>
+<h2>Obtendo o Caminho (Path) de um Ícone</h2>
+<p>Para descobrir rapidamente o caminho de um arquivo ou atalho:</p>
+<ol>
+<li>Arraste o ícone diretamente para uma janela do <b>Prompt do DOS</b>.</li>
+<li>O caminho completo será exibido no prompt.</li>
+</ol>
+<p>Essa dica é útil para localizar rapidamente o diretório de arquivos ou programas.</p>
+<h2>Gerenciando a Lista de Documentos Recentes</h2>
+<p>A lista do menu <b>Documentos Recentes</b> pode ser modificada acessando a subpasta <code>Recent</code> dentro do diretório do Windows:</p>
+<ol>
+<li>
+<p>Navegue até o diretório:</p>
+<pre><code>C:\Windows\Recent</code></pre>
+</li>
+<li>Exclua ou modifique os atalhos de arquivos conforme necessário.</li>
+</ol>
+<p>Essa dica é útil para limpar ou organizar a lista de documentos recentes exibida no menu <b>Iniciar</b>.</p>
+<h2>Abrindo e Fechando Múltiplas Janelas</h2>
+<p>Ao navegar por várias pastas no <b>Meu Computador</b>, pode ser cansativo abrir e fechar janelas individualmente. Aqui estão algumas formas de simplificar essa tarefa:</p>
+<h3>Abrir na Mesma Janela</h3>
+<ol>
+<li>Mantenha pressionada a tecla <b>Ctrl</b>.</li>
+<li>Clique duas vezes na pasta desejada.</li>
+</ol>
+<h3>Fechar Todas as Janelas de Uma Ramificação</h3>
+<ol>
+<li>Mantenha pressionada a tecla <b>Shift</b>.</li>
+<li>Clique no botão <b>Fechar</b> (X) da última janela aberta.</li>
+</ol>
+<p>Todas as janelas pertencentes à mesma ramificação serão fechadas simultaneamente.</p>
+<h2>Iniciando Programas Automaticamente</h2>
+<p>No Windows 95, é possível configurar a inicialização automática de programas:</p>
+<ol>
+<li>Clique com o botão direito no botão <b>Iniciar</b> e selecione <b>Abrir</b>.</li>
+<li>Na janela que aparece, clique duas vezes na pasta <b>Programas</b> e, em seguida, na subpasta <b>Iniciar</b>.</li>
+<li>Localize o ícone do programa que deseja iniciar automaticamente.</li>
+<li>Copie o ícone e cole-o na pasta <b>Iniciar</b>.</li>
+</ol>
+<p>Na próxima vez que o Windows for iniciado, o programa será executado automaticamente.</p>
+<h2>Transformando Bitmap em Ícone</h2>
+<p>Você pode usar um arquivo <b>BMP</b> (bitmap) como ícone, mas apenas para atalhos. Não é possível alterar o ícone de arquivos executáveis, dispositivos ou pastas originais.</p>
+<h3>Como Fazer</h3>
+<ol>
+<li>Escolha o atalho cujo ícone deseja modificar.</li>
+<li>Clique com o botão direito no atalho e selecione <b>Propriedades</b>.</li>
+<li>Na janela <b>Propriedades</b>, clique na aba <b>Atalho</b> e, em seguida, no botão <b>Alterar Ícone</b>.</li>
+<li>Na tela que aparece, clique em <b>Procurar</b> e selecione <b>Todos os Arquivos</b> como tipo de arquivo.</li>
+<li>Navegue até o diretório onde o arquivo <b>BMP</b> está localizado.</li>
+<li>Clique duas vezes no arquivo desejado.</li>
+<li>Clique em <b>OK</b>, depois em <b>Aplicar</b>, e finalize clicando em <b>OK</b>.</li>
+</ol>
+<p>Essa funcionalidade é ideal para personalizar atalhos, como usar o logotipo da empresa como ícone de um programa específico.</p>
+</td>
+<td width=220 valign=top>
+<p align=center><a href=http://www.ibazar.com.br/index.cgi?kj547738 target=_blank><img src=http://www.ibazar.com.br/banners/popup_1.gif border=0 width=225 height=150></a></p>
+<p align=center>&nbsp;</p>
+<p align=center><a href="http://www.fast-guestbooks.net/guestbook.cgi?id=cx394&a=15" target=_blank><img src=/files/guestbookBLK.gif><br><font face="Comic Sans MS, Comic Sans, cursive">LIVRO DE VISITAS</font></a></p>
+<p align=center>&nbsp;</p>
+<center>
+<!--Begin WebMart Votes-->
+<script>function wml16987534(pid){width=500; height=550; wmvotes=window.open(document.voteform16987534.action+'?id=16987534&pid='+pid,'WMVotes','width='+width+',height='+height+',left='+Math.ceil(screen.width/2-width/2)+',top='+Math.ceil((screen.height-height)/2)+',scrollbars=1,resizable=1'); wmvotes.focus();}</script><style type=text/css>.wmvt{font-family:Verdana,Arial,Geneva;font-size:11px;color:#000000;} .wmbt{font-family:Verdana,Arial,Geneva;font-size:11px;} .wmtl{font-family:Verdana,Arial,Geneva;font-weight:bold;font-size:13px;color:#FFFFFF;} .wmds{font-family:Verdana,Arial,Geneva;font-size:12px;color:#000000;font-weight:bold;} A.wma:link,A.wma:visited,A.wma:hover,A.wma:active{font-family:Verdana,Arial,Geneva;font-size:12px;underline:none;text-decoration: none;color:#0000FF;} .wmtd {font-family:Verdana,Arial,Geneva;font-size:12px;color:#000000;}</style><table border=0 cellspacing=0 bgcolor=EEEEEE cellpadding=0 width=225><tr><td height=1 width=1 colspan=3 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr><tr><td height=1 width=1 bgcolor=31639C rowspan=3><spacer type=block height=1 width=1></spacer></td><td bgcolor=31639C><table cellpadding=3><tr><td class=wmtl><b>Victor Ferreira's HomePage</b></td></tr></table></td><td height=1 width=1 bgcolor=31639C rowspan=3><spacer type=block height=1 width=1></spacer></td></tr><tr><td height=1 width=1 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr><tr><td><table border=0 cellpadding=3 cellspacing=0 width=100%><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><tr><td class=wmds colspan=2>O que você acha da minha HomePage?</td></tr><tr><td class=wmtd colspan=2></td></tr><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><form name=voteform16987534 action=http://votes.webmart.net/v.cfm method=GET target=wmvotes><input type=HIDDEN name=ID value=16987534><tr bgcolor=EEEEEE><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080891 onclick=wml16987534(1080891)></td><td width=259 class=wmtd>Muito boa, continue como está!</td></tr><tr bgcolor=DDDDDD><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080892 onclick=wml16987534(1080892)></td><td width=259 class=wmtd>Gosto do conteúdo, mas acho que poderia melhorar o design...</td></tr><tr bgcolor=EEEEEE><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080894 onclick=wml16987534(1080894)></td><td width=259 class=wmtd>O site todo é uma merda!!!</td></tr><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><tr><td align=CENTER colspan=2><table border=0 cellspacing=0 cellpadding=0 width=100%><tr><td><input type=Submit class=wmbt value=Votar></td><td align=RIGHT><script>document.write('<INPUT TYPE=BUTTON CLASS=wmbt VALUE="Resultados" ONCLICK="wml16987534(0)">');</script><noscript><input class=wmbt type=Submit value=Resultados></noscript></td></tr></table></td></tr></form></table></td></tr><tr><td height=1 width=1 colspan=3 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr></table>
+<!--End WebMart Votes-->
+</center>
+<p align=center>&nbsp;</p>
+<p align=center><img alt="Você está sendo observado!!!!" src=/files/olhos1.gif width=225 height=65></p>
+<p align=center>Estou de olho em você!!!</p>
+<p align=center>Vote na minha HomePage</p>
+<p align=center><a href="http://www.top30.com.br/cgi/votar.cgi?ID=13728" target=top30 border=0><img src=/files/selovotar.gif width=148 height=82></a></p>
+<p align=center>&nbsp;</p>
+<p align=center><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p align=center>&nbsp;</p>
+<p align=center><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<p align=center>&nbsp;</p>
+<p align=center>
+<script language=JavaScript><!--
+function installTrojan() {
+	var x=10
+	for (i=0;i<20;i++){
+		window.moveBy(0,x)
+		window.moveBy(x,0)
+		window.moveBy(0,-x)
+		window.moveBy(-x,0)
+	}
+}
+// --></script>
+<a style=cursor:crosshair; onclick="alert('CURIOSO');alert('Você não deveria ter clicado aqui...');alert('Agora o vírus do trojan vai ser instalado no seu computador!');installTrojan();alert('Vírus instalado com sucesso');alert('Desejo-lhe uma boa estadia ;-)')"><img src=/files/enterraios.gif width=145 height=77></a>
+</p>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<p align=center><img src=/files/image610.gif width=100% height=22></p>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<h2>Contato</h2>
+<form action=http://www2.woofoo.com/user-cgi/FormMail.pl method=POST>
+<input type=HIDDEN name=recipient value=victorotavioferreira@hotmail.com>
+Digite o assunto do seu e-mail:<br>
+<input type=TEXT name=subject><br>
+Digite seu endereço de e-mail:<br>
+<input type=TEXT name=email><br>
+Insira o conteúdo do seu e-mail:<br>
+<textarea name=content rows=9 cols=45></textarea><br>
+<input type=IMAGE src=/files/CONTATO.GIF>
+</form>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</td>
+</tr>
+</table>
+</FONT>
+<script language=JavaScript><!--
+	window.defaultStatus=" - = Victor Ferreira's Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
