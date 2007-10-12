@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>O que é DHTML? &mdash; Victor Ferreira's Homepage</TITLE>
+<META NAME=description CONTENT="Uma breve introdução sobre DHTML, uma das mais poderosas ferramentas nas mãos de um Web Master. Este artigo darão uma visão geral de o que é e como usar o DHTML. Não vou me ater muito em teorias, pois a linguagem JavaScript (padrão para DHTML) é muito complexa, em vez disso, vou dar exemplos de utilidade pratica para os conceitos apresentados, e mostrar como utilizar essa tecnologia para criar soluções criativas, bem apresntaveis e funcionais para a criação de paginas web dinamicas.">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, dhtml,javascript,html,css">
+<META NAME=abstract CONTENT="Uma breve introdução sobre DHTML, uma das mais poderosas ferramentas nas mãos de um Web Master. Este artigo darão uma visão geral de o que é e como usar o DHTML. Não vou me ater muito em teorias, pois a linguagem JavaScript (padrão para DHTML) é muito complexa, em vez disso, vou dar exemplos de utilidade pratica para os conceitos apresentados, e mostrar como utilizar essa tecnologia para criar soluções criativas, bem apresntaveis e funcionais para a criação de paginas web dinamicas.">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+</HEAD>
+<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif topmargin=0 leftmargin=0>
+<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
+<table width=768 border=0 cellspacing=0 cellpadding=10>
+<tr>
+<td colspan=2>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
+</td>
+</tr>
+<tr>
+<td valign=top>
+<H1>O que é DHTML?</H1>
+<P><I><FONT SIZE=1>sexta-feira, 12 de outubro de 2007</FONT></I></P>
+<p>Esta é uma breve introdução sobre DHTML, uma das mais poderosas ferramentas nas mãos de um Web Master. Este artigo darão uma visão geral de o que é e como usar o DHTML. Não vou me ater muito em teorias, pois a linguagem JavaScript (padrão para DHTML) é muito complexa, em vez disso, vou dar exemplos de utilidade pratica para os conceitos apresentados, e mostrar como utilizar essa tecnologia para criar soluções criativas, bem apresntaveis e funcionais para a criação de paginas web dinamicas.</p>
+<h2>O que é DHTML?</h2>
+<p>Ao contrario do que se pensa, DHTML não é uma linguagem de programação, mas sim um conjunto de técnicas de programação que combinam as linguagens HTML e JavaScript para tornar o HTML dinamico. Daí o nome <b>DHTML - Dynamic Hyper Text Markup Language</b>.</p>
+<p>Nos anos 80, com o advento dos computadores pessoais, surgiu uma linguagem de programação que permitia transportar arquivos gráficos no formato texto, e depois eles seriam remontados como graficos para ser exibidos. é a chamada HTML. Com os avanços tecnologicos na area da Internet, logo foi possivel enviar esses arquivos HTML pela rede, e assim surgiram as Paginas Web. Mas nesse momento o HTML perdia muito em performance, pois era necessário enviar a pagina pela internet, para que ela fosse visualizada no navegador cliente.</p>
+<p>A grande desvantagem do HTML sempre foi o fato de ser totalmente estática, ou seja, depois de interpretado o codigo e montada a pagina grafica, nada poderia acontecer. A primeira mudança nesse aspecto não veio na linguagem, mas sim nos navegadores. A partir da segunda geração de navegadores, os Links passaram a ser sublinhados, tendo comportamento diferente do restante do texto. Mas isso não estava ao alcance do programador, e sim pre-programado no interpretador da linguagem.</p>
+<p>Os links ativos foram o pontapé inicial para uma grande revolução: se era possível trocar a formatação do link em milesimos de segundos no browser, porque não fazer o mesmo com o resto do texto??? Assim surguia os primeiros esboços da linguagem JavaScript, criada pela Netscape e lançada na versão 2.0 do seu navegador. Anos depois, em um acordo entre a Microsoft e a Netscape, foi criada uma convenção internacional que homologou a linguagem JavaScript. Os navegadores Internet Explorer e Netscape, a partir das versões 3.0, passaram a ter suporte à essa linguagem, e assim as paginas HTML ganharam vida nas telas do browsers.</p>
+<p>O conceito DHTML surguiu em meados dos anos 90 com o Netscape 3.0, que trazia o reconhecimento de eventos, o que tornava o HTML interativo com o usuário. A Microsoft não ficou pra traz e lançou a versão 3.0 do IE, que tambem trazia a interpretação de eventos, e ainda adicionava um novo conceito ao DHTML, chamado <a href=/blog/introducao-ao-css.html><b>CSS - Cascating StyleSheet</b></a> que permitia armazenar em um trecho de script separado do HTML as regras de formatação e que passou a ser usado para configurar a atividade do JavaScript no que se refere à mudança dinamica de formatação.</p>
+<h2>O que é necessário para rodar o DHTML?</h2>
+<p>O Javascript, por necessitar de um interpretador, inpõe algumas restrições ao uso do DHTML:</p>
+<ul>
+<li>O navegador Internet Explorer até sua versão 2.0 não reconhece JavaScript;</li>
+<li>O navegador Netscape na versão 2.0 não reconhece eventos, mas permite efeitos de linha de tempo (entre outros usos do JavaScript sem relação com DHTML);</li>
+<li>O navegador Netscape, a partir da vesão 3.0, reconhece JavaScript 1.0</li>
+<li>Os demais navegadores reconhecem JavaScript, mas podem apresentar comportamento distinto do obtido no IE e no Netscape</li>
+</ul>
+<p>Como a linguagem está em constante desenvolvimento, há determinadas funcionalidades que não apresentam o mesmo comportamento em todos os navegadores, como tambem há comandos e funções que não são reconhecidos em algumas versões, por serem mais recentes que essas funções.</p>
+<p>Cabe ao programador testar seus scripts em diversos navegadores, e expor notas de versão, ou então tratar o codigo para só executar algo se o navegador suportar. Uma boa soluçõa no caso de um navegador não suportar seus scripts, é redirecionar o browser para uma página sem scripts.</p>
+<p>Alem do JavaScript, o CSS também apresenta problemas de não reconhecimento no Nestcape e no IE em versões inferiores à 3.0.</p>
+<h2>O que é possível fazer com DHTML?</h2>
+<p>Observe abaixo alguns exemplos do que é possível fazer com a combinação HTML - JavaScript:</p>
+<center>
+<script language=JavaScript type=text/javascript><!--
+	function Exemplo1(obj,act){
+		if(act=="over"){if(!(obj.contains(event.fromElement))){obj.style.color="#FF0000"}}else{if (!(obj.contains(event.toElement))){obj.style.color="#000000"}}
+	}
+	function Exemplo2(obj,act){
+		if (act=="over"){if(!(obj.contains(event.fromElement))){obj.bgColor="#E1E9F7"}}else{if(!(obj.contains(event.toElement))){obj.bgColor="#FFFFFF"}}
+	}
+	function Exemplo3(obj){
+		if(obj.innerHTML=="Clique Aqui"){obj.innerHTML="Agora clique outra vez"}else{obj.innerHTML="Clique Aqui"}
+	}
+	function Exemplo4(){
+		if(divExemplo4.style.display=="none"){divExemplo4.style.display=""}else{divExemplo4.style.display="none"}
+	}
+	function Exemplo5(obj) {
+		if (obj.index==1){msg="Você pressionou o botão da Esquerda!"}else if(obj.index==2){msg="Você pressionou o botão do Centro!"}else{msg="Você pressionou o botão da Direita!"}
+		alert(msg);
+	}
+	// -->
+</script>
+<table width=500 border=1 cellspacing=0 cellpadding=2>
+<tr>
+<td width=50% height=50 align=center valign=middle onMouseOver="Exemplo1(this,'over');" onMouseOut="Exemplo1(this,'out');">
+<b>Passe o Mouse Por Aqui</b>
+</td>
+<td width=50% height=50 align=center valign=middle onMouseOver="Exemplo2(this,'over');" onMouseOut="Exemplo2(this,'out');">
+<b>Passe o Mouse Por aqui</b>
+</td>
+</tr>
+<tr>
+<td height=50 align=center valign=middle>
+<a href=javascript:; class=exemplo name=Exemplo3 onClick=Exemplo3(this);>Clique Aqui</a>
+</td>
+<td>
+<center>
+<a href=javascript:; class=exemplo onClick=Exemplo4();>Clique Aqui</a>
+<div id=divExemplo4 style="display:none; font-size:12px; color:green;">
+(Clique novamente para este texto sumir)</div>
+</center>
+</td>
+</tr>
+<tr>
+<td colspan=2 height=50 align=center valign=middle>
+<input type=button name=btn1 value="Clique em Mim" onClick=Exemplo5(this); index=1>
+&nbsp;
+<input type=button name=btn2 value="Clique em Mim" onClick=Exemplo5(this); index=2>
+&nbsp;
+<input type=button name=btn3 value="Clique em Mim" onClick=Exemplo5(this); index=3>
+</td>
+</tr>
+</table>
+</center>
+<p>Estes são apenas exemplos de comportamentos simples que podem ser feitos com JavaScript. Todo o script que realiza os efeitos acima está escrito em apenas 16 linhas. Mas, por enquanto, não vamos analizá-los. Vamos nos ater a um exemplo prático para se iniciar com DHTML.</p>
+<h2>Mudando a formatação do texto</h2>
+<p>No primeiro quadro acima, temos um exemplo onde passando o mouse sobre a célula da tabela, o texto contido na tabela muda de cor. Vamos por a mão na massa e fazer um script semelhante. Mas antes de iniciar, um pouco de teoria sobre HTML:</p>
+<p>Em HTML, cada tag dá origem a um objeto, que pode ser acessado pelo script da pagina. Um objeto HTML nada mais é que uma area da pagina que pode reconhecer eventos sobre si mesma, bem como apresentar atributos proprios, ou conter outros objetos.</p>
+<p>Como eu disse, cada tag define um objeto. Mas o texto solto na página não pertence à objeto algum, então não tem como acessá-lo no script. A solução é criar um objeto que comporte o texto. é o que vamos fazer. Vamos utilizar o objeto <code>div</code>, ele define uma area do html, que pode ser formatada diferentemente do restante da pagina, e permite também reconhecer eventos sobre essa area. Poderiamos usar qualquer tag HTML, como a tag <code>&lt;td&gt;</code> que foi usada no exemplo acima, ou uma tag <code>&lt;p&gt;</code>, que define um paragrafo de texto.</p>
+<p>Agora é preciso definir a logica de funcionamento do script: o que ele deve fazer com o texto do objeto <code>div</code>? Resposta: deve mudar a cor do texto toda vez que o mouse passar por cima do objeto, e restaurar a cor anterior quando o mouse sair de cima da area do objeto. Para tanto vamos precisar interceptar dois eventos do Mouse (em um proximo artigo, trarei uma lista completa dos eventos). Nossos eventos são <code>onMouseOver</code> (quando o mouse passar por cima) e <code>onMouseOut</code> (quando o mouse deixar de estar por cima).</p>
+<p>O objeto <code>div</code> não possue um atributo que defina a cor do texto. Assim devemos utilizar atributos da subclasse <code>style</code> (que é comum a todos os objetos HTML). O atributo de style que define a cor do texto é <code>color</code>. Assim, é possível definir a cor do texto de um <code>div</code> atraves do atributo <code>style.color</code>. Veja como:</p>
+<pre><code>&lt;div style=&quot;color: blue;&quot;&gt;</code></pre>
+<p>A sintaxe é <code>nome_subclasse=&quot;nome_atributo: valor;&quot;</code></p>
+<p>Assim, definimos a cor do texto para azul. Mas como mudar para vermelho quando o mouse passar por cima? Simples: com uma instrução que mude o valor de <code>style.color</code> para <code>&quot;red&quot;</code>. Em javascript podemos sempre referenciar o objeto no qual é disparado o evento pela palavra-chave <code>this</code>. Assim, a instrução para mudar a cor do texto será: <code>this.style.color = 'red'</code>.</p>
+<p>Mas onde por essa instrução??? aí entram os eventos citados acima. A mudança deve ocorrer quando for disparado o evento <code>onMouseOver</code>, então basta incluir uma referencia ao evento na tag &lt;div&gt; e associar à ela o codigo. A declaração de um evento segue a mesma sintaxe da declaração de um atributo, ou seja: <code>nome_evento=&quot;codigo_associado&quot;</code>.</p>
+<p>Vamos à declaração do objeto:</p>
+<pre><code>&lt;div style=&quot;color: blue&quot; onMouseOver=&quot;this.style.color='red';&quot;&gt;
+	Este é o texto do Exemplo
+&lt;/div&gt;
+</code></pre>
+<p>Abaixo temos o resultado da linha de codigo acima:</p>
+<div align=center style="color: blue;" onMouseOver="this.style.color='red';">Este é o texto do Exemplo</div>
+<p>Você deve ter percebido que passando o mouse por cima, o texto fica vermelho. Mas por que não volta ao normal??? simples: o codigo associado ao evento <code>onMouseOver</code> é executado quando o mouse é detectado sobre o objeto, mas não tem relação alguma com o fato de o mouse estar sobre o objeto, ou seja, seu efeito permanece mesmo quando o mouse se retira de cima do objeto. Para contornar esse problema, vamos programar uma nova mudança de cor para quando o mouse se retirar de cima do objeto, ou seja, no evento <code>onMouseOut</code>. A instrução será a mesma do evento <code>onMouseOver</code>, mas atribuindo a cor azul para o texto. Vejamos como fica agora a declaração do objeto (lembrando que em HTML as quebras de linha não interferem):</p>
+<pre><code>&lt;div
+  align=&quot;center&quot;
+  style=&quot;color: blue&quot;
+  onMouseOver=&quot;this.style.color='red';&quot;
+  onMouseOut=&quot;this.style.color='blue'&quot;
+&gt;
+	Este é o texto do Exemplo
+&lt;/div&gt;
+</code></pre>
+<p>Abaixo temos agora o exemplo completo (código acima):</p>
+<div align=center style="color: blue;" onMouseOver="this.style.color='red';" onMouseOut="this.style.color='blue'">Este é o texto do Exemplo</div>
+<p>&nbsp;</p>
+<p>Abaixo, deixo uma tabela com alguns outros exemplos de comportamento semelhantes a esse. Observe as linhas de código dando especial atenção aos atributos da subclasse <code>style</code>.</p>
+<table width=100% border=1 cellspacing=0 cellpadding=2>
+<tr>
+<td align=center bgcolor=#CCCCCC width=70%>
+<b>Código Fonte</b></td>
+<td align=center bgcolor=#CCCCCC width=30%>
+<b>Resultado</b></td>
+</tr>
+<tr>
+<td><pre><code>&lt;div
+  style=&quot;text-decoration: none&quot;
+  onMouseOver=&quot;this.style.textDecoration='underline';&quot;
+  onMouseOut=&quot;this.style.textDecoration='none';&quot;
+&gt;
+	Este texto vai ficar sublinhado
+&lt;/div&gt;</code></pre></td>
+<td>
+<div align=center style="text-decoration: none;" onMouseOver="this.style.textDecoration='underline';" onMouseOut="this.style.textDecoration='none';">
+Este texto vai ficar sublinhado</div>
+</td>
+</tr>
+<tr>
+<td><pre><code>&lt;div
+  style=&quot;font-weight: normal&quot;
+  onMouseOver=&quot;this.style.fontWeight='bold';&quot;
+  onMouseOut=&quot;this.style.fontWeight='normal';&quot;
+&gt;
+	Este texto vai ficar em negrito
+&lt;/div&gt;</code></pre></td>
+<td>
+<div align=center style="font-weight: normal;" onMouseOver="this.style.fontWeight='bold';" onMouseOut="this.style.fontWeight='normal';">
+Este texto vai ficar em negrito</div>
+</td>
+</tr>
+<tr>
+<td><pre><code>&lt;div
+  style=&quot;font-size: 14px&quot;
+  onMouseOver=&quot;this.style.fontSize='10px';&quot;
+  onMouseOut=&quot;this.style.fontSize='14px';&quot;
+&gt;
+	Este texto vai mudar de tamanho de fonte
+&lt;/div&gt;</code></pre></td>
+<td>
+<div align=center onMouseOver="this.style.fontSize='8px';" onMouseOut="this.style.fontSize='';">
+Este texto vai mudar de tamanho de fonte</div>
+</td>
+</tr>
+</table>
+<p>O primeiro exemplo utilizou o atributo <code>textDecoration</code>, cujos possíveis valores são: <code>underline</code> (sublinhado), <code>overline</code> (sobrescrito), <code>line-through</code> (tachado), <code>blink</code> (piscando) e <code>none</code> (nenhum). Atribuir o valor <code>none</code> obriga o texto a não ter decoração nenhuma, se o atributo for deixado em branco (<code>textDecoration='';</code>) o texto receberá a decoração definida no objeto pai.</p>
+<p>O segundo utilizou o atributo <code>fontWeight</code>, cujos possíveis valores são: <code>bold</code> (negrito), <code>bolder</code> (negrito forte), <code>lighter</code> (negrito fraco) e <code>normal</code>. Alem desses valores, também é possível definir um valor numérico, e quanto mais baixo esse valor, mais clara é a fonte.</p>
+<p>O terceiro exemplo utilizou o atributo <code>fontSize</code>, que define o tamanho da fonte, em pixels (px) ou pontos (pt). Note que na declaração do objeto <code>&lt;div&gt;</code> não foi atribuido valor algum, isso faz com que se utilize o valor definido para a mesma propriedade no objeto pai (no caso a celula da tabela). Nesse caso, para restaurar o tamanho foi deixado em branco o valor, assim é atribuído o valor do mesmo atributo do objeto pai.</p>
+<p>&nbsp;</p>
+<p>Só para encerrar o assunto, vou deixar um exemplo onde vários desses atributos são alterados ao mesmo tempo. Em Javascript, podemos encadear uma série de instruções em uma única linha de comando, bastando separar as instruções por sinais de ponto-e-virgula (<code>;</code>). Abaixo está o código e logo após o exemplo:</p>
+<pre><code>&lt;div
+  align=&quot;center&quot;
+  style=&quot;background-color: #e1e9f7; border: 1px solid #cccccc; color: blue&quot;
+  onMouseOver=&quot;this.style.backgroundColor='#E9F7E1';this.style.color='green';&quot;
+  onMouseOut=&quot;this.style.backgroundColor='#E1E9F7';this.style.color='blue';&quot;
+&gt;
+	Neste exemplo, mudam a cor do texto e a cor de fundo
+&lt;/div&gt;</code></pre>
+<b>
+<div align=center style="backGround-Color: #E1E9F7; border: 1px solid #CCCCCC; color: blue;" onMouseOver="this.style.backgroundColor='#E9F7E1';this.style.color='green';" onMouseOut="this.style.backgroundColor='#E1E9F7';this.style.color='blue';">
+Neste exemplo, mudam a cor do texto e a cor de fundo</div>
+</b>
+</td>
+<td width=220 valign=top>
+<p align=center><a href=http://www.ibazar.com.br/index.cgi?kj547738 target=_blank><img src=http://www.ibazar.com.br/banners/popup_1.gif border=0 width=225 height=150></a></p>
+<p align=center>&nbsp;</p>
+<p align=center><a href="http://www.fast-guestbooks.net/guestbook.cgi?id=cx394&a=15" target=_blank><img src=/files/guestbookBLK.gif><br><font face="Comic Sans MS, Comic Sans, cursive">LIVRO DE VISITAS</font></a></p>
+<p align=center>&nbsp;</p>
+<center>
+<!--Begin WebMart Votes-->
+<script>function wml16987534(pid){width=500; height=550; wmvotes=window.open(document.voteform16987534.action+'?id=16987534&pid='+pid,'WMVotes','width='+width+',height='+height+',left='+Math.ceil(screen.width/2-width/2)+',top='+Math.ceil((screen.height-height)/2)+',scrollbars=1,resizable=1'); wmvotes.focus();}</script><style type=text/css>.wmvt{font-family:Verdana,Arial,Geneva;font-size:11px;color:#000000;} .wmbt{font-family:Verdana,Arial,Geneva;font-size:11px;} .wmtl{font-family:Verdana,Arial,Geneva;font-weight:bold;font-size:13px;color:#FFFFFF;} .wmds{font-family:Verdana,Arial,Geneva;font-size:12px;color:#000000;font-weight:bold;} A.wma:link,A.wma:visited,A.wma:hover,A.wma:active{font-family:Verdana,Arial,Geneva;font-size:12px;underline:none;text-decoration: none;color:#0000FF;} .wmtd {font-family:Verdana,Arial,Geneva;font-size:12px;color:#000000;}</style><table border=0 cellspacing=0 bgcolor=EEEEEE cellpadding=0 width=225><tr><td height=1 width=1 colspan=3 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr><tr><td height=1 width=1 bgcolor=31639C rowspan=3><spacer type=block height=1 width=1></spacer></td><td bgcolor=31639C><table cellpadding=3><tr><td class=wmtl><b>Victor Ferreira's HomePage</b></td></tr></table></td><td height=1 width=1 bgcolor=31639C rowspan=3><spacer type=block height=1 width=1></spacer></td></tr><tr><td height=1 width=1 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr><tr><td><table border=0 cellpadding=3 cellspacing=0 width=100%><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><tr><td class=wmds colspan=2>O que você acha da minha HomePage?</td></tr><tr><td class=wmtd colspan=2></td></tr><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><form name=voteform16987534 action=http://votes.webmart.net/v.cfm method=GET target=wmvotes><input type=HIDDEN name=ID value=16987534><tr bgcolor=EEEEEE><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080891 onclick=wml16987534(1080891)></td><td width=259 class=wmtd>Muito boa, continue como está!</td></tr><tr bgcolor=DDDDDD><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080892 onclick=wml16987534(1080892)></td><td width=259 class=wmtd>Gosto do conteúdo, mas acho que poderia melhorar o design...</td></tr><tr bgcolor=EEEEEE><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080894 onclick=wml16987534(1080894)></td><td width=259 class=wmtd>O site todo é uma merda!!!</td></tr><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><tr><td align=CENTER colspan=2><table border=0 cellspacing=0 cellpadding=0 width=100%><tr><td><input type=Submit class=wmbt value=Votar></td><td align=RIGHT><script>document.write('<INPUT TYPE=BUTTON CLASS=wmbt VALUE="Resultados" ONCLICK="wml16987534(0)">');</script><noscript><input class=wmbt type=Submit value=Resultados></noscript></td></tr></table></td></tr></form></table></td></tr><tr><td height=1 width=1 colspan=3 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr></table>
+<!--End WebMart Votes-->
+</center>
+<p align=center>&nbsp;</p>
+<p align=center><img alt="Você está sendo observado!!!!" src=/files/olhos1.gif width=225 height=65></p>
+<p align=center>Estou de olho em você!!!</p>
+<p align=center>Vote na minha HomePage</p>
+<p align=center><a href="http://www.top30.com.br/cgi/votar.cgi?ID=13728" target=top30 border=0><img src=/files/selovotar.gif width=148 height=82></a></p>
+<p align=center>&nbsp;</p>
+<p align=center><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p align=center>&nbsp;</p>
+<p align=center><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<p align=center>&nbsp;</p>
+<p align=center>
+<script language=JavaScript><!--
+function installTrojan() {
+	var x=10
+	for (i=0;i<20;i++){
+		window.moveBy(0,x)
+		window.moveBy(x,0)
+		window.moveBy(0,-x)
+		window.moveBy(-x,0)
+	}
+}
+// --></script>
+<a style=cursor:crosshair; onclick="alert('CURIOSO');alert('Você não deveria ter clicado aqui...');alert('Agora o vírus do trojan vai ser instalado no seu computador!');installTrojan();alert('Vírus instalado com sucesso');alert('Desejo-lhe uma boa estadia ;-)')"><img src=/files/enterraios.gif width=145 height=77></a>
+</p>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<p align=center><img src=/files/image610.gif width=100% height=22></p>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<h2>Contato</h2>
+<form action=http://www2.woofoo.com/user-cgi/FormMail.pl method=POST>
+<input type=HIDDEN name=recipient value=victorotavioferreira@hotmail.com>
+Digite o assunto do seu e-mail:<br>
+<input type=TEXT name=subject><br>
+Digite seu endereço de e-mail:<br>
+<input type=TEXT name=email><br>
+Insira o conteúdo do seu e-mail:<br>
+<textarea name=content rows=9 cols=45></textarea><br>
+<input type=IMAGE src=/files/CONTATO.GIF>
+</form>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</td>
+</tr>
+</table>
+</FONT>
+<script language=JavaScript><!--
+	window.defaultStatus=" - = Victor Ferreira's Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
