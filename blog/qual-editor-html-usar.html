@@ -175,7 +175,20 @@ function getAllText(el) {
 <tr>
 <td colspan=2>
 <h2>Contato</h2>
-<form action=http://www2.woofoo.com/user-cgi/FormMail.pl method=POST>
+<script type=text/javascript>
+// <![CDATA[
+		function validateEmail() {
+			var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,7})+$/;
+			if (!re.test(document.forms['eform'].email.value)) {
+				alert('Por favor, digite um endereço de e-mail válido.');
+				document.eform.email.focus();
+				return false;
+			}
+			else return true;
+		}
+		// ]]>
+</script>
+<form name=eform action=http://www2.woofoo.com/user-cgi/FormMail.pl method=POST onsubmit=return(validateEmail())>
 <input type=HIDDEN name=recipient value=victorotavioferreira@hotmail.com>
 Digite o assunto do seu e-mail:<br>
 <input type=TEXT name=subject><br>
