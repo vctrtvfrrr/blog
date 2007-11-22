@@ -5,9 +5,9 @@
 <META HTTP-EQUIV=Content-Language CONTENT=pt-br>
 <META NAME=language CONTENT=pt-BR>
 <TITLE>Por quê o DOS? &mdash; Victor Ferreira's Homepage</TITLE>
-<META NAME=description CONTENT="Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como dir, cls e attrib pareciam encantamentos. O Qbasic me possibilitou dar os meus primeiros passos em…">
-<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, MS-DOS, comandos">
-<META NAME=abstract CONTENT="Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como dir, cls e attrib pareciam encantamentos. O Qbasic me possibilitou dar os meus primeiros passos em…">
+<META NAME=description CONTENT="Os arquivos batch no DOS são pequenos scripts que possibilitam que se faça muitas tarefas de uma só vez. Possuem a extensão BAT e podem ser rodados como se fossem executáveis.">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, dos,batch,badcoms,doskey,ansi">
+<META NAME=abstract CONTENT="Os arquivos batch no DOS são pequenos scripts que possibilitam que se faça muitas tarefas de uma só vez. Possuem a extensão BAT e podem ser rodados como se fossem executáveis.">
 <META NAME=author CONTENT="Victor Ferreira">
 <META NAME=robots CONTENT="index, follow">
 <LINK REL="shortcut icon" HREF=/favicon.ico>
@@ -29,74 +29,80 @@
 <td valign=top>
 <H1>Por quê o DOS?</H1>
 <P><I><FONT SIZE=1>quarta-feira, 6 de junho de 2007</FONT></I></P>
-<p>Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como <code>dir</code>, <code>cls</code> e <code>attrib</code> pareciam encantamentos. O <code>Qbasic</code> me possibilitou dar os meus primeiros passos em uma linguagem de programação. É uma pena que o sistema operacional de disco (DOS) da Microsoft tende a não existir mais. A cada versão do Windows mata-se um pouco dele. No Millennium, nem é possível mais rodar alguns programas. Uma grande pena para os usuários da era do mouse. Vemos pessoas assim chamar diretórios de pastas, copiar arquivos usando o Windows Explorer (sendo que não há nada melhor e mais gostoso de ser usado do que o comando <code>copy</code> do DOS). Recomendo sua aprendizagem a todos que não o conhecem. Vocês ainda têm tempo antes de adquirir um Windows XP e acabar de assassinar nosso querido amigo. Foi em homenagem a ele que essa seção de dedica, mostrando truques e táticas de segurança.</p>
-<h2>Arquivos BAT</h2>
-<p>Os arquivos batch no DOS são pequenos scripts que possibilitam que se faça muitas tarefas de uma só vez. Possuem a extensão BAT e podem ser rodados como se fossem executáveis. A linguagem batch é bem extensa e ótima para iniciantes aprenderem os primeiros passos em programação. Meu objetivo não é ensinar a linguagem e sim apenas mostrar como o processo funciona. Um exemplo de um arquivo batch abaixo.</p>
-<pre><code>dir/p
+<P>Ainda me recordo da primeira vez que o vi. Fiquei maravilhado com toda aquela mágica de comandos. Expressões como<CODE>dir</CODE>,<CODE>cls</CODE> e<CODE>attrib</CODE> pareciam encantamentos. O<CODE>Qbasic</CODE> me possibilitou dar os meus primeiros passos em uma linguagem de programação. É uma pena que o sistema operacional de disco (DOS) da Microsoft tende a não existir mais. A cada versão do Windows mata-se um pouco dele. No Millennium, nem é possível mais rodar alguns programas. Uma grande pena para os usuários da era do mouse. Vemos pessoas assim chamar diretórios de pastas, copiar arquivos usando o Windows Explorer (sendo que não há nada melhor e mais gostoso de ser usado do que o comando<CODE>copy</CODE> do DOS). Recomendo sua aprendizagem a todos que não o conhecem. Vocês ainda têm tempo antes de adquirir um Windows XP e acabar de assassinar nosso querido amigo. Foi em homenagem a ele que essa seção de dedica, mostrando truques e táticas de segurança.</P>
+<H2>Arquivos BAT</H2>
+<P>Os arquivos batch no DOS são pequenos scripts que possibilitam que se faça muitas tarefas de uma só vez. Possuem a extensão BAT e podem ser rodados como se fossem executáveis. A linguagem batch é bem extensa e ótima para iniciantes aprenderem os primeiros passos em programação. Meu objetivo não é ensinar a linguagem e sim apenas mostrar como o processo funciona. Um exemplo de um arquivo batch abaixo.</P>
+<PRE><CODE>dir/p
 cls
-mem</code></pre>
-<p>Digite no prompt do DOS "edit teste.bat". Assim o editor padrão EDIT irá criar o arquivo teste.bat. Escreva os três comandos acima, colocando-os um em cada linha. Salve o arquivo e execute-o digitando <code>teste</code> ou <code>teste.bat</code>. O programa listará os arquivos com pausa (<code>dir/p</code>), limpará a tela (<code>cls</code>) e mostrará o status da memória (<code>mem</code>).</p>
-<h2>Badcoms</h2>
-<p>Os badcoms são uma má utilização de arquivos bat. Coloca-se no arquivo comandos destrutivos, tais como <code>del *.*</code> ou <code>deltree /y *.*</code>, que são comandos para apagar arquivos e diretórios. Pode-se até conseguir formatar o computador colocando-se <code>format c: | echo s</code>. O pipe ( | ) fará com que o comando <code>echo</code> envie o caractere <code>s</code> para o comando <code>format c:</code>. Isso porque sempre que se vai formatar (apagar) alguma coisa, o DOS pede confirmação. No caso, o batch daria a confirmação por si próprio.</p>
-<p>Um exemplozinho rápido de um badcom:</p>
-<pre><code>cls
-@deltree /y *.* &gt; nul</code></pre>
-<p>Ao criar esse arquivo BAT e executá-lo, o programa primeiro limpará a tela e logo depois usará o comando <code>deltree</code> para apagar os arquivos e pastas do computador. O @ antes do comando e o <code>&gt; nul</code> depois é para que não mostre o que o batch irá fazer. Se você digitasse esse comando sem esses dois termos (somente <code>deltree /y *.*</code>), iria aparecer a mensagem "Excluindo &lt;pasta ou arquivo&gt;". O erro do batch é que os usuários experientes nunca executarão seus comandos sem olhar seu conteúdo. Infelizmente foi criado o programa <b>bat2exe</b> que transforma o arquivo bat em executável (podendo ser COM ou EXE). Assim, muitas pessoas caem no seu truque a cada dia.</p>
-<center><p style=width:500px;><img src=/files/DOS_03.jpg alt="Exemplo de badcom" width=500 height=313 hspace=5 vspace=5 border=1><br>
-<font size=2>Nesse exemplo, enviamos o caractere <code>s</code> (<code>echo s</code>) para o comando <code>del</code>, assim ao executar o arquivo bat (ou badcom nesse caso) ele limpará a tela (<code>cls</code>), listará os dados(<code>dir</code>) e logo em seguida irá apagar o conteúdo do disquete (drive a). E ainda não mostrará nada na tela (<code>nul</code>).</font></p></center>
-<h2>Macros do doskey</h2>
-<p>Os antigos usuários do DOS se lembram muito bem do nome doskey. Ele era muito utilizado para repetir os comandos mais usados pelo usuário ao se apertar a tecla para cima. Algo como o botão voltar do Internet Explorer. Mas esse pequeno comando pode ser utilizado para outros fins interessantes, como a criação de macros. Vamos fazer um teste criando uma macro chamada listar.</p>
-<center><p style=width:500px;><img src=/files/DOS_06.jpg alt="Exemplo de macro do doskey" width=500 height=312 hspace=5 vspace=5 border=1></p></center>
-<p><b><code>doskey listar=dir</code></b></p>
-<p>Ao executarmos a macro <code>listar</code> (executando-a como se fosse um comando comum), ela automaticamente dará um <code>dir</code>, ou seja, listará os diretórios e arquivos. Até aqui a coisa não têm muita graça. Mas e se utilizarmos os caracteres <code>$T</code>?</p>
-<p><b><code>doskey listar=dir/p $t mem</code></b></p>
-<p>Neste exemplo, ao executarmos a macro <code>listar</code> o sistema dará um <code>dir</code> com pausa e executará logo em seguida o comando <code>mem</code>, que mostra o status da memória do sistema. Assim, usando o recurso <code>$T</code> podemos executar diversos comandos com uma só macro. Mas o interessante vêm agora:</p>
-<p><b><code>doskey dir = cls $t ver $t mem</code></b></p>
-<p>Nós conseguimos criar uma macro com o próprio comando <code>dir</code>. Assim quando alguém for listar diretórios, tomará um susto danado. Isso funciona para todos os comandos do DOS. Passe um bom susto em alguém.</p>
-<p>Para resetar as macros, aperte <kbd>alt + f10</kbd>.</p>
-<h2>Variáveis do sistema</h2>
-<p>Vou abranger rapidamente essa seção dizendo apenas que existem muitas variáveis de sistema do DOS, e que todas podem ser mudadas usando o comand <code>set</code>. Vou demonstrar um ótimo exemplo:</p>
-<p><b><code>set dircmd=@</code></b></p>
-<p>Isso fará com que ao listar os diretórios e arquivos, não apareça nada. O significado do @ é esse, esconder. Mas você pode colocar como <code>dircmd</code> a opção <code>/p</code> ou <code>/w</code> ou alguma outra. Elas irão automatizar o processo de listar com pausa, etc. Se teve dúvidas, tente fazê-lo que irá entender.</p>
-<h2>Comandos ANSI</h2>
-<p>Esse é o mais interessante de todos. Antes de tudo, verifique se existe essa linha no seu <code>config.sys</code> (ele fica na raiz). Se não existir, inclua.</p>
-<p><b><code>Device = C:\Windows\command\ansi.sys</code></b></p>
-<center><p style=width:500px;><img src=/files/DOS_07.jpg alt="Verificando se o comando ANSI está habilitado" width=500 height=314 hspace=5 vspace=5 border=1></p></center>
-<p>Agora resete o computador. Vá para o prompt do DOS depois que ele reiniciar.</p>
-<p>Deixe-me explicar por partes: primeiro vamos definir algumas cores dos números:</p>
-<ul>
-<li>0 - Preto</li>
-<li>1 - Vermelho</li>
-<li>2 - Verde</li>
-<li>3 - Amarelo</li>
-<li>4 - Azul</li>
-<li>7 - Branco</li>
-</ul>
-<p>E agora o status:</p>
-<ul>
-<li>0 - Letra mais forte</li>
-<li>1 - Letra mais fraca</li>
-<li>5 - Piscando</li>
-</ul>
-<p>Ok, qual o significado de mostrarmos esses números? Você vai entender.</p>
-<p><b><code>C:\&gt; prompt $e[1;33;44m$p$g</code></b></p>
-<center><p style=width:500px;><img src=/files/DOS_08.jpg alt="Exemplo de comando ANSI" width=500 height=290 hspace=5 vspace=5 border=1></p></center>
-<p>O comando <code>prompt</code> (atenção, o <code>c:\&gt;</code> não é para ser digitado) é usado para alterar esse <code>c:\&gt;</code> do DOS. Mas a sua opção <code>$e</code> é a de ANSI. O exemplo acima é dividido em três partes: o número 1 é o status. Logo depois ele é separado da dezena de 30 pelo ponto e vírgula. A dezena de 30 é a responsável pela letra, então colocamos o 3 (ficando 33) para que a letra seja amarela. Logo depois outro ponto e vírgula separando a dezena de 40. E colocamos a cor azul (ficando 44).O <code>m</code> é usado para terminar a sentença e o <code>$p$g</code> são para o prompt continuar o mesmo (ou seja, não mudar o <code>C:\&gt;</code>). Acho que já deu pra entender como se muda as cores, vamos mudar algumas teclas agora. Que tal o vírus cebolinha? Mudaremos a tecla r pela l.</p>
-<p><b><code>C:\&gt; prompt $e[“r”;”l”p$p$g</code></b></p>
-<p>Esse comando trocará a letra r pela l. Experimente pedir a alguém digitar seu nome. O <code>p</code> faz a mesma coisa que o <code>m</code> na cor. Mais dois exemplos apenas.</p>
-<p><b><code>C:\&gt; prompt $e[0;60;””;13p$p$g</code></b></p>
-<p>Esse comando transforma a tecla F2 (cujo código é <code>0;60</code>) em Enter (o <code>13p</code> no final). Agora vai o comando mais malvado de todos.</p>
-<p><b><code>C:\&gt; prompt $e[13;”deltree /y *.*”;13p$p$g</code></b></p>
-<p>Cuidado ao executá-lo, ele fará com que só de pressionar a tecla Enter (código 13), se execute o comando <code>deltree /y *.*</code> que apagará todos os arquivos. Troque o comando entre as aspas como teste. Para voltar as teclas ao normal, seria preciso saber o código delas. Há um método mais fácil. Feche o prompt do DOS ou resete o computador.</p>
-<h2>Velhos truques</h2>
-<p>O DOS é cheio de truques muito interessantes. Vou dar apenas uma palhinha pois o gostoso é fuçar e descobrí-los por você mesmo. Mas tenho certeza de que essa dica será muito útil. Abra o arquivo <code>autoexec.bat</code> (que está na raiz) e coloque o comando <code>date</code> mais a sua data atual. Mais ou menos assim:</p>
-<p><b><code>date 07/11/2007</code></b></p>
-<center><p style=width:500px;><img src=/files/DOS_09.jpg alt="Truque `date` no DOS" width=500 height=313 hspace=5 vspace=5 border=1></p></center>
-<p>Salve o arquivo e resete o computador. Esse lhe trará duas vantagens:</p>
-<ol>
-<li>Aqueles vírus com dias programados para atacar, nunca atacarão seu pc (e são mais de 50% dos vírus existentes) e</li>
-<li>Os programas que você pode usar por 30 dias poderão ser usados para sempre. É uma ótima vantagem. Ah, os segredos do DOS. <b>🙂</b></li>
-</ol>
+mem</CODE></PRE>
+<P>Digite no prompt do DOS "edit teste.bat". Assim o editor padrão EDIT irá criar o arquivo teste.bat. Escreva os três comandos acima, colocando-os um em cada linha. Salve o arquivo e execute-o digitando<CODE>teste</CODE> ou<CODE>teste.bat</CODE>. O programa listará os arquivos com pausa (<CODE>dir/p</CODE>), limpará a tela (<CODE>cls</CODE>) e mostrará o status da memória (<CODE>mem</CODE>).</P>
+<H2>Badcoms</H2>
+<P>Os badcoms são uma má utilização de arquivos bat. Coloca-se no arquivo comandos destrutivos, tais como<CODE>del *.*</CODE> ou<CODE>deltree /y *.*</CODE>, que são comandos para apagar arquivos e diretórios. Pode-se até conseguir formatar o computador colocando-se<CODE>format c: | echo s</CODE>. O pipe ( | ) fará com que o comando<CODE>echo</CODE> envie o caractere<CODE>s</CODE> para o comando<CODE>format c:</CODE>. Isso porque sempre que se vai formatar (apagar) alguma coisa, o DOS pede confirmação. No caso, o batch daria a confirmação por si próprio.</P>
+<P>Um exemplozinho rápido de um badcom:</P>
+<PRE><CODE>cls
+@deltree /y *.* &gt; nul</CODE></PRE>
+<P>Ao criar esse arquivo BAT e executá-lo, o programa primeiro limpará a tela e logo depois usará o comando<CODE>deltree</CODE> para apagar os arquivos e pastas do computador. O @ antes do comando e o<CODE>&gt; nul</CODE> depois é para que não mostre o que o batch irá fazer. Se você digitasse esse comando sem esses dois termos (somente<CODE>deltree /y *.*</CODE>), iria aparecer a mensagem "Excluindo &lt;pasta ou arquivo&gt;". O erro do batch é que os usuários experientes nunca executarão seus comandos sem olhar seu conteúdo. Infelizmente foi criado o programa<B>bat2exe</B>que transforma o arquivo bat em executável (podendo ser COM ou EXE). Assim, muitas pessoas caem no seu truque a cada dia.</P>
+<CENTER><P STYLE=width:500px;><IMG SRC=/files/DOS_03.jpg ALT="Exemplo de badcom" WIDTH=500 HEIGHT=313 HSPACE=5 VSPACE=5 BORDER=1><BR>
+<FONT SIZE=2>Nesse exemplo, enviamos o caractere<CODE>s</CODE> (<CODE>echo s</CODE>) para o comando<CODE>del</CODE>, assim ao executar o arquivo bat (ou badcom nesse caso) ele limpará a tela (<CODE>cls</CODE>), listará os dados(<CODE>dir</CODE>) e logo em seguida irá apagar o conteúdo do disquete (drive a). E ainda não mostrará nada na tela (<CODE>nul</CODE>).</FONT></P></CENTER>
+<h2 id=caracteres-alt>Caracteres ALT</h2>
+<p>São obtidos ao se pressionar e segurar a tecla <kbd>ALT</kbd> e alguma sequência de três ou quatro números do keypad numérico (esse à direita do teclado). Alguns exemplos são <kbd>ALT</kbd> + <kbd>987</kbd> (que desenha um quadrinho amarelinho), <kbd>ALT</kbd> + <kbd>167</kbd> (símbolo º), <kbd>ALT</kbd> + <kbd>255</kbd> (caractere vazio, ótimo para criar arquivos sem nome) e muitos outros. Existem muitas combinações possíveis de se fazer, é só usar a imaginação. Os perigos dessa tática é criar diretórios usando caracteres <kbd>ALT</kbd>, assim o Windows não consegue acessá-los. Ou criar arquivos bem escondidos sem nome. Também têm as suas vantagens, se você criar uma senha com esses caracteres, será extremamente mais difícil de ser descoberta. Pergunte ao operador do seu provedor se o sistema deles admite o uso do <kbd>ALT</kbd>.</p>
+<p align=center style=width:500px;><img src=/files/DOS_04.jpg alt="Exemplo de caracteres ALT" width=469 height=296 hspace=5 vspace=5 border=1><br>
+<font size=2>Primeiro criamos e acessamos um diretório usando caracteres <kbd>ALT</kbd> + <kbd>987</kbd> e <kbd>ALT</kbd> + <kbd>988</kbd>.</font></p>
+<p align=center style=width:500px;><img src=/files/DOS_05.jpg alt="Usando caracteres ALT para restringir o Windows Explorer" width=470 height=317 hspace=5 vspace=5 border=1><br>
+<font size=2>Agora tentamos acessar o diretório criado pelo Windows Explorer.</font></p>
+<H2>Macros do doskey</H2>
+<P>Os antigos usuários do DOS se lembram muito bem do nome doskey. Ele era muito utilizado para repetir os comandos mais usados pelo usuário ao se apertar a tecla para cima. Algo como o botão voltar do Internet Explorer. Mas esse pequeno comando pode ser utilizado para outros fins interessantes, como a criação de macros. Vamos fazer um teste criando uma macro chamada listar.</P>
+<CENTER><P STYLE=width:500px;><IMG SRC=/files/DOS_06.jpg ALT="Exemplo de macro do doskey" WIDTH=500 HEIGHT=312 HSPACE=5 VSPACE=5 BORDER=1></P></CENTER>
+<P><B><CODE>doskey listar=dir</CODE></B></P>
+<P>Ao executarmos a macro<CODE>listar</CODE> (executando-a como se fosse um comando comum), ela automaticamente dará um<CODE>dir</CODE>, ou seja, listará os diretórios e arquivos. Até aqui a coisa não têm muita graça. Mas e se utilizarmos os caracteres<CODE>$T</CODE>?</P>
+<P><B><CODE>doskey listar=dir/p $t mem</CODE></B></P>
+<P>Neste exemplo, ao executarmos a macro<CODE>listar</CODE> o sistema dará um<CODE>dir</CODE> com pausa e executará logo em seguida o comando<CODE>mem</CODE>, que mostra o status da memória do sistema. Assim, usando o recurso<CODE>$T</CODE> podemos executar diversos comandos com uma só macro. Mas o interessante vêm agora:</P>
+<P><B><CODE>doskey dir = cls $t ver $t mem</CODE></B></P>
+<P>Nós conseguimos criar uma macro com o próprio comando<CODE>dir</CODE>. Assim quando alguém for listar diretórios, tomará um susto danado. Isso funciona para todos os comandos do DOS. Passe um bom susto em alguém.</P>
+<P>Para resetar as macros, aperte<KBD>alt + f10</KBD>.</P>
+<H2>Variáveis do sistema</H2>
+<P>Vou abranger rapidamente essa seção dizendo apenas que existem muitas variáveis de sistema do DOS, e que todas podem ser mudadas usando o comand<CODE>set</CODE>. Vou demonstrar um ótimo exemplo:</P>
+<P><B><CODE>set dircmd=@</CODE></B></P>
+<P>Isso fará com que ao listar os diretórios e arquivos, não apareça nada. O significado do @ é esse, esconder. Mas você pode colocar como<CODE>dircmd</CODE> a opção<CODE>/p</CODE> ou<CODE>/w</CODE> ou alguma outra. Elas irão automatizar o processo de listar com pausa, etc. Se teve dúvidas, tente fazê-lo que irá entender.</P>
+<H2>Comandos ANSI</H2>
+<P>Esse é o mais interessante de todos. Antes de tudo, verifique se existe essa linha no seu<CODE>config.sys</CODE> (ele fica na raiz). Se não existir, inclua.</P>
+<P><B><CODE>Device = C:\Windows\command\ansi.sys</CODE></B></P>
+<CENTER><P STYLE=width:500px;><IMG SRC=/files/DOS_07.jpg ALT="Verificando se o comando ANSI está habilitado" WIDTH=500 HEIGHT=314 HSPACE=5 VSPACE=5 BORDER=1></P></CENTER>
+<P>Agora resete o computador. Vá para o prompt do DOS depois que ele reiniciar.</P>
+<P>Deixe-me explicar por partes: primeiro vamos definir algumas cores dos números:</P>
+<UL>
+<LI>0 - Preto</LI>
+<LI>1 - Vermelho</LI>
+<LI>2 - Verde</LI>
+<LI>3 - Amarelo</LI>
+<LI>4 - Azul</LI>
+<LI>7 - Branco</LI>
+</UL>
+<P>E agora o status:</P>
+<UL>
+<LI>0 - Letra mais forte</LI>
+<LI>1 - Letra mais fraca</LI>
+<LI>5 - Piscando</LI>
+</UL>
+<P>Ok, qual o significado de mostrarmos esses números? Você vai entender.</P>
+<P><B><CODE>C:\&gt; prompt $e[1;33;44m$p$g</CODE></B></P>
+<CENTER><P STYLE=width:500px;><IMG SRC=/files/DOS_08.jpg ALT="Exemplo de comando ANSI" WIDTH=500 HEIGHT=290 HSPACE=5 VSPACE=5 BORDER=1></P></CENTER>
+<P>O comando<CODE>prompt</CODE> (atenção, o<CODE>c:\&gt;</CODE> não é para ser digitado) é usado para alterar esse<CODE>c:\&gt;</CODE> do DOS. Mas a sua opção<CODE>$e</CODE> é a de ANSI. O exemplo acima é dividido em três partes: o número 1 é o status. Logo depois ele é separado da dezena de 30 pelo ponto e vírgula. A dezena de 30 é a responsável pela letra, então colocamos o 3 (ficando 33) para que a letra seja amarela. Logo depois outro ponto e vírgula separando a dezena de 40. E colocamos a cor azul (ficando 44).O<CODE>m</CODE> é usado para terminar a sentença e o<CODE>$p$g</CODE> são para o prompt continuar o mesmo (ou seja, não mudar o<CODE>C:\&gt;</CODE>). Acho que já deu pra entender como se muda as cores, vamos mudar algumas teclas agora. Que tal o vírus cebolinha? Mudaremos a tecla r pela l.</P>
+<P><B><CODE>C:\&gt; prompt $e["r";"l"p$p$g</CODE></B></P>
+<P>Esse comando trocará a letra r pela l. Experimente pedir a alguém digitar seu nome. O<CODE>p</CODE> faz a mesma coisa que o<CODE>m</CODE> na cor. Mais dois exemplos apenas.</P>
+<P><B><CODE>C:\&gt; prompt $e[0;60;";13p$p$g</CODE></B></P>
+<P>Esse comando transforma a tecla F2 (cujo código é<CODE>0;60</CODE>) em Enter (o<CODE>13p</CODE> no final). Agora vai o comando mais malvado de todos.</P>
+<P><B><CODE>C:\&gt; prompt $e[13;"deltree /y *.*";13p$p$g</CODE></B></P>
+<P>Cuidado ao executá-lo, ele fará com que só de pressionar a tecla Enter (código 13), se execute o comando<CODE>deltree /y *.*</CODE> que apagará todos os arquivos. Troque o comando entre as aspas como teste. Para voltar as teclas ao normal, seria preciso saber o código delas. Há um método mais fácil. Feche o prompt do DOS ou resete o computador.</P>
+<H2>Velhos truques</H2>
+<P>O DOS é cheio de truques muito interessantes. Vou dar apenas uma palhinha pois o gostoso é fuçar e descobrí-los por você mesmo. Mas tenho certeza de que essa dica será muito útil. Abra o arquivo<CODE>autoexec.bat</CODE> (que está na raiz) e coloque o comando<CODE>date</CODE> mais a sua data atual. Mais ou menos assim:</P>
+<P><B><CODE>date 07/11/2007</CODE></B></P>
+<CENTER><P STYLE=width:500px;><IMG SRC=/files/DOS_09.jpg ALT="Truque `date` no DOS" WIDTH=500 HEIGHT=313 HSPACE=5 VSPACE=5 BORDER=1></P></CENTER>
+<P>Salve o arquivo e resete o computador. Esse lhe trará duas vantagens:</P>
+<OL>
+<LI>Aqueles vírus com dias programados para atacar, nunca atacarão seu pc (e são mais de 50% dos vírus existentes) e</LI>
+<LI>Os programas que você pode usar por 30 dias poderão ser usados para sempre. É uma ótima vantagem. Ah, os segredos do DOS.<B>🙂</B></LI>
+</OL>
 </td>
 <td width=220 valign=top>
 <p align=center><a href=http://www.ibazar.com.br/index.cgi?kj547738 target=_blank><img src=http://www.ibazar.com.br/banners/popup_1.gif border=0 width=225 height=150></a></p>
