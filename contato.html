@@ -4,8 +4,8 @@
 <META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
 <META HTTP-EQUIV=Content-Language CONTENT=pt-br>
 <META NAME=language CONTENT=pt-BR>
-<TITLE>Blog &mdash; Victor Ferreira's Homepage</TITLE>
-<META NAME=description CONTENT="Homepage de Victor Ferreira">
+<TITLE>Contato &mdash; Victor Ferreira's Homepage</TITLE>
+<META NAME=description CONTENT="Entre em contato comigo">
 <META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas">
 <META NAME=abstract CONTENT="Homepage de Victor Ferreira">
 <META NAME=author CONTENT="Victor Ferreira">
@@ -343,8 +343,6 @@ function mouse(e) {
 }
 // ]]>
 </script> -->
-<META NAME=revisit-after CONTENT="15 days">
-<link rel=canonical href=http://localhost:3000>
 </HEAD>
 <BODY onload="document.forms['eform'].subject.focus()">
 <table width=768 border=0 cellspacing=0 cellpadding=0>
@@ -357,10 +355,10 @@ function mouse(e) {
 </td>
 <td align=right valign=bottom width=450 height=200>
 <ul class=menu>
-<li class=active><a href=/index.html>Blog</a></li>
+<li><a href=/index.html>Blog</a></li>
 <li><a href=/sobre-mim.html>Sobre Mim</a></li>
 <li><a href=/guestbook.html>Livro de Visitas</a></li>
-<li><a href=/contato.html>Contato</a></li>
+<li class=active><a href=/contato.html>Contato</a></li>
 </ul>
 </td>
 </tr>
@@ -369,119 +367,62 @@ function mouse(e) {
 </tr>
 <tr>
 <td valign=top>
-<table width=100% border=0 cellspacing=0 cellpadding=0>
+<script type=text/javascript>
+// <![CDATA[
+function validateEmail() {
+	var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,7})+$/;
+	if (!re.test(document.forms['eform'].email.value)) {
+		alert('Por favor, digite um endereço de e-mail válido.');
+		document.eform.email.focus();
+		return false;
+	}
+	else return true;
+}
+
+function over(el) {
+	el.style.borderColor="#fff";
+	el.style.borderRightColor="#666";
+	el.style.borderBottomColor="#666";
+}
+
+function out(el) {
+	el.style.borderColor="#ccc";
+}
+// ]]>
+</script>
+<form name=eform action=http://www2.woofoo.com/user-cgi/FormMail.pl method=POST onsubmit=return(validateEmail())>
+<input type=HIDDEN name=recipient value=victorotavioferreira@hotmail.com>
+<table class=mail>
 <tr>
-<td colspan=2>
-<p align=center><img src=/files/bemvindo.gif border=0 width=220 height=70></p>
-</td>
+<td style="padding:0px; background-image:url(/files/messagebar.gif)"><img src=/files/newmessage.gif height=20 width=102 alt=JavaScript-tastic align=left><img src=/files/messageend.gif height=20 width=54 alt="DHTML super scripts" align=right></td>
 </tr>
 <tr>
-<td colspan=2>
-<script language=JavaScript><!--
-	hoje = new Date()
-	dia = hoje.getDate()
-	dias = hoje.getDay()
-	mes = hoje.getMonth()
-	ano = hoje.getFullYear()
-	if (dia < 10)
-		dia = "0" + dia
-	function CriaArray (n) {
-	this.length = n }
-	NomeDia = new CriaArray(7)
-	NomeDia[0] = "Domingo"
-	NomeDia[1] = "Segunda-feira"
-	NomeDia[2] = "Terça-feira"
-	NomeDia[3] = "Quarta-feira"
-	NomeDia[4] = "Quinta-feira"
-	NomeDia[5] = "Sexta-feira"
-	NomeDia[6] = "Sábado"
-	NomeMes = new CriaArray(12)
-	NomeMes[0] = "Janeiro"
-	NomeMes[1] = "Fevereiro"
-	NomeMes[2] = "Março"
-	NomeMes[3] = "Abril"
-	NomeMes[4] = "Maio"
-	NomeMes[5] = "Junho"
-	NomeMes[6] = "Julho"
-	NomeMes[7] = "Agosto"
-	NomeMes[8] = "Setembro"
-	NomeMes[9] = "Outubro"
-	NomeMes[10] = "Novembro"
-	NomeMes[11] = "Dezembro"
-	// function WriteDate() {
-		document.write ("<marquee><font face='Verdana' size='2'>" + NomeDia[dias] + ", " + dia + " de " + NomeMes[mes] + " de " + ano + "</font></marquee>")
-	// }
-// --></script>
-</td>
+<td class=d>
+<table style="width:100%; background-color:#CCCCCC">
+<tr>
+<td class=d>Assunto:</td>
+<td class=d><input type=TEXT name=subject class=inp></td>
 </tr>
 <tr>
-<td colspan=2>
-</td>
+<td class=d>E-mail:</td>
+<td class=d><input type=TEXT name=email class=inp></td>
 </tr>
 <tr>
-<td colspan=2>
-<UL class=posts>
-<LI>
-<H2><A HREF=/blog/formulario-de-contato-com-php.html>Formulário de contato com PHP</A></H2>
-<P><I><FONT SIZE=1>segunda-feira, 3 de dezembro de 2007</FONT></I></P>
-<P>Aprenda a configurar o envio de e-mails com PHP e a criar um formulário de contato que envia e-mails.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/utilizando-pgp-para-criptografia.html>Utilizando PGP para Criptografia</A></H2>
-<P><I><FONT SIZE=1>quarta-feira, 14 de novembro de 2007</FONT></I></P>
-<P>Criptografia é a arte da escrita oculta usada desde a antiguidade. Ela é muito importante hoje em dia na internet. Mandar um e-mail confidencial da maneira convencional é muito inseguro ele pode ser interceptado no meio da transmissão ou posteriormente, por isto a necessidade do uso de programas eficientes, como o PGP. Esses programas possibilitam uma espécie de “código especial” entre você e o receptor da mensagem, fazendo com que mesmo que alguém consiga obte-la no meio do caminho, ela será impossível de se ler.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/tudo-o-que-voce-sempre-quis-saber-sobre-criptografia.html>Tudo O Que Você Sempre Quis Saber Sobre Criptografia</A></H2>
-<P><I><FONT SIZE=1>quarta-feira, 14 de novembro de 2007</FONT></I></P>
-<P>A criptografia é a arte de escrever ocultamente. Talvez tão antiga quanto a própria escrita, hoje é um dos métodos mais eficientes de se transferir informações, sem que haja a possibilidade de comprometimento do sigilo.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/utilizando-compressores-de-executaveis.html>Utilizando Compressores de Executáveis</A></H2>
-<P><I><FONT SIZE=1>terça-feira, 13 de novembro de 2007</FONT></I></P>
-<P>Como vimos no artigo sobre trojans, vários métodos podem ser usados para esconder um cavalo de tróia. Depende mais da imaginação do invasor. Só que ainda assim podem ser facilmente detectados. Nesse artigo vou citar o método do compressor de executáveis Windows 32 bits.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/eu-amo-a-wikipedia.html>Eu amo a Wikipédia</A></H2>
-<P><I><FONT SIZE=1>quinta-feira, 1 de novembro de 2007</FONT></I></P>
-<P>A Wikipédia é uma das maiores fontes de conhecimento livre na Internet. Saiba o que é a Wikipédia, como ela funciona e por que é tão importante.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/como-criar-um-cd-com-autorun-no-windows.html>Como Criar um CD com Autorun no Windows</A></H2>
-<P><I><FONT SIZE=1>quarta-feira, 24 de outubro de 2007</FONT></I></P>
-<P>Aprenda a criar um CD com autorun no Windows</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/o-que-e-dhtml.html>O que é DHTML?</A></H2>
-<P><I><FONT SIZE=1>sexta-feira, 12 de outubro de 2007</FONT></I></P>
-<P>Uma breve introdução sobre DHTML, uma das mais poderosas ferramentas nas mãos de um Web Master. Este artigo darão uma visão geral de o que é e como usar o DHTML. Não vou me ater muito em teorias, pois a linguagem JavaScript (padrão para DHTML) é muito complexa, em vez disso, vou dar exemplos de utilidade pratica para os conceitos apresentados, e mostrar como utilizar essa tecnologia para criar soluções criativas, bem apresntaveis e funcionais para a criação de paginas web dinamicas.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/introducao-ao-css.html>Introdução ao CSS</A></H2>
-<P><I><FONT SIZE=1>sexta-feira, 12 de outubro de 2007</FONT></I></P>
-<P>O CSS (Cascading Style Sheets) é uma ferramenta utilizada para definir estilos em documentos Web, como páginas HTML ou XHTML. Saiba o que é CSS, para que serve, como usar e quais são os principais atributos.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/vantagens-do-open-source.html>Vantagens do Open Source</A></H2>
-<P><I><FONT SIZE=1>quinta-feira, 11 de outubro de 2007</FONT></I></P>
-<P>As vantagens do código-fonte aberto (ou open-source) são muito grandes. Esse termo significa que os programas criados (ou o próximo sistema operacional) vêm junto com o seu código fonte, ou seja, você pode ver exatamente o que está executando.</P>
-</LI>
-<LI>
-<H2><A HREF=/blog/comandos-basicos-linux.html>Comandos Básicos Linux</A></H2>
-<P><I><FONT SIZE=1>quarta-feira, 10 de outubro de 2007</FONT></I></P>
-<P>Lista de comandos básicos para o sistema operacional Linux.</P>
-</LI>
-</UL>
-</td>
+<td class=d><img src=/files/e-mailicon.gif width=17 height=14 align=left alt=Para:>&nbsp;Para:</td>
+<td class=d><div class=inp>Victor Ferreira&#39;s Homepage</div></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<p align=right><a href=/blog/page/2.html><img src=/files/next.gif width=64 height=24></a></p>
+<td class=d valign=top>Mensagem:</td>
+<td class=d><textarea name=content rows=9 cols=45 class=inp style=height:150px></textarea></td>
+</tr>
+<tr>
+<td class=d colspan=2><div onmouseover=over(this) onmouseout=out(this) onclick="if(validateEmail())document.forms['eform'].submit()" class=mushroom style="margin-left:auto; margin-right:auto"><input type=image src=/files/send.gif><br>Enviar</div></td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
+</form>
 </td>
 <td width=220 valign=top class=sidebar>
 <!-- Inicio da busca no Google -->

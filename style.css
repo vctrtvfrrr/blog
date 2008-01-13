@@ -1,0 +1,151 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #2FCC61;
+	font-size: small;
+	background-color: #000000;
+	background-image: url(/files/bggreen.gif);
+	background-repeat: repeat-x;
+	margin: 0;
+	padding: 0 10px;
+}
+
+a {
+	color: #00FF51;
+}
+
+a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #FFFFFF;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+/* Header */
+
+.header {
+	width: 750px;
+	height: 200px;
+	margin: 0 auto;
+	background: url(/files/circuits.png) no-repeat center 32%;
+}
+
+/* Logo */
+
+.logo {
+	padding-bottom: 10px;
+}
+
+.logo h1, .logo a {
+	color: #FFFFFF;
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: -3px;
+	font-size: 3em;
+	font-weight: bold;
+	line-height: 1;
+	margin: 0;
+}
+
+/* Menu */
+
+.menu {
+	margin: 0 0 0 30px;
+	padding: 164px 0 0 0;
+	list-style: none;
+}
+
+.menu li {
+	display: inline;
+}
+
+.menu a {
+	display: block;
+	float: left;
+	margin-right: 2px;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1em;
+	letter-spacing: -1px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.menu a:hover, .menu .active a {
+	background: #000000;
+}
+
+/* Sidebar */
+
+.sidebar {
+	padding-left: 5px;
+}
+
+/* Posts */
+
+.posts {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.posts li {
+	border-bottom: 1px solid #2C2C2C;
+	padding: 5px 0;
+}
+
+/* Contact */
+
+.mail td { padding:1px; text-align:left }
+.d { font:10pt Arial, sans-serif; color:#000000; background-color:#CCCCCC }
+.mushroom { text-align:center; font:bold 9pt Arial, sans-serif; color:#000000; border:2px solid #CCCCCC; cursor:pointer; padding:1px; margin:1px; background-color:#CCCCCC; width:50px }
+.inp { border:2px inset; background-color:#FFFFFF; font:10pt Arial; color:#000000; width:300px }
+.mail { background-color:#999999; width:400px }
+
+/* Guestbook */
+
+.guestbook {
+  padding: 5px;
+  background: #FFFFFF;
+  color: #000000;
+  border: 1px solid #2FCC61;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.guestbook dt {
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.guestbook .date {
+	float: right;
+}
+
+.guestbook .name {
+  font-weight: bold;
+}
+
+.guestbook dd {
+  text-align: left;
+  margin: 0;
+}
+
+.guestbook .reply {
+  color: #000000;
+  margin-top: 10px;
+  border: 1px solid #EFF8FF;
+  background: #2FCC61;
+  padding: 5px;
+}
+
+.guestbook .reply p {
+	margin: 5px 0 0 0;
+}

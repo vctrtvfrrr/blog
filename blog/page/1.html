@@ -4,13 +4,14 @@
 <META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
 <META HTTP-EQUIV=Content-Language CONTENT=pt-br>
 <META NAME=language CONTENT=pt-BR>
-<TITLE>Victor Ferreira's Homepage</TITLE>
+<TITLE>Blog &mdash; Victor Ferreira's Homepage</TITLE>
 <META NAME=description CONTENT="Homepage de Victor Ferreira">
 <META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas">
 <META NAME=abstract CONTENT="Homepage de Victor Ferreira">
 <META NAME=author CONTENT="Victor Ferreira">
 <META NAME=robots CONTENT="index, follow">
 <LINK REL="shortcut icon" HREF=/favicon.ico>
+<link rel=stylesheet href=/style.css>
 <!-- <script type=text/javascript>
 // <![CDATA[
 var speed=40; // lower number for faster
@@ -343,18 +344,27 @@ function mouse(e) {
 // ]]>
 </script> -->
 <META NAME=revisit-after CONTENT="15 days">
+<link rel=canonical href=http://localhost:3000>
 </HEAD>
-<BODY LINK=#3CFF00 ALINK=#3CFF00 VLINK=#3CFF00 BGCOLOR=#202020 BACKGROUND=/files/background_slate.gif topmargin=0 leftmargin=0>
-<FONT FACE="Verdana, Arial, Helvetica, sans-serif" COLOR=#3CFF00 SIZE=2>
-<table width=768 border=0 cellspacing=0 cellpadding=10>
+<BODY onload="document.forms['eform'].subject.focus()">
+<table width=768 border=0 cellspacing=0 cellpadding=0>
 <tr>
-<td colspan=2>
-<H1>Victor Ferreira&#39;s Homepage</H1>
+<td colspan=2 class=header>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td align=left valign=bottom class=logo>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+</td>
+<td align=right valign=bottom width=450 height=200>
+<ul class=menu>
+<li><a href=/index.html>Blog</a></li>
+<li><a href=/sobre-mim.html>Sobre Mim</a></li>
+<li><a href=/guestbook.html>Livro de Visitas</a></li>
+<li><a href=/contato.html>Contato</a></li>
+</ul>
 </td>
 </tr>
-<tr>
-<td colspan=2>
-<P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
+</table>
 </td>
 </tr>
 <tr>
@@ -410,12 +420,7 @@ function mouse(e) {
 </tr>
 <tr>
 <td colspan=2>
-<p align=center><img border=0 height=22 src=/files/image610.gif width=100% height=22></p>
-</td>
-</tr>
-<tr>
-<td colspan=2>
-<UL>
+<UL class=posts>
 <LI>
 <H2><A HREF=/blog/formulario-de-contato-com-php.html>Formulário de contato com PHP</A></H2>
 <P><I><FONT SIZE=1>segunda-feira, 3 de dezembro de 2007</FONT></I></P>
@@ -478,16 +483,35 @@ function mouse(e) {
 </tr>
 </table>
 </td>
-<td width=220 valign=top>
-<p align=center><a href=http://www.ibazar.com.br/index.cgi?kj547738 target=_blank><img src=http://www.ibazar.com.br/banners/popup_1.gif border=0 width=225 height=150></a></p>
+<td width=220 valign=top class=sidebar>
+<!-- Inicio da busca no Google -->
+<form method=get action=http://www.google.com/search target=_blank>
+<input type=hidden name=hl value=pt-br>
+<table width=128 border=0 align=center cellpadding=0 cellspacing=0>
+<tr><td height=18 colspan=2>&nbsp;</td></tr>
+<tr valign=top>
+<td height=18 colspan=2>
+<div align=center><font size=1><b>Buscar na Web por:</b></font></div>
+</td>
+</tr>
+<tr>
+<td width=104>
+<input type=text name=q size=17 maxlength=255 style="font-family: Verdana; font-size: 10px; border: 1px solid #C0C0C0; background-color: #F5F5F5;">
+</td>
+<td width=24>
+<input type=image src=/files/ok.jpg border=0>
+</td>
+</tr>
+<tr valign=bottom>
+<td height=18 colspan=2>
+<div align=center><font color=#ACACAC size=1>Powered by </font><font size=1><a href=http://www.google.com.br target=_blank>Google</a></font></div>
+</td>
+</tr>
+</table>
+</form>
+<!-- Fim da busca no Google -->
 <p align=center>&nbsp;</p>
-<p align=center><a href="http://www.fast-guestbooks.net/guestbook.cgi?id=cx394&a=15" target=_blank><img src=/files/guestbookBLK.gif><br><font face="Comic Sans MS, Comic Sans, cursive">LIVRO DE VISITAS</font></a></p>
-<p align=center>&nbsp;</p>
-<center>
-<!--Begin WebMart Votes-->
-<script>function wml16987534(pid){width=500; height=550; wmvotes=window.open(document.voteform16987534.action+'?id=16987534&pid='+pid,'WMVotes','width='+width+',height='+height+',left='+Math.ceil(screen.width/2-width/2)+',top='+Math.ceil((screen.height-height)/2)+',scrollbars=1,resizable=1'); wmvotes.focus();}</script><style type=text/css>.wmvt{font-family:Verdana,Arial,Geneva;font-size:11px;color:#000000;} .wmbt{font-family:Verdana,Arial,Geneva;font-size:11px;} .wmtl{font-family:Verdana,Arial,Geneva;font-weight:bold;font-size:13px;color:#FFFFFF;} .wmds{font-family:Verdana,Arial,Geneva;font-size:12px;color:#000000;font-weight:bold;} A.wma:link,A.wma:visited,A.wma:hover,A.wma:active{font-family:Verdana,Arial,Geneva;font-size:12px;underline:none;text-decoration: none;color:#0000FF;} .wmtd {font-family:Verdana,Arial,Geneva;font-size:12px;color:#000000;}</style><table border=0 cellspacing=0 bgcolor=EEEEEE cellpadding=0 width=225><tr><td height=1 width=1 colspan=3 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr><tr><td height=1 width=1 bgcolor=31639C rowspan=3><spacer type=block height=1 width=1></spacer></td><td bgcolor=31639C><table cellpadding=3><tr><td class=wmtl><b>Victor Ferreira's HomePage</b></td></tr></table></td><td height=1 width=1 bgcolor=31639C rowspan=3><spacer type=block height=1 width=1></spacer></td></tr><tr><td height=1 width=1 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr><tr><td><table border=0 cellpadding=3 cellspacing=0 width=100%><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><tr><td class=wmds colspan=2>O que você acha da minha HomePage?</td></tr><tr><td class=wmtd colspan=2></td></tr><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><form name=voteform16987534 action=http://votes.webmart.net/v.cfm method=GET target=wmvotes><input type=HIDDEN name=ID value=16987534><tr bgcolor=EEEEEE><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080891 onclick=wml16987534(1080891)></td><td width=259 class=wmtd>Muito boa, continue como está!</td></tr><tr bgcolor=DDDDDD><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080892 onclick=wml16987534(1080892)></td><td width=259 class=wmtd>Gosto do conteúdo, mas acho que poderia melhorar o design...</td></tr><tr bgcolor=EEEEEE><td width=20 valign=TOP align=RIGHT><input type=radio name=PID value=1080894 onclick=wml16987534(1080894)></td><td width=259 class=wmtd>O site todo é uma merda!!!</td></tr><tr><td height=10 colspan=2><spacer type=block height=10 width=1></spacer></td></tr><tr><td align=CENTER colspan=2><table border=0 cellspacing=0 cellpadding=0 width=100%><tr><td><input type=Submit class=wmbt value=Votar></td><td align=RIGHT><script>document.write('<INPUT TYPE=BUTTON CLASS=wmbt VALUE="Resultados" ONCLICK="wml16987534(0)">');</script><noscript><input class=wmbt type=Submit value=Resultados></noscript></td></tr></table></td></tr></form></table></td></tr><tr><td height=1 width=1 colspan=3 bgcolor=31639C><spacer type=block height=1 width=1></spacer></td></tr></table>
-<!--End WebMart Votes-->
-</center>
+<p align=center><a href=/guestbook.html><img src=/files/guestbookBLK.gif><br><font face="Comic Sans MS, Comic Sans, cursive">LIVRO DE VISITAS</font></a></p>
 <p align=center>&nbsp;</p>
 <script type=text/javascript>
 // <![CDATA[
@@ -522,7 +546,7 @@ function wobbler() {
 }
 // ]]>
 </script>
-<p align=center><img alt="Você está sendo observado!!!!" src=/files/olhos1.gif width=225 height=65></p>
+<p align=center><img alt="Você está sendo observado!!!!" src=/files/olhos1.gif width=220 height=63></p>
 <p align=center>Estou de olho em você!!!</p>
 <p align=center id=wobble>Vote na minha HomePage</p>
 <p align=center><a href="http://www.top30.com.br/cgi/votar.cgi?ID=13728" target=top30 border=0><img src=/files/selovotar.gif width=148 height=82></a></p>
@@ -607,37 +631,7 @@ function getAllText(el) {
 </tr>
 <tr>
 <td colspan=2>
-<p align=center><img src=/files/image610.gif width=100% height=22></p>
-</td>
-</tr>
-<tr>
-<td colspan=2>
-<h2>Contato</h2>
-<script type=text/javascript>
-// <![CDATA[
-		function validateEmail() {
-			var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,7})+$/;
-			if (!re.test(document.forms['eform'].email.value)) {
-				alert('Por favor, digite um endereço de e-mail válido.');
-				document.eform.email.focus();
-				return false;
-			}
-			else return true;
-		}
-		// ]]>
-</script>
-<form name=eform action=http://www2.woofoo.com/user-cgi/FormMail.pl method=POST onsubmit=return(validateEmail())>
-<input type=HIDDEN name=recipient value=victorotavioferreira@hotmail.com>
-Digite o assunto do seu e-mail:<br>
-<input type=TEXT name=subject><br>
-Digite seu endereço de e-mail:<br>
-<input type=TEXT name=email><br>
-Insira o conteúdo do seu e-mail:<br>
-<textarea name=content rows=9 cols=45></textarea><br>
-<input type=IMAGE src=/files/CONTATO.GIF>
-</form>
-</td>
-</tr>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
 <tr>
 <td colspan=2 align=center>
 <P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
@@ -645,12 +639,14 @@ Insira o conteúdo do seu e-mail:<br>
 </tr>
 <tr>
 <td colspan=2 align=center>
-<P><I><FONT SIZE=1>Copyright &copy; 2007 Victor Ferreira - victorotavioferreira@hotmail.com</FONT></I></P>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 - 2008 Victor Ferreira - victorotavioferreira@hotmail.com<br>Designed by <a href=https://www.free-css.com/free-css-templates/page26/evergreen target=_blank><b>Free CSS Templates</b></a></FONT></I></P>
 <p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
 </td>
 </tr>
 </table>
-</FONT>
+</td>
+</tr>
+</table>
 <script language=JavaScript><!--
 	window.defaultStatus=" - = Victor Ferreira's Homepage = -  ";
 
