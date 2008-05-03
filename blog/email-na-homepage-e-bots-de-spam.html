@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=Content-Type CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV=Content-Language CONTENT=pt-br>
+<META NAME=language CONTENT=pt-BR>
+<TITLE>E-mail na homepage e bots de spam &mdash; Blog &mdash; Victor Ferreira's Homepage</TITLE>
+<META NAME=description CONTENT="Como os bots de spam funcionam e como se prevenir.">
+<META NAME=keywords CONTENT="Victor Ferreira, homepage, blog, artigos, notas, spam,bots,e-mail,ofuscacao">
+<META NAME=abstract CONTENT="Como os bots de spam funcionam e como se prevenir.">
+<META NAME=author CONTENT="Victor Ferreira">
+<META NAME=robots CONTENT="index, follow">
+<LINK REL="shortcut icon" HREF=/favicon.ico>
+<link rel=stylesheet href=/style.css>
+</HEAD>
+<BODY onload="document.forms['eform'].subject.focus()">
+<table width=768 border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td colspan=2 class=header>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td align=left valign=bottom class=logo>
+<DIV><A HREF=/ >Victor Ferreira&#39;s Homepage</A></DIV>
+</td>
+<td align=right valign=bottom width=450 height=200>
+<ul class=menu>
+<li><a href=/index.html>Blog</a></li>
+<li><a href=/sobre-mim.html>Sobre Mim</a></li>
+<li><a href=/guestbook.html>Livro de Visitas</a></li>
+<li><a href=/contato.html>Contato</a></li>
+</ul>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign=top>
+<H1>E-mail na homepage e bots de spam</H1>
+<P><I><FONT SIZE=1>sábado, 3 de maio de 2008</FONT></I></P>
+<p>Ah... que sonho seria a internet sem nenhum spam.</p>
+<center><p style="width: 500px;"><img src=/files/ceu-testemunhas-de-jeova.jpg><br><small>Assim seria a internet sem spam, popups, anúncios e propagandas pulando na sua tela e enchendo sua caixa de entrada.</small></p></center>
+<p>Hoje tive uma surpresa ao acessar minha caixa de entrada. Ela estava simplesmente lotada (isso mesmo, completamente cheia) de e-mails oferecendo os mais diversos produtos. Desde fórmulas milagrosas pra perder peso até pílulas pra fazer crescer o p**.</p>
+<p>O que me deixou mais atormentado foi pensar em como esses f** d* p** conseguiram meu endereço de e-mail pra me enviar tanto lixo. Será que foi algum contato meu que resolveu me sacanear? Será que digitei meu e-mail em algum site malicioso? Será que deixei meu e-mail exposto por aí?</p>
+<p>Enquanto eu pesquisava na internet algum motivo dos e-mails de spam invadirem a caixa de entrada, acabei me dando conta que a fonte do problema era simples (e até meio óbvia…). O problema era esta minha homepage… infelizmente…</p>
+<p align=center><img src=/files/email-spam.jpg></p>
+<p>Eu não me atentei (por inocência e descuido) que no dia que criei esta minha homepage, eu deixei meu endereço de e-mail pessoal escancarado no rodapé dela.</p>
+<p>Minhas pesquisas sobre spam no e-mail me levaram a vários artigos sobre bots de spam. Vou compartilhar aqui como eles funcionam e como se prevenir pra você não cair no mesmo problema que eu.</p>
+<h2>Como os bots de spam funcionam?</h2>
+<p>Os bots de spam são programas automatizados que varrem a internet em busca de endereços de e-mail. Eles utilizam técnicas como:</p>
+<p><b>Análise de HTML</b>: Ao acessar uma página, o bot verifica o código-fonte em busca de padrões de texto que se assemelhem a endereços de e-mail (Por exemplo, strings contendo “@” e um domínio).</p>
+<p><b>Reconhecimento de Links</b>: Bots também identificam links que contenham o protocolo “mailto:”.</p>
+<p><b>Exploração de padrões comuns</b>: Mesmo e-mails parcialmente escondidos, como “contato [arroba] exemplo [ponto] com”, podem ser capturados por bots mais sofisticados.</p>
+<p>Uma vez capturados, os endereços de e-mail são incluídos em listas de spam, que podem ser vendidas ou usadas para campanhas de phishing, malwares e outras ameaças.</p>
+<h2>A ofuscação é a solução</h2>
+<p>Ofuscar um endereço de e-mail significa torná-lo mais difícil de ser identificado automaticamente por esses bots mas sem comprometer a usuário do site. Existem diversas técnicas de se fazer isso. Na minha pesquisa eu vi várias soluções, mas a que me pareceu mais simples foi utilizando JavaScript:</p>
+<p>Com JavaScript, o endereço de e-mail é montado dinamicamente no navegador do usuário, dificultando o acesso por bots que analisam apenas o código HTML.</p>
+<pre><code>&lt;script&gt;
+	var nome = &quot;contato&quot;;
+	var dominio = &quot;exemplo.com&quot;;
+	document.write(&apos;&lt;a href=&quot;mailto:&apos; + nome + &apos;@&apos; + dominio +
+		&apos;&quot;&gt;&apos; + nome + &apos;@&apos; + dominio + &apos;&lt;/a&gt;&apos;);
+&lt;/script&gt;</code></pre>
+<p>Essa técnica foi a que usei aqui no site. Apesar de ter feito de uma forma um pouco mais complexa, o exemplo serve de base pra você ter uma ideia de como a coisa funciona.</p>
+<p>Essa técnica é eficaz contra muitos bots, porém alguns mais avançados ainda conseguem contorná-la, se eles forem capazes de executar o código JavaScript e capturar o e-mail montado ou se usar alguma técnica que tira um print da página depois de renderizada e aplicar o reconhecimento dos caracteres na imagem pra identificar e-mails.</p>
+<p>Mas esses bots mais avançados são poucos e essa técnica simples que eu trouxe aqui já te livra de muita dor de cabeça.</p>
+<p>Bom… por hoje é isso. Agora que o problema foi resolvido por aqui, preciso limpar minha caixa de entrada. xD</p>
+</td>
+<td width=220 valign=top class=sidebar>
+<!-- Inicio da busca no Google -->
+<form method=get action=http://www.google.com/search target=_blank>
+<input type=hidden name=hl value=pt-br>
+<table width=128 border=0 align=center cellpadding=0 cellspacing=0>
+<tr><td height=18 colspan=2>&nbsp;</td></tr>
+<tr valign=top>
+<td height=18 colspan=2>
+<div align=center><font size=1><b>Buscar na Web por:</b></font></div>
+</td>
+</tr>
+<tr>
+<td width=104>
+<input type=text name=q size=17 maxlength=255 style="font-family: Verdana; font-size: 10px; border: 1px solid #C0C0C0; background-color: #F5F5F5;">
+</td>
+<td width=24>
+<input type=image src=/files/ok.jpg border=0>
+</td>
+</tr>
+<tr valign=bottom>
+<td height=18 colspan=2>
+<div align=center><font color=#ACACAC size=1>Powered by </font><font size=1><a href=http://www.google.com.br target=_blank>Google</a></font></div>
+</td>
+</tr>
+</table>
+</form>
+<!-- Fim da busca no Google -->
+<p align=center>&nbsp;</p>
+<p align=center><a href=/guestbook.html><img src=/files/guestbookBLK.gif><br><font face="Comic Sans MS, Comic Sans, cursive">LIVRO DE VISITAS</font></a></p>
+<p align=center>&nbsp;</p>
+<script type=text/javascript>
+// <![CDATA[
+var speed=100; // speed of wobbling, lower is faster
+var height=2; // height of wobbling in pixels
+
+/****************************
+*    Wobbly Text Effect     *
+*(c) 2003-6 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var wobtxt, wobble, wobcnt=0;
+window.onload=function() { if (document.getElementById) {
+  var i, wobli;
+  wobble=document.getElementById("wobble");
+  wobtxt=wobble.firstChild.nodeValue;
+  while (wobble.childNodes.length) wobble.removeChild(wobble.childNodes[0]);
+  for (i=0; i<wobtxt.length; i++) {
+    wobli=document.createElement("span");
+    wobli.setAttribute("id", "wobb"+i);
+    wobli.style.position="relative";
+    wobli.appendChild(document.createTextNode(wobtxt.charAt(i)));
+    wobble.appendChild(wobli);
+  }
+  setInterval("wobbler()", speed);
+}}
+
+function wobbler() {
+  for (var i=0; i<wobtxt.length; i++) document.getElementById("wobb"+i).style.top=Math.round(height*Math.sin(i+wobcnt))+"px"
+  wobcnt++;
+}
+// ]]>
+</script>
+<p align=center><img alt="Você está sendo observado!!!!" src=/files/olhos1.gif width=220 height=63></p>
+<p align=center>Estou de olho em você!!!</p>
+<p align=center id=wobble>Vote na minha HomePage</p>
+<p align=center><a href="http://www.top30.com.br/cgi/votar.cgi?ID=13728" target=top30 border=0><img src=/files/selovotar.gif width=148 height=82></a></p>
+<p align=center>&nbsp;</p>
+<p align=center><A HREF=http://www.free-stuff.me.uk/free/voucher_codes/ TARGET=_blank><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH=95 HEIGHT=22 BORDER=0 ALT="voucher codes" TITLE="voucher codes"></A></p>
+<p align=center>&nbsp;</p>
+<p align=center><img border=0 src=/files/Linux.gif width=88 height=31></p>
+<p align=center>&nbsp;</p>
+<p align=center>
+<script language=JavaScript type=text/javascript>
+// <![CDATA[
+// Baseado no script de https://www.mf2fm.com/rv/dhtmlvirus.php
+
+var delay=5; // seconds until attack starts
+var seconds=60; // seconds until attack complete (from start)
+var colours=new Array("#090", "#0f0", "#6f6", "#cfc", "transparent");
+var elems=new Array();
+var chars=new Array();
+var elmax=chmax=0;
+
+function installTrojan() {
+	alert('CURIOSO');
+	alert('Você não deveria ter clicado aqui...');
+	alert('Agora o vírus do trojan vai ser instalado no seu computador!');
+
+	var x=10
+	for (i=0;i<20;i++){
+		window.moveBy(0,x)
+		window.moveBy(x,0)
+		window.moveBy(0,-x)
+		window.moveBy(-x,0)
+	}
+
+	if (document.getElementById) {
+		var i, j, txt, parent, span, words;
+		getAllText(document.body);
+		for (i=0; i<elmax; i++) {
+			txt=elems[i].nodeValue;
+			parent=elems[i].parentNode;
+			words=elems[i].nodeValue.split(" ");
+			for (j=0; j<words.length; j++) {
+			span=document.createElement("span");
+			span.appendChild(document.createTextNode(words[j]));
+			parent.insertBefore(span, elems[i]);
+			if (j!=words.length-1) parent.insertBefore(document.createTextNode(" "), elems[i]);
+			chars[chmax++]=span;
+			}
+			parent.removeChild(elems[i]);
+		}
+		virus();
+	}
+
+	alert('Vírus instalado com sucesso');
+	alert('Desejo-lhe uma boa estadia ;-)')
+}
+
+function virus() {
+  var i, t, j;
+  for (i=0; i<chmax; i++) {
+    t=1000*(delay+seconds*Math.random());
+    for (j=0; j<colours.length; j++) setTimeout('chars['+i+'].style.backgroundColor="'+colours[j]+'"', t+100*j);
+    setTimeout('chars['+i+'].style.visibility="hidden"', t+100*j);
+  }
+  setTimeout('end()', 1000*(delay+seconds));
+}
+
+function end() {
+  document.body.style.backgroundColor=colours[elmax=++elmax%colours.length];
+  setTimeout("end()", 100);
+}
+
+function getAllText(el) {
+  if (el.nodeType==3 && !el.nodeValue.match(/^\s+$/)) elems[elmax++]=el;
+  if (!el.childNodes.length) return;
+  else for (var i=0; i<el.childNodes.length; i++) getAllText(el.childNodes[i]);
+}
+// ]]>
+</script>
+<a style=cursor:crosshair; onClick=installTrojan()><img src=/files/enterraios.gif width=145 height=77></a>
+</p>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td colspan=2 align=center>
+<P><IMG SRC=/files/linha01.gif WIDTH=100% HEIGHT=30></P>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<script type=text/javascript src=/base64Decode.js></script>
+<script type=text/javascript>
+setTimeout(function () {
+	var elementId = 'dmljdG9yb3RhdmlvZmVycmVpcmFAaG90bWFpbC5jb20=';
+	var element = document.all[elementId];
+	if (element) {
+		var href = base64Decode(elementId);
+		var link = '<a href="m' + 'ailto:' +  href + '?sub' + 'ject=Contato' + '">' + href + '</a>';
+		element.outerHTML = '- ' + link;
+	}
+}, 1000);
+</script>
+<P><I><FONT SIZE=1>Copyright &copy; 2007 - 2008 Victor Ferreira <span id="dmljdG9yb3RhdmlvZmVycmVpcmFAaG90bWFpbC5jb20="></span><br>Designed by <a href=https://www.free-css.com/free-css-templates/page26/evergreen target=_blank><b>Free CSS Templates</b></a></FONT></I></P>
+<p><a onclick="alert('Eu disse para você não clicar aqui!');alert('Agora vou rir de você');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('Você quer que isso acabe, certo?');alert('Isso é culpa sua!');alert('Você fez exatamente o que eu falei pra não fazer!');alert('Acho que eu deveria deixá-lo ir.');alert('Estou pensando se devo');alert('Está bem! Conta até 100 e eu te deixo ir...');alert('1');alert('2');alert('3');alert('4');alert('5');alert('6');alert('7');alert('8');alert('9');alert('10');alert('11');alert('12');alert('13');alert('14');alert('15');alert('16');alert('17');alert('18');alert('19');alert('20');alert('21');alert('22');alert('23');alert('24');alert('25');alert('26');alert('27');alert('28');alert('29');alert('30');alert('31');alert('32');alert('33');alert('34');alert('35');alert('36');alert('37');alert('38');alert('39');alert('40');alert('41');alert('42');alert('43');alert('44');alert('45');alert('46');alert('47');alert('48');alert('49');alert('50');alert('51');alert('52');alert('53');alert('54');alert('55');alert('56');alert('57');alert('58');alert('59');alert('60');alert('61');alert('62');alert('63');alert('64');alert('65');alert('66');alert('67');alert('68');alert('69');alert('70');alert('71');alert('72');alert('73');alert('74');alert('75');alert('76');alert('77');alert('78');alert('79');alert('80');alert('81');alert('82');alert('83');alert('84');alert('85');alert('86');alert('87');alert('88');alert('89');alert('90');alert('91');alert('92');alert('93');alert('94');alert('95');alert('96');alert('97');alert('98');alert('99');alert('100');alert('Ok! Agora você pode ir.');alert('Contanto que me prometa uma coisa.');alert('Me prometa que você nunca será estúpido o suficiente para cair nessa armadilha de novo.');alert('Se cair novamente você terá problemas.');alert('Eu vou rir bastante de você');alert('Da próxima vez, vou te fazer contar até 100.000!!!');alert('OK, agora pode ir!');alert('Adeus!')"><font color=#FF0000 size=1 face="Comic Sans MS"><strong><u>NÃO CLIQUE AQUI</u></strong></font></a></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<script language=JavaScript><!--
+	window.defaultStatus=" - = Victor Ferreira's Homepage = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("Victor Ferreira's Homepage")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click
+	// --></script>
+</BODY>
+</HTML>
