@@ -1,8 +1,9 @@
-<!--METADATA
+---
+layout: post
+title: "Criando arquivos Phar"
 date: 2016-08-02 19:27:28 UTC
-image:
-tags:
-/METADATA-->
+categories: php phar
+---
 
 # Criando arquivos Phar
 
