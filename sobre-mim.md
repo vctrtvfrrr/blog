@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Sobre mim
-description: Meu nome é Victor Otávio. Sou um engenheiro de software apaixonado por arquitetura de software (sim, são coisas diferentes).
+subtitle: É aqui que você visita quando quer saber mais sobre mim
+cover-img: /media/path.jpg
 ---
 
 Eu realmente não faço ideia de como você veio parar aqui, mas vou te contar um pouco a meu respeito.

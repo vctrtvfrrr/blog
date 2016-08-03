@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Criando arquivos Phar"
+title: Criando arquivos Phar
+subtitle: Empacotando scripts PHP
 date: 2016-08-02 19:27:28 UTC
-tags: php phar
+tags: [php, phar]
 ---
 
 Uma das coisas que eu mais gosto de fazer como programador é automatizar pequenas tarefas do dia-a-dia. Geralmente eu começo com scripts bash, mas quem escreve scripts bash sabe o quão bizarro seu script pode se tornar na maioria das vezes.
