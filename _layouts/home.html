@@ -20,7 +20,7 @@ layout: page
     </a>
 
     <p class="post-meta">
-      {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+      {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
       Publicado em {{ post.date | date: date_format }}
     </p>
 

@@ -1,6 +1,6 @@
 # Meu blog pessoal
 
-> [victorotavio.com.br](https://victorotavio.com.br)
+> [blog.victorotavio.com.br](https://blog.victorotavio.com.br)
 
 ## Licença
 
