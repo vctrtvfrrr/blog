@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Victor Otávio</title>
+    
+    
+    <description>Artigos e tutoriais sobre tecnologia e desenvolvimento de software.</description>
+    
+    <link></link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Criando arquivos Phar</title>
+        <description>
+          Empacotando scripts PHP - 
+          Uma das coisas que eu mais gosto de fazer como programador é automatizar pequenas tarefas do dia-a-dia. Geralmente eu começo com scripts bash, mas quem escreve scripts bash sabe o quão bizarro seu script pode se tornar na maioria das vezes. Embora existam tantas outras linguagens de programação excelentes para...
+        </description>
+        <pubDate>Tue, 02 Aug 2016 19:27:28 +0000</pubDate>
+        <link>/2016-08-02-criando-arquivos-phar/</link>
+        <guid isPermaLink="true">/2016-08-02-criando-arquivos-phar/</guid>
+      </item>
+    
+      <item>
+        <title>Pare de usar package-lock.json ou yarn.lock</title>
+        <description>
+          
+          Este título é, de certa forma, um click-bait. Mas navegando por projetos públicos no GitHub, as PRs que eu mais vejo são de pessoas adicionando ou alterando arquivos package-lock.json ou yarn.lock nos repositórios. Essas PRs, na maioria dos casos, são fechadas sem um merge porque os arquivos de lock de...
+        </description>
+        <pubDate>Wed, 11 Nov 2015 10:08:04 +0000</pubDate>
+        <link>/2015-11-11-pare-de-usar-package-lock-ou-yarn-lock/</link>
+        <guid isPermaLink="true">/2015-11-11-pare-de-usar-package-lock-ou-yarn-lock/</guid>
+      </item>
+    
+      <item>
+        <title>HTML - Elementos</title>
+        <description>
+          
+          Um elemento HTML é definido por uma tag inicial. Se o elemento contiver outro conteúdo, ele termina com uma tag de fechamento, onde o nome do elemento é precedido por uma barra, conforme mostrado abaixo com algumas tags: Tag de abertura Conteúdo Tag de fechamento &amp;lt;p&amp;gt; Este é o conteúdo...
+        </description>
+        <pubDate>Thu, 17 May 2007 23:55:07 +0000</pubDate>
+        <link>/2007-05-17-html-elementos/</link>
+        <guid isPermaLink="true">/2007-05-17-html-elementos/</guid>
+      </item>
+    
+      <item>
+        <title>HTML - Tags básicas</title>
+        <description>
+          
+          Tags de Cabeçalho Qualquer documento começa com um título. Você pode usar tamanhos diferentes para seus títulos. O HTML tem seis níveis de cabeçalhos, que usam os elementos &amp;lt;h1&amp;gt;, &amp;lt;h2&amp;gt;, &amp;lt;h3&amp;gt;, &amp;lt;h4&amp;gt;, &amp;lt;h5&amp;gt; e &amp;lt;h6&amp;gt; . Ao exibir qualquer título, o navegador adiciona uma quebra de linha antes e depois...
+        </description>
+        <pubDate>Wed, 16 May 2007 23:55:07 +0000</pubDate>
+        <link>/2007-05-16-html-tags-basicas/</link>
+        <guid isPermaLink="true">/2007-05-16-html-tags-basicas/</guid>
+      </item>
+    
+      <item>
+        <title>HTML - Visão geral da linguagem</title>
+        <description>
+          
+          HTML significa Hypertext Markup Language, ou seja, Linguagem de Marcação de Hipertexto, e é a linguagem mais usada para exibir páginas na web. Hypertext refere-se à maneira pela qual as páginas da web (documentos HTML) são vinculadas. Assim, o link disponível em uma página é chamado de hipertexto. Como o...
+        </description>
+        <pubDate>Tue, 15 May 2007 17:15:01 +0000</pubDate>
+        <link>/2007-05-15-html-visao-geral-da-linguagem/</link>
+        <guid isPermaLink="true">/2007-05-15-html-visao-geral-da-linguagem/</guid>
+      </item>
+    
+      <item>
+        <title>Tutorial HTML</title>
+        <description>
+          
+          HTML significa Hyper Text Markup Language, que é a linguagem mais usada na internet para desenvolver websites. O HTML foi criado por Berners-Lee no final de 1991, mas o “HTML 2.0” foi a primeira especificação padrão publicada em 1995. O HTML 4.01, publicado no final de 1999, tornou-se a versão...
+        </description>
+        <pubDate>Mon, 14 May 2007 18:32:16 +0000</pubDate>
+        <link>/2007-05-14-tutorial-html/</link>
+        <guid isPermaLink="true">/2007-05-14-tutorial-html/</guid>
+      </item>
+    
+  </channel>
+</rss>
