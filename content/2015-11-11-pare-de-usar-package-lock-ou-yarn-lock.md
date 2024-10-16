@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Pare de usar package-lock.json ou yarn.lock
 date: 2015-11-11T10:08:04Z
 tags: [Node.js, npm, package-lock.json, yarn.lock]

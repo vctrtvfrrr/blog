@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Criando arquivos Phar
 subtitle: Empacotando scripts PHP
 date: 2016-08-02T19:27:28Z

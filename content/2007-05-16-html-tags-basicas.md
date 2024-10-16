@@ -1,5 +1,4 @@
 ---
-layout: post
 title: HTML - Tags básicas
 date: 2007-05-16T23:55:07Z
 tags: [html]
