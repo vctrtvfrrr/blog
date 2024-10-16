@@ -3,8 +3,8 @@ title: Criando arquivos Phar
 subtitle: Empacotando scripts PHP
 date: 2016-08-02T19:27:28Z
 tags: [php, phar]
+draft: false
 ---
-
 Uma das coisas que eu mais gosto de fazer como programador é automatizar pequenas tarefas do dia-a-dia. Geralmente eu começo com scripts bash, mas quem escreve scripts bash sabe o quão bizarro seu script pode se tornar na maioria das vezes.
 
 Embora existam tantas outras linguagens de programação excelentes para _scripting_, decidi escrever este tutorial focando no PHP. Em primeiro lugar, para demonstrar a versatilidade da linguagem (mais uma vez), em segundo, porque ainda é uma das linguagens mais populares do mundo e em terceiro, porque, ao longo dos anos, continua sendo uma das minhas linguagens favoritas (apesar de tudo o que dizem rsrs).

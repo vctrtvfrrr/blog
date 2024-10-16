@@ -2,8 +2,8 @@
 title: Pare de usar package-lock.json ou yarn.lock
 date: 2015-11-11T10:08:04Z
 tags: [Node.js, npm, package-lock.json, yarn.lock]
+draft: false
 ---
-
 Este título é, de certa forma, um click-bait. Mas navegando por projetos públicos no GitHub, as PRs que eu mais vejo são de pessoas adicionando ou alterando arquivos `package-lock.json` ou `yarn.lock` nos repositórios. Essas PRs, na maioria dos casos, são fechadas sem um merge porque os arquivos de lock de dependência não são projetados para serem usados ​​em pacotes, uma vez que eles mesmos são dependências de outros pacotes.
 
 ## O que está acontecendo de errado?
