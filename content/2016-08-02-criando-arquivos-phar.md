@@ -2,7 +2,7 @@
 layout: post
 title: Criando arquivos Phar
 subtitle: Empacotando scripts PHP
-date: 2016-08-02 19:27:28 UTC
+date: 2016-08-02T19:27:28Z
 tags: [php, phar]
 ---
 

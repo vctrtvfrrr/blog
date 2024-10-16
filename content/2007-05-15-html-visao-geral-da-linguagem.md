@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTML - Visão geral da linguagem
-date: 2007-05-15 17:15:01 UTC
+date: 2007-05-15T17:15:01Z
 tags: [html, DTD, doctype]
 ---
 
