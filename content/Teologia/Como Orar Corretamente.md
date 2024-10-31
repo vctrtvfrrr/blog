@@ -1,3 +1,7 @@
+---
+title: Como Orar Corretamente
+date: 2024-08-18
+---
 > Texto-base: Mateus 6:9-13
 
 Talvez nenhuma parte da Bíblia seja tão conhecida quanto o "Pai Nosso". Milhões de pessoas que não têm o hábito de ler a Bíblia ou que nunca tiveram oportunidade de ouvir o Evangelho, estão familiarizadas com essa oração, que deve ser não apenas conhecida e praticada, como também deve ser um modelo para as nossas orações segundo Jesus. Essa oração é um modelo e possui 10 coisas que nos guiam todas as vezes que formos falar com Deus. Algumas delas são, muitas vezes, negligenciadas por nosso esquecimento ou desconhecimento. Melhor do que fazer uma oração que é chamada de "bela" pelas pessoas, é fazer uma oração que esteja próxima do que Jesus ensinou.
