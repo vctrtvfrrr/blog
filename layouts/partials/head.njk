@@ -1,0 +1,25 @@
+{% if isProduction %}
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ googletagmanager }}');</script>
+  <!-- End Google Tag Manager -->
+{% endif %}
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="Content-Language" CONTENT="pt-br">
+<META NAME="language" CONTENT="pt-BR">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<TITLE>{{ pageTitle }}</TITLE>
+<META NAME="description" CONTENT="{{ pageDescription }}">
+<META NAME="keywords" CONTENT="{{ keywords }}">
+<META NAME="abstract" CONTENT="{{ abstract }}">
+<META NAME="author" CONTENT="{{ author }}">
+<META NAME="robots" CONTENT="index, follow">
+<META NAME="revisit-after" CONTENT="15 days">
+
+<LINK REL="shortcut icon" HREF="/favicon.ico">
+<BGSOUND SRC="/files/sound001.mid" LOOP="infinite">

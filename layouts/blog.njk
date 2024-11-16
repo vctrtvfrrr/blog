@@ -1,0 +1,16 @@
+{% extends "base.njk" %}
+
+{% block content %}
+{% if collections.blog.length %}
+<UL>
+	{% for item in collections.blog %}
+	<LI>
+		<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
+		<P>{{ item.excerpt }}</P>
+	</LI>
+	{% endfor %}
+</UL>
+{% else %}
+Nenhum post encontrado
+{% endif %}
+{% endblock content %}

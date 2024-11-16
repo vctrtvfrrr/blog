@@ -1,8 +1,12 @@
-import { fileURLToPath } from "node:url";
+import "dotenv/config";
 import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import Metalsmith from "metalsmith";
 import layouts from "@metalsmith/layouts";
+import collections from "@metalsmith/collections";
 import browserSync from "browser-sync";
+import * as cheerio from "cheerio";
+import htmlMinifier from "metalsmith-html-minifier";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env["NODE_ENV"] === "production";
@@ -21,16 +25,88 @@ function msBuild() {
       NODE_ENV: process.env.NODE_ENV,
     })
     .metadata({
-      sitename: "My Static Site & Blog",
-      siteurl: "http://example.com/",
-      description: "It's about saying »Hello« to the world.",
-      generatorname: "Metalsmith",
-      generatorurl: "https://metalsmith.io/",
+      isProduction: process.env["NODE_ENV"] === "production",
+      siteurl: process.env["APP_URL"] || "http://localhost:3000",
+      sitename: "Victor Ferreira's Homepage",
+      description: "Homepage de Victor Ferreira",
+      abstract: "Homepage de Victor Ferreira",
+      keywords: "Victor Ferreira, homepage, blog, artigos, notas",
+      author: "Victor Ferreira",
+      year: { from: "2007", to: new Date().getFullYear() },
+      googletagmanager: String(process.env["GOOGLE_TAG_MANAGER"]),
     })
-    .use((files) => console.log("Files:", Object.keys(files)))
+    .use(
+      collections({
+        blog: {
+          metadata: {
+            title: "Blog",
+            description: "Meus artigos e notas",
+            slug: "blog",
+          },
+          pattern: "blog/*.html",
+          sortBy: "pubdate",
+          reverse: true,
+          limit: 10,
+        },
+      })
+    )
+    .use((files, metalsmith, done) => {
+      setImmediate(done);
+      metalsmith.match("**/*.html").forEach((file) => {
+        const data = files[file];
+
+        if (data.path === "index.html") data.layout = "blog.njk";
+
+        data.permalink = data.path.replace(/\\/g, "/");
+
+        const $ = cheerio.load(data.contents.toString(), {}, false);
+        const title = $("h1").text();
+        const content = $("p:first").text();
+        $("h1").remove();
+
+        data.title = title;
+
+        if (data.collection?.includes("blog")) {
+          data.layout = "article.njk";
+
+          const date = $("time").text();
+          $("time").remove();
+
+          const maxNumberOfWords = 35;
+          const listOfWords = content.trim().split(" ");
+          const truncatedContent = listOfWords
+            .slice(0, maxNumberOfWords)
+            .join(" ");
+          const excerpt = truncatedContent + "…";
+          const output =
+            listOfWords.length > maxNumberOfWords ? excerpt : content;
+          data.excerpt = Buffer.from(output);
+
+          const pubdate = new Date(date);
+          data.isodate = pubdate.toISOString();
+          data.pubdate = pubdate.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+        }
+
+        data.contents = Buffer.from($.html());
+      });
+    })
     .use(
       layouts({
-        default: "default.njk",
+        default: "base.njk",
+      })
+    )
+    .use(
+      htmlMinifier({
+        minifierOptions: {
+          collapseWhitespace: true,
+          preserveLineBreaks: true,
+          caseSensitive: true,
+        },
       })
     );
 }
