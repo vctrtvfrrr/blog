@@ -35,6 +35,29 @@ function msBuild() {
       year: { from: "2007", to: new Date().getFullYear() },
       googletagmanager: String(process.env["GOOGLE_TAG_MANAGER"]),
     })
+    .use((files, metalsmith, done) => {
+      setImmediate(done);
+      metalsmith.match("**/*.html").forEach((file) => {
+        const data = files[file];
+        const $ = cheerio.load(data.contents.toString(), {}, false);
+        const $date = $("time:first");
+        const date = $date.text();
+
+        if (date) {
+          const pubdate = new Date(date + "T03:00:00");
+          data.isodate = pubdate.toISOString();
+          data.pubdate = pubdate.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+
+          $date.remove();
+          data.contents = Buffer.from($.html());
+        }
+      });
+    })
     .use(
       collections({
         blog: {
@@ -44,7 +67,7 @@ function msBuild() {
             slug: "blog",
           },
           pattern: "blog/*.html",
-          sortBy: "pubdate",
+          sortBy: "isodate",
           reverse: true,
           limit: 10,
         },
@@ -69,9 +92,6 @@ function msBuild() {
         if (data.collection?.includes("blog")) {
           data.layout = "article.njk";
 
-          const date = $("time").text();
-          $("time").remove();
-
           const maxNumberOfWords = 35;
           const listOfWords = content.trim().split(" ");
           const truncatedContent = listOfWords
@@ -81,15 +101,6 @@ function msBuild() {
           const output =
             listOfWords.length > maxNumberOfWords ? excerpt : content;
           data.excerpt = Buffer.from(output);
-
-          const pubdate = new Date(date);
-          data.isodate = pubdate.toISOString();
-          data.pubdate = pubdate.toLocaleDateString("pt-BR", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
         }
 
         data.contents = Buffer.from($.html());

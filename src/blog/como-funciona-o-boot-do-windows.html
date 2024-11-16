@@ -1,0 +1,15 @@
+<H1>Como funciona o boot do Windows</h1>
+<TIME>2007-06-02</TIME>
+<P><IMG SRC="/files/boot.jpg" ALT="pull oneself up by one's bootstraps" WIDTH="365" HEIGHT="300" BORDER="1" ALIGN="RIGHT"> Navegando pela internet, encontrei <A HREF="https://www.hardware.com.br/livros/hardware/boot.html" TARGET="_blank">este artigo sobre o Boot dos sistemas operacionais</A>. Não contente, fui atrás de como funciona o processo de boot do Windows e como o sistema operacional faz para inicializar. Encontrei algumas informações interessantes e vou resumí-las aqui pra vocês:</P>
+<P>O termo &quot;boot&quot; vem da expressão em inglês &quot;pull oneself up by one's bootstraps&quot; (&quot;erguer-se pelas próprias alças das botas&quot;), que é uma piada por si só e significa realizar uma tarefa difícil por conta própria, sem ajuda externa. No contexto da informática, isso se aplica à ideia de o computador &quot;iniciar-se sozinho&quot; sem qualquer assistência, carregando o sistema operacional e preparando-se para o uso.</P>
+<P>Esse processo de &quot;bootstrapping&quot; (ou &quot;boot&quot;) refere-se ao conjunto de etapas iniciais em que um sistema começa a rodar o código necessário para carregar seu sistema operacional e tornar-se funcional. No Windows, essas etapas são as seguintes:</P>
+<OL>
+    <LI><B>BIOS e POST</B>: Quando você liga o computador, o BIOS (Basic Input/Output System) faz um teste chamado POST (Power-On Self-Test) para verificar o hardware básico, como memória, teclado e disco rígido.</LI>
+    <LI><B>MBR e Partição Ativa</B>: Depois do POST, o BIOS procura o Master Boot Record (MBR), que está nos primeiros setores do disco rígido. O MBR contém informações sobre a partição ativa, onde o sistema operacional está instalado, e o código para carregar o sistema.</LI>
+    <LI><B>Carregamento do NTLDR</B>: O MBR carrega o &quot;NTLDR&quot; (NT Loader), que é responsável por iniciar o Windows. Ele carrega os arquivos do sistema e apresenta a tela de escolha de sistema operacional (se houver mais de um instalado).</LI>
+    <LI><B>Configuração do Sistema (BOOT.INI)</B>: O NTLDR lê o arquivo <CODE>BOOT.INI</CODE>, que indica onde o Windows está localizado no disco e quais parâmetros de inicialização usar.</LI>
+    <LI><B>Carregamento do NTOSKRNL e HAL</B>: O NTLDR carrega o kernel do sistema, o <CODE>NTOSKRNL.EXE</CODE>, e o HAL (Hardware Abstraction Layer), que ajuda o Windows a interagir com o hardware do computador.</LI>
+    <LI><B>Carregamento de Drivers</B>: Em seguida, o sistema começa a carregar drivers essenciais para a inicialização, como os drivers do disco e da tela. O usuário vê a tela de inicialização do Windows neste ponto.</LI>
+    <LI><B>Sessão de Logon</B>: Por fim, o sistema carrega os serviços e configurações de usuário, levando à tela de login, onde você pode acessar sua conta.</LI>
+</OL>
+<P>Esse processo ajuda o Windows a iniciar com os recursos mínimos e carregar o ambiente de trabalho e configurações específicas do usuário.</P>

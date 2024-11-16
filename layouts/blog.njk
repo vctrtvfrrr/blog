@@ -6,6 +6,7 @@
 	{% for item in collections.blog %}
 	<LI>
 		<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
+		<P><I><FONT SIZE="2">{{ item.pubdate }}</FONT></I></P>
 		<P>{{ item.excerpt }}</P>
 	</LI>
 	{% endfor %}
