@@ -3,7 +3,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["master"]
+    branches: ["temp"]
   workflow_dispatch:
 
 permissions:
@@ -24,15 +24,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+      - name: Build Pages
+        run: bun run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
-
+          path: build
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
