@@ -1,0 +1,51 @@
+<H1>O que é BIOS?</H1>
+<TIME>2007-06-07</TIME>
+<P>Um dos usos mais comuns da <A HREF="https://pt.wikipedia.org/wiki/Mem%C3%B3ria_flash" TARGET="_blank">memória flash</A> é o do sistema básico de entradas/saídas do computador, conhecido como memória <A HREF="https://pt.wikipedia.org/wiki/BIOS" TARGET="_blank">BIOS</A> (Basic Input/Output System) ou simplesmente BIOS. Em praticamente todos os computadores disponíveis, a BIOS assegura que todos os outros chips, discos rígidos, portas e CPU funcionem em conjunto.</P>
+<P>Todo computador do tipo desktop e laptop de propósito geral contém um microprocessador como unidade central de processamento. O microprocessador é um componente de hardware. Para fazer seu trabalho, o microprocessador executa um conjunto de instruções conhecido como software (veja Como funcionam os microprocessadores para mais informações). Você provavelmente já está bem familiarizado com dois tipos de software diferentes:</P>
+<ul>
+	<li>O sistema operacional - o sistema operacional fornece um conjunto de serviços para os aplicativos em execução em seu computador e também fornece a interface de usuário fundamental para seu computador. Windows e Linux são exemplos de sistemas operacionais;</li>
+	<li>Os aplicativos - <A HREF="https://pt.wikipedia.org/wiki/Software_aplicativo" TARGET="_blank">aplicativos são trechos de software programados para efetuar tarefas específicas</A>. Agora mesmo você pode estar executando, além de um aplicativo de navegação (ou browser), um aplicativo de processamento de texto, um aplicativo de e-mail e assim por diante. Você também pode comprar novos aplicativos e instalá-los em seu computador.</li>
+</ul>
+<P>Acontece que a memória BIOS é o terceiro tipo de software que seu computador precisa para operar com êxito. Neste artigo, você aprenderá tudo sobre a BIOS: o que ela faz, como configurá-la e o que fazer caso sua BIOS precise de atualização.</P>
+<H2>O que faz a BIOS</H2>
+<CENTER><IMG SRC="/files/hs-fail.png" ALT="HS Failed" WIDTH="256" HEIGHT="224" HSPACE="5" VSPACE="5" BORDER="1"></CENTER>
+<P>O software da BIOS tem diversos papéis diferentes, mas o mais importante é o carregamento do sistema operacional. Quando você liga seu computador e o microprocessador tenta executar sua primeira instrução, ele tem que obter essa instrução de algum lugar. Ele não pode obtê-la do sistema operacional porque esse sistema se localiza no disco rígido e o microprocessador não pode se comunicar com ele sem algumas instruções que digam como fazê-lo. A BIOS fornece essas instruções. Algumas das outras tarefas comuns que a BIOS executa incluem:</P>
+<ul>
+	<li>Um auto-teste durante a energização (POST - Power On-Self Test) para todos os diferentes componentes de hardware no sistema, para assegurar que tudo esteja funcionando corretamente;</li>
+	<li>Ativação de outros chips da BIOS em diferentes cartões instalados no computador. Por exemplo, placas SCSI e de vídeo freqüentemente possuem seus próprios chips de BIOS;</li>
+	<li>Fornecimento de um conjunto de rotinas de baixo nível que o sistema operacional usa para interfacear de diferentes dispositivos de hardware. São essas rotinas que dão à BIOS o seu nome. Elas administram coisas como o teclado, o monitor de vídeo, a porta serial e as portas paralelas, especialmente quando o computador está sendo inicializado;</li>
+	<li>Gerenciamento de diversos parâmetros para os discos rígidos, relógio, etc.</li>
+</ul>
+<P>A BIOS é um software especial que faz a interface dos principais componentes de hardware de seu computador com o sistema operacional. Ela geralmente é armazenada em um chip de memória flash na placa-mãe, mas algumas vezes o chip é de um outro tipo de <A HREF="https://pt.wikipedia.org/wiki/Mem%C3%B3ria_somente_de_leitura" TARGET="_blank">ROM</A>.</P>
+<P>Quando você liga seu computador, a BIOS faz diversas coisas. Esta é a seqüência normal:</P>
+<ol>
+	<li>Verifica a configuração (setup) da <A HREF="https://pt.wikipedia.org/wiki/CMOS" TARGET="_blank">CMOS</A> para os ajustes personalizados</li>
+	<li>Carrega os manipuladores de interrupção e acionadores (drivers) de dispositivos</li>
+	<li>Inicializa registradores e gerenciamento de energia</li>
+	<li>Efetua o autoteste durante a energização (POST)</li>
+	<li>Exibe as configurações do sistema</li>
+	<li>Determina quais dispositivos são inicializáveis</li>
+	<li>Começa a seqüência de inicialização (<A HREF="/blog/como-funciona-o-boot-do-windows/">conhecida como bootstrap ou, de forma mais reduzida, como boot</A>)</li>
+</ol>
+<CENTER><IMG SRC="/files/startup.gif" ALT="System Start-up" WIDTH="292" HEIGHT="342" HSPACE="5" VSPACE="5" BORDER="1"></CENTER>
+<P>A primeira coisa que a BIOS faz é verificar a informação armazenada em uma minúscula quantidade de RAM (64 bytes) localizada em um chip fabricado com a tecnologia CMOS (Complementary Metal Oxide Semicondutor). A Configuração da CMOS fornece informações detalhadas particulares para seu sistema e pode ser alterada de acordo as mudanças do sistema. A BIOS usa essas informações para modificar ou complementar sua programação padrão conforme necessário. Vamos falar mais sobre essas configurações daqui a pouco.</P>
+<P>Manipuladores de interrupção são pequenos trechos de software que atuam como tradutores entre os componentes do hardware e o sistema operacional. Por exemplo, quando você pressiona uma tecla, o evento associado ao sinal é enviado para o manipulador de interrupção do teclado, que informa à CPU do que se trata e o envia esse evento para o sistema operacional. Os drivers de dispositivos são outros trechos de software que identificam os componentes básicos do hardware como teclado, mouse, disco rígido e disco flexível. Como a BIOS está constantemente interceptando sinais de e para o hardware, ela geralmente é copiada (espelhada) na RAM para ser executada mais rapidamente.</P>
+<H2>Inicializando o computador</H2>
+<P>Sempre que você liga seu computador, a primeira coisa que vê é o software da BIOS fazendo seu trabalho. Em muitas máquinas, a BIOS exibe um texto que descreve coisas como a quantidade de memória instalada em seu computador, o tipo de disco rígido e assim por diante. Acontece que durante a seqüência de inicialização (boot), a BIOS faz uma grande quantidade de trabalho para deixar seu computador pronto para funcionar. Esta seção descreve rapidamente algumas dessas atividades para um PC típico.</P>
+<P>Depois de verificar a configuração de CMOS e carregar os manipuladores de interrupção, a BIOS determina se a placa de vídeo está operacional. A maioria das placas de vídeo possui sua própria BIOS em miniatura que inicializa a memória e o processador gráfico de sua placa. Caso não o façam, geralmente há informações do driver de vídeo em outra ROM na placa-mãe, que a BIOS pode carregar.</P>
+<P>Em seguida, a BIOS verifica se se trata de uma inicialização a frio (cold boot) ou de uma reinicialização (reboot). Ela faz isso verificando o valor no endereço de memória 0000:0472. Um valor 1234h indica uma reinicialização e a BIOS salta o restante do POST. Caso contrário, é considerada uma inicialização a frio.</P>
+<CENTER><IMG SRC="/files/BIOS.GIF" ALT="Controladores na placa-mãe" WIDTH="315" HEIGHT="229" HSPACE="5" VSPACE="5" BORDER="1"></CENTER>
+<P>Se for uma inicialização a frio, a BIOS verifica a RAM fazendo um teste de escrita/leitura de cada endereço da memória. Ele verifica as portas PS/2 ou portas USB em busca de um teclado e um mouse. Ela procura por um barramento PCI (Peripheral Component Interconnect) e, caso encontre algum, verifica todos os cartões PCI. Se a BIOS encontrar algum erro durante o POST, ela notificará o usuário por meio de uma série de bips ou uma mensagem de texto exibida na tela. Um erro nesse ponto quase sempre representa um problema de hardware.</P>
+<P>A BIOS então exibe alguns detalhes sobre seu sistema. Isso inclui tipicamente informações a respeito do (a):</P>
+<ul>
+	<li>Processador</li>
+	<li>Unidades (drivers) de disco flexível e disco rígido</li>
+	<li>Memória</li>
+	<li>Versão e data da BIOS</li>
+	<li>Monitor de vídeo</li>
+</ul>
+<P>Quaisquer drivers especiais, como aqueles para adaptadores de SCSI (Small Computer System Interface) são carregados a partir do adaptador e a BIOS exibe essa informação. A BIOS então considera a seqüência de dispositivos de armazenamento identificada como dispositivos de inicialização na configuração de CMOS. "Boot" é outro nome para a inicialização, e é uma forma reduzida de "bootstrap", alça para ajudar a calçar uma bota. A relação se origina em um antigo ditado, "Lift yourself up by your bootstraps", algo que pode ser traduzido como "Levante-se por conta própria ". O boot se refere ao processo de carregamento do sistema operacional.</P>
+<CENTER><IMG SRC="/files/non-system-disk-error.jpg" ALT="non system disk error" WIDTH="262" HEIGHT="174" HSPACE="5" VSPACE="5" BORDER="1"></CENTER>
+<P>O BIOS tentará iniciar a seqüência de boot a partir do primeiro dispositivo. Se a BIOS não encontrar um dispositivo, tentará o próximo dispositivo na lista. Caso ela não encontre os arquivos apropriados no dispositivo, o processo de partida será interrompido. Se algum dia você esqueceu um disquete no drive quando reiniciou seu computador, provavelmente já viu essa mensagem.</P>
+<P>A BIOS tentou inicializar o computador a partir do disquete esquecido no drive. Como ela não encontrou os arquivos de sistema corretos, não pôde continuar. É claro, isso é fácil de resolver. Simplesmente retire o disquete e pressione uma tecla para continuar.</P>
+<P>Fonte: <A HREF="http://eletronicos.hsw.uol.com.br/bios.htm" TARGET="_blank">http://eletronicos.hsw.uol.com.br/bios.htm</A></P>
