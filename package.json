@@ -5,6 +5,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production bun run metalsmith.js",
     "start": "cross-env NODE_ENV=development bun run metalsmith.js",
+    "dev": "nodemon --watch src --watch layouts --watch metalsmith.js --ext html,js,njk --exec bun run build",
     "serve": "browser-sync start --server build --no-open"
   },
   "devDependencies": {
@@ -18,7 +19,8 @@
     "dotenv": "^16.4.5",
     "jstransformer-nunjucks": "^1.2.0",
     "metalsmith": "^2.6.3",
-    "metalsmith-html-minifier": "^4.0.1"
+    "metalsmith-html-minifier": "^4.0.1",
+    "nodemon": "^3.1.7"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

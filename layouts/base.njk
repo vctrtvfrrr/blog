@@ -1,18 +1,18 @@
-{% set pageTitle = sitename %}
+{%- set pageTitle = sitename -%}
 
-{% if collections[collection].metadata.title %}
-  {% set pageTitle = collections[collection].metadata.title + ' | ' + pageTitle %}
-{% endif %}
+{%- if collections[collection].metadata.title -%}
+  {%- set pageTitle = collections[collection].metadata.title + ' | ' + pageTitle -%}
+{%- endif -%}
 
-{% if title %}
-  {% set pageTitle = title + ' | ' + pageTitle %}
-{% endif %}
+{%- if title -%}
+  {%- set pageTitle = title + ' | ' + pageTitle -%}
+{%- endif -%}
 
-{% if description %}
-  {% set pageDescription = description %}
-{% else %}
-  {% set pageDescription = author %}
-{% endif %}
+{%- if description -%}
+  {%- set pageDescription = description -%}
+{%- else -%}
+  {%- set pageDescription = author -%}
+{%- endif -%}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
 	<HEAD>
@@ -32,9 +32,28 @@
 		{{ contents | safe }}
 		{% endblock %}
 
+		<p align="center"><img alt="Você está sendo observado!!!!" src="/files/olhos1.gif" width="300" height="86"></p>
+		<p align="center">Estou de olho em você!!!</p>
+		<p align="center">Vote na minha HomePage</p>
+		<p align="center">&nbsp;<a href="http://www.top30.com.br/cgi/votar.cgi?ID=13728" target="top30" border="0"><img src="/files/selovotar.gif" width="148" height="82"></a></p>
+
 		<P><IMG SRC="/files/linha01.gif" WIDTH="765" HEIGHT="30"></P>
-		<A HREF="http://www.free-stuff.me.uk/free/voucher_codes/" TARGET="_blank"><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH="95" HEIGHT="22" BORDER="0" ALT="voucher codes" TITLE="voucher codes"></A>
-		<P><I><FONT SIZE="2">Copyright &copy; 2007 Victor Ferreira</FONT></I></P>
+		<p><A HREF="http://www.free-stuff.me.uk/free/voucher_codes/" TARGET="_blank"><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH="95" HEIGHT="22" BORDER="0" ALT="voucher codes" TITLE="voucher codes"></A></p>
+		<p><a href="https://web.archive.org/web/20091026234753/http://webquiz.hypermart.net/cgi-bin/counter/counter_stat.cgi?ID=mandikhacker" target="_top"><script language="JavaScript"><!--
+		document.write("<img border=0 src=http://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=mandikhacker&DIGIT=4&REF=");document.write(escape(parent.document.referrer));document.write(">");// --></script><img border="0" src="https://web.archive.orghttp://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=mandikhacker&amp;DIGIT=4&amp;REF=</template" lwl38x8ud="">&gt;<img border="0" src="https://web.archive.orghttp://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=mandikhacker&amp;DIGIT=3" lwl38x8ud=""><img border="0" src="https://web.archive.orghttp://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=mandikhacker&amp;DIGIT=2" lwl38x8ud=""><img border="0" src="https://web.archive.orghttp://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=mandikhacker&amp;DIGIT=1" lwl38x8ud=""><img border="0" src="https://web.archive.orghttp://webquiz.hypermart.net/cgi-bin/counter/counter.cgi?ID=mandikhacker&amp;DIGIT=0" lwl38x8ud=""><br>Estatísticas</a></p>
+		<p><img border="0" src="/files/Linux.gif" width="88" height="31"></p>
+		<P><I><FONT SIZE="2">Copyright &copy; {{ year.from }} {{ author.name }} - {{ author.email }}</FONT></I></P>
 	</FONT>
+	<script language="JavaScript">
+	window.defaultStatus=" - = {{ sitename }} = -  ";
+
+	function click() {
+	if (event.button==2) {
+	alert("{{ sitename | safe }}")
+	alert('Se quiser alguma coisa me mande um email!')
+	}
+
+	}
+	document.onmousedown=click</script>
 	</BODY>
 </HTML>

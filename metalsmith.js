@@ -31,7 +31,10 @@ function msBuild() {
       description: "Homepage de Victor Ferreira",
       abstract: "Homepage de Victor Ferreira",
       keywords: "Victor Ferreira, homepage, blog, artigos, notas",
-      author: "Victor Ferreira",
+      author: {
+        name: "Victor Ferreira",
+        email: "victorotavioferreira@hotmail.com",
+      },
       year: { from: "2007", to: new Date().getFullYear() },
       googletagmanager: String(process.env["GOOGLE_TAG_MANAGER"]),
     })
