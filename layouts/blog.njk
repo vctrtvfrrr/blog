@@ -16,4 +16,20 @@
 {% else %}
 Nenhum post encontrado
 {% endif %}
+
+<p align="center"><img src="/files/image610.gif" width="765" height="22"></p>
+
+<h2>Contato</h2>
+<form action="http://www2.woofoo.com/user-cgi/FormMail.pl" method="POST">
+<input type="HIDDEN" name="recipient" value="{{ author.email }}">
+Digite o assunto do seu e-mail: <br>
+<input type="TEXT" name="subject"><br>
+Digite seu endereço de e-mail: <br>
+<input type="TEXT" name="email"><br>
+Insira o conteúdo do seu e-mail: <br>
+<textarea name="content" rows="9" cols="45"></textarea><br>
+<input type="IMAGE" src="/files/CONTATO.GIF">
+</form>
+
+<p align="center"><img src="/files/image610.gif" width="765" height="22"></p>
 {% endblock content %}
