@@ -72,7 +72,7 @@ function msBuild() {
           pattern: "blog/*.html",
           sortBy: "isodate",
           reverse: true,
-          limit: 10,
+          // limit: 10,
         },
       })
     )

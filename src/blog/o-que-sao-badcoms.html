@@ -1,0 +1,37 @@
+<h1>O que são BADCOMS?</h1>
+<time>2007-06-08</time>
+<p>Falei brevemente sobre badcom's <a href="/blog/por-que-o-dos.html">neste outro post</a>, mas aqui vou entrar mais em detalhes. Badcom's são pequenos arquivos (.COM) que quando executados, eles realizam tarefas em um determinado computador... ou seja, são programas que fazem com que um PC realize comandos quanto do DOS quanto do Windows. Para isto você deve fazer um arquivo de LOTE com os comandos e compila-lo. O Mais famoso compilador de arquivos de LOTE (.BAT) é o BAT2EXEC.COM.</p>
+<h2>Comandos Básicos</h2>
+<h3>@ECHO OFF</h3>
+<p>Comando para não ser mostrados as linhas de comando em uma janela do MS-DOS, Exemplo: Colocando o comando DIR em um Badcom sem o @ECHO OFF no prompt ele mostrará o comando escrito na janela.. C:\DIR Com o comando @ECHO OFF, ele simplesmente elimina os dígitos dos comandos a serem mostrados.</p>
+<h3>CLS</h3>
+<p>Limpa a tela</p>
+<h3>ECHO</h3>
+<p>Para desativar o comando @ECHO OFF, e mostrar caracteres em uma janela Exemplo: ECHO "Mensagem" Irá mostrar a mensagem na janela, após isso automaticamente retorna a não aparição de comandos na Janela. Criando arquivos com o comando ECHO: Para criar um arquivo com este comando, é necessário o comando , exemplo: ECHO Nomedoarquivo.extensão Irá criar o arquivo no ambiente do MS-DOS... Para criar arquivos com textos ou comandos, é necessário fazer o seguinte comando: ECHO ARQ.EXT "Comando ou mensagem" OBS: As aspas são apenas para indicação porém em comandos não funcionam as aspas. Ex: ECHO Eu.BAT DIR Irá criar um arquivo chamado Eu.BAT (Arquivo de Lote) Com o comando DIR dentro do mesmo.</p>
+<h3>ATTRIB</h3>
+<p>Este comando permite que você esconda um determinado arquivo, torne-o somente para leitura, ou torne arquivo do sistema. Para obter os comandos simplesmente digite na janela do MS-DOS: ATTRIB /?</p>
+<h3>MD</h3>
+<p>Para Criar diretórios Ex: MD NOMEDODIR</p>
+<h3>RD</h3>
+<p>Comando para desfazer diretórios vazios. EX: RD 'NOME DA PASTA VAZIA'</p>
+<h3>PROGRAMAS</h3>
+<p>Não é um comando, é que nos Badcom's são muito útil o uso de programas comuns, como os padrões do Windows 95. Exemplo: O Programa Notepad.exe do Windows 95, para ele ser executado, A partir de um Badcom, você deve colocá-lo na linha de comando.. NOTEPAD.EXE. Para executar o programa a partir de um Badcom... no BAT coloque da seguinte forma: @echo off cls notepad.exe &lt;--- Não é necessário colocar o Path do Windows 95, pois Sendo executado durante o Windows, não acontecerá erros de não achar o programa.. Se quiser abrir textos com o tal programa ! notepad.exe arquivo.txt Você pode fazer isto com outros programas como o Pbrush.exe ( Paint ), Sol.exe ( Paciência ). Desde que estes programas instalados.</p>
+<h3>DEL ou DELETE</h3>
+<p>Para apagar arquivos, no Badcom é usado da seguinte maneira, Para deletar arquivos sem ter problemas de BUG, é necessário fazer com que o comando não tenha a opção (*.*), pois surgirá um prompt de confirmação de exclusão. Digite então da seguinte maneira: DEL *.Extensão, exemplo.. para apagar os arquivos .INI do diretório do Windows: del Drive:\windir\*.ini ou use: drive: cd\ cd windir del *.ini.</p>
+<h3>DELTREE</h3>
+<p>Muitos não tem conhecimento do que este comando pode causar em um sistema, pois é usado da maneira básica... Este "pode ser" o mais perigoso comando contido em um Badcom. Uso com BUG: DELTREE DIRETORIO Com este comando, aparecerá a confirmação de exclusão do diretório, será muito difícil alguém responder SIM a pergunta não ??? Bem, vou informar o perigo deste comando... Há uma opção no DELTREE que evita a aparição do prompt de confirmação, sendo ela a mais destrutiva, deletando todos os arquivos de um dir. Bom, para usar o Deltree de forma destrutiva basta acrescentar a opção /Y no mesmo, Exemplo: C:\Deltree /y windows Excluindo windows...</p>
+<h3>REN</h3>
+<p>Rename é um comando que pode causar dor de cabeça ao usuário atacado.. ex: use o REN em diversos arquivos... REN command.com command.nad REN Autoexec.bat autoexec.non e assim vai...</p>
+<h3>PROMPT</h3>
+<p>Com este comando você pode trocar o C:\&gt; do Ms-dos pelo que você quiser. Por exemplo: C:\&gt; PROMPT teste:\&gt; teste:\&gt;</p>
+<h3>GOTO</h3>
+<p>Este comando faz com que o BAT pule ou volte para determinada parte do Programa. Exemplo: O uso do GOTO é muito usado se quiser que não pare de repetir determinado comando ... usando o comando CLS, veja:</p>
+<p>@echo off</p>
+<p>:INI &lt;-- Indica a parte do programa onde vai ser voltado o comando</p>
+<p>Cls Usam-se dois ponto antes, outros exemplos são<br>:START<br>:COMEÇO GOTO INI &lt;-- Aqui o comando GOTO, para voltar para o alvo indicado.</p>
+<h3>CHOICE</h3>
+<p>Comando que possibilita um prompt, exemplo: CHOICE /c1234 Para números ou letras é necessário o uso do /c, sem este comando somente CHOICE, mostrará o prompt: [Y,n]? Com o /c e os números irá mostrar: [1,2,3,4]? Este comando precisa de um complemento, leia em: IF e Errorlevel</p>
+<h3>IF e ERRORLEVEL</h3>
+<p>Este é muito usado em Badcom's, ele possibilita o desenvolvimento de questões e prompts para o usuário. exemplo: este comando eu uso muito em pegadinhas e perguntas sacanas, cada vez que o usuário erra a pergunta alguns arquivos são apagados. Seguido também do comando CHOICE Segue a string.... @echo off cls echo Seu sistema paralisou, o que deseja fazer ? echo [1] Reiniciar echo [2] Desligar choice /c12 &lt;-- Mostrará o prompt [1,2]? if errorlevel 2 goto DES &lt;- aqui o comando if e errorlevel, sendo if errorlevel 1 goto REI se o usuário pressionar o 1, ele irá reiniciar o sistema Percebe-se que a posição das strings começa do 2 e depois vai para o 1. Qualquer dúvida nesta parte do badcom fale comigo! Estes são apenas comandos básicos para se aperfeiçoar nos Comandos do MS-dos você pode consultar o próprio HELP do Ms-dos, ele lhe dará varias informações, como no FORMAT e etc.. Com os badcom's você pode fazer muitas coisas até, destas que acabei de explicar, como por exemplo, mexer na memória do PC, e criar diretórios de impossível acesso para o Windows 95 ou 3.11.</p>
+<h2>Compilando</h2>
+<p>Para compilar um Badcom ele deve estar nomeado para nomedoarq.BAT Use o programa BAT2EXEC.COM, o mais conhecido compilador BAT. Usando o Bat2exec.com após editar o Badcom em qualquer editor de textos.. (o Mais usado é o EDIT do Ms-dos, pois não ocorrem erros de caracteres no ambiente MS-DOS) use a sintaxe: bat2exec nomedoarq.bat apague o original ou renomeie, e execute o nomedoarq.COM para teste.. Claro que Badcom's somente para assustar. Tentem usar os Badcom's de forma inofensiva, evitando assim transtornos futuros. teste em qualquer lugar menos na sua casa a policia vai te levar no outru dia pro beleleu...</p>
