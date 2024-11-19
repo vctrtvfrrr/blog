@@ -1,5 +1,9 @@
 {% extends "base.njk" %}
 
+{% block head %}
+<META NAME="revisit-after" CONTENT="15 days">
+{% endblock head %}
+
 {% block content %}
 {{ contents | safe }}
 
@@ -8,15 +12,14 @@
 	{% for item in collections.blog %}
 	<LI>
 		<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
-		<P><I><FONT SIZE="2">{{ item.pubdate }}</FONT></I></P>
+		<P><I><FONT SIZE="1">{{ item.pubdate }}</FONT></I></P>
 		<P>{{ item.excerpt }}</P>
 	</LI>
 	{% endfor %}
 </UL>
-{% else %}
-Nenhum post encontrado
 {% endif %}
 
+{# Liberar a partir de agosto/2007
 <p align="center"><img src="/files/image610.gif" width="765" height="22"></p>
 
 <h2>Contato</h2>
@@ -31,5 +34,5 @@ Insira o conteúdo do seu e-mail: <br>
 <input type="IMAGE" src="/files/CONTATO.GIF">
 </form>
 
-<p align="center"><img src="/files/image610.gif" width="765" height="22"></p>
+<p align="center"><img src="/files/image610.gif" width="765" height="22"></p> #}
 {% endblock content %}

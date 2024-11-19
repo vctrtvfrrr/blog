@@ -47,7 +47,7 @@ function msBuild() {
         const date = $date.text();
 
         if (date) {
-          const pubdate = new Date(date + "T03:00:00");
+          const pubdate = new Date(date);
           data.isodate = pubdate.toISOString();
           data.pubdate = pubdate.toLocaleDateString("pt-BR", {
             weekday: "long",
@@ -104,6 +104,7 @@ function msBuild() {
           const output =
             listOfWords.length > maxNumberOfWords ? excerpt : content;
           data.excerpt = Buffer.from(output);
+          data.abstract = data.excerpt;
         }
 
         data.contents = Buffer.from($.html());
