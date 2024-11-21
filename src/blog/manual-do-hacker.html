@@ -1,691 +1,656 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
 <h1>Manual do Hacker</h1>
 <time>2007-06-08T17:28:06-03:00</time>
-<p><font color="#FFFFFF" size="1" face="Verdana"><b>Índice:</b><br>
-<br>
-<strong>1. Introdução<br>
-1.1 Falta de informação<br>
-1.2 Vamos ao que interessa!<br>
-2. Definições<br>
-2.1 O que é um Hacker?<br>
-2.2 O que é Hacking?<br>
-2.3 Por quê hack?<br>
-2.4 A diferença entre Hackers e Crackers<br>
-2.5 Regras Hackers<br>
-2.6 Onde começar<br>
-<br>
-3. Entendendo os sistemas<br>
-3.1 Telenet<br>
-3.2 Sistemas Operacionais<br>
-3.3 Definições<br>
-<br>
-4. Vírus, Trojan Horses e Worms<br>
-4.1 Vírus<br>
-4.2 Trojan Horse (Cavalo de Tróia)<br>
-4.3 Worm<br>
-<br>
-5. PGP<br>
-<br>
-6. HACK (A melhor parte)<br>
-<br>
-6.1 HACK PC<br>
-6.1.1 Password do BIOS<br>
-6.1.2 Password do Windows<br>
-6.1.3 Password do screen saver do Windows<br>
-6.1.4 Proteção de documentos do Word<br>
-6.1.5 Proteção de arquivos ZIP<br>
-6.1.6 Proteção de arquivos ARJ<br>
-6.1.7 Copiando digitações ou macros de um micro<br>
-6.1.8 Um editor hexadecimal<br>
-6.1.9 Escondendo informações<br>
-6.2 HACK MODEM<br>
-6.2.1 Encontrando o sistema<br>
-6.2.2 Sistemas UNIX<br>
-6.2.3 Sistemas VAX/VMS<br>
-6.2.4 Sistemas PRIME<br>
-6.2.5 Rede Novell<br>
-6.2.6 Passwords muito utilizados<br>
-6.2.7 Email</strong><br>
-<br>
-<br>
-<strong>1 Introdução<br>
-<br>
-1.1 Falta de informação</strong><br>
-Todos os textos que eu via na WEB ou em BBS's tinham uma falta de informação 
-inacreditável. Na verdade, eu imagino que eles sabiam e estavam regulando 
-informação (o que eu não concordo, as informações devem ser compartilhadas!), 
-ou não sabiam porra nenhuma e só diziam as drogas que viam em ou<br>
-tras páginas.&nbsp;<br>
-<br>
-1.2 Vamos ao que interessa!<br>
-Bom... agora vamos ao que interessa! Você encontrar nesse manual, aquilo 
-que você sempre quis saber e ninguém te dizia. As fórmulas milagrosas 
-para invadir sistemas, enfim... TUDO! Faça bom proveito!<br>
-<br>
-2 Definições<br>
-2.1 O que é um Hacker<br>
-Tudo isto que vocês pensam dos Hackers foi criado possivelmente com a 
-publicidade gerada pelos filmes que tratam do assunto, como: Jogos de 
-Guerra<br>
-e agora com os mais recentes A rede e Hackers.<br>
-São aqueles possuem muitos, senão todos, os conhecimentos acima – isso 
-não é uma regra, mas não usam para os mesmos propósitos e as vezes auxiliam<br>
-os próprios técnicos em segurança e os webmasters a proteger seus sistemas.<br>
-São de uma inteligência e determinação muito superiores a de uma pessoas 
-comuns, pois eles são capazes de passarem semanas ou até mesmo meses<br>
-lendo e aprendendo de um novo sistema, apenas com o propósito de saber 
-e utilizar esses sistemas.<br>
-Um Hacker, é um sabichão. Justamente por saber muito, ele tem condições 
-de "aprontar" por ai. O Hacker sempre quer aprender mais um pouco e normalmente 
-acaba perdendo horas de sono por isso. É aquele que tem prazer em sentar 
-em frente de seu micro e ficar horas e horas buscando nem sabe o quê.<br>
-Naturalmente xereto, o Hacker adora invadir sistemas alheios para simplesmente 
-preencher seu ego. Muitas de suas façanhas podem ser discutiveis ao nível 
-social, mas o verdadeiro Hacker não costuma estragar nada, subtrair<br>
-programas, ou sequer roubar informações em detrimento de outrem.<br>
-O Hacker é, acima de tudo, um intelectual informatizado.&nbsp;<br>
-<br>
-2.2 O que é Hacking?<br>
-Hacking é o ato de penetrar em sistemas de computadores para ganhar mais 
-conhecimento e entender como é seu funcionamento. Em português hack significa 
-corte, entalhe.&nbsp;<br>
-<br>
-2.3 Por quê hack?<br>
-Como já foi dito anteriormente, o hack é feito para a aprimorar os conhecimentos 
-de uma pessoa em relação a um sistema de computadores. Hackers não destrõem, 
-não roubam e nem espionam informações por dinheiro.&nbsp;<br>
-<br>
-2.4 A diferença entre Hackers e Crackers<br>
-Os Crackers são os que a imprensa confunde com os hackers, são aqueles 
-que invadem sistemas com o propósito de roubar programas ou simplesmente 
-apagálos, são inteligentes, porém, em sua maioria, prepotentes, pois deixam 
-mensagens do tipo: "Eu sou o melhor ! / Apaguei e escapei !"entre outras, 
-dei<br>
-xando na maioria das vezes um rastro que possibilita sua captura. Possuem 
-conhecimentos semelhantes aos phreaks mais com propósitos um pouco mais 
-destrutivos.<br>
-Um exemplo recente foi a prisão de Kevin Mitnick, o "ladrão K(?) cibernético 
-mais procurado da história, capturado pelo FBI com a ajuda do Tsutomu 
-Shimomura, o técnico de segurança mais respeitado da história (?).<br>
-Um Cracker é o que utiliza de suas habilidades em proveito próprio, não<br>
-importando quantos ou quais prejuízos cause. Este é um elemento perigoso, 
-que<br>
-muitas vezes acaba por se autodestruir. Normalmente coloca vírus em computa<br>
-dores, descobre senhas para vender a empresas, destrói informações, corrompe<br>
-sistemas e apronta tudo que pode.&nbsp;<br>
-<br>
-2.5 Regras Hackers<br>
-1 Nunca destruir nenhum sistema.<br>
-2 Nunca alterar nenhum dos arquivos do sistema, a não ser que seja necesá<br>
-rio para esconder a sua presença ou garantir a sua entrada posteriormente.<br>
-3 Não compartilhe com ninguém seus projetos hackers, com ninguém<br>
-4 Em uma BBS, não é aconselhável que você discuta seus projetos hackers.<br>
-BBS's podem ser monitoradas pelo governo.<br>
-5 Nunca dê nomes ou telefones reais em uma BBS.<br>
-6 Nunca deixe seu apelido em um sistema que você entrou.<br>
-7 NãO entre em computadores governamentais.<br>
-8 Nunca converse sobre seus planos hackers com outra pessoa do telefone 
-de<br>
-sua casa.<br>
-9 Seja atento. Mantenha todo o seu material hacker em um lugar seguro.<br>
-10 Para se tornar um verdadeiro hacker você deve simplesmente praticar.<br>
-2.6 Onde começar<br>
-Começe com sistemas pequenos como em universidades ou escritórios. De<br>
-pois passe para redes maiores como telenet. A telenet é altamente recomendada<br>
-para novatos, pois ela tem um sistema de segurança muito vago. São milhares<br>
-de conexões ao mesmo tempo, o que torna praticamente impossível a monitoração<br>
-de um usuário (você).<br>
-<br>
-<br>
-<br>
-Entendendo os Sistemas<br>
-<br>
-3.1 Telenet<br>
-Telenet ou simplesmente Telnet, ‚ um sistema de interligação de compu<br>
-tadores. Telnet é a internet das BBS's. São vários computadores, com seu 
-sis<br>
-tema operacional próprio, associados próprios e arquivos próprios se interli<br>
-gando e compartilhando informações.<br>
-Abaixo, se encontra uma lista com os principais comando da Telnet:<br>
-<br>
-<br>
-<br>
-@ command prompt<br>
-<br>
-? comando errado<br>
-<br>
-Access Bared A sua conexão não permite esse acesso<br>
-<br>
-Access to This Address not permitted Seu Nui não é autorizado a acessar 
-es<br>
-se endereço<br>
-<br>
-Attempt Aborted Desconectando do sistema<br>
-<br>
-Busy Todas as portas e destinos estão sendo usados<br>
-<br>
-Collect Wats Call Not Permitted Collect Wats calls não são permitidos 
-pelo<br>
-seu host o pelo Nui<br>
-<br>
-Connected Conectado<br>
-<br>
-Connection From Seu terminal recebeu uma chamada<br>
-<br>
-Connection Pending O sistema está se conectando com o Nua (digite d bye 
-pa<br>
-ra desconectar de imediato)<br>
-<br>
-Disconnected Seu terminal foi desconectado pelo que você ligou<br>
-<br>
-Enhanced Network Services System Error Sua chamada não pode ser validada<br>
-<br>
-Enhanced Network services unavailable at this time Serviço temporariamente<br>
-desligado<br>
-<br>
-Illegal Address o endereço que você netrou é inválido<br>
-<br>
-Invalid Charge Request sua seleção de pagamento é inválida<br>
-<br>
-Invalid User Id or Password O Nui que você digitou é inválido<br>
-<br>
-Local Congestion Seu número de acesso local esta ocupado<br>
-<br>
-Local Disconnect Seu terminal foi desconectado<br>
-<br>
-Local Network Outage Um problema temporario esta o afastando da network<br>
-<br>
-Local Procedure Error Problemas na comunicação forçaram a network limpar 
-a<br>
-sua conexão<br>
-<br>
-Not Available,Not Operating,Not Responding O computador não pode aceitar 
-o<br>
-seu pedido<br>
-<br>
-Not Connected Você entrou com um comando que só funciona conectado ao 
-sis<br>
-tema certo<br>
-<br>
-Not Reachable Uma condição temporária deixou você sem acesso a network.<br>
-<br>
-Password É o prompt que aparece quando você entra na Nui<br>
-<br>
-*** Possible Data Loss conexão resetada<br>
-<br>
-Refused Collect Connection O sistema pago selecionado, precisa ser pago 
-an<br>
-tes da liberação<br>
-<br>
-Rejecting O host não aceitou a chamada<br>
-<br>
-Remote Procedure Error Problemas de comunicação, forçaram a network derru<br>
-bálo<br>
-<br>
-Still Connected Você se conectou em dois serviços ao mesmo tempo<br>
-<br>
-Telenet XXX XXX A porta que você esta usando<br>
-<br>
-Terminal terminal prompt<br>
-<br>
-Unable to validate call Seu Nui foi temporariamente desligado<br>
-<br>
-Unable to validate call contact admin The Nui has been permently disabled<br>
-Unknown Adress Seu Nua deve ser in<br>
-válido<br>
-<br>
-Wats Call not permitted Telenet Inwats calls não são permitidas pelo seu<br>
-host ou Nua&nbsp;<br>
-<br>
-<br>
-<br>
-<br>
-3.2 Sistemas Operacionais<br>
-Existem v rios tipos de sistemas operacionais hoje em dia. Os mais co<br>
-nhecidos são o UNIX, o VAX's, o PRIME e a rede Novell. Os textos sobre 
-como<br>
-entrar nesses sistemas estão na seção 6.2 HACK MODEM. O remote Access 
-tam<br>
-bém é bem conhecido, mas é mais usado em programas específicos ou em BBS's.<br>
-3.3 Definições<br>
-Access Number O numero que você disca para acessar diretamente a network<br>
-(duh).<br>
-Nua (Network Users Address) Nua é, basicamente, um número que você disca<br>
-para acessar um serviço particular qualquer. Dentro do sistema você pode 
-usar<br>
-os recursos internos, ou pode acessar um Nua com um serviço específico 
-para<br>
-cada numero.<br>
-Nui (Network User Identification) Nui é uma conta com password da network,<br>
-como nas BBS só que aqui você pode desfrutar de vários serviços e sistemas<br>
-diferentes.<br>
-DNIC (Data Network Identification Code) DNIC é um código de 4 digitos. 
-Pen<br>
-se que o DNIC é o prefixo e o Nua é seu número de telefone telefone.<br>
-Outdial Outdial é um modem conectado a network que, ligado a ele, você 
-pode<br>
-fazer chamadas para fora da network como um telefone pessoal etc...<br>
-<br>
-<br>
-<br>
-4 Virus, Trojan Horses e Worms<br>
-<br>
-<br>
-<br>
-4.1 Virus<br>
-Virus é um programa independente que se auto reproduz. Ele ir se aclo<br>
-par em outros programas e fazer cópias de si mesmo espalhandose pelo win<br>
-chester. O intuito do virus é destruir o corruptar informações do disco 
-rigi<br>
-do ou baixar o rendimento do micro rodando programas maiores que a memória<br>
-disponível. Antivirus, só retiram os vírus que eles forem programados. 
-Nenhum<br>
-programa pode o proteger 100 % de vírus, pois a cada momento estão sendo 
-fa<br>
-bricados novos vírus em qualquer parte do mundo.&nbsp;<br>
-<br>
-4.2 Trojan Horse (Cavalo de Tróia)<br>
-O cavalo de tróia é um programa que, como o vírus, se aclopa em um ar<br>
-quivo do winchester de um microcompurador infectado. Eles tem o intuito 
-de<br>
-roubar informações preciosas como passwords ou logins e, depois, enviálas 
-a<br>
-seu "dono"pela network automaticamente. Alguns antivírus retiram os Trojans<br>
-outros não, mas nenhum retira todos.&nbsp;<br>
-<br>
-4.3 Worm<br>
-Worm é o tipo de programa mais inteligente já criado. Ele não só se es<br>
-palha pelo computador e espera pela sorte de infectar outro atravéz de 
-um<br>
-disquete contaminado, ele tem o poder de se espalhar por toda a network. 
-Os<br>
-worms podem infectar toda uma rede de sistemas e fazer nelas um bom estrago.<br>
-<br>
-<br>
-5 PGP<br>
-<br>
-PGP ou Pretty Good Privacy é um programa de computador que encripta e<br>
-decripta informações. Você pode mandar emails ou até arquivos encriptados<br>
-para uma pessoa que, com o mesmo PGP que você usou para encriptar, pode 
-de<br>
-criptar as informações e usálas sem correr o risco de outra pessoa intercep<br>
-tála.<br>
-O PGP somente funciona quando é utilizada uma PUBLIC KEY. Tanto o des<br>
-tinat rio quanto o remetente precisam ter o mesmo PGP key, pois é com 
-ele que<br>
-as informações são enctiptadas e decriptadas pelo seu programa.<br>
-<br>
-<br>
-<br>
-6 Hack ( a melhor parte)<br>
-<br>
-<br>
-<br>
-Essa sessão é dividida em duas partes: 1 HACK PC; 2 HACK MODEM.<br>
-Obs.: Na maior parte das explicaçoes abaixo são necessários VáRIOS<br>
-programas. Todos eles estao disponiveis na Fou HomePage (O endereço está 
-no<br>
-fim do Manual.<br>
-<br>
-<br>
-<br>
-6.1 Hack PC<br>
-<br>
-<br>
-<br>
-6.1.1 Password do BIOS<br>
-Para quebrar o password do BIOS você pode encontrar duas situações:<br>
-1 Se você pegar o computador depois que o password foi passado corretamente,<br>
-use um desses programas:<br>
-amipsw.com (230b)<br>
-ami.com (555b)<br>
-aw.com (1,83k)<br>
-amidecod.com (1,79k)<br>
-2 Se você pegar o computador desligado ou esquecer o password:<br>
-Ligue o micro e entre o setup;<br>
-Anote TODOS os dados em um papel;<br>
-Desligue e abra a CPU;<br>
-Ache uma bateria na motherboard e retirea;<br>
-Espere uns 20 minutos e recoloque a bateria;<br>
-Ligue o micro novamente e entre no setup;<br>
-Reconfigure todos os dados que você anotou.<br>
-<br>
-<br>
-<br>
-6.1.2 Password do Windows<br>
-Para quebrar o password do Windows 3.x você deve digitar"ctrl+alt+del"e<br>
-depois "enter"quando aparecer a caixa de verificação. Depois que você 
-passou<br>
-o password, edite o arquivo win.ini e apague as linhas "load="e "run=".<br>
-<br>
-Para quebrar o password no WIN95:<br>
-1 Se a caixa de verificação que aparecer for Password Logon, simples<br>
-mente clique em cancel que o sistema vai entrar.<br>
-2 Se a caixa de verificação for Windows Password, digite<br>
-"ctrl+alt+del", escolha a janela do password na lista que aparecer e clique<br>
-em "End Task". Com o password passado, edite o arquivo win.ini e apague 
-as<br>
-linhas "load="e "run=".<br>
-<br>
-<br>
-<br>
-<br>
-6.1.3 Password do screen saver do Windows<br>
-Para retirar o password de Screen Saver do Windows 3.x você deve editar<br>
-o arquivo control.ini, apagando tudo o que tiver na area do password.<br>
-Para retirar o password do Screen Saver do WIN95, renomeie todos os ar<br>
-quivos de extensão .pwl do diret¢rio do windows. Anote os nomes alterados 
-em<br>
-um papel para eventuais problemas.<br>
-<br>
-Para desligar o screen saver sem ter o password no win 3.1 (ainda não<br>
-foi testado no 3.11 ou no WIN95), aperte ctrl+alt+del e enter várias vezes<br>
-que o screen saver ‚ fechado.<br>
-<br>
-<br>
-6.2.2 Sistemas UNIX<br>
-1. Entrando no sistema Para entrar no sistema, você deve entrar com um 
-"lo<br>
-gin", que pode ter de 1 a 8 dígitos e um password que pode ter de 6 a 
-8 dígi<br>
-tos. Dai você tem tres saídas:<br>
-1. Arrumar a lista de passwords com um hacker<br>
-2. Tentar entrar com os defaults<br>
-3. Ver quem est online com os comandos: who, rwho, finger; e tentar en<br>
-trar com seus logins mais tarde.<br>
-Defaults são logins e passwords que já vem com o sistema. Eles ficam residen<br>
-tes até que o sysop o desliguem, então você pode dar a sorte de encontrar 
-um<br>
-esquecido. Veja lista abaixo.<br>
-<br>
-Login: Password:<br>
-root root<br>
-root system<br>
-sys sys<br>
-sys system<br>
-daemon daemon<br>
-uucp uucp<br>
-tty tty<br>
-test test<br>
-unix unix<br>
-unix test<br>
-bin bin<br>
-adm adm<br>
-adm admin<br>
-admin adm<br>
-admin admin<br>
-sysman sysman<br>
-sysman sys<br>
-sysman system<br>
-sysadmin sysadmin<br>
-sysadmin sys<br>
-sysadmin system<br>
-sysadmin admin<br>
-sysadmin adm<br>
-who who<br>
-learn learn<br>
-uuhost uuhost<br>
-guest guest<br>
-host host<br>
-nuucp nuucp<br>
-rje rje<br>
-games games<br>
-games player<br>
-sysop sysop<br>
-root sysop<br>
-demo demo<br>
-<br>
-<br>
-2. Dentro do sistema: Dentro do sistema, a primeira coisa que você deve 
-fazer<br>
-é copiar o arquivo da lista de passwords. Ele se est em: /etc/passwd. 
-Nesse<br>
-arquivo, você vai encontrar as informações na seguinte sintaxe:<br>
-username:password:UserID:GroupID:descrição ou nome:homedir:shell<br>
-Ex.: fou:234abc56:7148:34:Fausto Morais:/home/dir/fou:/bin/fou<br>
-Username: fou<br>
-Encrypted Password: 234abc56<br>
-User Number: 7148<br>
-Group Number: 34<br>
-Other Information: Fausto Morais<br>
-Home Directory: /home/dir/fou<br>
-Shell: /bin/fou<br>
-Esse arquivo muito prov velmente estar encriptado. O password estar escon<br>
-dido e, sem um programa para decript la, a lista ser in£til. O programa 
-de<br>
-decripta‡Æo do password UNIX, trabalha em cima de um dicion rio pr‚ moldado,<br>
-comparando as palavras com o texto encriptado.  bom lembrar que o Brute 
-For<br>
-ce nÆo ir decriptar a lista. Ele ir tentar comparar palavras encriptadas<br>
-por uma lista de nomes com a lista de passwords. Quando ele encontrar 
-seme<br>
-lhanças (ex. duas palavras igusia com a mesma decriptacao) ele para e 
-d a<br>
-lista pronta.<br>
-<br>
-Brute Force (14,4k)<br>
-Dictionary Maker (7,73k)<br>
-Antes de usar o programa decriptador que nao d certeza de sucesso,<br>
-tente encontrar um login sem password pois assim, você só precisar digitar 
-o<br>
-login para entrar no sistema. Ex.:<br>
-fou::7148:34:Fausto Morais:/home/dir/fou:/bin/fou<br>
-Depois da lista de passwords, pegue os seguintes arquivos:<br>
-/etc/group é a lista de newsgroups e seus passwords tambem encriptados.<br>
-sintaxe groupname:password:group id:users in group<br>
-/etc/hosts é a lista de hosts conectados ao sistemas. étil quando a co<br>
-nexão é via telenet ou rlogin.<br>
-/usr/mail/&lt;user name&gt; é onde estÆo guardadas as mensagens de cada usuário.<br>
-<br>
-<br>
-<br>
-6.2.3 Sistemas VAX/VMS<br>
-Para entrar no sistema VAX/VMS, você deve proceder da mesma maneira que<br>
-fez no UNIX: Arrume a lista de passwords, entre com o login de alguem 
-ou ten<br>
-te os defaults.<br>
-<br>
-Username: Password:<br>
-system operator<br>
-system manager<br>
-system system<br>
-system syslib<br>
-operator operator<br>
-systets uetp<br>
-systest systest<br>
-systest test<br>
-sysmaint sysmaint<br>
-sysmaint service<br>
-sysmaint digital<br>
-field field<br>
-field service<br>
-guest guest<br>
-guest sem password<br>
-demo demo<br>
-demo sem password<br>
-test test<br>
-decnet decnet<br>
-<br>
-<br>
-<br>
-Dentro do sistema não há muito o que fazer. Você pode tentar pegar a<br>
-lista de passwords em: SYS$SYSTEM:SYSUAF.DAT, mas normalmente, ela nao 
-esta<br>
-disponivel para os usu rios<br>
-Tome muito cuidado quando tentar quebrar o sistema VAX's, pois ele<br>
-guarda todos os bad logins e bad passwords, podendo rastre lo na sua pr¢xima<br>
-tentativa. Se você quiser mesmo tentar, entre com alguns passwords em 
-um dia,<br>
-espere e tente novamente no dia seguinte...<br>
-<br>
-<br>
-<br>
-6.2.4 Sistemas PRIME<br>
-Para entrar no sistema PRIME você dever fazer as mesmas coisas que fez<br>
-no UNIX e no VAX's.<br>
-<br>
-Username: Password:<br>
-prime prime<br>
-primos primos<br>
-primos prime<br>
-primoscs prime<br>
-primoscs primos<br>
-primenet primenet<br>
-system system<br>
-system prime<br>
-system primos<br>
-netlink netlink<br>
-test test<br>
-guest guest<br>
-guest1 guest<br>
-<br>
-<br>
-<br>
-6.2.5 Rede Novell<br>
-1. Entrando no Sistema Para quebrar a rede Novell você deve utilizar<br>
-os mesmos recursos que usou para entrar nos sistemas UNIX ou VAX's. Na 
-Novell<br>
-você tambem pode tentar alguns defaults. Os defaults da rede Novell sao 
-usa<br>
-dos para a conexÆo com portas externas como impressoras, fax e etc..., 
-todos<br>
-sem password. Abaixo estÆo alguns defaults:<br>
-<br>
-Login:<br>
-superisor<br>
-guest<br>
-admin<br>
-usertemplate<br>
-print<br>
-laser<br>
-hplaser<br>
-printer<br>
-laserwriter<br>
-post<br>
-mail<br>
-gateway<br>
-gate<br>
-router<br>
-backup<br>
-wangtek<br>
-fax<br>
-faxuser<br>
-faxworks<br>
-test<br>
-archivist<br>
-cheyarchsvr<br>
-windowspassthru<br>
-<br>
-<br>
-<br>
-Se você conseguir entrar com esses defaults, você pode conseguir a lista 
-com os logins verdadeiros fazendo o seguinte: v ao diret¢rio SYS:PUBLIC,<br>
-digite SYSCON e de enter. Entao v a User Information e veja a lista com 
-to<br>
-dos os logins desse servidor. Esses logins só poderao ser utilizados se 
-estiverem sem password, pois a lista s¢ mostra os nomes. Nunca tente chutar 
-o<br>
-password de um usu rio, pois o computador armazena o numero de vezes que 
-uma<br>
-senha foi digitada errada e manda para o usu rio verdadeiro quando ele 
-se co<br>
-necta. Esse sistema de segurança se chama Intruder Detection.<br>
-Se você nao conseguir entrar com esses logins, faça o seguinte: no<br>
-prompt do DOS digite NETX ou VLM, para rodar a rede TSRs e escreva CX 
-/T /A<br>
-/R. Com isso você, provavelmente conseguir a lista dos usu rios.<br>
-2. Conseguindo Supe Acess Para conseguir um acesso Supervisor, que ‚<br>
-muito importante para fazer uma backdoor ou utilizar outros recursos use 
-esse<br>
-programa:<br>
-nwhack.zip (25,8k)<br>
-<br>
-Os problemas de usar o nwhack sao os seguintes: O password Supervisor<br>
-é mudado para SUPERHACKER; Todas as contas no servidor tem acesso Supervi<br>
-sor; o administrador do sistema logo saber que você entrou na rede e acabar<br>
-com os previlegios do acesso Supervisor mudando tambem seu password. A 
-£nica<br>
-coisa que você pode fazer é deixar uma backdoor ou "porta dos fundos".<br>
-3. Deixando uma Porta dos Fundos Uma porta dos fundos com previlegios<br>
-de acesso Supervisor é como uma assinatura gr tis. Para fazer isso, você 
-deve<br>
-utilizar o seguinte programa:<br>
-super.zip (31,3k)<br>
-Esse programa foi escrito exatamente para deixar o usu rio desligar e<br>
-ligar o acesso Supervisor na hora que quiser. Faça então o seguinte:<br>
-Consiga aceso Supervisor com o nwhacker;<br>
-Ligue sua conta para supe equivalency com o super.exe;<br>
-Se você ganhar acesso Supervisor, de supe equivalency a algum dos de<br>
-faults (Guest, test, archivist, cheyarchsvr...);<br>
-Saia e entre na rede com o default que você deu a supe equivalency e<br>
-ligue o acesso Supervisor com o super.exe;<br>
-Saia e entre novamente com o login que você utilizou primeiro;<br>
-Remova o acesso Supervisor.<br>
-Agora o default que você escolheu pode ser ligado e desligado por você,<br>
-na hora que você quiser para ter acesso Supervisor.<br>
-<br>
-<br>
-<br>
-6.2.6 Passwords muito utilizados<br>
-Se nÆo houver outro jeito e você precisar chutar os passwords, chute<br>
-com inteligência e não v começando: aaa, aab, aac, aad ... Os passwords 
-mais<br>
-utilizados aqui no Brasil são:<br>
-Times de futebol;<br>
-Telefone;<br>
-Sobrenome;<br>
-Nome de computadores (pentium, ibm, etc são encontrados com freqüência);<br>
-Apelidos;<br>
-Nome de pessoas famosas;<br>
-Passwords de teclas seguidas. Ex.: qwerty, asdfgh, zxcvbn ou aaa,<br>
-bbb, ccc. O usuário que usa desse tipo de password não pensa em<br>
-hackers quebrando sua senha e sim na velocidade para dar login.<br>
-Por isso, quando você escolher seu password, faça uma mesclagem de letras 
-e números. Ex. mouse/1997 m1o9u9s7e. Parece óbvio, mas ninguém vai<br>
-chutar um password desse tipo quando tentar quebrar seu login.<br>
-<br>
-<br>
-<br>
-6.2.7 Email<br>
-Nesta sessão você encontrar arquivos para enviar emails bombs, email<br>
-sem remetente e os famosos PGPs.<br>
-Unabomb (59,9k) Para bombear o email de alguém.<br>
-Upyours 3.0 (+2Mb) O melhor programa de email bomb<br>
-Anonimail (71,3k) Para enviar emails anônimos<br>
-AEgis Shell for PGP (2,6Mb) Um dos melhores programas de encripta<br>
-ção<br>
-<br>
-Se você quiser enviar um EMail para Usenet, mande a mensagem para<br>
-&lt;NEWSGROUP&gt;@&lt;SERVERNAME&gt;, por exemplo.<br>
-Grupo: fou.morais<br>
-Gateway: news.demon.co.uk<br>
-Endereço: fou.morais@news.demon.co.uk<br>
-Abaixo est uma lista com alguns gateways:<br>
-<br>
-group.name@news.demon.co.uk<br>
-group.name@charm.magnus.acs.ohiostate.edu<br>
-group.name@undergrad.math.uwaterloo.ca<br>
-group.name@nic.funet.fi<br>
-group.name.usenet@decwrl.dec.com<br>
-<br>
-<br>
-<br>
-Unabomber<br>
-Devido ao grande número de pedidos de ajuda no uso do Unabomber, aqui<br>
-vai um tutorial completo sobre o programa.<br>
-INSTALAÇÃO: Descompacte o arquivo em um diretório qualquer. Copie o arquivo 
-iport.vbx para o system do Windows, arrume (faça download na Internet) 
-um vbrun300.dll e copie tambem para o system.<br>
-USO: Rode o programa, na área "Mail Server" escreva o servidor que vo<br>
-ce usa para mandar EMails. (Veja isso na configuração do seu programa 
-de<br>
-mensagens) Escreva entÆo o endereçoo da vítima em "To", o endereço que 
-você<br>
-quer ter em "From", e sua mensagem como você escreve normalmente. A rea 
-"Apparent Server", ‚ o servidor que vai aparecer como remetente na mensagem<br>
-que você enviar.<br>
-<br>
-OBS: O remetente na mensagem estar escondido para pessoas comuns. Hackers, 
-programadores ou qualquer especialista poder descobrir o endereço do idiota 
-que o bombeou. NÃO VACILE... Este programa serve para ser usado com lammers, 
-portanto bombeie lammers.<br>
-</font></p>
+
+<p>Você encontrará neste manual aquilo que você sempre quis saber e ninguém te dizia. As fórmulas milagrosas para invadir sistemas e tudo mais.</p>
+<p>Todos os textos que eu via na web ou em fóruns tinham uma falta de informação inacreditável. Na verdade, eu imagino que eles sabiam e estavam regulando a informação (o que eu não concordo, as informações devem ser compartilhadas!), ou não sabiam coisa nenhuma e só repetiam o que viam em outras páginas.</p>
+<p>Bom, vamos ao que interessa. Faça bom proveito!</p>
+
+<center><img src="/files/greenskull.gif"></center>
+
+<h2>O que é um Hacker</h2>
+<p>Tudo isto que vocês pensam dos hackers foi criado possivelmente com a publicidade gerada pelos filmes que tratam do assunto, como: &quot;<a href="https://www.imdb.com/title/tt0086567/" target="_blank">Jogos de Guerra</a>&quot;, &quot;<a href="https://www.imdb.com/title/tt0074958/" target="_blank">A Rede</a>&quot; e &quot;<a href="https://www.imdb.com/title/tt0113243/characters/nm0001401" target="_blank">Hackers</a>&quot;.</p>
+<p>Hackers são aqueles que possuem muitos, senão todos, os conhecimentos acima &ndash; isso não é uma regra, mas não usam para os mesmos propósitos e as vezes auxiliam os próprios técnicos em segurança e os webmasters a proteger seus sistemas.</p>
+<p>Estes são de uma inteligência e determinação muito superiores a de uma pessoas comuns, pois eles são capazes de passar semanas, ou até mesmo meses, lendo e aprendendo um novo sistema, apenas com o propósito de saber e utilizar esses sistemas.</p>
+<p>Um hacker é um sabichão. Justamente por saber muito, ele tem condições de &quot;aprontar&quot; por ai. O hacker sempre quer aprender mais um pouco e normalmente acaba perdendo horas de sono por isso. É aquele que tem prazer em sentar em frente do seu PC e ficar horas e horas buscando nem sabe o quê.</p>
+<p>Naturalmente xereto, o hacker adora invadir sistemas alheios para simplesmente preencher seu ego. Muitas de suas façanhas podem ser discutiveis ao nível social, mas o verdadeiro hacker não costuma estragar nada, subtrair programas, ou sequer roubar informações em detrimento de outrem.</p>
+<p>O hacker é, acima de tudo, um intelectual informatizado.</p>
+
+<h3>O que é Hacking?</h3>
+<p>Hacking é o ato de penetrar em sistemas de computadores para ganhar mais conhecimento e entender como é seu funcionamento. Em português hack significa corte, entalhe.</p>
+
+<h3>Por quê hack?</h3>
+<p>Como já foi dito anteriormente, o hack é feito para a aprimorar os conhecimentos de uma pessoa em relação a um sistema de computadores. Hackers não destrõem, não roubam e nem espionam informações por dinheiro.</p>
+
+<h3>A diferença entre Hackers e Crackers</h3>
+<p>Os crackers são os que a imprensa confunde com os hackers, são aqueles que invadem sistemas com o propósito de roubar programas ou simplesmente apaga-los. São inteligentes, porém, em sua maioria, prepotentes, pois deixam mensagens do tipo: &quot;Eu sou o melhor! / Apaguei e escapei!&quot; entre outras. Deixando, na maioria das vezes, um rastro que possibilita sua captura. Possuem conhecimentos semelhantes aos hackers, mas com propósitos destrutivos.</p>
+<p>Um exemplo recente foi a prisão de Kevin Mitnick, o ladrão cibernético mais procurado da história[?], capturado pelo FBI com a ajuda do Tsutomu Shimomura, o técnico de segurança mais respeitado da história[?].</p>
+<p>Um cracker é o que utiliza de suas habilidades em proveito próprio, não importando quantos ou quais prejuízos cause. Este é um elemento perigoso, que muitas vezes acaba por se autodestruir. Normalmente coloca vírus em computadores, descobre senhas para vender a empresas, destrói informações, corrompe sistemas e apronta tudo que pode.</p>
+
+<h3>Regras Hackers</h3>
+<ol>
+	<li>Nunca destruir nenhum sistema.</li>
+	<li>Nunca alterar nenhum dos arquivos do sistema, a não ser que seja necesário para esconder a sua presença ou garantir a sua entrada posteriormente.</li>
+	<li>Não compartilhe com ninguém seus projetos.</li>
+	<li>Em um fórum, não é aconselhável que você discuta seus projetos. Fóruns podem ser monitoradas pelo governo.</li>
+	<li>Nunca dê nomes ou telefones reais em um fórum.</li>
+	<li>Nunca deixe seu apelido em um sistema que você entrou.</li>
+	<li>Não invada computadores governamentais.</li>
+	<li>Nunca converse sobre seus planos com outra pessoa através do telefone de sua casa.</li>
+	<li>Seja atento. Mantenha todo o seu material em um lugar seguro.</li>
+	<li>Para se tornar um verdadeiro hacker, você deve simplesmente praticar.</li>
+</ol>
+
+<h3>Onde começar</h3>
+<p>Começe com sistemas pequenos como em universidades ou escritórios. Depois passe para redes maiores como telenet. A telenet é altamente recomendada para novatos, pois ela tem um sistema de segurança muito vago. São milhares de conexões ao mesmo tempo, o que torna praticamente impossível a monitoração de um usuário (você).</p>
+
+<center><img src="/files/greenskull.gif"></center>
+
+<h2>Entendendo Os Sistemas</h2>
+
+<h3>Telenet</h3>
+<p><a href="https://pt.wikipedia.org/wiki/Telnet" target="_blank">Telenet ou simplesmente Telnet</a> é um sistema de interligação de computadores. Telnet é a internet dos fóruns. São vários computadores, com seu sistema operacional próprio, associados próprios e arquivos próprios se interligando e compartilhando informações.</p>
+<p>Abaixo, se encontra uma lista com os principais comandos da Telnet:</p>
+<dt>
+	<dt><code>@</code></dt>
+	<dd>command prompt</dd>
+	<dt><code>?</code></dt>
+	<dd>comando errado</dd>
+	<dt><code>Access Bared</code></dt>
+	<dd>A sua conexão não permite esse acesso</dd>
+	<dt><code>Access to This Address not permitted</code></dt>
+	<dd>Seu Nui não é autorizado a acessar esse endereço</dd>
+	<dt><code>Attempt Aborted</code></dt>
+	<dd>Desconectando do sistema</dd>
+	<dt><code>Busy</code></dt>
+	<dd>Todas as portas e destinos estão sendo usados</dd>
+	<dt><code>Collect Wats Call Not Permitted</code></dt>
+	<dd>Collect Wats calls não são permitidos pelo seu host o pelo Nui</dd>
+	<dt><code>Connected</code></dt>
+	<dd>Conectado</dd>
+	<dt><code>Connection From</code></dt>
+	<dd>Seu terminal recebeu uma chamada</dd>
+	<dt><code>Connection Pending</code></dt>
+	<dd>O sistema está se conectando com o Nua (digite d bye para desconectar de imediato)</dd>
+	<dt><code>Disconnected</code></dt>
+	<dd>Seu terminal foi desconectado pelo que você ligou</dd>
+	<dt><code>Enhanced Network Services System Error</code></dt>
+	<dd>Sua chamada não pode ser validada</dd>
+	<dt><code>Enhanced Network services unavailable at this time</code></dt>
+	<dd>Serviço temporariamente desligado</dd>
+	<dt><code>Illegal Address</code></dt>
+	<dd>o endereço que você netrou é inválido</dd>
+	<dt><code>Invalid Charge Request</code></dt>
+	<dd>sua seleção de pagamento é inválida</dd>
+	<dt><code>Invalid User Id or Password</code></dt>
+	<dd>O Nui que você digitou é inválido</dd>
+	<dt><code>Local Congestion</code></dt>
+	<dd>Seu número de acesso local esta ocupado</dd>
+	<dt><code>Local Disconnect</code></dt>
+	<dd>Seu terminal foi desconectado</dd>
+	<dt><code>Local Network Outage</code></dt>
+	<dd>Um problema temporario esta o afastando da network</dd>
+	<dt><code>Local Procedure Error</code></dt>
+	<dd>Problemas na comunicação forçaram a network limpar a sua conexão</dd>
+	<dt><code>Not Available</code>, <code>Not Operating</code>, <code>Not Responding</code></dt>
+	<dd>O computador não pode aceitar o seu pedido</dd>
+	<dt><code>Not Connected</code></dt>
+	<dd>Você entrou com um comando que só funciona conectado ao sistema certo</dd>
+	<dt><code>Not Reachable</code></dt>
+	<dd>Uma condição temporária deixou você sem acesso a network.</dd>
+	<dt><code>Password</code></dt>
+	<dd>É o prompt que aparece quando você entra na Nui</dd>
+	<dt><code>Possible Data Loss</code></dt>
+	<dd>conexão resetada</dd>
+	<dt><code>Refused Collect Connection</code></dt>
+	<dd>O sistema pago selecionado, precisa ser pago antes da liberação</dd>
+	<dt><code>Rejecting</code></dt>
+	<dd>O host não aceitou a chamada</dd>
+	<dt><code>Remote Procedure Error</code></dt>
+	<dd>Problemas de comunicação, forçaram a network derruba-lo</dd>
+	<dt><code>Still Connected</code></dt>
+	<dd>Você se conectou em dois serviços ao mesmo tempo</dd>
+	<dt><code>Telenet XXX XXX</code></dt>
+	<dd>A porta que você esta usando</dd>
+	<dt><code>Terminal</code></dt>
+	<dd>terminal prompt</dd>
+	<dt><code>Unable to validate call contact admin</code></dt>
+	<dd>Seu Nui foi temporariamente desligado</dd>
+	<dt><code>Unknown Adress</code></dt>
+	<dd>Seu Nua deve ser inválido</dd>
+	<dt><code>Wats Call Not Permitted Telenet Inwats calls</code></dt>
+	<dd>não são permitidas pelo seu host ou Nua</dd>
+</dt>
+
+<h3>Sistemas Operacionais</h3>
+<p>Existem vários tipos de sistemas operacionais hoje em dia. Os mais conhecidos são o <a href="https://pt.wikipedia.org/wiki/Unix" target="_blank">UNIX</a>, o <a href="https://pt.wikipedia.org/wiki/VAX/VMS" target="_blank">VAX's</a>, o <a href="http://www.unixprime.com/" target="_blank">PRIME</a> e a rede <a href="https://en.wikipedia.org/wiki/NetWare" target="_blank">Novell</a>. Os textos sobre como entrar nesses sistemas estão na seção HACK MODEM. O Remote Access também é bem conhecido, mas é mais usado em programas específicos ou em fóruns.</p>
+
+<h3>Definições</h3>
+<dl>
+	<dt>Access Number</dt>
+	<dd>O numero que você disca para acessar diretamente a network (duh).</dd>
+	<dt>Nua (Network Users Address)</dt>
+	<dd>Nua é, basicamente, um número que você disca para acessar um serviço particular qualquer. Dentro do sistema você pode usar os recursos internos, ou pode acessar um Nua com um serviço específico para cada numero.</dd>
+	<dt>Nui (Network User Identification)</dt>
+	<dd>Nui é uma conta com password da network, como nos fóruns, só que aqui você pode desfrutar de vários serviços e sistemas diferentes.</dd>
+	<dt>DNIC (Data Network Identification Code)</dt>
+	<dd>DNIC é um código de 4 digitos. Pense que o DNIC é o prefixo e o Nua é seu número de telefone telefone.</dd>
+	<dt>Outdial Outdial</dt>
+	<dd>Outdial Outdial é um modem conectado a network que, ligado a ele, você pode fazer chamadas para fora da network como um telefone pessoal etc...</dd>
+</dl>
+
+<center><img src="/files/greenskull.gif"></center>
+
+<h2>Virus, Trojan Horses e Worms</h2>
+
+<h3><a href="https://pt.wikipedia.org/wiki/Vírus_de_computador" target="_blank">Virus</a></h3>
+<p>Virus é um programa independente que se auto reproduz. Ele vai se acoplando em outros programas e fazendo cópias de si mesmo espalhando-se pelo sistema operacional. O intuito do virus é destruir o corruptar informações do disco rigido ou baixar o rendimento do PC rodando programas maiores que a memória disponível. Antivirus, só retiram os vírus que eles forem programados. Nenhum programa pode protege-lo 100 % dos vírus, pois a cada momento estão sendo fabricados novos vírus em qualquer parte do mundo.</p>
+
+<h3><a href="https://pt.wikipedia.org/wiki/Cavalo_de_troia_(computação)" target="_blank">Trojan Horse (Cavalo de Tróia)</a></h3>
+<p>O cavalo de tróia é um programa que, como o vírus, se aclopa em um arquivo do sistema operacional de um compurador infectado. Eles tem o intuito de roubar informações preciosas como senhas ou logins e, depois, envia-las a seu &quot;dono&quot; pela rede automaticamente. Alguns antivírus identificam trojans outros não, mas nenhum consegue identificar todos.</p>
+
+<h3><a href="https://pt.wikipedia.org/wiki/Worm" target="_blank">Worm</a></h3>
+<p>Worm é o tipo de programa mais inteligente já criado. Ele não só se espalha pelo computador, como espera pela sorte de infectar outro contaminando um disco removível (um disquete ou pen-drive, por exemplo) e também ele tem o poder de se espalhar por toda a rede. Os worms podem infectar toda uma rede de sistemas e fazer nelas um bom estrago.</p>
+
+<h3><a href="https://pt.wikipedia.org/wiki/Pretty_Good_Privacy" target="_blank">PGP</a></h3>
+<p>PGP ou Pretty Good Privacy é um programa de computador que encripta e decripta informações. Você pode mandar emails ou até arquivos encriptados para uma pessoa que, com o mesmo PGP que você usou para encriptar, pode decriptar as informações e usa-las sem correr o risco de outra pessoa intercepta-la.</p>
+<p>O PGP somente funciona quando é utilizada uma PUBLIC KEY. Tanto o destinatário quanto o remetente precisam ter o mesmo PGP key, pois é com ele que as informações são enctiptadas e decriptadas pelo seu programa.</p>
+
+<center><img src="/files/greenskull.gif"></center>
+
+<h2>Hacking (a melhor parte)</h2>
+<p>Esta sessão é dividida em duas partes: HACKING PC e HACKING MODEM.</p>
+<p>Obs.: Na maior parte das explicações abaixo são necessários vários programas. Todos eles estão disponiveis na Fou HomePage. O endereço está no fim do manual.</p>
+
+<center><img src="/files/greenskull.gif"></center>
+
+<h2>Hacking PC</h2>
+
+<h3>Password do BIOS</h3>
+<p>Para quebrar o password da BIOS você pode encontrar duas situações:</p>
+<ol>
+	<li>
+		Se você pegar o computador depois que o password foi passado corretamente, use um desses programas:
+		<ul>
+			<li><a href="http://geocities.yahoo.com.br/lafhackerhp/amipsw.com" target="_blank">amipsw.com (230b)</a></li>
+			<li><a href="http://geocities.yahoo.com.br/lafhackerhp/ami.com" target="_blank">ami.com (555b)</a></li>
+			<li><a href="http://geocities.yahoo.com.br/lafhackerhp/aw.com" target="_blank">aw.com (1,83k)</a></li>
+			<li><a href="http://geocities.yahoo.com.br/lafhackerhp/amidecod.com" target="_blank">amidecod.com (1,79k)</a></li>
+		</ul>
+	</li>
+	<li>
+		Se você pegar o computador desligado ou esquecer o password:
+		<ol>
+			<li>Ligue o micro e entre o setup;</li>
+			<li>Anote TODOS os dados em um papel;</li>
+			<li>Desligue e abra o gabinete;</li>
+			<li>Ache uma bateria na motherboard e retire-a;</li>
+			<li>Espere uns 20 minutos e recoloque a bateria;</li>
+			<li>Ligue o PC novamente e entre no setup;</li>
+			<li>Reconfigure todos os dados que você anotou.</li>
+		</ol>
+	</li>
+</ol>
+
+<h3>Password do Windows</h3>
+<p>Para quebrar o password do Windows 3.x você deve digitar <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd> e depois <kbd>enter</kbd>, quando aparecer a caixa de verificação. Depois que você passou o password, edite o arquivo <code>win.ini</code> e apague as linhas &quot;load=&quot;e &quot;run=&quot;.</p>
+<p>Para quebrar o password no WIN95:</p>
+<p>Se a caixa de verificação que aparecer for Password Logon, simplesmente clique em cancel que o sistema vai entrar.</p>
+<p>Se a caixa de verificação for Windows Password, digite <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd>, escolha a janela do password na lista que aparecer e clique em &quot;End Task&quot;. Com o password passado, edite o arquivo <code>win.ini</code> e apague as linhas &quot;load=&quot;e &quot;run=&quot;.</p>
+
+<h3>Password do screen saver do Windows</h3>
+<p>Para retirar o password de Screen Saver do Windows 3.x você deve editar o arquivo <code>control.ini</code>, apagando tudo o que tiver na area do password.</p>
+<p>Para retirar o password do Screen Saver do WIN95, renomeie todos os arquivos de extensão <code>.pwl</code> do diretório do windows. Anote os nomes alterados em um papel para eventuais problemas.</p>
+<p>Para desligar o screen saver sem ter o password no win 3.1 (ainda não foi testado no 3.11 ou no WIN95), aperte <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd >del</kbd >e enter várias vezes que o screen saver.</p>
+
+<h3>Sistemas UNIX</h3>
+<p>Para entrar no sistema, você deve entrar com um &quot;login&quot;, que pode ter de 1 a 8 dígitos e um password que pode ter de 6 a 8 dígitos. Dai você tem tres saídas:</p>
+<ol>
+	<li>Arrumar a lista de passwords com um hacker;</li>
+	<li>Tentar entrar com os defaults*;</li>
+	<li>Ver quem está online com os comandos: <code>who</code>, <code>rwho</code>, <code>finger</code>; e tentar entrar com seus logins mais tarde.</li>
+</ol>
+<p>* Defaults são logins e passwords que já vem com o sistema. Eles ficam residentes até que o sysop os desliguem, então você pode dar a sorte de encontrar um esquecido. Veja lista abaixo:</p>
+<table align="center" width="300" border="1" cellspacing="2" cellpadding="1">
+	<thead>
+		<tr>
+			<th>Login</th>
+			<th>Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>root</td>
+			<td>root</td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>system</td>
+		</tr>
+		<tr>
+			<td>sys</td>
+			<td>sys</td>
+		</tr>
+		<tr>
+			<td>sys</td>
+			<td>system</td>
+		</tr>
+		<tr>
+			<td>daemon</td>
+			<td>daemon</td>
+		</tr>
+		<tr>
+			<td>uucp</td>
+			<td>uucp</td>
+		</tr>
+		<tr>
+			<td>tty</td>
+			<td>tty</td>
+		</tr>
+		<tr>
+			<td>test</td>
+			<td>test</td>
+		</tr>
+		<tr>
+			<td>unix</td>
+			<td>unix</td>
+		</tr>
+		<tr>
+			<td>unix</td>
+			<td>test</td>
+		</tr>
+		<tr>
+			<td>bin</td>
+			<td>bin</td>
+		</tr>
+		<tr>
+			<td>adm</td>
+			<td>adm</td>
+		</tr>
+		<tr>
+			<td>adm</td>
+			<td>admin</td>
+		</tr>
+		<tr>
+			<td>admin</td>
+			<td>adm</td>
+		</tr>
+		<tr>
+			<td>admin</td>
+			<td>admin</td>
+		</tr>
+		<tr>
+			<td>sysman</td>
+			<td>sysman</td>
+		</tr>
+		<tr>
+			<td>sysman</td>
+			<td>sys</td>
+		</tr>
+		<tr>
+			<td>sysman</td>
+			<td>system</td>
+		</tr>
+		<tr>
+			<td>sysadmin</td>
+			<td>sysadmin</td>
+		</tr>
+		<tr>
+			<td>sysadmin</td>
+			<td>sys</td>
+		</tr>
+		<tr>
+			<td>sysadmin</td>
+			<td>system</td>
+		</tr>
+		<tr>
+			<td>sysadmin</td>
+			<td>admin</td>
+		</tr>
+		<tr>
+			<td>sysadmin</td>
+			<td>adm</td>
+		</tr>
+		<tr>
+			<td>who</td>
+			<td>who</td>
+		</tr>
+		<tr>
+			<td>learn</td>
+			<td>learn</td>
+		</tr>
+		<tr>
+			<td>uuhost</td>
+			<td>uuhost</td>
+		</tr>
+		<tr>
+			<td>guest</td>
+			<td>guest</td>
+		</tr>
+		<tr>
+			<td>host</td>
+			<td>host</td>
+		</tr>
+		<tr>
+			<td>nuucp</td>
+			<td>nuucp</td>
+		</tr>
+		<tr>
+			<td>rje</td>
+			<td>rje</td>
+		</tr>
+		<tr>
+			<td>games</td>
+			<td>games</td>
+		</tr>
+		<tr>
+			<td>games</td>
+			<td>player</td>
+		</tr>
+		<tr>
+			<td>sysop</td>
+			<td>sysop</td>
+		</tr>
+		<tr>
+			<td>root</td>
+			<td>sysop</td>
+		</tr>
+		<tr>
+			<td>demo</td>
+			<td>demo</td>
+		</tr>
+	</tbody>
+</table>
+<p>Dentro do sistema, a primeira coisa que você deve fazer é copiar o arquivo da lista de passwords. Ele se está em: <code>/etc/passwd</code>. Nesse arquivo, você vai encontrar as informações na seguinte sintaxe:</p>
+<pre><code>username:password:UserID:GroupID:descrição ou nome:homedir:shell
+# Exemplo:
+victor:asdf1234:1000:1000:Victor Ferreira:/home/victor:/bin/bash</code></pre>
+<ul>
+	<li>Username: victor</li>
+	<li>Encrypted Password: asdf1234</li>
+	<li>User Number: 1000</li>
+	<li>Group Number: 1000</li>
+	<li>Other Information: Victor Ferreira</li>
+	<li>Home Directory: /home/victor</li>
+	<li>Shell: /bin/bash</li>
+</ul>
+<p>Esse arquivo, muito provavelmente, estará encriptado. O password estará escondido e, sem um programa para decriptá-la, a lista ser inútil. O programa de decriptação do password UNIX, trabalha em cima de um dicionário pré, moldado, comparando as palavras com o texto encriptado. Bom lembrar que o &quot;brute force&quot; não irá decriptar a lista. Ele irá tentar comparar palavras encriptadas por uma lista de nomes com a lista de passwords. Quando ele encontrar semelhanças (ex. duas palavras igusia com a mesma decriptação) ele para e dá a lista pronta.</p>
+<ul>
+	<li><a href="http://geocities.yahoo.com.br/lafhackerhp/BruteForce.exe" target="_blank">Brute Force (14,4k)</a></li>
+	<li><a href="http://geocities.yahoo.com.br/lafhackerhp/DictionaryMaker.exe" target="_blank">Dictionary Maker (7,73k)</a></li>
+</ul>
+<p>Antes de usar o programa decriptador que não dá certeza de sucesso, tente encontrar um login sem password pois, assim, você só precisará digitar o login para entrar no sistema. Ex.: <code>fulano::1000:1000:Fulano:/home/fulano:/bin/bash</code></p>
+<p>Depois da lista de passwords, pegue os seguintes arquivos:</p>
+<ul>
+	<li><code>/etc/group</code> é a lista de newsgroups e seus passwords tambem encriptados. Sua sintaxe é <code>groupname:password:group_id:users_in_group</code></li>
+	<li><code>/etc/hosts</code> é a lista de hosts conectados ao sistemas. É útil quando a conexão é via <code>telenet</code> ou <code>rlogin</code>.</li>
+	<li><code>/usr/mail/&lt;user name&gt;</code> é onde estão guardadas as mensagens de cada usuário.</li>
+</ul>
+
+<h4>Sistemas VAX/VMS</h4>
+<p>Para entrar em sistemas VAX/VMS, você deve proceder da mesma maneira que fez no UNIX. Arrume a lista de passwords, entre com o login de alguém ou tente os defaults.</p>
+<table align="center" width="300" border="1" cellspacing="2" cellpadding="1">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>system</td>
+			<td>operator</td>
+		</tr>
+		<tr>
+			<td>system</td>
+			<td>manager</td>
+		</tr>
+		<tr>
+			<td>system</td>
+			<td>system</td>
+		</tr>
+		<tr>
+			<td>system</td>
+			<td>syslib</td>
+		</tr>
+		<tr>
+			<td>operator</td>
+			<td>operator</td>
+		</tr>
+		<tr>
+			<td>systets</td>
+			<td>uetp</td>
+		</tr>
+		<tr>
+			<td>systest</td>
+			<td>systest</td>
+		</tr>
+		<tr>
+			<td>systest</td>
+			<td>test</td>
+		</tr>
+		<tr>
+			<td>sysmaint</td>
+			<td>sysmaint</td>
+		</tr>
+		<tr>
+			<td>sysmaint</td>
+			<td>service</td>
+		</tr>
+		<tr>
+			<td>sysmaint</td>
+			<td>digital</td>
+		</tr>
+		<tr>
+			<td>field</td>
+			<td>field</td>
+		</tr>
+		<tr>
+			<td>field</td>
+			<td>service</td>
+		</tr>
+		<tr>
+			<td>guest</td>
+			<td>guest</td>
+		</tr>
+		<tr>
+			<td>guest</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>demo</td>
+			<td>demo</td>
+		</tr>
+		<tr>
+			<td>demo</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>test</td>
+			<td>test</td>
+		</tr>
+		<tr>
+			<td>decnet</td>
+			<td>decnet</td>
+		</tr>
+	</tbody>
+</table>
+<p>Dentro do sistema não há muito o que fazer. Você pode tentar pegar a lista de passwords em: <code>SYS$SYSTEM:SYSUAF.DAT</code>, mas normalmente, ela não está disponivel para os usuários.</p>
+<p>Tome muito cuidado ao tentar quebrar os sistemas VAX's, pois eles guardam todos os bad logins e bad passwords, podendo rastreá-lo na sua próxima tentativa. Se você quiser mesmo tentar, entre com alguns passwords em um dia, espere e tente novamente no dia seguinte...</p>
+
+<h4>Sistemas PRIME</h4>
+<p>Para entrar nos sistemas PRIME você dever fazer as mesmas coisas que fez no UNIX e no VAX's.</p>
+<table align="center" width="300" border="1" cellspacing="2" cellpadding="1">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>prime</td>
+			<td>prime</td>
+		</tr>
+		<tr>
+			<td>primos</td>
+			<td>primos</td>
+		</tr>
+		<tr>
+			<td>primos</td>
+			<td>prime</td>
+		</tr>
+		<tr>
+			<td>primoscs</td>
+			<td>prime</td>
+		</tr>
+		<tr>
+			<td>primoscs</td>
+			<td>primos</td>
+		</tr>
+		<tr>
+			<td>primenet</td>
+			<td>primenet</td>
+		</tr>
+		<tr>
+			<td>system</td>
+			<td>system</td>
+		</tr>
+		<tr>
+			<td>system</td>
+			<td>prime</td>
+		</tr>
+		<tr>
+			<td>system</td>
+			<td>primos</td>
+		</tr>
+		<tr>
+			<td>netlink</td>
+			<td>netlink</td>
+		</tr>
+		<tr>
+			<td>test</td>
+			<td>test</td>
+		</tr>
+		<tr>
+			<td>guest</td>
+			<td>guest</td>
+		</tr>
+		<tr>
+			<td>guest1</td>
+			<td>guest</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>Rede Novell</h4>
+<p>Para quebrar a rede Novell você deve utilizar os mesmos recursos que usou para entrar nos sistemas UNIX ou VAX's. Na Novell, você também pode tentar alguns defaults. Os defaults da rede Novell são usados para a conexão com portas externas como impressoras, fax e etc; todos</p>
+<p>sem password. Abaixo estão alguns defaults:</p>
+<ul>
+	<li>superisor</li>
+	<li>guest</li>
+	<li>admin</li>
+	<li>usertemplate</li>
+	<li>print</li>
+	<li>laser</li>
+	<li>hplaser</li>
+	<li>printer</li>
+	<li>laserwriter</li>
+	<li>post</li>
+	<li>mail</li>
+	<li>gateway</li>
+	<li>gate</li>
+	<li>router</li>
+	<li>backup</li>
+	<li>wangtek</li>
+	<li>fax</li>
+	<li>faxuser</li>
+	<li>faxworks</li>
+	<li>test</li>
+	<li>archivist</li>
+	<li>cheyarchsvr</li>
+	<li>windowspassthru</li>
+</ul>
+<p>Se você conseguir entrar com esses defaults, você pode conseguir a lista com os logins verdadeiros fazendo o seguinte: vá ao diretório <code>SYS:PUBLIC</code>, digite <code>SYSCON</code> e de <kbd>Enter</kbd>. Entao vá a &quot;User Information&quot; e veja a lista com todos os logins desse servidor. Esses logins só poderão ser utilizados se estiverem sem password, pois a lista só mostra os nomes. Nunca tente chutar o password de um usuário, pois o computador armazena o numero de vezes que uma senha foi digitada errada e manda para o usuário verdadeiro quando ele se conecta. Esse sistema de segurança se chama &quot;Intruder Detection&quot;.</p>
+<p>Se você não conseguir entrar com esses logins, faça o seguinte: No prompt do DOS, digite <code>NETX</code> ou <code>VLM</code>, para rodar a rede TSRs e escreva <code>CX /T /A /R</code>. Com isso você, provavelmente conseguirá a lista dos usuários.</p>
+<p>Para conseguir um acesso Supervisor, que é muito importante para fazer uma backdoor ou utilizar outros recursos, use este programa: <a href="http://geocities.yahoo.com.br/lafhackerhp/nwhack.zip" target="_blank">nwhack.zip (25,8k)</a></p>
+<p>Os problemas de usar o <code>nwhack</code> são os seguintes: O password Supervisor é mudado para <code>SUPERHACKER</code>; Todas as contas no servidor ganham acesso Supervisor; o administrador do sistema logo saberá que você entrou na rede e acabará com os previlégios do acesso Supervisor mudando tambem seu password. A única coisa que você pode fazer é deixar uma backdoor.</p>
+<p>Uma porta dos fundos com previlegios de acesso Supervisor é como uma assinatura grátis. Para fazer isso, você deve utilizar o seguinte programa: <a href="http://geocities.yahoo.com.br/lafhackerhp/super.zip" target="_blank">super.zip (31,3k)</a></p>
+<p>Esse programa foi escrito exatamente para deixar o usuário desligar e ligar o acesso Supervisor na hora que quiser. Faça então o seguinte:</p>
+<ol>
+	<li>Consiga acesso Supervisor com o <code>nwhacker</code>;</li>
+	<li>Ligue sua conta para supe equivalency com o <code>super.exe</code>;</li>
+	<li>Se você ganhar acesso Supervisor, dê supe equivalency a algum dos defaults (guest, test, archivist, cheyarchsvr...);</li>
+	<li>Saia e entre na rede com o default que você deu a supe equivalency e ligue o acesso Supervisor com o <code>super.exe</code>;</li>
+	<li>Saia e entre novamente com o login que você utilizou primeiro;</li>
+	<li>Remova o acesso Supervisor.</li>
+	<li>Agora o default que você escolheu pode ser ligado e desligado por você na hora que você quiser para ter acesso Supervisor.</li>
+</ol>
+
+<h3>Passwords muito utilizados</h3>
+<p>Se não houver outro jeito e você precisar chutar os passwords, chute com inteligência e não vá começando: aaa, aab, aac, aad...</p>
+<p>Os passwords mais utilizados aqui no Brasil são:</p>
+<ul>
+	<li>Times de futebol;</li>
+	<li>Telefone;</li>
+	<li>Sobrenome;</li>
+	<li>Nome de computadores (pentium, ibm, etc são encontrados com frequência);</li>
+	<li>Apelidos;</li>
+	<li>Nome de pessoas famosas;</li>
+	<li>Passwords de teclas seguidas. Ex.: qwerty, asdfgh, zxcvbn ou aaa, bbb, ccc. O usuário que usa desse tipo de password não pensa em hackers quebrando sua senha e sim na velocidade para dar login.</li>
+</ul>
+<p>Por isso, quando você escolher sua password, faça uma mesclagem de letras e números. Ex. &quot;mouse/1997&quot; ou &quot;m1o9u9s7e&quot;. Parece óbvio, mas ninguém vai chutar uma password desse tipo quando tentar quebrar seu login.</p>
+
+<center><img src="/files/greenskull.gif"></center>
+
+<h2>Email</h2>
+<p>Nesta sessão você encontrará arquivos para enviar emails bombs, email sem remetente e os famosos PGPs.</p>
+<ul>
+	<li><a href="http://geocities.yahoo.com.br/lafhackerhp/Unabomb.zip" target="_blank">Unabomb (59,9k)</a> Para bombear o email de alguém.</li>
+	<li><a href="http://geocities.yahoo.com.br/lafhackerhp/Upyours_3.0.rar" target="_blank">Upyours 3.0 (+2Mb)</a> O melhor programa de email bomb.</li>
+	<li><a href="http://geocities.yahoo.com.br/lafhackerhp/Anonimail.exe" target="_blank">Anonimail (71,3k)</a> Para enviar emails anônimos.</li>
+	<li><a href="http://geocities.yahoo.com.br/lafhackerhp/AEgis_Shell_for_PGP.zip" target="_blank">AEgis Shell for PGP (2,6Mb)</a> Um dos melhores programas de encriptação.</li>
+</ul>
+<p>Se você quiser enviar um e-mail para Usenet, mande a mensagem para <code>&lt;NEWSGROUP&gt;@&lt;SERVERNAME&gt;</code>, por exemplo.</p>
+<dl>
+	<dt>Grupo</dt>
+	<dd>fulano.silva</dd>
+
+	<dt>Gateway</dt>
+	<dd>news.demon.co.uk</dd>
+
+	<dt>Endereço</dt>
+	<dd>fulano.silva@news.demon.co.uk</dd>
+</dl>
+<p>Abaixo está uma lista com alguns gateways:</p>
+<ul>
+	<li>group.name@news.demon.co.uk</li>
+	<li>group.name@charm.magnus.acs.ohiostate.edu</li>
+	<li>group.name@undergrad.math.uwaterloo.ca</li>
+	<li>group.name@nic.funet.fi</li>
+	<li>group.name.usenet@decwrl.dec.com</li>
+</ul>
+
+<h3>Unabomber</h3>
+<p>Devido ao grande número de pedidos de ajuda no uso do Unabomber, aqui vai um tutorial completo sobre o programa.</p>
+
+<h4>Instalação</h4>
+<ol>
+	<li>Descompacte o arquivo em um diretório qualquer.</li>
+	<li>Copie o arquivo iport.vbx para o system do Windows.</li>
+	<li>Arrume (faça download na Internet) um <code>vbrun300.dll</code> e copie tambem para o system.</li>
+</ol>
+
+<h4>Uso</h4>
+<ol>
+	<li>Rode o programa.</li>
+	<li>Na área &quot;Mail Server&quot; escreva o servidor que você usa para mandar e-mails (veja isso na configuração do seu programa de mensagens).</li>
+	<li>Escreva o endereço da vítima em &quot;To&quot;</li>
+	<li>O endereço que você quer assumir em &quot;From&quot;</li>
+	<li>E sua mensagem como você escreve normalmente.</li>
+	<li>Na área &quot;Apparent Server&quot;, escreva o servidor que vai aparecer como remetente na mensagem que você enviar.</li>
+</ol>
+<p>OBS: O remetente na mensagem estará escondido para pessoas comuns. Hackers, programadores ou qualquer especialista poder descobrir o endereço do idiota que o bombeou. NÃO VACILE... Este programa serve para ser usado com lammers, portanto bombeie lammers.</p>
