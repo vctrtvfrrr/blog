@@ -1,0 +1,81 @@
+<h1>Invasão por IP</h1>
+<time>2007-06-10T14:14:59-03:00</time>
+<center><img src="/files/windowsxp_fail.gif" width="267" height="200" hspace="5" vspace="5" border="1"></center>
+<p>Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.</p>
+<h2>1º Método</h2>
+<ol>
+<li>Verifique se você possui o programa <code>NBTSTAT</code> instalado no sistema.</li>
+<li>Abra o <b>Prompt de Comando</b> (MS-DOS).</li>
+<li>Digite o comando:
+<pre><code>nbtstat -a [IP do alvo]</code></pre></li>
+<li>O comando retornará informações sobre o computador de destino. Se o compartilhamento de arquivos não estiver habilitado, será exibida a mensagem: <code>HOST NOT FOUND</code>.</li>
+<li>Caso apareçam mensagens contendo <code><03></code>, isso indica que o compartilhamento está ativo. Pegue o nome associado a essa marca.</li>
+<li>Mapeie uma unidade de disco para integrar os dois sistemas. No Windows, acesse:<br>
+<b>Iniciar > Executar</b><br>
+Digite:
+<pre><code>\\[IP do alvo]</code></pre>
+e clique em <b>OK</b>.</li>
+<li>Agora, o computador foi acessado via IP!</li>
+</ol>
+<p><b>Observação:</b><br>
+Nunca apague ou modifique arquivos no computador de destino. Limite-se a explorar e, se necessário, copiar o que for relevante.</p>
+<h3>Dica</h3>
+<p>Para evitar ataques de terceiros, alguns usuários renomeiam o arquivo <code>VNBT.386</code>, localizado no diretório <code>C:\Windows\System</code>. Considere renomeá-lo também como medida de proteção.</p>
+<h2>2º Método</h2>
+<h3>Introdução</h3>
+<p>Para utilizar este método, é necessário:</p>
+<ol>
+<li>Uma conexão <b>PPP</b> (Point-to-Point Protocol).</li>
+<li>O endereço <b>IP</b> do computador-alvo.</li>
+</ol>
+<p>Com essas informações, você poderá acessar e controlar os drives da máquina da vítima.</p>
+<h3>Pré-requisitos</h3>
+<p>O computador da vítima deve ter o <b>Compartilhamento de Arquivos</b> instalado e ativado.</p>
+<h3>Configurações Necessárias</h3>
+<ol>
+<li>Verifique se o programa <code>NBTSTAT.EXE</code> está instalado. Ele geralmente está disponível por padrão no diretório <code>C:\Windows</code>.</li>
+<li>Certifique-se de que o driver <b>Clientes para Redes Microsoft</b> está ativado. Para isso:
+<ol>
+<li>Acesse o <b>Painel de Controle</b>.</li>
+<li>Abra o ícone <b>Redes</b>.</li>
+<li>Caso o driver não esteja listado, instale-o.</li>
+</ol></li>
+<li>Configure os serviços <b>WINS</b> e <b>LMHOSTS</b>:
+<ol>
+<li>O <b>WINS</b> localiza computadores com IP fixo.</li>
+<li>O <b>LMHOSTS</b> identifica dispositivos com IP dinâmico (IPs atribuídos pelo provedor, como ocorre na maioria dos casos).</li>
+</ol></li>
+</ol>
+<h4>Passo a passo para configurar o WINS:</h4>
+<ol>
+<li>No <b>Painel de Controle</b>, abra o ícone <b>Redes</b>.</li>
+<li>Selecione <b>TCP/IP</b> e clique em <b>Propriedades</b>.</li>
+<li>Vá até a aba <b>Configuração WINS</b> e ative a resolução WINS.</li>
+</ol>
+<h3>Realizando a Invasão</h3>
+<ol>
+<li>Certifique-se de capturar o IP da vítima no momento da invasão, pois IPs dinâmicos mudam a cada conexão.</li>
+<li>No <b>Prompt de Comando</b>, digite:
+<pre><code>nbtstat -A [IP do alvo]</code></pre>
+<p><b>Nota:</b> O parâmetro <code>-A</code> deve ser digitado em letras maiúsculas.</p>
+<ul>
+<li>Se a mensagem <code>Host not found</code> aparecer, o computador da vítima pode não ter compartilhamento de arquivos habilitado ou o IP pode ser inválido.</li>
+<li>Caso apareçam nomes com a marca <code><03></code>, anote o <b>NetBIOS</b> associado.</li>
+</ul></li>
+<li>Abra o arquivo <code>LMHOSTS.SAM</code>, localizado no diretório <code>C:\Windows</code>, utilizando o <b>Notepad</b>. Adicione o seguinte:
+<pre><code>[IP do alvo] [Nome NetBIOS]</code></pre>
+<ul>
+<li>O <b>Nome NetBIOS</b> é aquele associado à marca <code><03></code>.</li>
+<li>Seja rápido, pois o IP da vítima pode mudar ou ela pode desconectar-se.</li>
+</ul></li>
+</ol>
+<h3>Mapeando os Drives</h3>
+<center><img src="/files/invasao_por_ip.jpg" width="280" height="252" hspace="5" vspace="5" border="1"></center>
+<p>Agora, vincule os drives do computador da vítima ao seu sistema:</p>
+<ol>
+<li>No <b>Windows Explorer</b>, acesse <b>Ferramentas > Mapear unidade de rede</b>.</li>
+<li>Escolha uma letra de unidade (por exemplo, <code>Z:</code>).</li>
+<li>No campo de endereço, insira:
+<pre><code>\\[IP do alvo]</code></pre>
+<p>Para maior facilidade, acesse o menu <b>Iniciar > Executar</b> e digite o comando acima.</p></li>
+</ol>

