@@ -1,0 +1,146 @@
+<h1>Ping</h1>
+<time>2007-06-18T21:18:52-03:00</time>
+
+<p>Ping é uma das ferramentas mais conhecidas no diagnóstico de redes. Ela é usada para testar a conectividade entre dois dispositivos (por exemplo, entre seu computador e um servidor) e medir o tempo necessário para que um pacote de dados seja enviado e retornado. O <b>ping</b> utiliza o protocolo <b>ICMP</b> (Internet Control Message Protocol) para realizar essas verificações.</p>
+
+<h2>Principais Usos do Ping</h2>
+<ol>
+	<li><b>Verificar a conectividade com outro dispositivo</b><br>
+	Com o <b>ping</b>, você pode determinar se um host (computador, servidor, roteador, etc.) está alcançável na rede.</li>
+	<li><b>Diagnosticar problemas de rede</b><br>
+	Ele ajuda a identificar falhas em conexões ou identificar se há alta latência na comunicação.</li>
+	<li><b>Medir latência (tempo de resposta)</b><br>
+	O <b>ping</b> retorna o tempo que um pacote de dados levou para ir e voltar, medido em milissegundos (ms).</li>
+	<li><b>Testar nomes de domínio ou endereços IP</b><br>
+	Você pode usá-lo para verificar a resolução de nomes de domínio para IPs e vice-versa.</li>
+</ol>
+
+<h2>Como Usar o Ping</h2>
+<p>No Prompt de Comando, basta digitar <code>ping</code> seguido do endereço IP ou do nome do host que deseja testar.</p>
+
+<h3>Sintaxe Básica</h3>
+<pre><code>ping [host ou endereço IP] [opções]</code></pre>
+
+<h3>Exemplos Básicos</h3>
+<ol>
+	<li>
+		<p><b>Ping para um domínio</b></p>
+		<pre><code>ping www.google.com</code></pre>
+		<p>Retorna informações sobre a latência entre seu computador e os servidores do Google.</p>
+	</li>
+	<li>
+		<p><b>Ping para um endereço IP</b></p>
+		<pre><code>ping 8.8.8.8</code></pre>
+		<p>Verifica a conectividade com o DNS público do Google.</p>
+	</li>
+</ol>
+<p align="center"><img src="/files/ping.JPG" width="573" height="358" hspace="5" vspace="5" border="1"></p>
+
+<h2>Parâmetros Comuns do Ping</h2>
+<p>A ferramenta <b>ping</b> aceita diversos parâmetros que permitem personalizar seus testes. Aqui estão os mais comuns:</p>
+
+<table align="center" width="500" border="1" bordercolor="#3CFF00" cellspacing="0" cellpadding="5">
+	<thead>
+		<tr>
+			<th width="25%"><b>Parâmetro</b></th>
+			<th width="75%"><b>Descrição</b></th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>
+			<code>/t</code>
+		</td>
+		<td>Envia pacotes continuamente até que seja interrompido manualmente (Ctrl+C para parar).</td>
+	</tr>
+	<tr>
+		<td>
+			<code>/n &lt;count&gt;</code>
+		</td>
+		<td>Define o número de pacotes ICMP que serão enviados.</td>
+	</tr>
+	<tr>
+		<td>
+			<code>/l &lt;size&gt;</code>
+		</td>
+		<td>Define o tamanho do pacote ICMP enviado (em bytes).</td>
+	</tr>
+	<tr>
+		<td>
+			<code>/a</code>
+		</td>
+		<td>Resolve o endereço IP para um nome de host, caso possível.</td>
+	</tr>
+	<tr>
+		<td>
+			<code>/w &lt;timeout&gt;</code>
+		</td>
+		<td>Especifica o tempo limite em milissegundos para aguardar uma resposta.</td>
+	</tr>
+	<tr>
+		<td>
+			<code>/4</code>
+		</td>
+		<td>Força o uso do protocolo IPv4.</td>
+	</tr>
+	<tr>
+		<td>
+			<code>/6</code>
+		</td>
+		<td>Força o uso do protocolo IPv6.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Exemplos de Uso com Parâmetros</h2>
+<ol>
+	<li>
+		<p><b>Enviar ping continuamente</b></p>
+		<pre><code>ping www.google.com /t</code></pre>
+		<p>Útil para monitorar a estabilidade de uma conexão.</p>
+	</li>
+	<li>
+		<p><b>Enviar um número específico de pacotes</b></p>
+		<pre><code>ping www.google.com /n 5</code></pre>
+		<p>Envia 5 pacotes para o servidor Google.</p>
+	</li>
+	<li>
+		<p><b>Alterar o tamanho do pacote enviado</b></p>
+		<pre><code>ping www.google.com /l 128</code></pre>
+		<p>Envia pacotes com 128 bytes de dados.</p>
+	</li>
+	<li>
+		<p><b>Força o uso de IPv4</b></p>
+		<pre><code>ping www.google.com /4</code></pre>
+		<p>Garante que apenas o protocolo IPv4 será utilizado.</p>
+	</li>
+	<li>
+		<p><b>Configura um tempo limite para resposta</b></p>
+		<pre><code>ping www.google.com /w 2000</code></pre>
+		<p>Aguarda no máximo 2 segundos (2000 ms) por uma resposta antes de declarar o destino inacessível.</p>
+	</li>
+</ol>
+
+<h2>Analisando a Resposta do Ping</h2>
+<p>Quando você executa o <b>ping</b>, verá algo semelhante a:</p>
+<pre><code>Disparando em www.google.com [142.250.72.206] com 32 bytes de dados: Resposta de 142.250.72.206: bytes=32 tempo=28ms TTL=114 Resposta de 142.250.72.206: bytes=32 tempo=27ms TTL=114</code></pre>
+
+<h3>Campos Importantes</h3>
+<ul>
+	<li><b>bytes</b>: O tamanho do pacote enviado.</li>
+	<li><b>tempo</b>: A latência, medida em milissegundos.</li>
+	<li><b>TTL</b>: Time-to-Live, que indica o número máximo de saltos que o pacote pode realizar antes de ser descartado.</li>
+</ul>
+<p>Se o servidor não estiver acessível, você verá mensagens como:</p>
+<ul>
+	<li><b>Host de destino inacessível</b></li>
+	<li><b>Esgotado o tempo limite do pedido</b></li>
+</ul>
+
+<h2>Limitações do Ping</h2>
+<ol>
+	<li><b>Firewalls e políticas de segurança</b><br>
+	Algumas redes bloqueiam pacotes ICMP, tornando o <b>ping</b> inútil nesses casos.</li>
+	<li><b>Não detecta problemas complexos</b><br>
+	O <b>ping</b> é útil para diagnósticos básicos, mas não substitui ferramentas mais avançadas, como <b>tracert</b> ou <b>Wireshark</b>.</li>
+</ol>

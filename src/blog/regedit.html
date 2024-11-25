@@ -1,0 +1,106 @@
+<h1>Regedit</h1>
+<time>2007-06-28T20:53:48-03:00</time>
+
+<p>O Regedit (Editor de Registro) é uma ferramenta do Windows usada para visualizar, editar e gerenciar o registro do sistema operacional. O registro é uma base de dados que armazena informações importantes sobre o sistema, como configurações de hardware, preferências de software e detalhes sobre os programas instalados no computador.</p>
+
+<h2>Atenção ao usar o Regedit</h2>
+<p>Se você é iniciante e está explorando o Regedit, seja por curiosidade ou por qualquer outro motivo, é fundamental ter cuidado. Alterações no registro podem causar sérios problemas ao funcionamento do sistema, incluindo falhas críticas. Por isso, recomenda-se sempre:</p>
+<ol>
+	<li>
+		Fazer um backup do registro antes de qualquer modificação.
+	</li>
+	<li>
+		Realizar testes apenas em computadores que não são críticos, caso algo dê errado.
+	</li>
+</ol>
+<p>Qualquer alteração, mesmo que pequena, pode ser irreversível ou exigir a reinstalação do sistema operacional para corrigir.</p>
+
+<h2>Exemplos de modificações simples no Regedit</h2>
+
+<h3>1. Alterar o Nome da Lixeira</h3>
+<p>Uma modificação simples e inofensiva é alterar o nome da Lixeira do Windows. Para isso:</p>
+<ol>
+	<li>
+		Abra o Regedit.
+	</li>
+	<li>
+		Use a ferramenta de busca (pressione <kbd>Ctrl</kbd>+<kbd>F</kbd>) e digite o termo <code>Lixeira</code>.
+	</li>
+	<li>
+		Localize a chave correspondente ao nome da Lixeira.
+	</li>
+	<li>
+		Altere o valor da chave para o nome desejado.
+	</li>
+	<li>
+		Salve as alterações.
+	</li>
+</ol>
+<p>Lembre-se de reiniciar o sistema ou atualizar a área de trabalho para que a modificação seja aplicada.</p>
+
+<h3>2. Driblar limites de uso de programas trial</h3>
+<p>Outra prática comum é usar o Regedit para contornar restrições de tempo de uso de softwares de avaliação.</p>
+<p>Quando um programa atinge o limite de uso, ele normalmente registra essa informação no registro do Windows. Para redefinir o contador:</p>
+<ol>
+	<li>
+		Abra o Regedit.
+	</li>
+	<li>
+		Procure a chave relacionada ao programa, frequentemente identificada pelo nome do software.
+	</li>
+	<li>
+		Exclua ou edite a chave correspondente ao registro de uso.
+	</li>
+</ol>
+<p><b>Atenção:</b> Nem sempre esse método funciona, pois muitos softwares utilizam mecanismos de proteção avançados para evitar esse tipo de alteração, mas não custa tentar. ;-)</p>
+
+<p align="center"><img src="/files/regedit.jpg" width="500" height="210" hspace="5" vspace="5" border="1"></p>
+
+<h2>Algumas chaves do Regedit:</h2>
+<ul>
+	<li>
+		<b>Painel de Controle</b> {21EC2020-3AEA-1069-A2DD-08002B30309D}
+	</li>
+	<li>
+		<b>Impressoras</b> {2227A280-3AEA-1069-A2DE-08002B30309D}
+	</li>
+	<li>
+		<b>Lixeira</b> {645FF040-5081-101B-9F08-00AA002F954E}
+	</li>
+	<li>
+		<b>Meu Computador</b> {20D04FE0-3AEA-1069-A2D8-08002B30309D}
+	</li>
+	<li>
+		<b>Network Neighborhood</b> {208D2C60-3AEA-1069-A2D7-08002B30309D}
+	</li>
+	<li>
+		<b>Caixa de Entrada</b> {00020D75-0000-0000-C000-000000000046}
+	</li>
+	<li>
+		<b>Área de Trabalho</b> {00021400-0000-0000-C000-000000000046}
+	</li>
+	<li>
+		<b>Atalho</b> {00021401-0000-0000-C000-000000000046}
+	</li>
+	<li>
+		<b>Tarefa do Menu iniciar</b> {DDB008FE-048D-11d1-B9CD-00C04FC2C1D2}
+	</li>
+	<li>
+		<b>Active Desktop Mover</b> {72267F6A-A6F9-11D0-BC94-00C04FB67863}
+	</li>
+	<li>
+		<b>Internet Explorer</b> {25336920-03F9-11CF-8FD0-00AA00686F13}
+	</li>
+	<li>
+		<b>Documento MS WORD</b> {00020900-0000-0000-C000-000000000046}
+	</li>
+	<li>
+		<b>Documento MS EXCEL</b> {00024500-0000-0000-C000-000000000046}
+	</li>
+	<li>
+		<b>The Ms Network</b> {00028B00-0000-0000-C000-000000000046}
+	</li>
+	<li>
+		<b>Fontes</b> {BD84B380-8CA2-1069-A2DE-08000948F534}
+	</li>
+</ul>

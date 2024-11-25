@@ -5,7 +5,93 @@
 {% endblock head %}
 
 {% block content %}
+<p align="center">
+<applet align="baseline" code="fazermessage.class" height="174" width="620">
+<param name="background" value="00000000">
+<param name="italic" value="No">
+<param name="item0" value="{{ sitename }}">
+<param name="step" value="9">
+<param name="url0" value="">
+<param name="fazercolor" value="00ff00">
+<param name="bold" value="No">
+<param name="delay" value="100">
+<param name="loop" value="No">
+<param name="sleeptime" value="1000">
+<param name="sound" value="Yes">
+<param name="font" value="Helvetica">
+<param name="fontsize" value="40">
+<param name="foreground" value="fff">
+O seu navegador não suporta Applets Java.
+</applet>
+</p>
+<p align="center"><img border="0" src="/files/javascriptativado.bmp"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img src="/files/bemvindo.gif" border="0" width="220" height="70"></p>
+<p align="center">&nbsp;</p>
+<script language="JavaScript"><!--
+	hoje = new Date()
+	dia = hoje.getDate()
+	dias = hoje.getDay()
+	mes = hoje.getMonth()
+	ano = hoje.getFullYear()
+
+	if (dia < 10)
+			dia = "0" + dia
+	if (ano < 2000)
+			ano = "19" + ano
+	function CriaArray (n) {
+	this.length = n }
+
+	NomeDia = new CriaArray(7)
+	NomeDia[0] = "Domingo"
+	NomeDia[1] = "Segunda-feira"
+	NomeDia[2] = "Terça-feira"
+	NomeDia[3] = "Quarta-feira"
+	NomeDia[4] = "Quinta-feira"
+	NomeDia[5] = "Sexta-feira"
+	NomeDia[6] = "Sábado"
+
+	NomeMes = new CriaArray(12)
+	NomeMes[0] = "Janeiro"
+	NomeMes[1] = "Fevereiro"
+	NomeMes[2] = "Março"
+	NomeMes[3] = "Abril"
+	NomeMes[4] = "Maio"
+	NomeMes[5] = "Junho"
+	NomeMes[6] = "Julho"
+	NomeMes[7] = "Agosto"
+	NomeMes[8] = "Setembro"
+	NomeMes[9] = "Outubro"
+	NomeMes[10] = "Novembro"
+	NomeMes[11] = "Dezembro"
+	// function WriteDate() {
+		document.write ("<p align='center'><font face='Verdana' size='2'>" + NomeDia[dias] + ", " + dia + " de " + NomeMes[mes] + " de " + ano + "</font>")
+	// }
+// --></script>
+<p align="center">&nbsp;</p>
+
 {{ contents | safe }}
+
+{# liberar a partir de julho/2007<p align="center">&nbsp;</p>
+<p align="center"><a href="http://www.ibazar.com.br/index.cgi?kj547738" target="_blank"><img src="http://www.ibazar.com.br/banners/popup_1.gif" border="0" width="300" height="200"></a></p> #}
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" height="22" src="/files/image610.gif" width="765"></p>
+
+{# Liberar após mudança de layout
+<p align="center">
+	<script language="JavaScript">
+	function installTrojan() {
+		var x=10
+		for (i=0;i<20;i++){
+			window.moveBy(0,x)
+			window.moveBy(x,0)
+			window.moveBy(0,-x)
+			window.moveBy(-x,0)
+		}
+	}
+	</script>
+	<a style="cursor:crosshair;" onclick="alert('CURIOSO');alert('Você não deveria ter clicado aqui...');alert('Agora o vírus do trojan vai ser instalado no seu computador!');installTrojan();alert('Vírus instalado com sucesso');alert('Desejo-lhe uma boa estadia ;-)')"><img src="/files/enterraios.gif" width="145" height="77"></a>
+</p> #}
 
 {% if collections.blog.length %}
 <UL>
