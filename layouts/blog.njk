@@ -5,27 +5,6 @@
 {% endblock head %}
 
 {% block content %}
-<p align="center">
-<applet align="baseline" code="fazermessage.class" height="174" width="620">
-<param name="background" value="00000000">
-<param name="italic" value="No">
-<param name="item0" value="{{ sitename }}">
-<param name="step" value="9">
-<param name="url0" value="">
-<param name="fazercolor" value="00ff00">
-<param name="bold" value="No">
-<param name="delay" value="100">
-<param name="loop" value="No">
-<param name="sleeptime" value="1000">
-<param name="sound" value="Yes">
-<param name="font" value="Helvetica">
-<param name="fontsize" value="40">
-<param name="foreground" value="fff">
-O seu navegador não suporta Applets Java.
-</applet>
-</p>
-<p align="center"><img border="0" src="/files/javascriptativado.bmp"></p>
-<p align="center">&nbsp;</p>
 <p align="center"><img src="/files/bemvindo.gif" border="0" width="220" height="70"></p>
 <p align="center">&nbsp;</p>
 <script language="JavaScript"><!--
@@ -34,14 +13,10 @@ O seu navegador não suporta Applets Java.
 	dias = hoje.getDay()
 	mes = hoje.getMonth()
 	ano = hoje.getFullYear()
-
 	if (dia < 10)
 			dia = "0" + dia
-	if (ano < 2000)
-			ano = "19" + ano
 	function CriaArray (n) {
 	this.length = n }
-
 	NomeDia = new CriaArray(7)
 	NomeDia[0] = "Domingo"
 	NomeDia[1] = "Segunda-feira"
@@ -50,7 +25,6 @@ O seu navegador não suporta Applets Java.
 	NomeDia[4] = "Quinta-feira"
 	NomeDia[5] = "Sexta-feira"
 	NomeDia[6] = "Sábado"
-
 	NomeMes = new CriaArray(12)
 	NomeMes[0] = "Janeiro"
 	NomeMes[1] = "Fevereiro"
@@ -72,8 +46,8 @@ O seu navegador não suporta Applets Java.
 
 {{ contents | safe }}
 
-{# liberar a partir de julho/2007<p align="center">&nbsp;</p>
-<p align="center"><a href="http://www.ibazar.com.br/index.cgi?kj547738" target="_blank"><img src="http://www.ibazar.com.br/banners/popup_1.gif" border="0" width="300" height="200"></a></p> #}
+<p align="center">&nbsp;</p>
+<p align="center"><a href="http://www.ibazar.com.br/index.cgi?kj547738" target="_blank"><img src="http://www.ibazar.com.br/banners/popup_1.gif" border="0" width="300" height="200"></a></p>
 <p align="center">&nbsp;</p>
 <p align="center"><img border="0" height="22" src="/files/image610.gif" width="765"></p>
 
