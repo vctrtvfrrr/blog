@@ -67,9 +67,9 @@
 	<a style="cursor:crosshair;" onclick="alert('CURIOSO');alert('Você não deveria ter clicado aqui...');alert('Agora o vírus do trojan vai ser instalado no seu computador!');installTrojan();alert('Vírus instalado com sucesso');alert('Desejo-lhe uma boa estadia ;-)')"><img src="/files/enterraios.gif" width="145" height="77"></a>
 </p> #}
 
-{% if collections.blog.length %}
+{% if pagination.files.length %}
 <UL>
-	{% for item in collections.blog %}
+	{% for item in pagination.files %}
 	<LI>
 		<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
 		<P><I><FONT SIZE="1">{{ item.pubdate }}</FONT></I></P>
@@ -77,6 +77,13 @@
 	</LI>
 	{% endfor %}
 </UL>
+{% endif %}
+
+{% if pagination.previous %}
+<a href="/{{ pagination.previous.path }}" class="btn pull-right"><img src="/files/back.gif" width="64" height="24"></a>
+{% endif %}
+{% if pagination.next %}
+<a href="/{{ pagination.next.path }}" class="btn pull-left"><img src="/files/next.gif" width="64" height="24"></a>
 {% endif %}
 
 {# Liberar a partir de agosto/2007

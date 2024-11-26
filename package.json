@@ -20,6 +20,7 @@
     "jstransformer-nunjucks": "^1.2.0",
     "metalsmith": "^2.6.3",
     "metalsmith-html-minifier": "^4.0.1",
+    "metalsmith-pagination": "^1.5.0",
     "nodemon": "^3.1.7"
   },
   "peerDependencies": {

@@ -7,6 +7,7 @@ import collections from "@metalsmith/collections";
 import browserSync from "browser-sync";
 import * as cheerio from "cheerio";
 import htmlMinifier from "metalsmith-html-minifier";
+import pagination from "metalsmith-pagination";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env["NODE_ENV"] === "production";
@@ -110,6 +111,15 @@ function msBuild() {
         data.contents = Buffer.from($.html());
       });
     })
+    .use(
+      pagination({
+        "collections.blog": {
+          first: "index.html",
+          layout: "blog.njk",
+          path: "blog/page/:num.html",
+        },
+      })
+    )
     .use(
       layouts({
         default: "base.njk",
