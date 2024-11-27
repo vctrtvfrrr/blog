@@ -1,11 +1,12 @@
 {%- set pageTitle = sitename -%}
 
+{# Liberar quando o site tiver mais páginas além do blog
 {%- if collections[collection].metadata.title -%}
   {%- set pageTitle = collections[collection].metadata.title + ' | ' + pageTitle -%}
-{%- endif -%}
+{%- endif -%} #}
 
 {%- if title -%}
-  {%- set pageTitle = title + ' | ' + pageTitle -%}
+  {%- set pageTitle = title + ' &mdash; ' + pageTitle -%}
 {%- endif -%}
 
 {%- if excerpt -%}
