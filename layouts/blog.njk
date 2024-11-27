@@ -5,101 +5,87 @@
 {% endblock head %}
 
 {% block content %}
-<p align="center"><img src="/files/bemvindo.gif" border="0" width="220" height="70"></p>
-<p align="center">&nbsp;</p>
-<script language="JavaScript"><!--
-	hoje = new Date()
-	dia = hoje.getDate()
-	dias = hoje.getDay()
-	mes = hoje.getMonth()
-	ano = hoje.getFullYear()
-	if (dia < 10)
-			dia = "0" + dia
-	function CriaArray (n) {
-	this.length = n }
-	NomeDia = new CriaArray(7)
-	NomeDia[0] = "Domingo"
-	NomeDia[1] = "Segunda-feira"
-	NomeDia[2] = "Terça-feira"
-	NomeDia[3] = "Quarta-feira"
-	NomeDia[4] = "Quinta-feira"
-	NomeDia[5] = "Sexta-feira"
-	NomeDia[6] = "Sábado"
-	NomeMes = new CriaArray(12)
-	NomeMes[0] = "Janeiro"
-	NomeMes[1] = "Fevereiro"
-	NomeMes[2] = "Março"
-	NomeMes[3] = "Abril"
-	NomeMes[4] = "Maio"
-	NomeMes[5] = "Junho"
-	NomeMes[6] = "Julho"
-	NomeMes[7] = "Agosto"
-	NomeMes[8] = "Setembro"
-	NomeMes[9] = "Outubro"
-	NomeMes[10] = "Novembro"
-	NomeMes[11] = "Dezembro"
-	// function WriteDate() {
-		document.write ("<p align='center'><font face='Verdana' size='2'>" + NomeDia[dias] + ", " + dia + " de " + NomeMes[mes] + " de " + ano + "</font>")
-	// }
-// --></script>
-<p align="center">&nbsp;</p>
-
-{{ contents | safe }}
-
-<p align="center">&nbsp;</p>
-<p align="center"><a href="http://www.ibazar.com.br/index.cgi?kj547738" target="_blank"><img src="http://www.ibazar.com.br/banners/popup_1.gif" border="0" width="300" height="200"></a></p>
-<p align="center">&nbsp;</p>
-<p align="center"><img border="0" height="22" src="/files/image610.gif" width="765"></p>
-
-{# Liberar após mudança de layout
-<p align="center">
-	<script language="JavaScript">
-	function installTrojan() {
-		var x=10
-		for (i=0;i<20;i++){
-			window.moveBy(0,x)
-			window.moveBy(x,0)
-			window.moveBy(0,-x)
-			window.moveBy(-x,0)
-		}
-	}
-	</script>
-	<a style="cursor:crosshair;" onclick="alert('CURIOSO');alert('Você não deveria ter clicado aqui...');alert('Agora o vírus do trojan vai ser instalado no seu computador!');installTrojan();alert('Vírus instalado com sucesso');alert('Desejo-lhe uma boa estadia ;-)')"><img src="/files/enterraios.gif" width="145" height="77"></a>
-</p> #}
-
-{% if pagination.files.length %}
-<UL>
-	{% for item in pagination.files %}
-	<LI>
-		<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
-		<P><I><FONT SIZE="1">{{ item.pubdate }}</FONT></I></P>
-		<P>{{ item.excerpt }}</P>
-	</LI>
-	{% endfor %}
-</UL>
-{% endif %}
-
-{% if pagination.previous %}
-<a href="/{{ pagination.previous.path }}" class="btn pull-right"><img src="/files/back.gif" width="64" height="24"></a>
-{% endif %}
-{% if pagination.next %}
-<a href="/{{ pagination.next.path }}" class="btn pull-left"><img src="/files/next.gif" width="64" height="24"></a>
-{% endif %}
-
-{# Liberar a partir de agosto/2007
-<p align="center"><img src="/files/image610.gif" width="765" height="22"></p>
-
-<h2>Contato</h2>
-<form action="http://www2.woofoo.com/user-cgi/FormMail.pl" method="POST">
-<input type="HIDDEN" name="recipient" value="{{ author.email }}">
-Digite o assunto do seu e-mail: <br>
-<input type="TEXT" name="subject"><br>
-Digite seu endereço de e-mail: <br>
-<input type="TEXT" name="email"><br>
-Insira o conteúdo do seu e-mail: <br>
-<textarea name="content" rows="9" cols="45"></textarea><br>
-<input type="IMAGE" src="/files/CONTATO.GIF">
-</form>
-
-<p align="center"><img src="/files/image610.gif" width="765" height="22"></p> #}
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			<p align="center"><img src="/files/bemvindo.gif" border="0" width="220" height="70"></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<script language="JavaScript"><!--
+				hoje = new Date()
+				dia = hoje.getDate()
+				dias = hoje.getDay()
+				mes = hoje.getMonth()
+				ano = hoje.getFullYear()
+				if (dia < 10)
+						dia = "0" + dia
+				function CriaArray (n) {
+				this.length = n }
+				NomeDia = new CriaArray(7)
+				NomeDia[0] = "Domingo"
+				NomeDia[1] = "Segunda-feira"
+				NomeDia[2] = "Terça-feira"
+				NomeDia[3] = "Quarta-feira"
+				NomeDia[4] = "Quinta-feira"
+				NomeDia[5] = "Sexta-feira"
+				NomeDia[6] = "Sábado"
+				NomeMes = new CriaArray(12)
+				NomeMes[0] = "Janeiro"
+				NomeMes[1] = "Fevereiro"
+				NomeMes[2] = "Março"
+				NomeMes[3] = "Abril"
+				NomeMes[4] = "Maio"
+				NomeMes[5] = "Junho"
+				NomeMes[6] = "Julho"
+				NomeMes[7] = "Agosto"
+				NomeMes[8] = "Setembro"
+				NomeMes[9] = "Outubro"
+				NomeMes[10] = "Novembro"
+				NomeMes[11] = "Dezembro"
+				// function WriteDate() {
+					document.write ("<p align='center'><font face='Verdana' size='2'>" + NomeDia[dias] + ", " + dia + " de " + NomeMes[mes] + " de " + ano + "</font>")
+				// }
+			// --></script>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			{{ contents | safe }}
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<p align="center"><img border="0" height="22" src="/files/image610.gif" width="100%" height="22"></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			{% if pagination.files.length %}
+			<UL>
+				{% for item in pagination.files %}
+				<LI>
+					<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
+					<P><I><FONT SIZE="1">{{ item.pubdate }}</FONT></I></P>
+					<P>{{ item.excerpt }}</P>
+				</LI>
+				{% endfor %}
+			</UL>
+			{% endif %}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			{% if pagination.previous %}
+			<p align="left"><a href="/{{ pagination.previous.path }}"><img src="/files/back.gif" width="64" height="24"></a></p>
+			{% endif %}
+		</td>
+		<td>
+			{% if pagination.next %}
+			<p align="right"><a href="/{{ pagination.next.path }}"><img src="/files/next.gif" width="64" height="24"></a></p>
+			{% endif %}
+		</td>
+	</tr>
+</table>
 {% endblock content %}
