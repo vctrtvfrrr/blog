@@ -1,0 +1,20 @@
+<h1>Armações no Orkut</h1>
+<time>2008-10-18T21:00:00-03:00</time>
+<p>Aqui a vou ensinar algumas das 1000 maneiras de hackear o Orkut!</p>
+<p>Colocar o código na página da web<br>
+Escrever o scrap mais não clickar em submeter e sim dar enter</p>
+<p>Esse é pra floodar quem esta adicionado em sua lista de amigos.</p>
+<pre><code>
+javascript:var _field=document.getElementById... origText=_field.value;function 
+floodIt(){document.getElementB... += '[i]'; floodID=setTimeout(floodIt, 
+500);}floodIt();
+</code></pre>
+<p>Esse é pra floodar em depoimentos.</p>
+<pre><code>
+javascript:function ResistenciaFloodin() 
+{if (typeof(Page_ClientValidate) != 'function' || Page_ClientValidate()) 
+__doPostBack('btnSubmit','');R... 500)};ResistenciaFloodin();
+</code></pre>
+<p>ZERAR SCRAPS</p>
+<pre><code>javascript:function resJoinIt(){document.getElemen... 
+void(setInterval(resJoinIt,404...</code></pre>
