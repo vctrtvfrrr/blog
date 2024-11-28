@@ -1,0 +1,159 @@
+<h1>10 Dicas para o Windows</h1>
+<time>2007-08-06T21:00:00-03:00</time>
+<h2>Reinicializando somente o Windows, sem reiniciar o computador</h2>
+<p>No Windows 95 e 98, muitas alterações exigem a reinicialização do sistema. Para evitar a reinicialização completa da máquina, que pode ser demorada, use este truque:</p>
+<ol>
+<li>
+Selecione a opção <b>Desligar</b> e, em seguida, clique em <b>Reiniciar o computador</b>.
+</li>
+<li>
+Mantenha pressionada a tecla <b>Shift</b> enquanto clica em <b>OK</b>.
+</li>
+</ol>
+<p>Este método reinicia apenas o Windows, economizando tempo e mantendo o computador ligado.</p>
+<h2>Acelerando o Menu Iniciar</h2>
+<p>Os segundos de espera ao abrir o Windows podem parecer longos. Existe uma maneira de acelerar a abertura do <b>Menu Iniciar</b>:</p>
+<ol>
+<li>
+Abra o <b>Editor de Registro</b>. Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione <b>Enter</b>.
+</li>
+<li>
+<p>Navegue até a seguinte chave:</p>
+<pre><code>HKEY_CURRENT_USER\Control Panel\Desktop</code></pre>
+</li>
+<li>
+<p>No painel direito, clique com o botão direito em um espaço vazio, escolha <b>Novo &gt; Valor da Cadeia</b>, e nomeie-o como <code>MenuShowDelay</code>.</p>
+<blockquote>
+<p>
+<b>Atenção:</b> O nome deve ser escrito exatamente assim, respeitando maiúsculas e minúsculas.</p>
+</blockquote>
+</li>
+<li>
+Dê um duplo clique em <code>MenuShowDelay</code> e insira o valor <code>1</code> (ou outro número menor que o padrão).
+</li>
+</ol>
+<p>Quanto menor o valor, mais rápido o Menu Iniciar será exibido.</p>
+<h2>Criando um atalho para o Menu Iniciar</h2>
+<p>Transforme o <b>Menu Iniciar</b> em uma janela semelhante ao Gerenciador de Programas do Windows 3.x:</p>
+<ol>
+<li>
+Clique com o botão direito na <b>Barra de Tarefas</b> e escolha <b>Propriedades</b>.
+</li>
+<li>
+Vá até <b>Programas do Menu Iniciar</b> e clique em <b>Avançado</b>.
+</li>
+<li>
+No <b>Explorador de Arquivos</b>, selecione a pasta <b>Programas</b>.
+</li>
+<li>
+Clique em <b>Editar &gt; Copiar</b> no menu superior.
+</li>
+<li>
+Feche todas as janelas, vá para a área de trabalho, clique com o botão direito e escolha <b>Colar atalho</b>.
+</li>
+</ol>
+<p>Um ícone que representa a nova janela de programas será exibido na área de trabalho.</p>
+<h2>Melhorando a Velocidade do Modem</h2>
+<p>Para otimizar o desempenho do seu modem:</p>
+<ol>
+<li>
+Abra o <b>Painel de Controle</b> e clique em <b>Sistema</b>.
+</li>
+<li>
+Vá até a aba <b>Gerenciador de Dispositivos</b>.
+</li>
+<li>
+Encontre e selecione a seção <b>Portas COM e LPT</b>.
+</li>
+<li>
+Clique na porta em que o modem está configurado (COM1, COM2, etc.) e clique em <b>Propriedades</b>.
+</li>
+<li>
+Na aba <b>Configurações da Porta</b>, localize a opção <b>Bits por Segundo</b> e defina o valor como <code>921600</code>.
+</li>
+<li>
+Clique em <b>OK</b> para aplicar as configurações.
+</li>
+</ol>
+<p>Essa alteração aumenta a eficiência do modem, especialmente para dispositivos com velocidades de 28800 ou 33600 bps.</p>
+<h2>Melhorando o Desempenho do Computador</h2>
+<p>Se o seu computador possui mais de 20 MB de RAM, você pode aprimorar o desempenho:</p>
+<ol>
+<li>
+Acesse o <b>Painel de Controle</b> e clique em <b>Sistema</b>.
+</li>
+<li>
+Na aba <b>Desempenho</b>, selecione a opção <b>Servidor de Rede</b>.
+</li>
+<li>
+Clique em <b>OK</b> e observe a melhora no desempenho geral da máquina.
+</li>
+</ol>
+<h2>Fechando Todas as Janelas Abertas Rapidamente</h2>
+<p>Para fechar todas as janelas abertas de uma mesma ramificação:</p>
+<ol>
+<li>
+Mantenha pressionada a tecla <b>Shift</b>.
+</li>
+<li>
+Clique no botão <b>Fechar</b> (X) da última janela aberta.
+</li>
+</ol>
+<p>Todas as janelas pertencentes à mesma ramificação serão fechadas instantaneamente.</p>
+<h2>Adicionando o Painel de Controle ao Menu Iniciar</h2>
+<p>Para facilitar o acesso ao <b>Painel de Controle</b> diretamente pelo Menu Iniciar:</p>
+<ol>
+<li>
+Clique com o botão direito no botão <b>Iniciar</b> e selecione <b>Abrir</b>.
+</li>
+<li>
+Na janela que se abre, clique com o botão direito novamente e escolha <b>Novo &gt; Pasta</b>.
+</li>
+<li>
+<p>Renomeie a nova pasta para:</p>
+<pre><code>Painel de Controle.{21EC2020-3AEA-1069-A2DD-08002B30309D}</code></pre>
+<p>ou</p>
+<pre><code>Control Painel.{21EC2020-3AEA-1069-A2DD-08002B30309D}</code></pre>
+</li>
+<li>
+Verifique se o ícone do Painel de Controle aparece no Menu Iniciar. Caso contrário, confira se o nome foi digitado corretamente, incluindo o ponto antes da chave.
+</li>
+</ol>
+<p>Agora, você terá acesso direto aos ícones do Painel de Controle a partir do Menu Iniciar.</p>
+<h2>Visualizando as Propriedades de um Arquivo Rapidamente</h2>
+<p>Para acessar rapidamente as propriedades de um arquivo:</p>
+<ol>
+<li>
+Pressione e mantenha a tecla <b>Alt</b>.
+</li>
+<li>
+Clique duas vezes no arquivo desejado.
+</li>
+</ol>
+<p>Isso exibirá a janela de propriedades do arquivo de forma imediata.</p>
+<h2>Calendário Rápido</h2>
+<p>No Windows XP, 98 e 95, você pode facilitar o acesso ao calendário:</p>
+<ol>
+<li>
+Clique no pequeno ícone de relógio localizado ao lado da hora, na barra de tarefas.
+</li>
+<li>
+Um calendário será exibido para consulta imediata.
+</li>
+</ol>
+<p>Essa funcionalidade é útil para quem precisa acessar datas rapidamente sem abrir programas adicionais.</p>
+<h2>Impressão Rápida</h2>
+<p>No Windows 95, é possível realizar uma impressão rápida diretamente pelo Explorador de Arquivos:</p>
+<ol>
+<li>
+Abra o <b>Explorer</b> e navegue até o diretório onde os documentos estão armazenados.
+</li>
+<li>
+Selecione os documentos que deseja imprimir.
+</li>
+<li>
+Clique com o botão direito no documento selecionado e escolha a opção <b>Imprimir</b>.
+</li>
+</ol>
+<p>Certifique-se de que conhece o nome dos arquivos e seus locais, pois o procedimento não oferece pré-visualização.</p>
+</div>
