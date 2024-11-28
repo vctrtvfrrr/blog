@@ -1,0 +1,175 @@
+<h1>Limpando Arquivos Temporários do Windows</h1>
+<time>2007-08-21T21:00:00-03:00</time>
+<p>
+	Todo mundo sabe que o Windows e a maioria dos programas, criam arquivos temporários para seu uso. Porém, nem todos os programas apagam os rascunhos que criam, deixando-os entulharem o sistema do usuário.
+</p>
+<p>
+	Os arquivos temporários ocupam espaço no HD, como qualquer outro arquivo. Por si só, eles não reduzem o desempenho. Mas, aos poucos, conforme mais e mais arquivos inúteis vão ficando armazenados, o computador começa a ficar mais lento, por causa da fragmentação dos dados no HD. Além do espaço desperdiçado, que pode chegar a vários gigabytes em HDs de quem nunca limpa os temporários.
+</p>
+<p>
+	Talvez você pense, "com HDs gigantescos, não preciso ficar limpando os temporários frequentemente". Não é bem assim... Quanto mais espaço, e mais tempo de uso, conforme o instala/desinstala programa, abre/fecha arquivos zipados (que normalmente são extraídos para a pasta dos temporários), etc, seu HD vai ficando com mais e mais arquivos temporários. A situação fica pior ainda para quem mantém o Windows numa máquina virtual, onde normalmente se define um tamanho pequeno de HD, e os temporários reduzem a performance, atrapalham o backup (para quê fazer backup de lixo?!)... Ou seja, não dá para manter para sempre os temporários no seu computador, se você quiser seu sistema sadio; além de poder aproveitar melhor o espaço do SEU HD com arquivos que VOCÊ precisa.
+</p>
+<p>
+	Além disso, como se não bastasse, muitos programas gravam e não limpam depois dados no registro. O registro é um banco de dados no Windows, cujo objetivo é armazenar de forma organizada as configurações do sistema, do próprio Windows, e dos programas que queiram utilizá-lo.
+</p>
+<p>
+	Existem seções diferentes do registro para cada programa, mas muitos não limpam suas configurações e dados quando são desinstalados. Isso com o tempo vai deixando o registro cheio de lixo, com configurações antigas de programas que você não vai mais usar. Por isso é bom uma limpeza, mas esta é praticamente impossível de se fazer manualmente.
+</p>
+<p>
+	Para começar, o registro não é um arquivo de texto, é um arquivo binário que segue um formato específico. O Windows possui um editor, muito conhecido: o <a href="/blog/regedit.html">Regedit</a> ("Iniciar &gt; Executar &gt; regedit"). Mas são tantos os locais que podem armazenar dados antigos ou inúteis, que a caça manual por eles não é uma boa idéia. Para isso precisamos usar programas limpadores de registro, como comentarei mais a frente.
+</p>
+<p>
+	Muita gente reclama do registro do Windows, comparando muitas vezes com a forma das configurações do Linux, que ficam em arquivos de texto puro, legíveis e facilmente editáveis/substituíveis. Ambas as formas de guardar as configurações têm suas vantagens e desvantagens. Os arquivos de configuração são fáceis de editar (basta abri-los em qualquer editor de textos), é fácil fazer backup copiando os arquivos, etc. Já o registro não tem nada disso, se o Windows não inicia, muitos problemas não têm como ser consertados. Em compensação, o acesso aos dados no registro normalmente é mais rápido, especialmente se feito várias vezes seguidas, do que em arquivos de texto. E também, dificulta para os usuários editarem ou excluírem algo inadvertidamente, o que prejudicaria o funcionamento normal do sistema.
+</p>
+<p>
+	Bom, não vamos discutir qual é melhor ou pior, vamos organizar melhor o Windows para evitar lentidão, lentidão essa que sempre acontecerá com o tempo, mesmo em computadores mais parrudos, com o instala/desinstala/baixa/copia/move arquivos.
+</p>
+
+<h2>Programas limpadores de arquivos</h2>
+<p>
+	O Windows possui um acessório de limpeza de disco, básico, mas que cumpre seu papel, apesar de ser lento para listar o quanto de espaço será liberado. Trata-se do utilitário "Limpeza de Disco", que você pode acessar clicando no botão "Limpeza de disco", na janela das propriedades da unidade desejada, no "Meu computador". Ou, se quiser, pode abri-lo digitando <code>cleanmgr</code> no "Iniciar &gt; Executar".
+</p>
+<p>
+	Uma solução de terceiros é o CCleaner, um programa gratuito, que eu recomendo a todos os usuários de Windows que posso. Baixe-o em <a href="http://www.ccleaner.com/" target="_blank">www.ccleaner.com</a>.
+</p>
+<p>
+	Ele limpa diversos arquivos temporários e logs, além do histórico, cookies e temporários da Internet do IE, Firefox, Opera, menus de arquivos recentes de diversos programas que ele detecta quando estão instalados, etc. É muito bom, pois há diversos locais no Windows que podem armazenar arquivos temporários, e se você nunca limpar, estará desperdiçando espaço e deixando seu computador mais lento. Já me surpreendi algumas vezes onde passei o CCleaner em computadores de amigos, nem com tanto tempo de uso assim, e ele eliminou mais de 1 GB de lixo.
+</p>
+<blockquote>
+<p>
+	Dica: clicando no botão "Analisar", ele exibe o quanto de espaço será liberado, antes de apagar um byte sequer do HD. Além disso, para uma limpeza mais completa, é bom clicar em "Opções" e a seguir em "Avançado", no CCleaner, e desmarcar o item "Deletar somente arquivos temporários criados a mais de 48 horas". Só não mande limpar logo após instalar algum programa, pois eles podem guardar arquivos temporários para substituição após a reinicialização. A dica é então, reiniciar o computador após instalar algum programa, e só depois de reiniciado, passar o CCleaner.
+</p>
+</blockquote>
+<p>
+	Dependendo do uso do computador, é bom passar o CCleaner uma vez por semana. Em máquinas virtuais, é bom passar sempre antes de desligá-la, mas claro, depende do uso que cada um faz do sistema. Se você passar frequentemente e ver que poucos dados são eliminados, pode então ir ampliando os intervalos.
+</p>
+<h2>Limpeza manual? Arregace as mangas, e vamos lá!</h2>
+<p>
+	Para quem gosta de fazer as coisas manualmente, estes são os locais mais comuns de se encontrar arquivos temporários e/ou inúteis, que podem ser apagados com segurança (troque X pela letra da unidade do Windows, normalmente C):
+</p>
+<p>
+	<li>
+		<pre><code>X:\Documents and settings\&lt;NomeDoUsuário&gt;\Configurações locais\Temp</code></pre>
+		<p>Pasta temporária do usuário no Windows 2000 ou superior; se nunca for limpa, cresce indefinidamente, comendo GIGAS e mais GIGAS do seu HD!</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\temp</code></pre>
+		<p>Arquivos temporários do computador, pouco usada do Windows 2000 para cá, pois cada usuário tem a sua pasta temporária separada; no entanto, alguns programas mais antigos só usam ela, portanto, vale a pena limpar.</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\repair</code></pre>
+		<p>
+			Cópia de alguns arquivos de sistema do Windows; se ele precisar desses arquivos e não encontrar, vai pedir o CD; na verdade ele só vai precisar se os originais forem apagados ou alterados - o que praticamente nunca ocorrerá em
+			situações normais, desde que você não rode programas suspeitos!
+		</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\system32\dllcache</code></pre>
+		<p>Idem item anterior, esta ocupa em média de 80 a 400 MB.</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\prefetch</code></pre>
+		<p>
+			Arquivos que normalmente podem ser removidos no Windows XP ou superior, de tempos em tempos, mas não muito frequentemente, pois isso poderia reduzir o desempenho; os arquivos desta pasta são "pedaços" do conteúdo carregado em memória de determinados programas, para abertura ou ação mais rápida nas outras vezes que você usá-los; no entanto, aos poucos vão sendo acumulados muitos "pedaços inúteis", de programas antigos ou que você não vai mais usar frequentemente.
+		</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\Downloaded Installations</code></pre>
+		<p>
+			Usada por alguns programas, para armazenar seus arquivos de instalação; pode apagar sem dó mesmo, esta pasta pode ocupar centenas de megabytes (como no caso de você ter instalado o Macromedia Flash, Fireworks e Dreamewaver 8 por exemplo); se o programa precisar repor arquivos, use o instalador dele, ou coloque o CD.
+		</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\Installer</code></pre>
+		<p>
+			Idem item anterior, normalmente guarda os pacotes do Windows Installer, de diversos programas que você possa ter instalados... Pode apagar, se algum programa precisar, normalmente bastará colocar o CD dele novamente ou indicar o caminho do instalador ou do pacote ".msi", no caso de arquivos baixados da Internet.
+		</p>
+	</li>
+	<li>
+		<pre><code>X:\MSOCache</code></pre>
+		<p>
+			Guarda os arquivos de instalação do Microsoft Office 2003 ou superior, o que consome cerca de 300 a 500 MB, para quem tem instalado o Office 2003 e 2007, respectivamente. Quando você precisar do instalador, insira o CD; é besteira manter a cópia destes arquivos no HD!
+		</p>
+	</li>
+	<li>
+		<pre><code>X:\Windows\system32\ReinstallBackups</code></pre>
+		<p>
+			Armazena os drivers anteriores, usados pela restauração de drivers; pode-se restaurar os drivers no Windows XP/2003 através do Gerenciador de Dispositivos. Se você instalou drivers recentemente para sua placa de vídeo, modem ou o que quer que seja, que já possuíam um driver instalado (como o que vem com o Windows, por exemplo), e viu que os novos não lhe trouxeram problemas, então pode limpar os anteriores. Particularmente, apenas com uma placa de vídeo reinstalada duas vezes, limpando esta pasta economizei cerca de 40 MB! Pois usando os drivers fornecidos pelos fabricantes dos dispositivos, é comum eles ocuparem mais espaço por incluírem programas de configuração e acessórios. Na pasta ReinstallBackups há subpastas com números, vale a pena você entrar em cada uma delas para tentar identificar do que se trata, ver as propriedades para ver o espaço ocupado e decidir então se apaga ou não.
+		</p>
+	</li>
+</p>
+<p>
+	Note que não comentei apenas de arquivos temporários... O CCleaner e outros programas limpadores nunca sugeririam limpar a pasta <code>dllcache</code>, <code>MSOcache</code>, <code>Downloaded Installations</code>, etc. Mas estas pastas podem ocupar um grande espaço, dependendo dos programas que você mantém instalados.
+</p>
+<p>
+	Importante: faça a limpeza com todos os programas fechados, seja usando um programa limpador, ou manualmente... Pois é comum os programas criarem arquivos temporários durante o uso, em especial programas grandes, editores de áudio e vídeo, mixagem, imagens, etc (até mesmo o OpenOffice/BrOffice!). Não apague os arquivos temporários também se você instalou um programa na sessão atual. Às vezes o instalador armazena arquivos temporários para substituí-los pelos que estavam em uso, e isso ocorre na próxima inicialização. Se você instalou um programa, reinicie o computador e só então exclua os arquivos da pasta "Temp".
+</p>
+<p>
+	Note que algumas pastas podem estar ocultas. Para limpar manualmente os arquivos, certifique-se de mostrar as pastas ocultas no seu computador, ative isso nas opções de pasta (menu &quot;Ferramentas &gt; Opções de pasta &gt; Modos de exibição &gt; Mostrar pastas e arquivos ocultos&quot;, no Windows Explorer).
+</p>
+
+<h2>Mais limpeza: cache das DLLs, hibernação, temporários da Internet...</h2>
+<p>
+	É importante também, no Windows 2000/XP/2003 etc, limitar o tamanho da pasta de recuperação dos arquivos do sistema. Digite num prompt de comando ou no "Executar":
+</p>
+<pre><code>sfc /purgecache</code></pre>
+<p>
+	Isso limpará a pasta <code>dllcache</code> e/ou a <code>repair</code>, que contém cópias de alguns arquivos de sistema do Windows, como comentado mais acima. No Windows 2000, se aparecer a tela do verificador de arquivos do sistema ao dar esse comando, apenas clique em cancelar.
+</p>
+<p>
+	E um outro comando, que é bom rodar logo em seguida:
+</p>
+<pre><code>sfc /cachesize=50</code></pre>
+<p>
+	Este define o tamanho máximo da pasta dos arquivos de recuperação, em megabytes. Eu particularmente uso "10" MB, não quero desperdiçar espaço. Afinal, tenho o CD sempre à mão, e nunca precisei!
+</p>
+<p>
+	No Windows Millennium ou XP, desative também a restauração do sistema, acessando as propriedades do "Meu computador". Mas, é claro, só a desative se você não usá-la... Ela ocupa bastante espaço em disco e diminui consideravelmente a performance em algumas aplicações, durante a instalação de alguns programas, etc, já que vive registrando o estado do sistema (adivinha onde? no seu HD!). Se der pau, muitos usuários avançados se viram na raça... Ou seja, boa parte não usa mesmo a restauração do sistema.
+</p>
+<p>
+	Falando em não usar, se você não usa, desative a hibernação (nas opções de energia, no painel de controle). Com a hibernação ativada, o Windows mantém um arquivo que ocupa sempre o mesmo tamanho do total de memória RAM. Assim, se você possui 256 MB de memória (digo, seu PC rs), esse arquivo terá 256 MB de tamanho no HD, assim como ocuparia 512 MB para quem tem 512 MB de RAM, 1 GB, e por aí vai.
+</p>
+<p>
+	Por padrão, o Windows XP deixa ativada a hibernação, o que pode ser terrível em máquinas virtuais também. Para excluí-lo "depois" de desativar a hibernação, pode ser necessário exibir os arquivos protegidos do sistema, através das opções de pasta (no Windows Explorer ou em uma pasta qualquer, vá ao menu &quot;Ferramentas &gt; Opções de pasta&quot;, ou nas versões anteriores (Windows 95, 98 e NT), através do menu &quot;Exibir &gt; Opções de pasta&quot;). O arquivo que deve ser excluído é o <code>hiberfil.sys</code>, e geralmente fica na pasta raiz do sistema (normalmente a unidade C). Normalmente, ao desativar a hibernação ele é excluído automaticamente; mas esta dica vale também para quem mantém mais de um Windows instalado no mesmo computador, onde terá dois (ou mais!) arquivos de hibernação.
+</p>
+<p>
+	Limite também o tamanho máximo da pasta de arquivos temporários do seu navegador. No IE 6, vá ao menu "Ferramentas &gt; Opções da Internet". No grupo do meio da janela, "Arquivos de Internet temporários", clique no botão "Configurações". Defina então um tamanho pequeno. Dependendo do seu HD ele pode vir configurado para ocupar centenas e centenas de megabytes, pois normalmente é calculado como uma porcentagem do tamanho da unidade! E quando essa pasta tem muitos arquivos, a tendência é a navegação ficar lenta. Aproveite e, antes de definir o tamanho, exclua os cookies e os arquivos temporários clicando nos respectivos botões. Eu geralmente deixo apenas 10 MB para os temporários. No Mozilla Firefox 2, Opera 9 e IE 7 está mais fácil fazer a limpeza: há um item para excluir dados pessoais ou privados, no menu "Ferramentas". No IE 7, é o "Excluir histórico de navegação".
+</p>
+
+<h2>Limpando o registro</h2>
+<p>
+	Não vou perder tempo aqui comentando as chaves do registro onde você pode encontrar dados inúteis, senão este tutorial não terminaria nunca... Em vez disso, use programas, que já foram "programados" com as várias chaves a serem verificadas. Além disso, a limpeza com programas específicos é muito mais eficiente do que a manual. Eles verificam os caminhos dos arquivos em diversas seções do registro, e então verificam se o arquivo existe no HD. Se ele não existir, significa que trata-se de uma referência a um arquivo que já foi apagado ou desinstalado. A entrada no registro pode então ser excluída. Se você fosse ficar olhando chave por chave, entrada por entrada, e vendo se cada arquivo está mesmo no local indicado ou não... Já viu, né? (você simplesmente não teria tempo para usar o computador!).
+</p>
+<p>
+	O CCleaner tem uma função de limpeza básica. Existem diversos programas limpadores, você não terá muita dificuldade em encontrá-los em sites como o <a href="www.superdownloads.com.br" target="_blank">SuperDownloads</a> ou <a href="www.baixaki.com.br" target="_blank">Baixaki</a>. Particularmente, uso o próprio CCleaner e o <a href="http://www.jv16.org" target="_blank">RegCleaner</a> (na verdade este último pode lhe causar confusão, alguns programadores diferentes mundo afora usam o nome "RegCleaner" em seus programas...).
+</p>
+<p>
+	No CCleaner, clique no botão "Erros", e a seguir no "Procurar Erros". Ao concluir, ele exibe uma lista com todos os erros encontrados:
+</p>
+<p>
+	É interessante que ele mostra uma descrição do erro, dizendo do que se trata. É óbvio, usuários não avançados não entenderão muito, bastará mandar corrigir os erros. Deixe todos selecionados (a menos que você saiba o que estará fazendo se quiser desmarcar algum) e clique no botão "Corrigir erros selecionados". Se ele pedir para fazer cópia dos dados a serem apagados, clique em "Não"; raramente você precisaria de um backup desse tipo, pois a pesquisa do CCleaner é muito bem feita. Ele apresentará então uma outra telinha:
+</p>
+<p>
+	Você pode ir lendo um por um e ir clicando em "Corrigir Erro", ou então clicar diretamente em "Corrigir todos os erros selecionados". Esse processo de limpeza não precisa ser feito tão frequentemente, apenas ao instalar ou desinstalar muitos programas, ou com o passar do tempo, algo como de 3 em 3 meses, por exemplo (cada caso é um caso).
+</p>
+<p>
+	Realmente, o CCleaner é do tipo de programa que deveria vir com o Windows :)
+</p>
+<p>O outro programa que indico é o RegCleaner, do Jouni Vuorio. Baixe em <a href="http://www.jv16.org">www.jv16.org</a>:</p>
+<p>
+	Ele é mais específico do que o CCleaner para esta tarefa, além de permitir realizar ações diversas para quem sabe o que estará fazendo: remover programas que se iniciam automaticamente (seja por meio de atalhos ou via registro), remover entradas de tipos de arquivos, extensões do shell, etc. Para fazer a limpeza nele, clique em "Ferramentas &gt; Limpeza do registro &gt; Executar todos". Ao concluir, selecione tudo (<kbd>CTRL</kbd> + <kbd>A</kbd>) e mande excluir (<kbd>Delete</kbd>). Cuidado, não faça isso nas outras seções, mas sim apenas na tela de resultados da limpeza.
+</p>
+<p>
+	Dica: estes dois programas comentados (CCleaner e RegClener) têm interface em português e em diversas outras línguas. O CCleaner detecta o idioma do seu Windows durante a instalação, mas no RegCleaner você deverá escolher o idioma pelo menu "Options &gt; Language &gt; Select Language", senão ele ficará em inglês.
+</p>
+
+<h2>Concluindo</h2>
+<p>
+	É claro, nem precisaria falar isso, mas para finalizar... Mantenha no seu HD, só o essencial! Arquivos que você baixou há um tempão, rascunhos de algo que nunca vai terminar, fotos que recebeu em grupos de discussão, etc. Esses arquivos são tão inúteis quanto os temporários, do ponto de vista técnico, e ajudam a deixar os dados mais fragmentados, especialmente para quem não mantém uma partição separada para os arquivos particulares. E não deixe de desfragmentar o disco rígido de tempos em tempos (mas também não abuse, senão o HD sofre com o trabalho e pode ter sua vida útil reduzida). Deixei algumas dicas <a href="/blog/perguntas-frequentes-sobre-o-hd.html">nesse outro artigo aqui</a>. Só para recordar, a desfragmentação pode ser feita no Windows através da guia "Ferramentas" na janela de propriedades da unidade desejada, no "Meu computador". Uma curiosidade é que no Windows 2000, XP ou superior, é possível desfragmentar o HD mesmo com programas abertos, acessando a Internet e tudo mais - claro, dependendo do que você fizer, estará atrasando o processo de desfragmentação e judiará mais ainda do seu HD.
+</p>
+<p>
+	Um fato é que o Windows fica muito mais lento quando há pouco espaço em disco, na unidade onde ele estiver instalado. Isso não é um problema significante para os HDs de hoje, mas pense bem... Quem tem um HD de 40 GB e deixa 10 GB para o sistema, com o tempo e com mais e mais programas instalados, você pode chegar facilmente a ver que apenas 1 GB ou 800 MB estão livres. O Windows fica mais lento, especialmente quando o espaço livre vem chegando a 400, 300 MB... O que complica mais ainda para quem tem HDs pequenos, ou mantém o sistema numa máquina virtual.
+</p>
+<p>
+	Boa limpeza, de tempos em tempos, dê um trato no PC. Você e seu HD só têm a ganhar!
+</p>

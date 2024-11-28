@@ -1,0 +1,307 @@
+<h1>10 Dicas para o Windows - Parte 4</h1>
+<time>2007-08-27T21:16:54-03:00</time>
+<p>
+    Essa é a quarta parte do artigo com 10 dicas para o Windows (totalizando 40 dicas rsrs). Se ainda não leu as partes anteriores, clique nos links abaixo:
+</p>
+<ul>
+    <li><a href="/blog/10-dicas-para-o-windows.html">Parte 1</a></li>
+    <li><a href="/blog/10-dicas-para-o-windows-parte-2.html">Parte 2</a></li>
+    <li><a href="/blog/10-dicas-para-o-windows-parte-3.html">Parte 3</a></li>
+</ul>
+<p>Então vamos lá:</p>
+<h2>Aumentando o Desempenho do Windows</h2>
+<p>Para melhorar o desempenho geral do Windows:</p>
+<ol>
+    <li>
+        Substitua os drivers gráficos padrão pelos drivers mais recentes disponibilizados pelo fabricante da sua placa gráfica.
+    </li>
+    <li>
+        Para encontrar os drivers atualizados:
+        <ul>
+            <li>
+                Visite o site oficial do fabricante da sua placa gráfica.
+            </li>
+            <li>
+                Baixe e instale os drivers mais recentes compatíveis com sua versão do Windows.
+            </li>
+        </ul>
+    </li>
+</ol>
+<h3>Por Que Fazer Isso?</h3>
+<p>Os drivers desenvolvidos pelos fabricantes são geralmente mais otimizados do que os fornecidos pela Microsoft, resultando em um ganho de desempenho de até 10%, de acordo com estudos da <i>Windows Computing</i>.</p>
+<p>
+    Essa dica é especialmente útil para usuários que utilizam programas gráficos intensivos ou jogos.
+</p>
+<h2>Atualizando de 4 MB para 8 MB de RAM</h2>
+<p>Se você instalou o <b>Windows 95</b> em um computador com <b>4 MB de RAM</b> e, posteriormente, aumentou a memória para <b>8 MB</b>, é recomendável reinstalar o sistema operacional.</p>
+<h3>Por quê?</h3>
+<p>
+    O programa de instalação do Windows 95 seleciona e instala diferentes arquivos e configurações com base na quantidade de memória detectada durante a instalação inicial. Ao atualizar para 8 MB de RAM, a reinstalação ajustará o sistema
+    para aproveitar melhor a memória adicional.
+</p>
+<h2>Excluindo Arquivos Imediatamente</h2>
+<p>Para excluir arquivos permanentemente, sem enviá-los para a Lixeira:</p>
+<ol>
+    <li>
+        Selecione o(s) arquivo(s) desejado(s).
+    </li>
+    <li>Pressione <b>Shift + Delete</b>.</li>
+    <li>Confirme a exclusão pressionando <b>Enter</b> ou clicando em <b>Sim</b>.</li>
+</ol>
+<p>
+    Essa opção é útil para arquivos que você tem certeza de que deseja remover permanentemente, mas deve ser usada com cautela para evitar exclusões acidentais.
+</p>
+<h2>Liberando Mais Memória no Windows 95</h2>
+<p>
+    Se você raramente utiliza o drive de CD-ROM, é possível liberar memória ajustando o cache padrão do sistema. O Windows 95 reserva
+    <b>1 MB de memória cache</b> para o CD-ROM, mas você pode reduzir esse valor:
+</p>
+<ol>
+    <li>Vá em <b>Iniciar &gt; Configurações &gt; Painel de Controle</b>.</li>
+    <li>Clique no ícone <b>Sistema</b> e, na aba <b>Desempenho</b>, clique em <b>Sistema de Arquivos</b>.</li>
+    <li>
+        Altere o tamanho do cache do CD-ROM para um valor menor, conforme sua necessidade.
+    </li>
+    <li>Clique em <b>OK</b> e reinicie o computador.</li>
+</ol>
+<p>
+    Esse ajuste é ideal para liberar memória adicional em sistemas com pouca RAM.
+</p>
+<h2>Otimizando a Memória no MS-DOS</h2>
+<p>
+    Se você precisa maximizar a memória disponível em uma sessão
+    <b>MS-DOS</b> no Windows 95, adicione a seguinte linha ao arquivo <code>System.ini</code>:
+</p>
+<pre><code>[386Enh]<br>LocalLoadHigh=1</code></pre>
+<p>
+    Essa configuração instrui o sistema a carregar programas na memória superior, liberando mais memória convencional (640 KB).
+</p>
+<h2>Usando Dois Sistemas Operacionais no Mesmo Computador</h2>
+<p>Para configurar sua máquina para alternar entre o Windows 95 e o MS-DOS:</p>
+<ol>
+    <li>Insira um disco de inicialização do <b>MS-DOS</b> ou <b>PC-DOS</b> no drive A ou B.</li>
+    <li>
+        Renomeie os seguintes arquivos no disco de inicialização:
+        <ul>
+            <li><code>IO.SYS</code> para <code>IO.DOS</code></li>
+            <li><code>MS-DOS.SYS</code> para <code>MS-DOS.DOS</code></li>
+            <li><code>COMMAND.COM</code> para <code>COMMAND.DOS</code></li>
+        </ul>
+    </li>
+    <li>Copie esses arquivos para a raiz do drive de inicialização (geralmente o <b>C:</b>).</li>
+    <li>Crie os arquivos <code>Autoexec.bat</code> e <code>Config.sys</code> personalizados para o MS-DOS, renomeando-os para <code>AUTOEXEC.DOS</code> e <code>CONFIG.DOS</code>.</li>
+    <li>
+        Copie esses arquivos também para a raiz do drive de inicialização.
+    </li>
+</ol>
+<h3>Como alternar entre os sistemas:</h3>
+<ol>
+    <li>Reinicie o computador.</li>
+    <li>Durante a inicialização, pressione <b>F4</b> quando a mensagem <i>"Iniciando o Windows 95"</i> for exibida.</li>
+</ol>
+<p>Isso carregará o MS-DOS configurado nos arquivos modificados.</p>
+<h2>Instalando e Configurando a Rede Dial-up</h2>
+<h3>Parte 1: Verificando a Instalação do Dial-up</h3>
+<ol>
+    <li>No Windows 95, clique duas vezes no ícone <b>Meu Computador</b> localizado na área de trabalho.</li>
+    <li>
+        Verifique se a Rede Dial-up está instalada.
+        <ul>
+            <li>
+                Caso não esteja, siga os passos a seguir para configurá-la.
+            </li>
+        </ul>
+    </li>
+</ol>
+<h3>Parte 2: Configurando o Protocolo TCP/IP</h3>
+<ol>
+    <li>
+        Abra o <b>Painel de Controle</b>.
+        <ul>
+            <li>Para isso, clique em <b>Iniciar &gt; Configurações &gt; Painel de Controle</b>.</li>
+        </ul>
+    </li>
+    <li>No Painel de Controle, mude o modo de exibição para <b>Lista</b> e clique duas vezes no ícone <b>Rede</b>.</li>
+    <li>Na janela <b>Rede</b>, localize e selecione o ícone <b>TCP/IP</b>.</li>
+    <li>Clique no botão <b>Propriedades</b>.</li>
+</ol>
+<h4>Configurações do DNS</h4>
+<ol>
+    <li>Clique na aba <b>Configuração DNS</b>.</li>
+    <li>
+        Preencha os campos conforme as informações do seu provedor:
+        <ul>
+            <li><b>Host</b>: Insira o seu nome.</li>
+            <li><b>Domínio</b>: Insira o nome do provedor.</li>
+            <li>
+                <b>Ordem de pesquisa do servidor DNS</b>:
+                <ul>
+                    <li>Insira o IP primário do provedor (ex.: <code>200.247.251.10</code>) e clique em <b>Adicionar</b>.</li>
+                    <li>Insira o IP secundário do provedor (ex.: <code>200.255.252.241</code>) e clique em <b>Adicionar</b>.</li>
+                </ul>
+            </li>
+            <li><b>Ordem de pesquisa por sufixo</b>: Adicione o domínio do provedor (ex.: <code>provedor.com.br</code>) e clique em <b>Adicionar</b>.</li>
+        </ul>
+    </li>
+    <li>Clique em <b>OK</b> para salvar as configurações.</li>
+</ol>
+<blockquote>
+    <p><b>Nota:</b> Para a maioria dos provedores que utilizam PPP (Point-to-Point Protocol), as configurações padrão do TCP/IP são suficientes e não exigem ajustes adicionais.</p>
+</blockquote>
+<h2>Criando e Configurando uma Nova Conexão Dial-up</h2>
+<h3>Passo a Passo para Criar a Conexão</h3>
+<ol>
+    <li>
+        Clique em <b>Iniciar &gt; Programas &gt; Rede Dial-up</b>.
+        <ul>
+            <li>Caso a pasta não esteja visível, ela pode estar dentro de <b>Acessórios</b>.</li>
+        </ul>
+    </li>
+    <li>Abra a pasta <b>Rede Dial-up</b> e clique duas vezes no ícone <b>Fazer Nova Conexão</b>.</li>
+    <li>No campo <b>Nome do computador</b>, insira o nome do provedor (ex.: <code>Embratel</code>, <code>Unicamp</code>, etc.).</li>
+    <li>
+        Verifique se o modem listado é o mesmo que está instalado no computador:
+        <ul>
+            <li>Clique em <b>Configurar</b> para verificar e ajustar, se necessário.</li>
+        </ul>
+    </li>
+    <li>
+        Clique em <b>Avançar</b> e insira o número de telefone do provedor.
+        <ul>
+            <li>
+                Se o provedor for da mesma cidade, insira apenas o número local.
+            </li>
+            <li>Certifique-se de que o <b>Código do País</b> está configurado para Brasil.</li>
+        </ul>
+    </li>
+    <li>Clique em <b>Avançar</b> e, por fim, em <b>Finalizar</b>.</li>
+</ol>
+<p>Um novo ícone será criado na pasta <b>Rede Dial-up</b>, representando a conexão configurada.</p>
+<h3>Conectando-se à Internet</h3>
+<ol>
+    <li>Abra a pasta <b>Rede Dial-up</b> e localize o ícone da conexão criada.</li>
+    <li>Clique com o botão direito no ícone e selecione <b>Propriedades</b>.</li>
+    <li>Na janela de propriedades, clique no botão <b>Configurar</b>.</li>
+    <li>
+        Ative a opção <b>Abrir janela do terminal após a discagem</b>.
+        <ul>
+            <li>Essa configuração permitirá inserir o <b>login</b> (nome de usuário) e a <b>senha</b> durante a conexão.</li>
+        </ul>
+    </li>
+</ol>
+<h3>Testando a Conexão</h3>
+<ol>
+    <li>
+        Clique duas vezes no ícone da conexão.
+    </li>
+    <li>
+        Aguarde a discagem e verifique se a janela do terminal é exibida para completar o login com suas credenciais de usuário e senha.
+    </li>
+</ol>
+<h2>Pequenas Dicas para o Windows</h2>
+<ul>
+    <li>
+        <b>Abrindo o Menu Iniciar sem o Mouse</b><br />
+        Para abrir o <b>Menu Iniciar</b> sem usar o mouse, pressione <b>Ctrl + ESC</b>.
+    </li>
+    <li>
+        <b>Acessando o Explorer Rapidamente</b><br />
+        Para abrir o <b>Windows Explorer</b> de forma rápida:
+
+        <ol>
+            <li>Clique com o botão direito no <b>botão Iniciar</b>.</li>
+            <li>Selecione a opção <b>Explorar</b> no menu que aparece.</li>
+        </ol>
+    </li>
+    <li>
+        <b>Atualizando o Estado das Janelas</b><br />
+        Para atualizar o conteúdo das janelas, pressione <b>F5</b>. Isso recarrega o conteúdo exibido na janela ativa.
+    </li>
+    <li>
+        <b>Alterando a Resolução de Tela</b><br />
+        Para mudar a resolução da tela, clique com o botão direito em qualquer lugar da <b>área de trabalho</b> e selecione <b>Propriedades</b>. Em seguida, vá até a aba <b>Configurações</b> e ajuste a resolução conforme desejado.
+    </li>
+    <li>
+        <b>Fechando Programas com Problemas</b><br />
+        Caso um programa trave ou apresente problemas:
+
+        <ol>
+            <li>Pressione <b>Ctrl + Alt + Del</b>.</li>
+            <li>
+                Selecione o programa que não está respondendo.
+            </li>
+            <li>Clique em <b>Finalizar Tarefa</b> para fechá-lo.</li>
+        </ol>
+    </li>
+    <li>
+        <b>Alterando o Logotipo de Entrada do Windows</b><br />
+        Para personalizar o logotipo de inicialização do Windows:
+
+        <ol>
+            <li>Crie uma imagem no <b>Paintbrush</b> com o tamanho <b>320 x 400 pixels</b>.</li>
+            <li>Salve a imagem no diretório raiz como <b>logo.SYS</b>.</li>
+        </ol>
+        <ul>
+            <li>
+                A imagem será redimensionada automaticamente durante a inicialização do sistema.
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Entrando no Modo MS-DOS</b><br />
+        Para iniciar o <b>MS-DOS</b> no Windows, pressione <b>F8</b> assim que a mensagem <i>"Iniciando o Windows"</i> aparecer.
+    </li>
+    <li>
+        <b>Instalando Programas no Diretório Correto</b><br />
+        Durante a instalação de qualquer programa, sempre selecione o diretório <b>Arquivos de Programas</b>. Isso facilita a organização e localização futura dos programas instalados.
+    </li>
+    <li>
+        <b>Alternando Entre Programas</b><br />
+        Para alternar rapidamente entre os programas abertos:
+
+        <ol>
+            <li>Pressione <b>Alt + Tab</b>.</li>
+            <li>Continue pressionando <b>Alt</b> enquanto pressiona <b>Tab</b> para navegar entre as janelas abertas.</li>
+        </ol>
+    </li>
+    <li>
+        <b>Limpando o Menu de Documentos Recentes</b><br />
+        Para limpar os itens do menu <b>Documentos Recentes</b>:
+
+        <ul>
+            <li>Limpe as pastas <b>Recent</b> e <b>Temp</b> dentro do diretório <b>Windows</b>.</li>
+        </ul>
+    </li>
+    <li>
+        <b>Lendo Arquivos Importantes no Bloco de Notas</b><br />
+        Abra o <b>Bloco de Notas</b> do Windows e leia os arquivos <b>TXT</b> encontrados no diretório <b>Windows</b>. Esses arquivos contêm informações importantes sobre o sistema.
+    </li>
+</ul>
+<h2>Cuidados ao Modificar o Registro do Windows (Registry)</h2>
+<p>O <b>Registro do Windows (Registry)</b> é o local onde o sistema armazena todas as informações importantes de configuração. Para editá-lo:</p>
+<ol>
+    <li>
+        Abra o programa <b>regedit.exe</b>.
+        <ul>
+            <li>Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione <b>Enter</b>.</li>
+        </ul>
+    </li>
+    <li>Use a opção <b>Editar &gt; Localizar</b> para encontrar a chave desejada.</li>
+    <li>
+        Na janela da direita, clique duas vezes no valor que deseja modificar para editá-lo.
+    </li>
+</ol>
+<h3>Cuidados Importantes:</h3>
+<ul>
+    <li>
+        <p>
+            Antes de realizar qualquer alteração, faça uma cópia de segurança dos arquivos:
+        </p>
+        <pre><code>C:\Windows\system.dat<br>C:\Windows\user.dat</code></pre>
+    </li>
+    <li>
+        Caso algo dê errado, substitua os arquivos modificados pelas cópias de segurança e reinicie o Windows.
+    </li>
+</ul>
+<h3>Dica:</h3>
+<p>O programa <b>TWEAKUI</b> facilita a modificação de alguns parâmetros do registro de forma segura e amigável.</p>
