@@ -128,9 +128,11 @@ function msBuild() {
     .use(
       htmlMinifier({
         minifierOptions: {
+          removeComments: false,
           collapseWhitespace: true,
           preserveLineBreaks: true,
           caseSensitive: true,
+          removeRedundantAttributes: false,
         },
       })
     );

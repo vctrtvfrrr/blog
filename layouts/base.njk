@@ -27,12 +27,12 @@
 		<table width="768" border="0" cellspacing="0" cellpadding="10">
 			{% include 'partials/header.njk' %}
 			<tr>
-				<td width="80%" valign="top">
+				<td valign="top">
 					{% block content %}
 					{{ contents | safe }}
 					{% endblock %}
 				</td>
-				<td width="20%" valign="top">
+				<td width="220" valign="top">
 					{% include 'partials/sidebar.njk' %}
 				</td>
 			</tr>
