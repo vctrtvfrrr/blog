@@ -1,0 +1,141 @@
+<h1>10 Dicas para o Windows - Parte 5</h1>
+<time>2007-09-03T22:26:45-03:00</time>
+<p>Continuando com essa que já virou uma série aqui no site: Mais 10 dicas para o Windows (totalizando 50, até agora). Se você ainda não viu as partes anteriores, clique nos links abaixo:</p>
+<ul>
+	<li><a href="/blog/10-dicas-para-o-windows.html">10 Dicas para o Windows - Parte 1</a></li>
+	<li><a href="/blog/10-dicas-para-o-windows-parte-2.html">10 Dicas para o Windows - Parte 2</a></li>
+	<li><a href="/blog/10-dicas-para-o-windows-parte-3.html">10 Dicas para o Windows - Parte 3</a></li>
+	<li><a href="/blog/10-dicas-para-o-windows-parte-4.html">10 Dicas para o Windows - Parte 4</a></li>
+</ul>
+<h2>Cópia de Segurança</h2>
+<p>Antes de modificar qualquer arquivo de sistema, crie uma cópia de segurança para evitar problemas:</p>
+<ol>
+	<li>Clique com o botão direito no arquivo desejado e selecione <b>Copiar</b>.</li>
+	<li>
+		Clique com o botão direito em uma área vazia do mesmo diretório e selecione <b>Colar</b>.
+		<ul>
+			<li>O arquivo será duplicado com o nome <b>Cópia de nome_do_arquivo</b>.</li>
+		</ul>
+	</li>
+</ol>
+<h3>Modificando o Arquivo <code>MSDOS.SYS</code></h3>
+<ol>
+	<li>
+		Para editar o arquivo <code>MSDOS.SYS</code>, altere seus atributos:
+		<ul>
+			<li>
+				<p>Abra o <b>Prompt de Comando</b> e digite:</p>
+				<pre><code>attrib -h -r -s msdos.sys</code></pre>
+			</li>
+			<li>Ou, no <b>Explorer</b>, clique com o botão direito no arquivo, selecione <b>Propriedades</b> e desmarque as opções <b>Oculto</b> e <b>Somente leitura</b>.</li>
+		</ul>
+	</li>
+	<li>
+		Após a edição, restaure os atributos originais:
+		<ul>
+			<li>
+				<p>No Prompt de Comando:</p>
+				<pre><code>attrib +h +r +s msdos.sys</code></pre>
+			</li>
+			<li>Ou, no <b>Explorer</b>, volte a marcar as opções <b>Oculto</b> e <b>Somente leitura</b>.</li>
+		</ul>
+	</li>
+</ol>
+<h2>Retirando a Tela Inicial (Logo)</h2>
+<p>Para desativar a imagem exibida durante a inicialização do Windows 95/98:</p>
+<ol>
+	<li>Abra o arquivo <code>MSDOS.SYS</code> em um editor de texto, como o <b>Bloco de Notas</b>.</li>
+	<li>
+		<p>Na seção <code>[Options]</code>, adicione ou edite a seguinte linha:</p>
+		<pre><code>logo=0</code></pre>
+	</li>
+</ol>
+<h2>Iniciando Diretamente no Prompt do DOS 7.0</h2>
+<p>Se você deseja que o Windows inicie diretamente no prompt do <b>MS-DOS</b>:</p>
+<ol>
+	<li>
+		<p>Edite o arquivo <code>MSDOS.SYS</code> e, na seção <code>[Options]</code>, adicione ou edite a seguinte linha:</p>
+		<pre><code>BootGui=0</code></pre>
+	</li>
+</ol>
+<p>Ao reiniciar o sistema, ele será carregado diretamente no <b>DOS 7.0</b> sem abrir a interface gráfica do Windows.</p>
+<h2>Iniciando no DOS 6.x</h2>
+<p>Para configurar o sistema para iniciar no <b>DOS 6.x</b> mesmo após a instalação do Windows 95:</p>
+<ol>
+	<li>
+		<p>Abra o arquivo <code>MSDOS.SYS</code> e, na seção <code>[Options]</code>, adicione ou edite a linha:</p>
+		<pre><code>BootMulti=1</code></pre>
+	</li>
+	<li>Durante a inicialização, pressione <b>F4</b> ao ver a mensagem <i>"Iniciando o Windows 95"</i>.</li>
+</ol>
+<p>Isso permitirá alternar entre o <b>DOS 6.x</b> e o Windows 95.</p>
+<h2>Iniciando Diretamente no DOS 6.x</h2>
+<p>Para configurar o sistema para inicializar diretamente no <b>DOS 6.x</b>:</p>
+<ol>
+	<li>Abra o arquivo <code>MSDOS.SYS</code> em um editor de texto, como o <b>Bloco de Notas</b>.</li>
+	<li>
+		<p>Na seção <code>[Options]</code>, adicione ou edite as seguintes linhas:</p>
+		<pre><code>BootMulti=1<br>BootWin=0</code></pre>
+	</li>
+	<li>Durante a inicialização, pressione <b>F4</b> ao ver a mensagem <i>"Iniciando o MS-DOS"</i> para alternar para o Windows 95.</li>
+</ol>
+<h2>Menu Inicial do Windows</h2>
+<p>Se pressionar <b>F8</b> logo após a mensagem <i>"Iniciando Windows"</i>, será exibido o <b>Menu de Inicialização do Windows</b>. Este menu oferece opções como iniciar em Modo Seguro, com Prompt de Comando, entre outras.</p>
+<h2>Acessando o Desktop Rapidamente</h2>
+<p>Quando várias aplicações estão abertas, o acesso ao <b>Desktop</b> pode ser dificultado. Existem duas formas de facilitar isso:</p>
+<ol>
+	<li>
+		<p><b>Criando um Atalho no Menu Iniciar</b>:</p>
+		<ul>
+			<li>Crie um atalho da pasta <code>C:\Windows\Desktop</code> dentro da pasta <code>C:\Windows\Start Menu</code>.</li>
+			<li>
+				Altere as propriedades do atalho:
+				<ul>
+					<li>Clique com o botão direito no atalho e selecione <b>Propriedades</b>.</li>
+					<li>
+						<p>Na linha de comando, insira:</p>
+						<pre><code>C:\WINDOWS\EXPLORER.EXE /n,/root,</code></pre>
+						<p>(Certifique-se de incluir a vírgula no final).</p>
+					</li>
+					<li>Renomeie o atalho para "Desktop" e, opcionalmente, altere seu ícone para algo que represente o Desktop.</li>
+				</ul>
+			</li>
+		</ul>
+		<p>Agora, ao clicar em <b>Iniciar &gt; Desktop</b>, o Desktop será aberto como uma pasta.</p>
+	</li>
+	<li>
+		<b>Minimizando Todas as Janelas</b>:
+		<ul>
+			<li>Clique com o botão direito na <b>Barra de Tarefas</b> e selecione <b>Minimizar Todas as Janelas</b>.</li>
+			<li>Para restaurar o estado anterior, clique novamente com o botão direito na barra de tarefas e selecione <b>Reverter Minimizar Todas</b>.</li>
+		</ul>
+	</li>
+</ol>
+<h2>Colocando Atalhos no Menu Iniciar</h2>
+<p>Para acessar rapidamente os programas mais usados, adicione atalhos ao menu superior do <b>Menu Iniciar</b>:</p>
+<ol>
+	<li>
+		<p>Arraste os atalhos desejados (como <b>Explorer</b>, <b>Bloco de Notas</b>, <b>Prompt de Comando</b>, etc.) para a pasta:</p>
+		<pre><code>C:\Windows\Start Menu</code></pre>
+	</li>
+</ol>
+<p>Esses atalhos estarão disponíveis diretamente no <b>Menu Iniciar</b>.</p>
+<h2>Fechando Múltiplas Janelas Abertas</h2>
+<p>Para fechar várias janelas abertas no <b>Meu Computador</b>:</p>
+<ol>
+	<li>Pressione e segure a tecla <b>Shift</b>.</li>
+	<li>Clique no botão <b>X</b> (Fechar) da janela superior.</li>
+</ol>
+<p>Isso fechará todas as janelas precedentes de uma vez.</p>
+<h2>Abrindo Subpastas na Mesma Janela</h2>
+<p>Se abrir uma pasta cria uma nova janela, você pode alterar esse comportamento:</p>
+<ol>
+	<li>Pressione <b>Ctrl</b> ao clicar na pasta desejada. Isso forçará a abertura na mesma janela.</li>
+	<li>
+		Para configurar isso permanentemente:
+		<ul>
+			<li>Vá em <b>Exibir &gt; Opções</b> no Explorer.</li>
+			<li>Habilite a opção para usar apenas uma janela para explorar pastas.</li>
+		</ul>
+	</li>
+</ol>

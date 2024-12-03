@@ -1,0 +1,169 @@
+<h1>10 Dicas para o Windows - Parte 7</h1>
+<time>2007-09-17T21:03:22-03:00</time>
+<h2>Habilitando o Auto-arranjo para Pastas</h2>
+<p>Para configurar uma pasta com a opção <b>Autoorganizar</b>:</p>
+<ol>
+	<li>Abra a pasta desejada.</li>
+	<li>
+		No menu <b>Exibir</b>, selecione <b>Organizar Ícones</b>.
+		<ul>
+			<li>Escolha como deseja organizar os ícones (por <b>Nome</b>, <b>Tamanho</b>, etc.).</li>
+		</ul>
+	</li>
+	<li>Retorne ao menu <b>Exibir &gt; Organizar Ícones</b> e selecione <b>Autoorganizar</b>.</li>
+	<li>Pressione <b>Ctrl</b> enquanto fecha a janela.</li>
+</ol>
+<p>Essa configuração manterá o <b>Autoorganizar</b> habilitado para a pasta.</p>
+<h3>Alterando o Padrão de Organização</h3>
+<p>Se quiser mudar o padrão de organização (por exemplo, para <b>Tamanho</b> ou <b>Nome</b>), siga os mesmos passos acima e ajuste a configuração antes de ativar o <b>Autoorganizar</b>.</p>
+<h2>Desativando a Animação de Janelas</h2>
+<p>Para desativar a animação exibida ao minimizar ou maximizar janelas:</p>
+<ol>
+	<li>
+		Abra o <b>Regedit</b>:
+		<ul>
+			<li>Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione <b>Enter</b>.</li>
+		</ul>
+	</li>
+	<li>
+		<p>Navegue até a chave:</p>
+		<pre><code>HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics</code></pre>
+	</li>
+	<li>
+		No painel direito:
+		<ul>
+			<li>Clique com o botão direito em um espaço vazio e selecione <b>Novo &gt; Valor da Cadeia</b>.</li>
+			<li>Renomeie o novo valor para <code>MinAnimate</code>.</li>
+		</ul>
+	</li>
+	<li>
+		Clique duas vezes em <code>MinAnimate</code> e insira:
+		<ul>
+			<li><b>0</b> para desativar a animação.</li>
+			<li><b>1</b> para ativar a animação.</li>
+		</ul>
+	</li>
+	<li>Feche o <b>Regedit</b>, encerre os programas abertos e reinicie o computador para aplicar a alteração.</li>
+</ol>
+<h2>Personalizando o Menu "Enviar Para" no Explorer</h2>
+<p>O menu <b>Enviar Para</b> permite enviar arquivos rapidamente para locais ou programas específicos. Para personalizá-lo:</p>
+<ol>
+	<li>
+		<p>Navegue até a pasta:</p>
+		<pre><code>C:\Windows\SendTo</code></pre>
+	</li>
+	<li>
+		Arraste atalhos de diretórios ou programas para esta pasta.
+		<ul>
+			<li>Exemplos úteis incluem atalhos para <b>Bloco de Notas</b>, <b>WinZip</b> ou diretórios frequentemente usados.</li>
+		</ul>
+	</li>
+</ol>
+<p>Os itens adicionados aparecerão no menu <b>Enviar Para</b> quando você clicar com o botão direito em um arquivo.</p>
+<h2>Acelerando a Taxa de Atualização (Refresh) do Windows</h2>
+<p>O Windows geralmente exige pressionar <b>F5</b> para atualizar o conteúdo de uma janela. Para configurar a atualização automática:</p>
+<ol>
+	<li>
+		Abra o <b>Regedit</b>:
+		<ul>
+			<li>Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione **Enter`.</li>
+		</ul>
+	</li>
+	<li>
+		<p>Navegue até a chave:</p>
+		<pre><code>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Update</code></pre>
+	</li>
+	<li>No painel direito, clique com o botão direito no valor <b>Update</b> e selecione <b>Modificar</b>.</li>
+	<li>Altere o valor de <code>01</code> para <code>00</code>.</li>
+	<li>Clique em <b>OK</b> e reinicie o Windows para que as alterações tenham efeito.</li>
+</ol>
+<h2>Atualizando o Registro sem Reiniciar o Sistema</h2>
+<p>Para aplicar alterações no Registro do Windows sem precisar reiniciar:</p>
+<ol>
+	<li>Pressione <b>Ctrl + Alt + Del</b> e abra o <b>Gerenciador de Tarefas</b>.</li>
+	<li>Na lista de tarefas, selecione <b>Explorer</b> e clique em <b>Finalizar Tarefa</b>.</li>
+	<li>Quando o Windows perguntar se deseja desligar, clique em <b>Não</b>.</li>
+	<li>No próximo menu, clique em <b>Terminar Tarefa</b>.</li>
+</ol>
+<p>O <b>Explorer</b> será reiniciado automaticamente, atualizando o registro.</p>
+<h2>Usando Nomes Longos no Prompt do DOS</h2>
+<p>No <b>Prompt do DOS</b>, você pode acessar pastas e arquivos com nomes longos, desde que eles sejam colocados entre aspas. Por exemplo:</p>
+<pre><code>dir "Arquivos de Programas"</code></pre>
+<p>Isso permite navegar e usar nomes que excedam o limite padrão do DOS.</p>
+<h2>Mapeando Sistemas Remotos como Discos de Rede</h2>
+<p>Se você utiliza <b>TCP/IP</b> para acessar servidores FTP frequentemente, pode mapeá-los como discos de rede:</p>
+<ol>
+	<li>
+		<p>Localize o arquivo <code>LMHOSTS.SAM</code> no diretório:</p>
+		<pre><code>C:\Windows</code></pre>
+	</li>
+	<li>Faça uma cópia do arquivo <code>LMHOSTS.SAM</code> e renomeie-a para <code>LMHOSTS</code>.</li>
+	<li>
+		<p>Edite o arquivo <code>LMHOSTS</code> com um editor de texto, como o <b>Bloco de Notas</b>, e adicione a seguinte linha:</p>
+		<pre><code>198.105.232.1 msftp #FTP da Microsoft</code></pre>
+		<ul>
+			<li>Substitua <code>198.105.232.1</code> pelo IP do servidor desejado.</li>
+			<li>O símbolo <code>#</code> indica o início de um comentário.</li>
+		</ul>
+	</li>
+</ol>
+<p>Agora, o local será tratado como um disco de rede, facilitando o acesso.</p>
+<h2>Aumentando o Tamanho da Barra de Tarefas</h2>
+<p>A <b>Barra de Tarefas</b> pode ser redimensionada como qualquer outra janela:</p>
+<ol>
+	<li>Posicione o cursor do mouse na borda superior da Barra de Tarefas até que ele mude para o formato de seta vertical (Norte-Sul).</li>
+	<li>Clique e arraste para cima para aumentar ou para baixo para diminuir a barra.</li>
+</ol>
+<p>Isso ajuda a organizar melhor os ícones e as janelas abertas.</p>
+<h2>Obtendo o Caminho (Path) de um Ícone</h2>
+<p>Para descobrir rapidamente o caminho de um arquivo ou atalho:</p>
+<ol>
+	<li>Arraste o ícone diretamente para uma janela do <b>Prompt do DOS</b>.</li>
+	<li>O caminho completo será exibido no prompt.</li>
+</ol>
+<p>Essa dica é útil para localizar rapidamente o diretório de arquivos ou programas.</p>
+<h2>Gerenciando a Lista de Documentos Recentes</h2>
+<p>A lista do menu <b>Documentos Recentes</b> pode ser modificada acessando a subpasta <code>Recent</code> dentro do diretório do Windows:</p>
+<ol>
+	<li>
+		<p>Navegue até o diretório:</p>
+		<pre><code>C:\Windows\Recent</code></pre>
+	</li>
+	<li>Exclua ou modifique os atalhos de arquivos conforme necessário.</li>
+</ol>
+<p>Essa dica é útil para limpar ou organizar a lista de documentos recentes exibida no menu <b>Iniciar</b>.</p>
+<h2>Abrindo e Fechando Múltiplas Janelas</h2>
+<p>Ao navegar por várias pastas no <b>Meu Computador</b>, pode ser cansativo abrir e fechar janelas individualmente. Aqui estão algumas formas de simplificar essa tarefa:</p>
+<h3>Abrir na Mesma Janela</h3>
+<ol>
+	<li>Mantenha pressionada a tecla <b>Ctrl</b>.</li>
+	<li>Clique duas vezes na pasta desejada.</li>
+</ol>
+<h3>Fechar Todas as Janelas de Uma Ramificação</h3>
+<ol>
+	<li>Mantenha pressionada a tecla <b>Shift</b>.</li>
+	<li>Clique no botão <b>Fechar</b> (X) da última janela aberta.</li>
+</ol>
+<p>Todas as janelas pertencentes à mesma ramificação serão fechadas simultaneamente.</p>
+<h2>Iniciando Programas Automaticamente</h2>
+<p>No Windows 95, é possível configurar a inicialização automática de programas:</p>
+<ol>
+	<li>Clique com o botão direito no botão <b>Iniciar</b> e selecione <b>Abrir</b>.</li>
+	<li>Na janela que aparece, clique duas vezes na pasta <b>Programas</b> e, em seguida, na subpasta <b>Iniciar</b>.</li>
+	<li>Localize o ícone do programa que deseja iniciar automaticamente.</li>
+	<li>Copie o ícone e cole-o na pasta <b>Iniciar</b>.</li>
+</ol>
+<p>Na próxima vez que o Windows for iniciado, o programa será executado automaticamente.</p>
+<h2>Transformando Bitmap em Ícone</h2>
+<p>Você pode usar um arquivo <b>BMP</b> (bitmap) como ícone, mas apenas para atalhos. Não é possível alterar o ícone de arquivos executáveis, dispositivos ou pastas originais.</p>
+<h3>Como Fazer</h3>
+<ol>
+	<li>Escolha o atalho cujo ícone deseja modificar.</li>
+	<li>Clique com o botão direito no atalho e selecione <b>Propriedades</b>.</li>
+	<li>Na janela <b>Propriedades</b>, clique na aba <b>Atalho</b> e, em seguida, no botão <b>Alterar Ícone</b>.</li>
+	<li>Na tela que aparece, clique em <b>Procurar</b> e selecione <b>Todos os Arquivos</b> como tipo de arquivo.</li>
+	<li>Navegue até o diretório onde o arquivo <b>BMP</b> está localizado.</li>
+	<li>Clique duas vezes no arquivo desejado.</li>
+	<li>Clique em <b>OK</b>, depois em <b>Aplicar</b>, e finalize clicando em <b>OK</b>.</li>
+</ol>
+<p>Essa funcionalidade é ideal para personalizar atalhos, como usar o logotipo da empresa como ícone de um programa específico.</p>
