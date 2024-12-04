@@ -1,0 +1,435 @@
+---
+title: Comandos Básicos Linux
+date: 2007-10-10T22:21:47-03:00
+description: Lista de comandos básicos para o sistema operacional Linux.
+abstract: Lista de comandos básicos para o sistema operacional Linux.
+tags: [linux, comandos, terminal]
+---
+<dl>
+	<dt>
+		<p>
+			ls = Lista os arquivos (mesmo que dir do DOS)
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Atributos comuns:
+		</p>
+		<ul>
+			<li>
+				-a = mostra arquivos ocultos
+			</li>
+			<li>
+				-l = mostra bytes, permissões, diretório, etc
+			</li>
+		</ul>
+		<p>
+			Obs: no ls os nomes de arquivos nos sistemas *X (Unix, linux, etc) não precisam ter só 8 letras. Dai, se você quer listar os arquivos começados com u, por exemplo, peca ls u* e veja o resultado.<br />
+			* substitui qualquer conjunto de caracteres<br />
+			? substitui caracteres isolados
+		</p>
+	</dd>
+	<dt>
+		<p>
+			rm = remove arquivos, no formato: rm (arquivo1) (arquivo2) (arquivo3) …
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Exemplo: rm look.doc / rm root.txt link.html win95.w95
+		</p>
+	</dd>
+	<dt>
+		<p>
+			cp = copia arquivos, no formato: cp (arquivo1) (diretório)
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Exemplo: cp manual.txt /home/manual
+		</p>
+	</dd>
+	<dt>
+		<p>
+			cat = mostra o conteúdo do arquivo, mesmo que o 'type' no DOS
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			more = exibe o conteúdo de um arquivo pagina a pagina, mesmo q no DOS
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Exemplo: ls | more
+		</p>
+	</dd>
+	<dd>
+		<p>
+			pwd = exibe o diretório atual (o que vc esta)
+		</p>
+	</dd>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			rmdir = apaga diretório
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Exemplo: rmdir /diretório se o diretório estiver cheio, use o rm com o atributo -r
+		</p>
+	</dd>
+	<dt>
+		<p>
+			mkdir = cria diretório
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Exemplo: mkdir /diretório
+		</p>
+	</dd>
+	<dt>
+		<p>
+			clear = limpa a tela, mesmo que 'cls' no DOS
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			who = mostra quem está na maquina no momento
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			whoami = mostra quem você e - útil quando você esquece com q login entrou... ;-)
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			finger = mostra o usuário associado a certa chave
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			df = mostra o espaço usado, livre e a capacidade das partições do HD
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			free = exibe a memória livre, a usada, e o buffers da memória RAM
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			exit e logout = sai da sessão atual
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			tar (tape archive) = programa de geração de backup<br />
+			tar -c gera backup<br />
+			tar -x restaura backup<br />
+			tar -v lista cada arquivo processado<br />
+			tar -t lista o conteúdo de um backup
+		</p>
+	</dt>
+	<dd>
+		<p>
+			Nota: Para descompactar arquivos "tagged" (.tar.gz, .tgz, etc)<br />
+			tar zxpvf (nome_do_arquivo)<br />
+			Se o arquivo for "gziped"(.gz):<br />
+			gunzip -d (nome_do_arquivo)
+		</p>
+	</dd>
+	<dt>
+		<p>
+			chmod - muda as permissões do arquivo/diretório
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			chown - muda as permissões do arquivo/diretório
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			awk - Procura por um modelo a partir de um arquivo. Inclui uma linguagem de programação embutida.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			bdiff - Compara dois arquivos grandes.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			bfs - Procura um arquivo grande.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			cal - Exibe um calendário.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			cat - Encadeia e imprimi arquivos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			cc - Compilador C.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			cd - Muda diretório.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			chgrp - Muda o titulo de um grupo de arquivos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			cmp - Compara dois arquivos; mostra a localização (linha e byte) da primeira diferença entre eles.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			comm - Compara dois arquivos para determinar quais linhas sao comuns entre eles.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			cu - Chamar outro sistema UNIX.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			date - Retorna a data e a hora.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			diff - Exibe as diferenças entre dois arquivos ou diretórios.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			diff3 - Exibe as diferenças entre tres arquivos ou diretorios.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			du - Relatorio no uso do sistema de arquivos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			echo - Exibe seus argumentos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			ed - Editor de texto.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			ex - Editor de texto.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			expr - Avalia seus argumentos quando geralmente e uma formula matematica.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			f77 - Compilador FORTRAN.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			find - Localiza os arquivos c/ caracteristicas especificas.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			format - Inicializa um floppy disk.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			grep - Procura um modelo a partir de um arquivo. (veja awk)
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			help - :/ (ajuda)
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			kill - Termina um processo.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			ln - Usado para unir arquivos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			lpr - Copia um arquivo para a linha de impressora.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			ls - Exibe informacoes sobre um ou mais arquivos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			mail - Usado para receber ou enviar e-mail.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			nroff - Usado para formatar textos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			ps - Exibe um status dos processos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			sleep - Causa um processo para tornar-se inativo por uma duracao de tempo especifica.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			sort - Escolher e unir um ou mais arquivos.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			spell - Procurar erros de ortografia num arquivo.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			split - Dividir um arquivo.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			stty - Exibir ou escolher parametros do terminal.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			tail - Exibir o fim de um arquivo.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			tset - Escolher o tipo de terminal.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			umask - Permite que o usuario especifique uma nova criacao de camuflagem.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			uniq - Compara dois arquivos. Procura e exibe em linhas o que e incomparavel em um arquivo.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			uucp - Execucao UNIX-para-UNIX
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			vi - Editor de tela cheia.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			wc - Exibe detalhes no tamanho do arquivo.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			who - Informacoes de quem esta on-line.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+	<dt>
+		<p>
+			write - Usado para mandar mensagens para outro usuário.
+		</p>
+	</dt>
+	<dd>&nbsp;</dd>
+</dl>
