@@ -1,5 +1,10 @@
-<h1>Invasão por IP</h1>
-<time>2007-06-10T14:14:59-03:00</time>
+---
+title: Invasão por IP
+date: 2007-06-10T14:14:59-03:00
+description: Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.
+abstract: Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.
+tags: [segurança, invasão, IP, Windows]
+---
 <center><img src="/files/windowsxp_fail.gif" width="267" height="200" hspace="5" vspace="5" border="1"></center>
 <p>Este texto apresenta dois métodos diferentes que ilustram como ocorre o acesso remoto não autorizado via IP.</p>
 <h2>1º Método</h2>
@@ -9,7 +14,7 @@
 <li>Digite o comando:
 <pre><code>nbtstat -a [IP do alvo]</code></pre></li>
 <li>O comando retornará informações sobre o computador de destino. Se o compartilhamento de arquivos não estiver habilitado, será exibida a mensagem: <code>HOST NOT FOUND</code>.</li>
-<li>Caso apareçam mensagens contendo <code><03></code>, isso indica que o compartilhamento está ativo. Pegue o nome associado a essa marca.</li>
+<li>Caso apareçam mensagens contendo <code>&lt;03&gt;</code>, isso indica que o compartilhamento está ativo. Pegue o nome associado a essa marca.</li>
 <li>Mapeie uma unidade de disco para integrar os dois sistemas. No Windows, acesse:<br>
 <b>Iniciar > Executar</b><br>
 Digite:
@@ -60,12 +65,12 @@ Nunca apague ou modifique arquivos no computador de destino. Limite-se a explora
 <p><b>Nota:</b> O parâmetro <code>-A</code> deve ser digitado em letras maiúsculas.</p>
 <ul>
 <li>Se a mensagem <code>Host not found</code> aparecer, o computador da vítima pode não ter compartilhamento de arquivos habilitado ou o IP pode ser inválido.</li>
-<li>Caso apareçam nomes com a marca <code><03></code>, anote o <b>NetBIOS</b> associado.</li>
+<li>Caso apareçam nomes com a marca <code>&lt;03&gt;</code>, anote o <b>NetBIOS</b> associado.</li>
 </ul></li>
 <li>Abra o arquivo <code>LMHOSTS.SAM</code>, localizado no diretório <code>C:\Windows</code>, utilizando o <b>Notepad</b>. Adicione o seguinte:
 <pre><code>[IP do alvo] [Nome NetBIOS]</code></pre>
 <ul>
-<li>O <b>Nome NetBIOS</b> é aquele associado à marca <code><03></code>.</li>
+<li>O <b>Nome NetBIOS</b> é aquele associado à marca <code>&lt;03&gt;</code>.</li>
 <li>Seja rápido, pois o IP da vítima pode mudar ou ela pode desconectar-se.</li>
 </ul></li>
 </ol>

@@ -5,7 +5,6 @@ import Metalsmith from "metalsmith";
 import layouts from "@metalsmith/layouts";
 import collections from "@metalsmith/collections";
 import browserSync from "browser-sync";
-import * as cheerio from "cheerio";
 import htmlMinifier from "metalsmith-html-minifier";
 import pagination from "metalsmith-pagination";
 
@@ -43,23 +42,14 @@ function msBuild() {
       setImmediate(done);
       metalsmith.match("**/*.html").forEach((file) => {
         const data = files[file];
-        const $ = cheerio.load(data.contents.toString(), {}, false);
-        const $date = $("time:first");
-        const date = $date.text();
-
-        if (date) {
-          const pubdate = new Date(date);
-          data.isodate = pubdate.toISOString();
-          data.pubdate = pubdate.toLocaleDateString("pt-BR", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-
-          $date.remove();
-          data.contents = Buffer.from($.html());
-        }
+        const date = data.date ? new Date(data.date) : new Date();
+        data.isodate = date.toISOString();
+        data.pubdate = date.toLocaleDateString("pt-BR", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
       });
     })
     .use(
@@ -81,34 +71,12 @@ function msBuild() {
       setImmediate(done);
       metalsmith.match("**/*.html").forEach((file) => {
         const data = files[file];
-
-        if (data.path === "index.html") data.layout = "blog.njk";
-
         data.permalink = data.path.replace(/\\/g, "/");
-
-        const $ = cheerio.load(data.contents.toString(), {}, false);
-        const title = $("h1").text();
-        const content = $("p:first").text();
-        $("h1").remove();
-
-        data.title = title;
-
+        if (data.path === "index.html") data.layout = "blog.njk";
         if (data.collection?.includes("blog")) {
           data.layout = "article.njk";
-
-          const maxNumberOfWords = 35;
-          const listOfWords = content.trim().split(" ");
-          const truncatedContent = listOfWords
-            .slice(0, maxNumberOfWords)
-            .join(" ");
-          const excerpt = truncatedContent + "…";
-          const output =
-            listOfWords.length > maxNumberOfWords ? excerpt : content;
-          data.excerpt = Buffer.from(output);
-          data.abstract = data.excerpt;
+          data.excerpt = data.abstract;
         }
-
-        data.contents = Buffer.from($.html());
       });
     })
     .use(
