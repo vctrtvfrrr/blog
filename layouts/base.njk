@@ -16,6 +16,13 @@
 {%- else -%}
   {%- set pageDescription = author -%}
 {%- endif -%}
+
+{%- if keywords -%}
+  {%- set pageKeywords = keywords -%}
+  {% if tags %}
+    {%- set pageKeywords = pageKeywords + ', ' + tags -%}
+  {% endif %}
+{%- endif -%}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
 	<HEAD>
