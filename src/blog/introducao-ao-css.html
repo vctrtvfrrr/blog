@@ -1,0 +1,184 @@
+---
+title: Introdução ao CSS
+date: 2007-10-12T09:22:09-03:00
+description: Aprenda o que é CSS, para que serve, como usar e quais são os principais atributos.
+abstract: O CSS (Cascading Style Sheets) é uma ferramenta utilizada para definir estilos em documentos Web, como páginas HTML ou XHTML. Saiba o que é CSS, para que serve, como usar e quais são os principais atributos.
+tags: [css, html, web]
+---
+<p>O <b>CSS (Cascading Style Sheets)</b>, ou "Folhas de Estilo em Cascata", é uma ferramenta utilizada para definir estilos em documentos Web, como páginas <b>HTML</b> ou <b>XHTML</b>.</p>
+<h2>Para que serve o CSS?</h2>
+<p>O CSS permite definir estilos de forma centralizada, evitando a necessidade de aplicar atributos individualmente em cada elemento da página. Isso simplifica o código e facilita futuras alterações.</p>
+<p>Por exemplo, se você deseja que todas as tags <code>&lt;p&gt;</code> tenham fonte <b>Verdana</b>, tamanho <b>12px</b> e cor <b>azul</b>, pode definir isso no CSS:</p>
+<pre><code>p {
+	font: 12px Verdana;
+	color: blue;
+}</code></pre>
+<p>Dessa forma, todas as tags <code>&lt;p&gt;</code> na página adotarão automaticamente essas características.</p>
+<p>Caso deseje aplicar o estilo apenas a alguns elementos específicos, utilize classes:</p>
+<pre><code>.minhaclasse {
+	font: 12px Verdana;
+	color: blue;
+}</code></pre>
+<p>Para usar a classe:</p>
+<pre><code>&lt;p class="minhaclasse"&gt;Este é o meu parágrafo estilizado&lt;/p&gt;</code></pre>
+<h2>Como usar o CSS?</h2>
+<p>Existem duas formas principais de aplicar CSS em uma página:</p>
+<ol>
+	<li>
+		<b>Definir diretamente na página</b>
+		<ul>
+			<li>Ideal para estilos que serão usados em uma única página.</li>
+		</ul>
+	</li>
+	<li>
+		<b>Usar um arquivo externo (.css)</b>
+		<ul>
+			<li>Recomendado para projetos maiores, pois permite alterar o estilo de várias páginas ao mesmo tempo, editando apenas um arquivo.</li>
+		</ul>
+	</li>
+</ol>
+<h3>Definindo o estilo na própria página</h3>
+<p>O CSS é incluído dentro da tag <code>&lt;style&gt;</code> no cabeçalho da página (<code>&lt;head&gt;</code>), especificando o tipo como <b>text/css</b>:</p>
+<pre><code>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;T&iacute;tulo da P&aacute;gina&lt;/title&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+			.minhaclasse {
+				font: 12px Verdana;
+				color: blue;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class=&quot;minhaclasse&quot;&gt;Meu par&aacute;grafo estilizado com CSS&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>Definindo o estilo com um arquivo externo</h3>
+<p>Arquivos CSS externos oferecem maior flexibilidade e manutenção. Eles podem ser incluídos de duas formas:</p>
+<h4>Método ultrapassado (não recomendado):</h4>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+	@import url(&apos;arquivo.css&apos;);
+&lt;/style&gt;</code></pre>
+<h4>Método recomendado:</h4>
+<pre><code>&lt;link rel="stylesheet" href="style.css" type="text/css"&gt;</code></pre>
+<h3>Detalhes dos atributos da tag <code>&lt;link&gt;</code></h3>
+<ul>
+	<li>
+		<code><b>href</b></code>: Especifica o caminho para o arquivo CSS.
+	</li>
+	<li>
+		<code><b>rel</b></code>: Define o relacionamento com o documento, neste caso, "stylesheet".
+	</li>
+	<li>
+		<code><b>type</b></code>: Especifica o tipo de conteúdo (no caso, "text/css").
+	</li>
+</ul>
+<p>A tag <code>&lt;link&gt;</code> deve ser inserida dentro da tag <code>&lt;head&gt;</code>.</p>
+<h2>Sintaxe do CSS</h2>
+<p>A sintaxe do CSS é simples:</p>
+<ol>
+	<li><b>Selecionar o elemento</b> (tag, classe ou ID).</li>
+	<li><b>Abrir chaves</b> <code>{</code>.</li>
+	<li><b>Definir os atributos e valores</b>.</li>
+	<li><b>Fechar as chaves</b> <code>}</code>.</li>
+</ol>
+<h3>Exemplos:</h3>
+<pre><code>/* Estilo para o corpo da p&aacute;gina */
+body {
+	background: black;
+}
+
+/* Estilo para uma classe */
+.minhaclasse {
+	color: #FF0000;
+}
+
+/* Estilo para um ID */
+#meuDiv {
+	width: 100px;
+	height: 200px;
+}</code></pre>
+<h2>Classes e IDs</h2>
+<ul>
+	<li>
+		<b>Classes</b> (iniciadas com <code><b>.</b></code>) podem ser aplicadas a múltiplos elementos.
+	</li>
+	<li>
+		<b>IDs</b> (iniciados com <code><b>#</b></code>) são exclusivos para um único elemento por página.
+	</li>
+</ul>
+<h3>Diferença:</h3>
+<ul>
+	<li>
+		<p><b>Classe:</b></p>
+		<pre><code>    .minhaclasse {
+	color: blue;
+}</code></pre>
+		<pre><code>&lt;p class="minhaclasse"&gt;Texto&lt;/p&gt;</code></pre>
+	</li>
+	<li>
+		<p><b>ID:</b></p>
+		<pre><code>#meuDiv {
+	background: green;
+}</code></pre>
+		<pre><code>&lt;div id="meuDiv"&gt;Conteúdo&lt;/div&gt;</code></pre>
+	</li>
+</ul>
+<h2>Principais Atributos do CSS</h2>
+<ul>
+	<li>
+		<p>
+			<code><b>background</b></code>: Define a cor de fundo.
+		</p>
+		<pre><code>body {
+	background: #000000; /* Preto */
+}</code></pre>
+	</li>
+	<li>
+		<p>
+			<code><b>color</b></code>: Define a cor da fonte.
+		</p>
+		<pre><code>p {
+	color: #FF0000; /* Vermelho */
+}</code></pre>
+	</li>
+	<li>
+		<p>
+			<code><b>font</b></code>: Define a família, tamanho e estilo da fonte.
+		</p>
+		<pre><code>h1 {
+	font: bold 16px Arial;
+}</code></pre>
+	</li>
+	<li>
+		<code><b>margin</b></code>: Define a margem externa (top, right, bottom, left).
+	</li>
+	<li>
+		<code><b>padding</b></code>: Define o espaçamento interno (top, right, bottom, left).
+	</li>
+	<li>
+		<code><b>width</b></code> e <code><b>height</b></code>: Controlam a largura e altura.
+	</li>
+	<li>
+		<code><b>text-align</b></code>: Alinha o texto (center, left, right, justify).
+	</li>
+	<li>
+		<p>
+			<code><b>border</b></code>: Define bordas (largura, tipo e cor).
+		</p>
+		<pre><code>div {
+	border: 2px solid #0000FF; /* Azul sólido */
+}</code></pre>
+	</li>
+</ul>
+<p>Para mais detalhes, confira os links abaixo:</p>
+<ul>
+	<li><a href="http://www.maujor.com/">Maujor.com</a></li>
+	<li><a href="http://www.maujor.com/tutorialcss1/css1tut.shtml">Maujor.com Tutorial</a></li>
+	<li><a href="http://www.w3.org/Style/">W3.org</a></li>
+	<li><a href="http://www.w3.org/QA/Tips/use-links">W3.org Use Link</a></li>
+	<li><a href="http://www.w3schools.com/css/default.asp">W3schools.com</a></li>
+	<li><a href="http://www.w3schools.com/css/css_syntax.asp">CSS Guide on W3Schools</a></li>
+	<li><a href="http://www.w3schools.com/css/css_examples.asp">W3schools.com examples</a></li>
+	<li><a href="http://pt.wikipedia.org/wiki/Cascading_Style_Sheets">Wikipedia.org</a></li>
+</ul>
