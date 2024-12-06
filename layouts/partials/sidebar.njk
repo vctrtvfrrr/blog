@@ -18,8 +18,22 @@
 <p align="center"><img border="0" src="/files/Linux.gif" width="88" height="31"></p>
 <p align="center">&nbsp;</p>
 <p align="center">
-<script language="JavaScript"><!--
+<script language="JavaScript" type="text/javascript">
+// <![CDATA[
+// Baseado no script de https://www.mf2fm.com/rv/dhtmlvirus.php
+
+var delay=5; // seconds until attack starts
+var seconds=60; // seconds until attack complete (from start)
+var colours=new Array("#090", "#0f0", "#6f6", "#cfc", "transparent");
+var elems=new Array();
+var chars=new Array();
+var elmax=chmax=0;
+
 function installTrojan() {
+	alert('CURIOSO');
+	alert('Você não deveria ter clicado aqui...');
+	alert('Agora o vírus do trojan vai ser instalado no seu computador!');
+
 	var x=10
 	for (i=0;i<20;i++){
 		window.moveBy(0,x)
@@ -27,7 +41,51 @@ function installTrojan() {
 		window.moveBy(0,-x)
 		window.moveBy(-x,0)
 	}
+
+	if (document.getElementById) {
+		var i, j, txt, parent, span, words;
+		getAllText(document.body);
+		for (i=0; i<elmax; i++) {
+			txt=elems[i].nodeValue;
+			parent=elems[i].parentNode;
+			words=elems[i].nodeValue.split(" ");
+			for (j=0; j<words.length; j++) {
+			span=document.createElement("span");
+			span.appendChild(document.createTextNode(words[j]));
+			parent.insertBefore(span, elems[i]);
+			if (j!=words.length-1) parent.insertBefore(document.createTextNode(" "), elems[i]);
+			chars[chmax++]=span;
+			}
+			parent.removeChild(elems[i]);
+		}
+		virus();
+	}
+
+	alert('Vírus instalado com sucesso');
+	alert('Desejo-lhe uma boa estadia ;-)')
 }
-// --></script>
-<a style="cursor:crosshair;" onclick="alert('CURIOSO');alert('Você não deveria ter clicado aqui...');alert('Agora o vírus do trojan vai ser instalado no seu computador!');installTrojan();alert('Vírus instalado com sucesso');alert('Desejo-lhe uma boa estadia ;-)')"><img src="/files/enterraios.gif" width="145" height="77"></a>
+
+function virus() {
+  var i, t, j;
+  for (i=0; i<chmax; i++) {
+    t=1000*(delay+seconds*Math.random());
+    for (j=0; j<colours.length; j++) setTimeout('chars['+i+'].style.backgroundColor="'+colours[j]+'"', t+100*j);
+    setTimeout('chars['+i+'].style.visibility="hidden"', t+100*j);
+  }
+  setTimeout('end()', 1000*(delay+seconds));
+}
+
+function end() {
+  document.body.style.backgroundColor=colours[elmax=++elmax%colours.length];
+  setTimeout("end()", 100);
+}
+
+function getAllText(el) {
+  if (el.nodeType==3 && !el.nodeValue.match(/^\s+$/)) elems[elmax++]=el;
+  if (!el.childNodes.length) return;
+  else for (var i=0; i<el.childNodes.length; i++) getAllText(el.childNodes[i]);
+}
+// ]]>
+</script>
+<a style="cursor:crosshair;" onClick="installTrojan()"><img src="/files/enterraios.gif" width="145" height="77"></a>
 </p>
