@@ -1,0 +1,15 @@
+---
+title: Como Criar um CD com Autorun no Windows
+date: 2007-10-24T22:17:47-03:00
+description: Aprenda a criar um CD com autorun no Windows
+abstract: Aprenda a criar um CD com autorun no Windows
+tags: [windows, cd, autorun]
+---
+<p>Já pensou em criar um CD de instalação de algum programa, ou um arquivo batch autoexecutável no Windows? O que você acha de ao colocar o seu CD na unidade ter imediatamente iniciado o seu sistema de instalação ou executar seu script batch?</p>
+<p>Bem, a coisa é tão simples que relutei em inserí-la aqui como uma dica. Mas é basicamente o seguinte:</p>
+<p>Criar um arquivo chamado <code>AUTORUN.INF</code> com as seguintes linhas:</p>
+<pre><code>[autorun]
+OPEN=SETUP.EXE /AUTORUN</code></pre>
+<p>Onde <code>SETUP.EXE</code> é o nome do arquivo que você deseja executar automaticamente. Se você deseja executar um arquivo batch, por exemplo, basta substituir <code>SETUP.EXE</code> pelo nome do arquivo batch.</p>
+<p>Depois, basta gravar os arquivos <code>AUTORUN.INF</code> e o executável para a raiz do CD-ROM. Pronto! Ao inserir o CD na unidade, o arquivo será executado automaticamente.</p>
+<p>Por hoje é só isso... tchau!</p>
