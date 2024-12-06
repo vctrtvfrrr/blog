@@ -8,9 +8,42 @@
 	<!--End WebMart Votes-->
 </center>
 <p align="center">&nbsp;</p>
+<script type="text/javascript">
+// <![CDATA[
+var speed=100; // speed of wobbling, lower is faster
+var height=2; // height of wobbling in pixels
+
+/****************************
+*    Wobbly Text Effect     *
+*(c) 2003-6 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+var wobtxt, wobble, wobcnt=0;
+window.onload=function() { if (document.getElementById) {
+  var i, wobli;
+  wobble=document.getElementById("wobble");
+  wobtxt=wobble.firstChild.nodeValue;
+  while (wobble.childNodes.length) wobble.removeChild(wobble.childNodes[0]);
+  for (i=0; i<wobtxt.length; i++) {
+    wobli=document.createElement("span");
+    wobli.setAttribute("id", "wobb"+i);
+    wobli.style.position="relative";
+    wobli.appendChild(document.createTextNode(wobtxt.charAt(i)));
+    wobble.appendChild(wobli);
+  }
+  setInterval("wobbler()", speed);
+}}
+
+function wobbler() {
+  for (var i=0; i<wobtxt.length; i++) document.getElementById("wobb"+i).style.top=Math.round(height*Math.sin(i+wobcnt))+"px"
+  wobcnt++;
+}
+// ]]>
+</script>
 <p align="center"><img alt="Você está sendo observado!!!!" src="/files/olhos1.gif" width="225" height="65"></p>
 <p align="center">Estou de olho em você!!!</p>
-<p align="center">Vote na minha HomePage</p>
+<p align="center" id="wobble">Vote na minha HomePage</p>
 <p align="center"><a href="http://www.top30.com.br/cgi/votar.cgi?ID=13728" target="top30" border="0"><img src="/files/selovotar.gif" width="148" height="82"></a></p>
 <p align="center">&nbsp;</p>
 <p align="center"><A HREF="http://www.free-stuff.me.uk/free/voucher_codes/" TARGET="_blank"><IMG SRC="http://001.c-o-u-n-t.com/count-016.pl?count=0a07xg5dgnmty32t8swk&type=odmeter1&prog=hit" WIDTH="95" HEIGHT="22" BORDER="0" ALT="voucher codes" TITLE="voucher codes"></A></p>
