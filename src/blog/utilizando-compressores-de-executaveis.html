@@ -1,0 +1,25 @@
+---
+title: Utilizando Compressores de Executáveis
+date: 2007-11-13T21:10:37-03:00
+description: Nesse artigo vou citar o método do compressor de executáveis Windows 32 bits para esconder um trojan dos anti-vírus.
+abstract: Como vimos no artigo sobre trojans, vários métodos podem ser usados para esconder um cavalo de tróia. Depende mais da imaginação do invasor. Só que ainda assim podem ser facilmente detectados. Nesse artigo vou citar o método do compressor de executáveis Windows 32 bits.
+tags: [trojan, anti-vírus, compressores, executáveis]
+---
+<p>Como vimos no <a href="/blog/tudo-sobre-trojans.html">artigo sobre trojans</a>, vários métodos podem ser usados para esconder um cavalo de tróia. Depende mais da imaginação do invasor. Só que ainda assim podem ser facilmente detectados. Nesse artigo vou citar o método do compressor de executáveis Windows 32 bits.</p>
+<p>Apesar de essa técnica já vir sendo utilizada em larga escala há um tempo. Consiste em usar um programa compressor de arquivos EXE, que apenas diminua o seu tamanho retirando espaços vazios desnecessários. Um programa comum é o <a href="http://www.un4seen.com/petite/">Petite</a> que diminui cerca de 30% ou mais do arquivo original.</p>
+<p>Um trojan (ou mesmo um vírus) comprimido é absolutamente indetectável por anti-vírus e scanners. Isso porquê esses programas se baseiam na estrutura do arquivo para identificá-lo. É como se tivesse fotos na memória e as comparasse. Como não encontrou nenhuma igual, não mostra nenhum tipo de aviso. Um operador de sistemas têm que conhecer muito bem seus arquivos e conferir sempre novas alterações (como datas e horas de novos arquivos) para evitar que um trojan comprimido seja instalado em seu sistema. Não dependa só de anti-vírus.</p>
+<p>Vamos realizar passo a passo o processo de esconder um trojan de um anti-vírus.</p>
+<ol>
+	<li>
+		Passaremos o Norton para que encontre o arquivo infectado:<br>
+		<img src="/files/norton.JPG" width="413" height="306">
+	</li>
+	<li>
+		Agora, abriremos o programa PETITE para comprimir o arquivo EXE do servidor do Netbus.<br>
+		<img src="/files/norton2.JPG" width="394" height="226">
+	</li>
+	<li>Com o arquivo já comprimido, novamente testamos o anti-vírus:<br>
+		<img src="/files/norton3.JPG" width="295" height="308">
+	</li>
+</ol>
+<p>Fica evidente que nada foi detectado. Use essa técnica com cautela. ;-)</p>
