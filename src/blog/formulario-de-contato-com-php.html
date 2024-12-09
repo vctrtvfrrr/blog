@@ -1,0 +1,74 @@
+---
+title: Formulário de contato com PHP
+date: 2007-12-03T13:55:16-03:00
+description: Aprenda a configurar o envio de e-mails com PHP e a criar um formulário de contato que envia e-mails.
+abstract: Aprenda a configurar o envio de e-mails com PHP e a criar um formulário de contato que envia e-mails.
+tags: [php, email, smtp, sendmail]
+---
+<h2>Configuração de e-mail no PHP</h2>
+<p>Antes de podermos enviar e-mails com PHP, precisamos configurá-lo para isso. A configuração para enviar e-mails em PHP é feita com o arquivo <code>php.ini</code>. Então, abra o arquivo <code>php.ini</code> do seu servidor em qualquer editor que você normalmente usa (pode ser no Bloco de Notas).</p>
+<blockquote><p>NOTA: Se o seu servidor não te dá acesso às configurações do PHP, então as coisas ficam um pouco mais difíceis. Pode ser que o administrador do servidor permita configurar o envio de e-mails de alguma outra forma ou através de um painel administrativo. Neste caso, procure se informar sobre as configurações de e-mail do seu servidor e como alterá-las e pule esta etapa.</p></blockquote>
+<p>Na seção intitulada <code>[mail function]</code> no arquivo <code>php.ini</code>, você encontrará três configurações: <code>SMTP</code>, <code>sendmail_from</code> e <code>sendmail_path</code>. Se o seu servidor roda em uma máquina Windows, é melhor definir a opção <code>SMTP</code> e apontar para o seu servidor SMTP (ou o servidor SMTP do seu ISP, se você estiver configurando o PHP na sua máquina doméstica). Se, em vez disso, você estiver configurando o PHP em um servidor Linux (ou outro sistema operacional baseado em Unix), você pode definir a opção <code>sendmail_path</code> para apontar para o programa <code>sendmail</code> no seu servidor, passando a opção <code>-t</code> para ele. Você também pode usar a opção SMTP no Linux, se não tiver um programa <code>sendmail</code> configurado. Em ambos os casos, configure a opção <code>sendmail_from</code> para o seu endereço de e-mail, ou qualquer endereço que você gostaria que aparecesse como remetente das suas mensagens (o endereço <i>from</i> padrão para e-mails enviados de scripts PHP). Veja como fica esta seção em um servidor Windows ou Linux sem sendmail:</p>
+<pre><code>[mail function]
+; Setup for Windows systems
+SMTP = smtp.meu.isp.net
+sendmail_from = exemplo@meuservidor.com.br</code></pre>
+<p>E é assim que normalmente fica em um servidor Linux com sendmail:</p>
+<pre><code>[mail function]
+; Setup for Linux systems
+sendmail_path = /usr/sbin/sendmail -t -i
+sendmail_from = exemplo@meuservidor.com.br</code></pre>
+<p>Com essas configurações definidas, reinicie seu servidor e pronto!</p>
+<h2>Testando o envio de e-mail</h2>
+<p>Para testar se o envio de e-mails está funcionando, você deve, primeiro, criar um formulário HTML que submete para o script PHP que enviará a mensagem. Veja este exemplo:</p>
+<pre><code>&lt;form action="sendmail.php" method="post"&gt;
+	&lt;label for="subject"&gt;Assunto:&lt;/label&gt;&lt;br&gt;
+	&lt;input type="text" id="subject" name="subject" required&gt;&lt;br&gt;&lt;br&gt;
+
+	&lt;label for="name"&gt;Nome:&lt;/label&gt;&lt;br&gt;
+	&lt;input type="text" id="name" name="name" required&gt;&lt;br&gt;&lt;br&gt;
+
+	&lt;label for="from"&gt;E-mail:&lt;/label&gt;&lt;br&gt;
+	&lt;input type="text" id="from" name="from" required&gt;&lt;br&gt;&lt;br&gt;
+
+	&lt;label for="message"&gt;Mensagem:&lt;/label&gt;&lt;br&gt;
+	&lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+	&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>Ao clicar no botão "Enviar", os dados preenchidos nos campos do formulário serão enviados para o script <code>sendmail.php</code>.</p>
+<p>O conteúdo do script PHP no arquivo <code>sendmail.php</code> que receberá os dados do formulário é este:</p>
+<pre><code>&lt;?php
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	// Captura os dados do formulário
+	$subject = trim($_POST['subject']);
+	$name = trim($_POST['name']);
+	$from = trim($_POST['from']);
+	$message = trim($_POST['message']);
+
+	// Valida os campos
+	if (empty($subject) || empty($name) || empty($from) || empty($message)) {
+		die("Todos os campos são obrigatórios!");
+	}
+
+	// Configurações do e-mail
+	$to = "seu_email@dominio.com"; // Substitua pelo seu e-mail
+	$headers = "From: $name &lt;$from&gt;\r\n";
+	$headers .= "Reply-To: $to\r\n";
+	$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+	// Envia o e-mail
+	$sent = mail($to, $subject, $message, $headers);
+
+	if ($sent) {
+		echo "E-mail enviado com sucesso!";
+	} else {
+		echo "Falha ao enviar o e-mail.";
+	}
+} else {
+	die("Acesso inválido.");
+}
+?&gt;</code></pre>
+<p>Este script PHP captura os dados enviados pelo formulário, valida os campos, configura o e-mail e o envia. Se o e-mail for enviado com sucesso, uma mensagem de sucesso é exibida. Caso contrário, uma mensagem de falha é exibida.</p>
+<p>Pronto! Agora você tem um formulário de contato que envia e-mails com PHP. Se quiser saber mais sobre o PHP e como melhorar os e-mails enviados, dê uma olhada na documentação da função <code>mail</code> no <a href="https://www.php.net/manual/en/function.mail.php" target="_blank">site do PHP</a>.</p>
