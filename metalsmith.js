@@ -90,6 +90,7 @@ function msBuild() {
     )
     .use(
       layouts({
+        pattern: '**/*.html',
         default: "base.njk",
       })
     )
