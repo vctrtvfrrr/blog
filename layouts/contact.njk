@@ -1,0 +1,60 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<script type="text/javascript">
+// <![CDATA[
+function validateEmail() {
+	var re=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,7})+$/;
+	if (!re.test(document.forms['eform'].email.value)) {
+		alert('Por favor, digite um endereço de e-mail válido.');
+		document.eform.email.focus();
+		return false;
+	}
+	else return true;
+}
+
+function over(el) {
+	el.style.borderColor="#fff";
+	el.style.borderRightColor="#666";
+	el.style.borderBottomColor="#666";
+}
+
+function out(el) {
+	el.style.borderColor="#ccc";
+}
+// ]]>
+</script>
+<form name="eform" action="http://www2.woofoo.com/user-cgi/FormMail.pl" method="POST" onsubmit="return(validateEmail())">
+	<input type="HIDDEN" name="recipient" value="{{ author.email }}">
+	<table class="mail">
+		<tr>
+			<td style="padding:0px; background-image:url(/files/messagebar.gif)"><img src="/files/newmessage.gif" height="20" width="102" alt="JavaScript-tastic" align="left"><img src="/files/messageend.gif" height="20" width="54" alt="DHTML super scripts" align="right"></td>
+		</tr>
+		<tr>
+			<td class="d">
+				<table style="width:100%; background-color:#CCCCCC">
+					<tr>
+						<td class="d">Assunto:</td>
+						<td class="d"><input type="TEXT" name="subject" class="inp"></td>
+					</tr>
+					<tr>
+						<td class="d">E-mail:</td>
+						<td class="d"><input type="TEXT" name="email" class="inp"></td>
+					</tr>
+					<tr>
+						<td class="d"><img src="/files/e-mailicon.gif" width="17" height="14" align="left" alt="Para:">&nbsp;Para:</td>
+						<td class="d"><div class="inp">{{ sitename }}</div></td>
+					</tr>
+					<tr>
+						<td class="d" valign="top">Mensagem:</td>
+						<td class="d"><textarea name="content" rows="9" cols="45" class="inp" style="height:150px"></textarea></td>
+					</tr>
+					<tr>
+						<td class="d" colspan="2"><div onmouseover="over(this)" onmouseout="out(this)" onclick="if(validateEmail())document.forms['eform'].submit()" class="mushroom" style="margin-left:auto; margin-right:auto"><input type="image" src="/files/send.gif"><br>Enviar</div></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</form>
+{% endblock content %}

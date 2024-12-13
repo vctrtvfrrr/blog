@@ -2,6 +2,7 @@
 
 {% block head %}
 <META NAME="revisit-after" CONTENT="15 days">
+<link rel="canonical" href="{{ siteurl | safe }}">
 {% endblock head %}
 
 {% block content %}
@@ -52,21 +53,16 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			{{ contents | safe }}
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<p align="center"><img border="0" height="22" src="/files/image610.gif" width="100%" height="22"></p>
+			<p align="center">&nbsp;</p>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2">
 			{% if pagination.files.length %}
-			<UL>
+			<UL class="posts">
 				{% for item in pagination.files %}
 				<LI>
-					<H2><A HREF="/{{ item.permalink }}">{{ item.title }}</A></H2>
+					<H2><A HREF="{{ item.permalink }}">{{ item.title }}</A></H2>
 					<P><I><FONT SIZE="1">{{ item.pubdate }}</FONT></I></P>
 					<P>{{ item.excerpt }}</P>
 				</LI>

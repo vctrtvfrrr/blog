@@ -1,9 +1,8 @@
 {%- set pageTitle = sitename -%}
 
-{# Liberar quando o site tiver mais páginas além do blog
 {%- if collections[collection].metadata.title -%}
-  {%- set pageTitle = collections[collection].metadata.title + ' | ' + pageTitle -%}
-{%- endif -%} #}
+  {%- set pageTitle = collections[collection].metadata.title + ' &mdash; ' + pageTitle -%}
+{%- endif -%}
 
 {%- if title -%}
   {%- set pageTitle = title + ' &mdash; ' + pageTitle -%}
@@ -29,20 +28,28 @@
 		{% include 'partials/head.njk' %}
 		{% block head %}{% endblock head %}
 	</HEAD>
-	<BODY>
-		<table width="768" border="0" cellspacing="0" cellpadding="10">
-			{% include 'partials/header.njk' %}
+	<BODY onload="document.forms['eform'].subject.focus()">
+		<table width="768" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td colspan="2" class="header">
+					{% include 'partials/header.njk' %}
+				</td>
+			</tr>
 			<tr>
 				<td valign="top">
 					{% block content %}
 					{{ contents | safe }}
 					{% endblock %}
 				</td>
-				<td width="220" valign="top">
+				<td width="220" valign="top" class="sidebar">
 					{% include 'partials/sidebar.njk' %}
 				</td>
 			</tr>
-			{% include 'partials/footer.njk' %}
+			<tr>
+				<td colspan="2">
+					{% include 'partials/footer.njk' %}
+				</td>
+			</tr>
 		</table>
 
 	<script language="JavaScript"><!--

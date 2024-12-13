@@ -16,16 +16,16 @@ let startTime = performance.now();
 
 function msBuild() {
   return Metalsmith(__dirname)
-    .clean(true)
+    .clean(false)
     .watch(isProduction ? false : ["layouts", "src"])
     .source("./src")
-    .destination("./build")
+    .destination(process.env.DEST_PATH || "./build")
     .env({
       DEBUG: process.env.DEBUG,
       NODE_ENV: process.env.NODE_ENV,
     })
     .metadata({
-      isProduction: false, // process.env["NODE_ENV"] === "production",
+      isProduction: process.env["NODE_ENV"] === "production",
       siteurl: process.env["APP_URL"] || "http://localhost:3000",
       sitename: "Victor Ferreira's Homepage",
       description: "Homepage de Victor Ferreira",
@@ -35,7 +35,11 @@ function msBuild() {
         name: "Victor Ferreira",
         email: "victorotavioferreira@hotmail.com",
       },
-      year: { from: "2007", to: new Date().getFullYear() },
+      year: {
+        from: "2007",
+        to: "2008",
+        // to: new Date().getFullYear(),
+      },
       googletagmanager: String(process.env["GOOGLE_TAG_MANAGER"]),
     })
     .use((files, metalsmith, done) => {
@@ -65,14 +69,16 @@ function msBuild() {
           reverse: true,
           // limit: 10,
         },
+        pages: {
+          pattern: "*.html",
+        },
       })
     )
     .use((files, metalsmith, done) => {
       setImmediate(done);
       metalsmith.match("**/*.html").forEach((file) => {
         const data = files[file];
-        data.permalink = data.path.replace(/\\/g, "/");
-        if (data.path === "index.html") data.layout = "blog.njk";
+        data.permalink = `/${data.path.replace(/\\/g, "/")}`;
         if (data.collection?.includes("blog")) {
           data.layout = "article.njk";
           data.excerpt = data.abstract;
@@ -85,13 +91,24 @@ function msBuild() {
           first: "index.html",
           layout: "blog.njk",
           path: "blog/page/:num.html",
+          pageMetadata: {
+            title: "Blog",
+          },
         },
       })
     )
     .use(
       layouts({
-        pattern: '**/*.html',
+        pattern: "**/*.html",
         default: "base.njk",
+        engineOptions: {
+          filters: {
+            debug(value) {
+              console.log(value);
+              return value;
+            },
+          },
+        },
       })
     )
     .use(

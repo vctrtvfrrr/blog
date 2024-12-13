@@ -1,14 +1,20 @@
-<tr>
-	<td colspan="2">
-		{% if title %}
-		<DIV><A HREF="/">{{ sitename }}</A></DIV>
-		{% else %}
-		<H1>{{ sitename }}</H1>
-		{% endif %}
-	</td>
-</tr>
-<tr>
-	<td colspan="2">
-		<P><IMG SRC="/files/linha01.gif" WIDTH="100%" HEIGHT="30"></P>
-	</td>
-</tr>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="left" valign="bottom" class="logo">
+			{% if title %}
+			<DIV><A HREF="/">{{ sitename }}</A></DIV>
+			{% else %}
+			<H1>{{ sitename }}</H1>
+			{% endif %}
+		</td>
+		<td align="right" valign="bottom" width="450" height="200">
+			{% if collections.pages.length %}
+			<ul class="menu">
+				{% for page in collections.pages | sort(attribute='navorder') %}
+				<li{% if page.path == path %} class="active"{% endif %}><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</td>
+	</tr>
+</table>
