@@ -17,15 +17,15 @@ let startTime = performance.now();
 function msBuild() {
   return Metalsmith(__dirname)
     .clean(false)
-    .watch(isProduction ? false : ["layouts", "src"])
+    // .watch(isProduction ? false : ["layouts", "src"])
     .source("./src")
-    .destination(process.env.DEST_PATH || "./build")
+    .destination(process.env["DEST_PATH"] || "./build")
     .env({
-      DEBUG: process.env.DEBUG,
-      NODE_ENV: process.env.NODE_ENV,
+      DEBUG: process.env["DEBUG"],
+      NODE_ENV: process.env["NODE_ENV"],
     })
     .metadata({
-      isProduction: process.env["NODE_ENV"] === "production",
+      isProduction,
       siteurl: process.env["APP_URL"] || "http://localhost:3000",
       sitename: "Victor Ferreira's Homepage",
       description: "Homepage de Victor Ferreira",
