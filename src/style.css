@@ -27,6 +27,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	text-decoration: none;
 }
 
+img {
+	max-width: 100%;
+}
+
 /* Header */
 
 .header {
