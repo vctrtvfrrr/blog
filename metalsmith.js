@@ -16,7 +16,7 @@ let startTime = performance.now();
 
 function msBuild() {
   return Metalsmith(__dirname)
-    .clean(false)
+    .clean(isProduction)
     // .watch(isProduction ? false : ["layouts", "src"])
     .source("./src")
     .destination(process.env["DEST_PATH"] || "./build")
