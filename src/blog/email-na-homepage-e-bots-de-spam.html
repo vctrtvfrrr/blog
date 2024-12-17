@@ -1,0 +1,38 @@
+---
+title: E-mail na homepage e bots de spam
+date: 2008-05-03T19:41:24-03:00
+description: Como os bots de spam funcionam e como se prevenir.
+abstract: Como os bots de spam funcionam e como se prevenir.
+tags: [spam, bots, e-mail, ofuscacao]
+---
+<p>Ah... que sonho seria a internet sem nenhum spam.</p>
+<center><p style="width: 500px;"><img src="/files/ceu-testemunhas-de-jeova.jpg"><br><small>Assim seria a internet sem spam, popups, anúncios e propagandas pulando na sua tela e enchendo sua caixa de entrada.</small></p></center>
+<p>Hoje tive uma surpresa ao acessar minha caixa de entrada. Ela estava simplesmente lotada (isso mesmo, completamente cheia) de e-mails oferecendo os mais diversos produtos. Desde fórmulas milagrosas pra perder peso até pílulas pra fazer
+crescer o p**.</p>
+<p>O que me deixou mais atormentado foi pensar em como esses f** d* p** conseguiram meu endereço de e-mail pra me enviar tanto lixo. Será que foi algum contato meu que resolveu me sacanear? Será que digitei meu e-mail em algum site
+malicioso? Será que deixei meu e-mail exposto por aí?</p>
+<p>Enquanto eu pesquisava na internet algum motivo dos e-mails de spam invadirem a caixa de entrada, acabei me dando conta que a fonte do problema era simples (e até meio óbvia…). O problema era esta minha homepage… infelizmente…</p>
+<p align="center"><img src="/files/email-spam.jpg"></p>
+<p>Eu não me atentei (por inocência e descuido) que no dia que criei esta minha homepage, eu deixei meu endereço de e-mail pessoal escancarado no rodapé dela.</p>
+<p>Minhas pesquisas sobre spam no e-mail me levaram a vários artigos sobre bots de spam. Vou compartilhar aqui como eles funcionam e como se prevenir pra você não cair no mesmo problema que eu.</p>
+<h2>Como os bots de spam funcionam?</h2>
+<p>Os bots de spam são programas automatizados que varrem a internet em busca de endereços de e-mail. Eles utilizam técnicas como:</p>
+<p><b>Análise de HTML</b>: Ao acessar uma página, o bot verifica o código-fonte em busca de padrões de texto que se assemelhem a endereços de e-mail (Por exemplo, strings contendo “@” e um domínio).</p>
+<p><b>Reconhecimento de Links</b>: Bots também identificam links que contenham o protocolo “mailto:”.</p>
+<p><b>Exploração de padrões comuns</b>: Mesmo e-mails parcialmente escondidos, como “contato [arroba] exemplo [ponto] com”, podem ser capturados por bots mais sofisticados.</p>
+<p>Uma vez capturados, os endereços de e-mail são incluídos em listas de spam, que podem ser vendidas ou usadas para campanhas de phishing, malwares e outras ameaças.</p>
+<h2>A ofuscação é a solução</h2>
+<p>Ofuscar um endereço de e-mail significa torná-lo mais difícil de ser identificado automaticamente por esses bots mas sem comprometer a usuário do site. Existem diversas técnicas de se fazer isso. Na minha pesquisa eu vi várias soluções,
+mas a que me pareceu mais simples foi utilizando JavaScript:</p>
+<p>Com JavaScript, o endereço de e-mail é montado dinamicamente no navegador do usuário, dificultando o acesso por bots que analisam apenas o código HTML.</p>
+<pre><code>&lt;script&gt;
+	var nome = &quot;contato&quot;;
+	var dominio = &quot;exemplo.com&quot;;
+	document.write(&apos;&lt;a href=&quot;mailto:&apos; + nome + &apos;@&apos; + dominio +
+		&apos;&quot;&gt;&apos; + nome + &apos;@&apos; + dominio + &apos;&lt;/a&gt;&apos;);
+&lt;/script&gt;</code></pre>
+<p>Essa técnica foi a que usei aqui no site. Apesar de ter feito de uma forma um pouco mais complexa, o exemplo serve de base pra você ter uma ideia de como a coisa funciona.</p>
+<p>Essa técnica é eficaz contra muitos bots, porém alguns mais avançados ainda conseguem contorná-la, se eles forem capazes de executar o código JavaScript e capturar o e-mail montado ou se usar alguma técnica que tira um print da página
+depois de renderizada e aplicar o reconhecimento dos caracteres na imagem pra identificar e-mails.</p>
+<p>Mas esses bots mais avançados são poucos e essa técnica simples que eu trouxe aqui já te livra de muita dor de cabeça.</p>
+<p>Bom… por hoje é isso. Agora que o problema foi resolvido por aqui, preciso limpar minha caixa de entrada. xD</p>
