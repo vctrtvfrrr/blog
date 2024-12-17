@@ -1,0 +1,77 @@
+---
+title: Introdução ao XHTML
+date: 2008-02-02T14:20:24-02:00
+description: O XHTML é uma linguagem de marcação baseada no HTML, projetada para combinar a simplicidade e funcionalidade do HTML com a estrutura e a robustez do XML. Saiba mais sobre o XHTML e como ele se compara ao HTML.
+abstract: O XHTML é uma linguagem de marcação baseada no HTML, projetada para combinar a simplicidade e funcionalidade do HTML com a estrutura e a robustez do XML. Saiba mais sobre o XHTML e como ele se compara ao HTML.
+tags: [html, xhtml, xml, w3c]
+---
+<p>O XHTML (eXtensible HyperText Markup Language) é uma linguagem de marcação baseada no HTML, projetada para combinar a simplicidade e funcionalidade do HTML com a estrutura e a robustez do XML (eXtensible Markup Language). Ele foi desenvolvido pelo W3C (World Wide Web Consortium) como uma evolução do HTML 4.01, com o objetivo de tornar os documentos da web mais consistentes e compatíveis com diferentes plataformas e dispositivos.</p>
+<h2>Por que o XHTML foi criado?</h2>
+<p>O HTML tem uma sintaxe flexível, mas essa permissividade muitas vezes resulta em códigos malformados que podem ser interpretados de maneiras diferentes por navegadores distintos. Por outro lado, o XML exige uma estrutura rigorosa e bem-formada. O XHTML foi introduzido para trazer essa rigidez do XML para a web, garantindo que os documentos sejam mais fáceis de processar por máquinas e ferramentas.</p>
+<h2>Diferenças principais entre HTML e XHTML</h2>
+<p>Aqui estão algumas diferenças fundamentais:</p>
+<h3>Sintaxe Bem-Formada</h3>
+<p>No XHTML, todos os elementos devem ser bem-formatados, o que significa:</p>
+<ul>
+	<li>Todas as tags abertas devem ser fechadas.</li>
+	<li>Os nomes de tags e atributos devem ser escritos em letras minúsculas.</li>
+	<li>Os atributos devem sempre ter valores delimitados por aspas.</li>
+</ul>
+<p>Exemplo em HTML:</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Exemplo em HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;img src=&quot;imagem.jpg&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Exemplo equivalente em XHTML:</p>
+<pre><code>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+  &lt;title&gt;Exemplo em XHTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;img src=&quot;imagem.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>No XHTML, a tag <code>&lt;img&gt;</code> precisa ser encerrada com uma barra (<code>/&gt;</code>), e o atributo <code>alt</code> é obrigatório.</p>
+<h3>Declaração do Namespace</h3>
+<p>Os documentos XHTML devem incluir um namespace para indicar que seguem a especificação XML.</p>
+<p>Exemplo:</p>
+<pre><code>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</code></pre>
+<p>No HTML, essa declaração é desnecessária.</p>
+<h3>Diferenciação entre Maiúsculas e Minúsculas</h3>
+<p>Os nomes de tags e atributos no XHTML são <i>case-sensitive</i>, o que significa que <code>&lt;BODY&gt;</code> e <code>&lt;body&gt;</code> são considerados diferentes. Em HTML, não há essa diferença.</p>
+<h3>Elementos Vazios</h3>
+<p>No XHTML, elementos vazios devem ser explicitamente fechados. Por exemplo:</p>
+<pre><code>&lt;br&gt;	&lt;!-- &Eacute; v&aacute;lido em HTML mas inv&aacute;lido em XHTML --&gt;
+&lt;br /&gt;	&lt;!-- &Eacute; v&aacute;lido em XHTML --&gt;</code></pre>
+<h3>Documentos devem ser bem-formatados</h3>
+<p>Arquivos XHTML devem ser bem-formados para serem considerados válidos. Isso significa que devem seguir as regras do XML, como a correta aninhagem de tags. Exemplo:</p>
+<pre><code>&lt;b&gt;&lt;i&gt;Texto em negrito e it&aacute;lico&lt;/b&gt;&lt;/i&gt;	&lt;!-- XHTML inv&aacute;lido --&gt;
+&lt;b&gt;&lt;i&gt;Texto em negrito e it&aacute;lico&lt;/i&gt;&lt;/b&gt;	&lt;!-- XHTML v&aacute;lido --&gt;
+
+&lt;span&gt;&lt;div&gt;Tag de bloco dentro de tag inline&lt;/div&gt;&lt;/span&gt;	&lt;!-- XHTML inv&aacute;lido --&gt;
+&lt;div&gt;&lt;span&gt;Tag inline dentro de tag de bloco&lt;/span&gt;&lt;/div&gt;	&lt;!-- XHTML v&aacute;lido --&gt;</code></pre>
+<h2>Vantagens do XHTML</h2>
+<ul>
+	<li>
+		<b>Consistência:</b> Força os desenvolvedores a criarem códigos limpos e bem-organizados.
+	</li>
+	<li>
+		<b>Compatibilidade com XML:</b> Permite que documentos da web sejam manipulados por ferramentas baseadas em XML.
+	</li>
+	<li>
+		<b>Interoperabilidade:</b> Facilita o suporte em diferentes dispositivos, como navegadores móveis e leitores de tela.
+	</li>
+</ul>
+<h2>Desvantagens do XHTML</h2>
+<ul>
+	<li>
+		<b>Maior Rigor:</b> A exigência de conformidade estrita pode ser vista como um obstáculo para iniciantes.
+	</li>
+	<li>
+		<b>Tolerância Zero a Erros:</b> Pequenos erros na sintaxe podem fazer com que o documento não seja renderizado corretamente.
+	</li>
+</ul>
