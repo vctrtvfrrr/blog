@@ -1,0 +1,83 @@
+---
+title: "[App] ÑÎ©KÑÅ爪Ë ™"
+date: 2008-07-20T16:13:41-03:00
+description: Este é um programa muito simples, cuja função é transformar palavras simples em palavras formadas com caracteres especias. Útil pra entrar no MSN ou no Orkut com um nick diferenciado!
+abstract: Este é um programa muito simples, cuja função é transformar palavras simples em palavras formadas com caracteres especias. Útil pra entrar no MSN ou no Orkut com um nick diferenciado!
+tags: [javascript, app, nickname]
+---
+<script type="text/javascript">
+var y=0;				// variavel para o scroller da funcao mostrarnick
+var campoCheio=null;	// booleano para chamar ou ñ as funções, de acordo com o preenchimento dos campos.
+
+// converte caractere normal para especial.
+function converter(n) {
+	if(n=='A') {n='Å'}
+	if(n=='a') {n='ä'}
+	if(n=='B' || n=='b') {n='ß'}
+	if(n=='C') {n='©'}
+	if(n=='c') {n='¢'}
+	if(n=='D') {n='Ð'}
+	if(n=='d') {n='ð'}
+	if(n=='E') {n='Ë'}
+	if(n=='e') {n='ë'}
+	if(n=='f' || n=='F') {n='ƒ'}
+	if(n=='H' || n=='h') {n='|-|'}
+	if(n=='I') {n='Î'} 
+	if(n=='i') {n='¡'}
+	if(n=='L' || n=='l') {n='£'}
+	if(n=='m') {n='𝖒'}
+	if(n=='M') {n='爪'}
+	if(n=='N') {n='Ñ'}
+	if(n=='n') {n='ñ'}
+	if(n=='o') {n='ö'}
+	if(n=='O') {n='Ø'}
+	if(n=='p' || n=='P') {n='Þ'}
+	if(n=='r' || n=='R') {n='®'}
+	if(n=='s') {n='§'}
+	if(n=='S') {n='Š'}
+	if(n=='t' || n=='T') {n='†'}
+	if(n=='u') {n='µ'}
+	if(n=='U') {n='Ü'}
+	if(n=='Y') {n='¥'}
+	else n=n
+	return n
+}
+
+//converte os valores DEPOIS que estes são digitados,note a chamada de converter()
+function chgNick() {
+	var output=''
+	var enter=document.form1.entrada.value;
+	if(enter!='') {      // este laço só executa a conversão se o primeiro campo estiver preenchido
+		campoCheio=true;
+		for(var i=0;i<enter.length+1;i++) {output+=converter(enter.charAt(i));}
+		saida1=''+output+' ™'
+	}
+	else if(enter=='' && document.form1.saida.value!='') {alert('Preencha o primeiro campo, seu lamer burro.');campoCheio=false;}
+	else {alert('Preencha o primeiro campo...seu lamer...');campoCheio=false;} 
+}
+
+// mostra novo nick em forma de substrings,letra a letra
+function mostrarNick() {
+	if(campoCheio) {
+		document.form1.saida.value=saida1.substring(0,y);
+		y++;
+		tempo=setTimeout('mostrarNick()',100);
+		if(y==saida1.length+1) {clearTimeout(tempo)}
+	}
+}
+
+//função que agrupa todas as outras,é chamada pelo botão Input
+function execNickNamer() {
+	chgNick();
+	if(campoCheio) {mostrarNick()};
+}
+</script>
+
+<p>Este é um programa muito simples, cuja função é transformar palavras simples em palavras formadas com caracteres especias. Útil pra entrar no MSN ou no Orkut com um nick diferenciado!</p>
+<p>OBS: Letras maiúsculas e minúsculas em geral produzem resultados diferentes... experimente todas!</p>
+<form name="form1">
+	<p><big><font color="#FF0000">Digite seu nick:</font> <input name="entrada" size="40"></big></p>
+	<p><big><input onclick="execNickNamer()" type="button" value="Clique aqui para ver seu novo nick"></big></p>
+	<p><big><font color="#FF0000">Seu novo nick:</font> <input name="saida" size="40"></big></p>
+</form>
+<p>Em breve trarei novos formatos de letras!!! ;-)</p>
