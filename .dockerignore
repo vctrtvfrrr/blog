@@ -1,0 +1,16 @@
+.git
+.gitea
+.env
+.env.*
+vendor
+node_modules
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+database/*.sqlite
+*.log
+.DS_Store
+README.md
+LICENSE
+tests

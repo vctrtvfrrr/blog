@@ -1,0 +1,11 @@
+/node_modules
+/public/*
+!/public/assets/*
+!/public/favicon.ico
+!/public/index.php
+!/public/robots.txt
+/storage/*.key
+/vendor
+.env
+.phpunit.result.cache
+npm-debug.log
