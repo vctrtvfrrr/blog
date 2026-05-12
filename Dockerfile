@@ -7,7 +7,7 @@ FROM php:7.4-fpm-alpine
 RUN apk add --no-cache --virtual .build-deps \
         autoconf g++ make linux-headers \
         freetype-dev libjpeg-turbo-dev libpng-dev \
-        icu-dev libzip-dev oniguruma-dev sqlite-dev \
+        icu-dev libzip-dev oniguruma-dev sqlite-dev libxml2-dev \
     && apk add --no-cache \
         freetype libjpeg-turbo libpng icu libzip oniguruma sqlite-libs \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
