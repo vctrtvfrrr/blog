@@ -1,29 +1,27 @@
-FROM composer:2 AS vendor
-WORKDIR /app
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --ignore-platform-reqs
-
 FROM php:7.4-fpm-alpine
+
 RUN apk add --no-cache --virtual .build-deps \
         autoconf g++ make linux-headers \
         freetype-dev libjpeg-turbo-dev libpng-dev \
         icu-dev libzip-dev oniguruma-dev sqlite-dev libxml2-dev \
     && apk add --no-cache \
-        freetype libjpeg-turbo libpng icu libzip oniguruma sqlite-libs \
+        freetype libjpeg-turbo libpng icu libzip oniguruma sqlite-libs libxml2 \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) \
         pdo_mysql pdo_sqlite mbstring tokenizer xml ctype bcmath gd zip fileinfo intl opcache \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/*
 
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 WORKDIR /var/www/html
-COPY --from=vendor /app/vendor ./vendor
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-progress
 COPY . .
 RUN composer dump-autoload --optimize --no-dev --classmap-authoritative \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R ug+rwX storage bootstrap/cache
 
-# PHP-FPM listens on TCP for cross-container fastcgi
 RUN sed -i 's|^listen = .*|listen = 9000|' /usr/local/etc/php-fpm.d/www.conf
 
 EXPOSE 9000
