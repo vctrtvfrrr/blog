@@ -18,7 +18,7 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-progress
 COPY . .
-RUN composer dump-autoload --optimize --no-dev --classmap-authoritative \
+RUN composer dump-autoload --no-scripts --optimize --no-dev --classmap-authoritative \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R ug+rwX storage bootstrap/cache
 
