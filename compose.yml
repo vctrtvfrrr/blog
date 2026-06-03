@@ -1,0 +1,55 @@
+services:
+  victorotavio-php:
+    image: registry.codelab.tec.br/vctrtvfrrr/blog:latest
+    container_name: victorotavio-php
+    restart: unless-stopped
+    pull_policy: always # the deploy runs `up -d`; always pull the freshly built tag
+    # The Laravel env is the deploy-stack-rendered host .env
+    # (/opt/compose/victorotavio/.env), produced from .env.example + the
+    # victorotavio Vault collection at deploy time — not a hand-managed data
+    # file (ADR-0010). It is injected as environment variables (not mounted as a
+    # file): the renderer writes it mode 600 owned by the compose-dir owner, so a
+    # file mount would be unreadable by the php-fpm worker (www-data). env_file
+    # is read host-side by `docker compose` and propagated to the workers via
+    # `clear_env = no` (set in the Dockerfile). App config and secrets travel
+    # with the code.
+    env_file:
+      - .env
+    volumes:
+      # Persistent application data stays under the host /opt/data convention
+      # and is owned by the restic backup, never touched by the deploy.
+      - /opt/data/victorotavio/storage:/var/www/html/storage
+      - /opt/data/victorotavio/bootstrap-cache:/var/www/html/bootstrap/cache
+      - /opt/data/victorotavio/database/database.sqlite:/var/www/html/database/database.sqlite
+    networks:
+      - traefik-public
+    mem_limit: 256m
+
+  victorotavio-nginx:
+    image: registry.codelab.tec.br/vctrtvfrrr/blog-nginx:latest
+    container_name: victorotavio-nginx
+    restart: unless-stopped
+    pull_policy: always
+    depends_on:
+      - victorotavio-php
+    networks:
+      - traefik-public
+    mem_limit: 64m
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-public"
+      - "traefik.http.routers.victorotavio.rule=Host(`victorotavio.com.br`) || Host(`www.victorotavio.com.br`)"
+      - "traefik.http.routers.victorotavio.entrypoints=websecure"
+      - "traefik.http.routers.victorotavio.tls=true"
+      - "traefik.http.routers.victorotavio.tls.certresolver=cloudflare"
+      - "traefik.http.routers.victorotavio.tls.domains[0].main=victorotavio.com.br"
+      - "traefik.http.routers.victorotavio.tls.domains[0].sans=*.victorotavio.com.br"
+      - "traefik.http.routers.victorotavio.middlewares=victorotavio-www-redirect@docker,security-headers@file"
+      - "traefik.http.services.victorotavio.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.victorotavio-www-redirect.redirectregex.regex=^https?://www\\.victorotavio\\.com\\.br/(.*)"
+      - "traefik.http.middlewares.victorotavio-www-redirect.redirectregex.replacement=https://victorotavio.com.br/$${1}"
+      - "traefik.http.middlewares.victorotavio-www-redirect.redirectregex.permanent=true"
+
+networks:
+  traefik-public:
+    external: true

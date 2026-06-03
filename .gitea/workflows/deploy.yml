@@ -18,6 +18,7 @@ jobs:
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
         - /opt/compose:/opt/compose
+        - /opt/data:/opt/data
     steps:
       - uses: actions/checkout@v4
 
@@ -37,7 +38,22 @@ jobs:
           docker push "${IMAGE_NGINX}:${{ github.sha }}"
           docker push "${IMAGE_NGINX}:latest"
 
-      - name: Deploy
-        run: |
-          docker compose -f /opt/compose/victorotavio/compose.yml pull
-          docker compose -f /opt/compose/victorotavio/compose.yml up -d --force-recreate
+      - name: Deploy stack
+        # Consume the shared action by its FULL Gitea instance URL (ADR-0007/0009).
+        # It renders /opt/compose/victorotavio/.env from .env.example + the
+        # victorotavio Vault collection, rsyncs compose.yml, and runs up -d.
+        uses: https://git.codelab.tec.br/codelab/deploy-stack@master
+        with:
+          service: victorotavio
+          # Production config; secrets (APP_KEY, mail) come from the Vault
+          # collection, local-dev defaults from .env.example.
+          env-overrides: |
+            APP_ENV=production
+            APP_DEBUG=false
+            APP_URL=https://victorotavio.com.br
+            DB_DATABASE=/var/www/html/database/database.sqlite
+          # All-or-nothing Vault credential group (org-level Action secrets).
+          bw-server: ${{ secrets.BW_SERVER }}
+          bw-clientid: ${{ secrets.BW_CLIENTID }}
+          bw-clientsecret: ${{ secrets.BW_CLIENTSECRET }}
+          bw-password: ${{ secrets.BW_PASSWORD }}
