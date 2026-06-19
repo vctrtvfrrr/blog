@@ -36,6 +36,9 @@ services:
       - traefik-public
     mem_limit: 64m
     labels:
+      - "probe=true"
+      - "probe.url=https://victorotavio.com.br"
+      - "probe.mode=public"
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-public"
       - "traefik.http.routers.victorotavio.rule=Host(`victorotavio.com.br`) || Host(`www.victorotavio.com.br`)"
